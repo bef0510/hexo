@@ -25,9 +25,9 @@ categories:
 
 ### 安裝 Hexo
 透過 **npm** 安裝 **Hexo** (出錯的地方，無視它)
-``` bash
+~~~ bash
 $ npm install -g hexo-cli
-```
+~~~
 # GitHub 新增 Repository
 1. 開啟 [github.com](https://github.com/)
 2. 建立一個 **Repository**
@@ -36,33 +36,33 @@ $ npm install -g hexo-cli
 ![Create Repository](2.png)
 
 # Hexo 建立
-``` bash
+~~~ bash
 $ hexo init 文件名稱
 $ cd 文件名稱
 $ npm install
 $ npm install hexo-deployer-git --save
-```
+~~~
 
 # GitHub + Hexo
 ### 本機鏈結 GitHub
 1. 在新建的目錄按右鍵，開啟 **git bash**
-``` bash
+~~~ bash
 $ git config --global user.name "name"
 $ git config --global user.email "email"
-```
+~~~
 2. 生成 **SSH** 密鑰
    輸入完指令後，連按三次 Enter
-``` bash
+~~~ bash
 $ ssh-keygen -t rsa -C "email"
-```
+~~~
 3. 密鑰加至 **ssh-agent**
-``` bash
+~~~ bash
 $ eval "$(ssh-agent -s)"
-```
+~~~
 4. 生成的 **SSH** 加至 **ssh-agent**
-``` bash
+~~~ bash
 $ ssh-add ~/.ssh/id_rsa
-```
+~~~
 5. 開啟 [github.com](https://github.com/)
    點擊頭像下 **Settings**
 ![Settings](3.png)
@@ -70,15 +70,15 @@ $ ssh-add ~/.ssh/id_rsa
    點擊 **New SSH key**
 ![SSHandGPG](4.png)
 7. 顯示 **SSH key** 及複製
-``` bash
+~~~ bash
 $ cat ~/.ssh/id_rsa.pub
-```
+~~~
 8. 將 **SSH key** 貼至 **GitHub SSH key** 裡， `Title` 任意打
 ![Inputkey](5.png)
 9. 確認 **GitHub** 鏈結成功
-``` bash
+~~~ bash
 $ ssh -T git@github.com
-```
+~~~
 ![GithubConnect](6.png)
 
 ### Hexo config 修改
@@ -102,47 +102,47 @@ language: zh-tw
 {% note default %}
 post_asset_folder: true
 {% endnote %}
-``` bash
+~~~ bash
 $ npm install https://github.com/CodeFalling/hexo-asset-image --save
-```
+~~~
 
 # 備份在另一個 Repository
 1. **Commit Git**
-``` bash
+~~~ bash
 $ echo "# otherRepository" >> README.md
 $ git init
 $ git add .
 $ git commit -m "first commit"
 $ git remote add origin git@github.com:username/otherRepository.git
 $ git push -u origin master
-```
+~~~
 
 # 部署
 1. 清除快取檔案 **(db.json)** 和已產生的靜態檔案 **(public)**
-``` bash
+~~~ bash
 $ hexo clean
-```
+~~~
 2. 產生靜態檔案
-``` bash
+~~~ bash
 $ hexo g 
-```
+~~~
 3. 啟動伺服器
 {% note default %}
 預設是 `http://localhost:4000/`
 {% endnote %}
-``` bash
+~~~ bash
 $ hexo s
-```
+~~~
 4. 部署網站
-``` bash
+~~~ bash
 $ hexo d
-```
+~~~
 5. **Blog URL**
 {% note default %}
 https://blogRepository.github.io/
 {% endnote %}
 
-# 參考文章
+# Reference
 [Hexo](https://hexo.io/zh-tw/docs/)
 [超详细Hexo+Github博客搭建小白教程](https://godweiyang.com/2018/04/13/hexo-blog/)
 [使用 Hexo + github 建立Blog](https://alumincan.github.io/2017/03/28/setup-blog-on-github/)

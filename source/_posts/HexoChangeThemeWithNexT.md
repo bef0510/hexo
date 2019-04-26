@@ -10,9 +10,9 @@ categories:
 # 更換主題
 ### 安裝 NexT
 使用 **Git checkout**
-``` bash
+~~~ bash
 $ git clone https://github.com/iissnan/hexo-theme-next themes/next
-```
+~~~
 
 ### config 設定
 根目錄 `_config.yml` 修改 **theme**
@@ -52,29 +52,29 @@ sidebar:
 
 ### 新增 menu 對應資料
 增加 **tags**，在 `/source/` 下產生相對應資料
-``` bash
+~~~ bash
 $ hexo new page "tags"
-```
+~~~
 {% note default %}
 修改 `title: 標籤`
 /source/tags/index.md 加入 `type: "tags"`
 {% endnote %}
 
 增加 **categories**，在 `/source/` 下產生相對應資料
-``` bash
+~~~ bash
 $ hexo new page "categories"
-```
+~~~
 {% note default %}
 修改 `title: 分類`
 /source/categories/index.md 加入 `type: "categories"`
 {% endnote %}
 
 ### 新增文章
-``` bash
+~~~ bash
 $ hexo new post "Title-1"
-```
+~~~
 
-# 參考
+# Reference
 [Hexo](https://hexo.io/zh-tw/docs/)
 [NexT](https://theme-next.iissnan.com/)
 [Hexo - 前端也能建置部落格！更換主題與發表文章篇](https://ithelp.ithome.com.tw/articles/10207997)
