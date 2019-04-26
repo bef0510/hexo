@@ -87,7 +87,7 @@ $ ssh -T git@github.com
 {% note default %}
 deploy:
 &emsp;type: git
-&emsp;repository: https://github.com/username/repository.github.io
+&emsp;repository: https://github.com/username/blogRepository.github.io
 &emsp;branch: master
 {% endnote %}
 2. 設定 `Title`、`author`、`language`
@@ -106,38 +106,40 @@ post_asset_folder: true
 $ npm install https://github.com/CodeFalling/hexo-asset-image --save
 ```
 
-# 部署
+# 備份在另一個 Repository
 1. **Commit Git**
 ``` bash
-$ echo "# repository.github.io" >> README.md
+$ echo "# otherRepository" >> README.md
 $ git init
 $ git add .
 $ git commit -m "first commit"
-$ git remote add origin git@github.com:username/repository.github.io.git
+$ git remote add origin git@github.com:username/otherRepository.git
 $ git push -u origin master
 ```
-2. 清除快取檔案 **(db.json)** 和已產生的靜態檔案 **(public)**
+
+# 部署
+1. 清除快取檔案 **(db.json)** 和已產生的靜態檔案 **(public)**
 ``` bash
 $ hexo clean
 ```
-3. 產生靜態檔案
+2. 產生靜態檔案
 ``` bash
 $ hexo g 
 ```
-4. 啟動伺服器
+3. 啟動伺服器
 {% note default %}
 預設是 `http://localhost:4000/`
 {% endnote %}
 ``` bash
 $ hexo s
 ```
-5. 部署網站
+4. 部署網站
 ``` bash
 $ hexo d
 ```
-6. **Blog URL**
+5. **Blog URL**
 {% note default %}
-https://repository.github.io/
+https://blogRepository.github.io/
 {% endnote %}
 
 # 參考文章
