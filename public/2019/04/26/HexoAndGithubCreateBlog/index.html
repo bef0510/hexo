@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo,GitHub,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="順序 基本安基 GitHub 帳號注冊及新增一個 Repository Hexo 建立 Hexo + GitHub 部署  基本安基安裝 NodeNode.js 下載並安裝 安裝 GitGit for Windows 下載並安裝 安裝 Hexo透過 npm 安裝 Hexo (出錯的地方，無視它) 1$ npm install -g hexo-cli GitHub 新增 Repository 開啟">
+<meta name="keywords" content="Hexo,GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HexoAndGithubCreateBlog">
+<meta property="og:url" content="http://yoursite.com/2019/04/26/HexoAndGithubCreateBlog/index.html">
+<meta property="og:site_name" content="D &amp; E&#39;s Notes">
+<meta property="og:description" content="順序 基本安基 GitHub 帳號注冊及新增一個 Repository Hexo 建立 Hexo + GitHub 部署  基本安基安裝 NodeNode.js 下載並安裝 安裝 GitGit for Windows 下載並安裝 安裝 Hexo透過 npm 安裝 Hexo (出錯的地方，無視它) 1$ npm install -g hexo-cli GitHub 新增 Repository 開啟">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/HexoAndGithubCreateBlog/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/HexoAndGithubCreateBlog/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/HexoAndGithubCreateBlog/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/HexoAndGithubCreateBlog/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/HexoAndGithubCreateBlog/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/HexoAndGithubCreateBlog/6.png">
+<meta property="og:updated_time" content="2019-04-26T03:40:43.915Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HexoAndGithubCreateBlog">
+<meta name="twitter:description" content="順序 基本安基 GitHub 帳號注冊及新增一個 Repository Hexo 建立 Hexo + GitHub 部署  基本安基安裝 NodeNode.js 下載並安裝 安裝 GitGit for Windows 下載並安裝 安裝 Hexo透過 npm 安裝 Hexo (出錯的地方，無視它) 1$ npm install -g hexo-cli GitHub 新增 Repository 開啟">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/26/HexoAndGithubCreateBlog/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/26/HexoAndGithubCreateBlog/">
+
+
+
+
+
+  <title>HexoAndGithubCreateBlog | D & E's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D & E's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/26/HexoAndGithubCreateBlog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="D & E">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D & E's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HexoAndGithubCreateBlog</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-26T11:38:54+08:00">
+                2019-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="順序"><a href="#順序" class="headerlink" title="順序"></a>順序</h1><ol>
+<li>基本安基</li>
+<li>GitHub 帳號注冊及新增一個 Repository</li>
+<li>Hexo 建立</li>
+<li>Hexo + GitHub</li>
+<li>部署</li>
+</ol>
+<h1 id="基本安基"><a href="#基本安基" class="headerlink" title="基本安基"></a>基本安基</h1><h3 id="安裝-Node"><a href="#安裝-Node" class="headerlink" title="安裝 Node"></a>安裝 Node</h3><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a> 下載並安裝</p>
+<h3 id="安裝-Git"><a href="#安裝-Git" class="headerlink" title="安裝 Git"></a>安裝 Git</h3><p><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git for Windows</a> 下載並安裝</p>
+<h3 id="安裝-Hexo"><a href="#安裝-Hexo" class="headerlink" title="安裝 Hexo"></a>安裝 Hexo</h3><p>透過 npm 安裝 Hexo (出錯的地方，無視它)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h1 id="GitHub-新增-Repository"><a href="#GitHub-新增-Repository" class="headerlink" title="GitHub 新增 Repository"></a>GitHub 新增 Repository</h1><ol>
+<li>開啟 <a href="https://github.com/" target="_blank" rel="noopener">github.com</a></li>
+<li>建立一個 Repository<br><img src="/2019/04/26/HexoAndGithubCreateBlog/1.png" alt="New Repository"></li>
+<li>輸入自己的名字 <code>username</code>，後綴 <code>.github.io</code></li>
+<li>勾選 README<br><img src="/2019/04/26/HexoAndGithubCreateBlog/2.png" alt="Create Repository"></li>
+</ol>
+<h1 id="Hexo-建立"><a href="#Hexo-建立" class="headerlink" title="Hexo 建立"></a>Hexo 建立</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init 文件名稱</span><br><span class="line">$ <span class="built_in">cd</span> 文件名稱</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h1 id="GitHub-Hexo"><a href="#GitHub-Hexo" class="headerlink" title="GitHub + Hexo"></a>GitHub + Hexo</h1><h3 id="本機鏈結-GitHub"><a href="#本機鏈結-GitHub" class="headerlink" title="本機鏈結 GitHub"></a>本機鏈結 GitHub</h3><ol>
+<li><p>在新建的目錄按右鍵，開啟 <strong>git bash</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"name"</span></span><br><span class="line">$ git config --global user.email <span class="string">"email"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成 <strong>SSH</strong> 密鑰<br>輸入完指令後，連按三次 Enter</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"email"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>密鑰加至 <strong>ssh-agent</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">eval</span> <span class="string">"<span class="variable">$(ssh-agent -s)</span>"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成的 <strong>SSH</strong> 加至 <strong>ssh-agent</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>開啟 <a href="https://github.com/" target="_blank" rel="noopener">github.com</a><br>點擊頭像下 <strong>Settings</strong><br><img src="/2019/04/26/HexoAndGithubCreateBlog/3.png" alt="Settings"></p>
+</li>
+<li>點擊左側 <strong>SSH and GPG keys</strong><br>點擊 <strong>New SSH key</strong><br><img src="/2019/04/26/HexoAndGithubCreateBlog/4.png" alt="SSHandGPG"></li>
+<li><p>顯示 <strong>SSH key</strong> 及複製</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>將 <strong>SSH key</strong> 貼至 <strong>GitHub SSH key</strong> 裡， <strong>Title</strong> 任意打<br><img src="/2019/04/26/HexoAndGithubCreateBlog/5.png" alt="Inputkey"></p>
+</li>
+<li>確認 <strong>GitHub</strong> 鏈結成功<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="/2019/04/26/HexoAndGithubCreateBlog/6.png" alt="GithubConnect"></p>
+<h3 id="Hexo-config-修改"><a href="#Hexo-config-修改" class="headerlink" title="Hexo config 修改"></a>Hexo config 修改</h3><ol>
+<li>根目錄下開啟 <code>_config.yml</code><br>修改最後一行的配置，如下<div class="note default"><p>deploy:<br>&emsp;type: git<br>&emsp;repository: <a href="https://github.com/username/repository.github.io" target="_blank" rel="noopener">https://github.com/username/repository.github.io</a><br>&emsp;branch: master</p></div></li>
+<li>設定Title、author、language<br>修改 <code>_config.yml</code><div class="note default"><p>title: your title<br>author: your name<br>language: zh-tw</p></div></li>
+<li>image相對應路徑<br>修改 <code>_config.yml</code><div class="note default"><p>post_asset_folder: true</p></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><h3 id="清除檔案"><a href="#清除檔案" class="headerlink" title="清除檔案"></a>清除檔案</h3><ol>
+<li><p>清除快取檔案 (db.json) 和已產生的靜態檔案 (public)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>產生靜態檔案</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>啟動伺服器<br>預設是 <code>http://localhost:4000/</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署網站</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Blog URL</p>
+<div class="note default"><p><a href="https://repository.github.io/" target="_blank" rel="noopener">https://repository.github.io/</a></p></div>
+</li>
+</ol>
+<h1 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h1><p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="noopener">Hexo</a><br><a href="https://godweiyang.com/2018/04/13/hexo-blog/" target="_blank" rel="noopener">超详细Hexo+Github博客搭建小白教程</a><br><a href="https://alumincan.github.io/2017/03/28/setup-blog-on-github/" target="_blank" rel="noopener">使用 Hexo + github 建立Blog</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/26/HexoChangeThemeWithNexT/" rel="prev" title="Hexo 更換主題 NexT">
+                Hexo 更換主題 NexT <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="D & E">
+            
+              <p class="site-author-name" itemprop="name">D & E</p>
+              <p class="site-description motion-element" itemprop="description">Just notes</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#順序"><span class="nav-number">1.</span> <span class="nav-text">順序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本安基"><span class="nav-number">2.</span> <span class="nav-text">基本安基</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝-Node"><span class="nav-number">2.0.1.</span> <span class="nav-text">安裝 Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝-Git"><span class="nav-number">2.0.2.</span> <span class="nav-text">安裝 Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝-Hexo"><span class="nav-number">2.0.3.</span> <span class="nav-text">安裝 Hexo</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#GitHub-新增-Repository"><span class="nav-number">3.</span> <span class="nav-text">GitHub 新增 Repository</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-建立"><span class="nav-number">4.</span> <span class="nav-text">Hexo 建立</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GitHub-Hexo"><span class="nav-number">5.</span> <span class="nav-text">GitHub + Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本機鏈結-GitHub"><span class="nav-number">5.0.1.</span> <span class="nav-text">本機鏈結 GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-config-修改"><span class="nav-number">5.0.2.</span> <span class="nav-text">Hexo config 修改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署"><span class="nav-number">6.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#清除檔案"><span class="nav-number">6.0.1.</span> <span class="nav-text">清除檔案</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#參考文章"><span class="nav-number">7.</span> <span class="nav-text">參考文章</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">D & E</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
