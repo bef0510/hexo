@@ -1,5 +1,5 @@
 ---
-title: HexoAndGithubCreateBlog
+title: 使用 Hexo 及 GitHub 建立 Blog
 date: 2019-04-26 11:38:54
 tags: 
  - Hexo
@@ -31,9 +31,9 @@ $ npm install -g hexo-cli
 # GitHub 新增 Repository
 1. 開啟 [github.com](https://github.com/)
 2. 建立一個 **Repository**
-![New Repository](HexoAndGithub/1.png)
+![New Repository](1.png)
 3. 輸入自己的名字 `username`，後綴 `.github.io`
-![Create Repository](HexoAndGithub/2.png)
+![Create Repository](2.png)
 
 # Hexo 建立
 ``` bash
@@ -65,21 +65,21 @@ $ ssh-add ~/.ssh/id_rsa
 ```
 5. 開啟 [github.com](https://github.com/)
    點擊頭像下 **Settings**
-![Settings](HexoAndGithub/3.png)
+![Settings](3.png)
 6. 點擊左側 **SSH and GPG keys**
    點擊 **New SSH key**
-![SSHandGPG](HexoAndGithub/4.png)
+![SSHandGPG](4.png)
 7. 顯示 **SSH key** 及複製
 ``` bash
 $ cat ~/.ssh/id_rsa.pub
 ```
 8. 將 **SSH key** 貼至 **GitHub SSH key** 裡， `Title` 任意打
-![Inputkey](HexoAndGithub/5.png)
+![Inputkey](5.png)
 9. 確認 **GitHub** 鏈結成功
 ``` bash
 $ ssh -T git@github.com
 ```
-![GithubConnect](HexoAndGithub/6.png)
+![GithubConnect](6.png)
 
 ### Hexo config 修改
 1. 根目錄下開啟 **_config.yml**
