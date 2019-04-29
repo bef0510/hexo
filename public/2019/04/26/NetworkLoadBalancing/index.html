@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="GitHub,">
+  <meta name="keywords" content="IIS,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="設定 git (第一次使用) 12$ git config --global user.name &quot;userName&quot;$ git config --global user.email &quot;userEmail&quot;  設定遠端路徑 1$ git remote add origin git@github.com:username/repository.git  查看變更狀態 1$ git status">
-<meta name="keywords" content="GitHub">
+<meta name="description" content="網路負載平衡設定 A server IP ： 192.168.1.101 B server IP ： 192.168.1.102 叢集 IP ： 192.168.1.103  A server 管理 B server在 A server[伺服器管理員] →[管理] →[新增伺服器][立即尋抓] B server B server 開啟 網路負載平衡 功能[伺服器管理員] →[管理] →[新增角色及">
+<meta name="keywords" content="IIS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git 常用指令">
-<meta property="og:url" content="http://yoursite.com/2019/04/26/GithubCommand/index.html">
+<meta property="og:title" content="NLB 網路負載平衡">
+<meta property="og:url" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="設定 git (第一次使用) 12$ git config --global user.name &quot;userName&quot;$ git config --global user.email &quot;userEmail&quot;  設定遠端路徑 1$ git remote add origin git@github.com:username/repository.git  查看變更狀態 1$ git status">
+<meta property="og:description" content="網路負載平衡設定 A server IP ： 192.168.1.101 B server IP ： 192.168.1.102 叢集 IP ： 192.168.1.103  A server 管理 B server在 A server[伺服器管理員] →[管理] →[新增伺服器][立即尋抓] B server B server 開啟 網路負載平衡 功能[伺服器管理員] →[管理] →[新增角色及">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-04-26T06:18:24.228Z">
+<meta property="og:updated_time" content="2019-04-29T01:17:56.543Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git 常用指令">
-<meta name="twitter:description" content="設定 git (第一次使用) 12$ git config --global user.name &quot;userName&quot;$ git config --global user.email &quot;userEmail&quot;  設定遠端路徑 1$ git remote add origin git@github.com:username/repository.git  查看變更狀態 1$ git status">
+<meta name="twitter:title" content="NLB 網路負載平衡">
+<meta name="twitter:description" content="網路負載平衡設定 A server IP ： 192.168.1.101 B server IP ： 192.168.1.102 叢集 IP ： 192.168.1.103  A server 管理 B server在 A server[伺服器管理員] →[管理] →[新增伺服器][立即尋抓] B server B server 開啟 網路負載平衡 功能[伺服器管理員] →[管理] →[新增角色及">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/26/GithubCommand/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/26/NetworkLoadBalancing/">
 
 
 
 
 
-  <title>Git 常用指令 | D & E's Notes</title>
+  <title>NLB 網路負載平衡 | D & E's Notes</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/26/GithubCommand/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/26/NetworkLoadBalancing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Git 常用指令</h1>
+          <h1 class="post-title" itemprop="name headline">NLB 網路負載平衡</h1>
         
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-26T13:57:44+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-26T17:34:29+08:00">
                 2019-04-26
               </time>
             
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/MIS/" itemprop="url" rel="index">
+                    <span itemprop="name">MIS</span>
                   </a>
                 </span>
 
@@ -342,30 +342,43 @@
       
 
       
-        <ol>
-<li><p>設定 git (第一次使用)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"userName"</span></span><br><span class="line">$ git config --global user.email <span class="string">"userEmail"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>設定遠端路徑</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@github.com:username/repository.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看變更狀態</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>放棄變更檔案</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout 檔案名</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看 <strong>commit</strong> 紀錄</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>檔案加入版控 (單一及所有)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git add 檔案名稱</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>commit</strong> (先 <strong>add</strong> 後才能 <strong>commit</strong>)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">"first commit"</span></span><br></pre></td></tr></table></figure>
-</li>
+        <h1 id="網路負載平衡設定"><a href="#網路負載平衡設定" class="headerlink" title="網路負載平衡設定"></a>網路負載平衡設定</h1><ol>
+<li><strong>A server IP ：</strong> <code>192.168.1.101</code></li>
+<li><strong>B server IP ：</strong> <code>192.168.1.102</code></li>
+<li><strong>叢集 IP ：</strong> <code>192.168.1.103</code></li>
 </ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://git-scm.com/docs/user-manual.html" target="_blank" rel="noopener">git</a><br><a href="https://ithelp.ithome.com.tw/articles/10156301" target="_blank" rel="noopener">新手專用的git常用指令</a></p>
+<h3 id="A-server-管理-B-server"><a href="#A-server-管理-B-server" class="headerlink" title="A server 管理 B server"></a>A server 管理 B server</h3><p>在 <strong>A server</strong><br>[伺服器管理員] →[管理] →[新增伺服器]<br>[立即尋抓] <strong>B server</strong></p>
+<h3 id="B-server-開啟-網路負載平衡-功能"><a href="#B-server-開啟-網路負載平衡-功能" class="headerlink" title="B server 開啟 網路負載平衡 功能"></a>B server 開啟 網路負載平衡 功能</h3><p>[伺服器管理員] →[管理] →[新增角色及功能]<br>選 <strong>B server</strong> [下一步]<br>[功能] → 勾選 [網路負載平衡]<br>[安裝]</p>
+<h3 id="A-server-開啟-網路負載平衡-功能"><a href="#A-server-開啟-網路負載平衡-功能" class="headerlink" title="A server 開啟 網路負載平衡 功能"></a>A server 開啟 網路負載平衡 功能</h3><p>重覆 <strong>B server</strong> 動作，改選 <strong>A server</strong></p>
+<h3 id="叢集設定"><a href="#叢集設定" class="headerlink" title="叢集設定"></a>叢集設定</h3><p>在 <strong>A server</strong> 開啟 [網路負載平衡管理]<br><strong>A server</strong> 設定</p>
+<ol>
+<li>在 <span style="background-color:#f8f906;color:#0000FF;">[網路負載平衡叢集]</span> 按右鍵 →<span style="background-color:#f8f906;color:#0000FF;">[新增叢集]</span></li>
+<li>主機：輸入 <code>192.168.1.101</code> →<span style="background-color:#f8f906;color:#0000FF;">[連線]</span></li>
+<li><span style="background-color:#f8f906;color:#0000FF;">[下一步]</span> (不要點其他地方，<span style="background-color:#f8f906;color:#0000FF;">[下一步]</span> 會不見，<strong>Server 2019</strong> 也還沒修好)</li>
+<li><span style="background-color:#f8f906;color:#0000FF;">[優先順序]</span> 選 <code>1</code></li>
+<li><span style="background-color:#f8f906;color:#0000FF;">[下一步]</span></li>
+<li>新增 <strong>叢集 IP</strong> <code>192.168.1.103</code></li>
+<li><span style="background-color:#f8f906;color:#0000FF;">[下一步]</span></li>
+<li><span style="background-color:#f8f906;color:#0000FF;">[叢集操作模式]</span> 選 <span style="background-color:#f8f906;color:#0000FF;">[多點傳送]</span> <span style="background-color:#f8f906;color:#0000FF;">[下一步]</span> (虛擬機只能選多點，實體機能選單點、多點)</li>
+<li>等漏斗跑完就完成 <span style="background-color:#f8f906;color:#0000FF;">[交集]</span></li>
+</ol>
+<p><strong>B server</strong> 設定</p>
+<ol>
+<li>在 IP <span style="background-color:#f8f906;color:#0000FF;">192.168.1.100</span> 按右鍵 →新增主機到叢集</li>
+<li>主機：<strong>B server</strong> <code>192.168.1.102</code> →連線 (因遠端，會比較久，要有耐心)</li>
+<li><span style="background-color:#f8f906;color:#0000FF;">下一步</span> (不要點其他地方，下一步會不見，把生命浪費在有意義的地方)</li>
+<li><span style="background-color:#f8f906;color:#0000FF;">優先順序</span> 選 <code>2</code></li>
+<li><span style="background-color:#f8f906;color:#0000FF;">下一步</span></li>
+<li><span style="background-color:#f8f906;color:#0000FF;">完成</span></li>
+<li>等漏斗跑完就完成 <span style="background-color:#f8f906;color:#0000FF;">[交集]</span></li>
+</ol>
+<p><strong>A B server</strong> 已 <span style="background-color:#f8f906;color:#0000FF;">[交集]</span> 後，兩台 <strong>server</strong> 都要重開機</p>
+<h1 id="DNS-server-設定"><a href="#DNS-server-設定" class="headerlink" title="DNS server 設定"></a>DNS server 設定</h1><ol>
+<li>新增主機</li>
+<li>輸入名稱</li>
+<li>輸入 <strong>IP</strong> <code>192.168.1.100</code></li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://docs.microsoft.com/zh-tw/windows-server/networking/technologies/network-load-balancing" target="_blank" rel="noopener">網路負載平衡| Microsoft Docs</a><br><a href="https://www.youtube.com/watch?v=Zx4s59nFX3E&amp;t=1093s" target="_blank" rel="noopener">108-1網工班-Windows Server 2019-IIS Server 網路負載平衡-16-1</a></p>
 
       
     </div>
@@ -383,7 +396,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            <a href="/tags/IIS/" rel="tag"># IIS</a>
           
         </div>
       
@@ -396,8 +409,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/26/HexoRecoveryFromGitHub/" rel="next" title="Hexo 從 GitHub 還原">
-                <i class="fa fa-chevron-left"></i> Hexo 從 GitHub 還原
+              <a href="/2019/04/26/GithubCommand/" rel="next" title="Git 常用指令">
+                <i class="fa fa-chevron-left"></i> Git 常用指令
               </a>
             
           </div>
@@ -405,10 +418,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/26/NetworkLoadBalancing/" rel="prev" title="NLB 網路負載平衡">
-                NLB 網路負載平衡 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -542,7 +551,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#網路負載平衡設定"><span class="nav-number">1.</span> <span class="nav-text">網路負載平衡設定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-server-管理-B-server"><span class="nav-number">1.0.1.</span> <span class="nav-text">A server 管理 B server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-server-開啟-網路負載平衡-功能"><span class="nav-number">1.0.2.</span> <span class="nav-text">B server 開啟 網路負載平衡 功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-server-開啟-網路負載平衡-功能"><span class="nav-number">1.0.3.</span> <span class="nav-text">A server 開啟 網路負載平衡 功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#叢集設定"><span class="nav-number">1.0.4.</span> <span class="nav-text">叢集設定</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#DNS-server-設定"><span class="nav-number">2.</span> <span class="nav-text">DNS server 設定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
