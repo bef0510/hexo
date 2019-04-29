@@ -11,6 +11,7 @@ categories:
 # 安裝 Redis
 ### 下載
 [Redis](https://github.com/MicrosoftArchive/redis/releases/download/win-3.0.504/Redis-x64-3.0.504.msi)
+[Redis Desktop Manager](https://sourceforge.net/projects/redis-desktop-manager.mirror/files/0.8.8/redis-desktop-manager-0.8.8.384.exe/download)
 
 ### 安裝
 預設使用 `6379` **port**，勾選加入防火牆例外清單

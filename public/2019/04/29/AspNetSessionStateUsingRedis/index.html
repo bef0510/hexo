@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="安裝 Redis下載Redis 安裝預設使用 6379 port，勾選加入防火牆例外清單 設定使用記憶體上限依實際最大值設定，而不是平均值，官方建議要設，防止 out of max memory 安裝套件NuGet GUI使用 NuGet 下載 Microsoft.Web.RedisSessionStateProviderWeb.Config 自動產生下列資訊   &amp;lt;sessionState">
+<meta name="description" content="安裝 Redis下載RedisRedis Desktop Manager 安裝預設使用 6379 port，勾選加入防火牆例外清單 設定使用記憶體上限依實際最大值設定，而不是平均值，官方建議要設，防止 out of max memory 安裝套件NuGet GUI使用 NuGet 下載 Microsoft.Web.RedisSessionStateProviderWeb.Config 自動產生下列">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Session 使用 Redis">
 <meta property="og:url" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="安裝 Redis下載Redis 安裝預設使用 6379 port，勾選加入防火牆例外清單 設定使用記憶體上限依實際最大值設定，而不是平均值，官方建議要設，防止 out of max memory 安裝套件NuGet GUI使用 NuGet 下載 Microsoft.Web.RedisSessionStateProviderWeb.Config 自動產生下列資訊   &amp;lt;sessionState">
+<meta property="og:description" content="安裝 Redis下載RedisRedis Desktop Manager 安裝預設使用 6379 port，勾選加入防火牆例外清單 設定使用記憶體上限依實際最大值設定，而不是平均值，官方建議要設，防止 out of max memory 安裝套件NuGet GUI使用 NuGet 下載 Microsoft.Web.RedisSessionStateProviderWeb.Config 自動產生下列">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/1.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/2.png">
@@ -96,10 +96,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/8.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/9.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/10.png">
-<meta property="og:updated_time" content="2019-04-29T08:36:19.277Z">
+<meta property="og:updated_time" content="2019-04-29T08:41:35.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Session 使用 Redis">
-<meta name="twitter:description" content="安裝 Redis下載Redis 安裝預設使用 6379 port，勾選加入防火牆例外清單 設定使用記憶體上限依實際最大值設定，而不是平均值，官方建議要設，防止 out of max memory 安裝套件NuGet GUI使用 NuGet 下載 Microsoft.Web.RedisSessionStateProviderWeb.Config 自動產生下列資訊   &amp;lt;sessionState">
+<meta name="twitter:description" content="安裝 Redis下載RedisRedis Desktop Manager 安裝預設使用 6379 port，勾選加入防火牆例外清單 設定使用記憶體上限依實際最大值設定，而不是平均值，官方建議要設，防止 out of max memory 安裝套件NuGet GUI使用 NuGet 下載 Microsoft.Web.RedisSessionStateProviderWeb.Config 自動產生下列">
 <meta name="twitter:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/1.png">
 
 
@@ -352,7 +352,7 @@
       
 
       
-        <h1 id="安裝-Redis"><a href="#安裝-Redis" class="headerlink" title="安裝 Redis"></a>安裝 Redis</h1><h3 id="下載"><a href="#下載" class="headerlink" title="下載"></a>下載</h3><p><a href="https://github.com/MicrosoftArchive/redis/releases/download/win-3.0.504/Redis-x64-3.0.504.msi" target="_blank" rel="noopener">Redis</a></p>
+        <h1 id="安裝-Redis"><a href="#安裝-Redis" class="headerlink" title="安裝 Redis"></a>安裝 Redis</h1><h3 id="下載"><a href="#下載" class="headerlink" title="下載"></a>下載</h3><p><a href="https://github.com/MicrosoftArchive/redis/releases/download/win-3.0.504/Redis-x64-3.0.504.msi" target="_blank" rel="noopener">Redis</a><br><a href="https://sourceforge.net/projects/redis-desktop-manager.mirror/files/0.8.8/redis-desktop-manager-0.8.8.384.exe/download" target="_blank" rel="noopener">Redis Desktop Manager</a></p>
 <h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><p>預設使用 <code>6379</code> <strong>port</strong>，勾選加入防火牆例外清單<br><img src="/2019/04/29/AspNetSessionStateUsingRedis/1.png" alt="DefaultPort"></p>
 <h3 id="設定使用記憶體上限"><a href="#設定使用記憶體上限" class="headerlink" title="設定使用記憶體上限"></a>設定使用記憶體上限</h3><p>依實際最大值設定，而不是平均值，官方建議要設，防止 <strong>out of max memory</strong><br><img src="/2019/04/29/AspNetSessionStateUsingRedis/2.png" alt="MaxMemory"></p>
 <h1 id="安裝套件"><a href="#安裝套件" class="headerlink" title="安裝套件"></a>安裝套件</h1><h3 id="NuGet-GUI"><a href="#NuGet-GUI" class="headerlink" title="NuGet GUI"></a>NuGet GUI</h3><p>使用 <strong>NuGet</strong> 下載 <code>Microsoft.Web.RedisSessionStateProvider</code><br><strong>Web.Config</strong> 自動產生下列資訊</p>
