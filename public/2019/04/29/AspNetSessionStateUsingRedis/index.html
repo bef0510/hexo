@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Config,Session,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,23 +79,28 @@
 
 
 
-<meta name="description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
-<meta name="keywords" content="Config,Session">
+<meta name="description" content="安裝 Redis下載Redis 安裝預設使用 6379 port，勾選加入防火牆例外清單 設定使用記憶體上限依實際最大值設定，而不是平均值，官方建議要設，防止 out of max memory 安裝套件NuGet GUI使用 NuGet 下載 Microsoft.Web.RedisSessionStateProviderWeb.Config 自動產生下列資訊   &amp;lt;sessionState">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Session 使用 SqlServer">
-<meta property="og:url" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/index.html">
+<meta property="og:title" content="Session 使用 Redis">
+<meta property="og:url" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
+<meta property="og:description" content="安裝 Redis下載Redis 安裝預設使用 6379 port，勾選加入防火牆例外清單 設定使用記憶體上限依實際最大值設定，而不是平均值，官方建議要設，防止 out of max memory 安裝套件NuGet GUI使用 NuGet 下載 Microsoft.Web.RedisSessionStateProviderWeb.Config 自動產生下列資訊   &amp;lt;sessionState">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/4.png">
-<meta property="og:updated_time" content="2019-04-29T08:23:23.279Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/8.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/9.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/10.png">
+<meta property="og:updated_time" content="2019-04-29T08:36:19.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Session 使用 SqlServer">
-<meta name="twitter:description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/1.png">
+<meta name="twitter:title" content="Session 使用 Redis">
+<meta name="twitter:description" content="安裝 Redis下載Redis 安裝預設使用 6379 port，勾選加入防火牆例外清單 設定使用記憶體上限依實際最大值設定，而不是平均值，官方建議要設，防止 out of max memory 安裝套件NuGet GUI使用 NuGet 下載 Microsoft.Web.RedisSessionStateProviderWeb.Config 自動產生下列資訊   &amp;lt;sessionState">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/1.png">
 
 
 
@@ -125,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/">
 
 
 
 
 
-  <title>Session 使用 SqlServer | D & E's Notes</title>
+  <title>Session 使用 Redis | D & E's Notes</title>
   
 
 
@@ -258,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/AspNetSessionStateUsingRedis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -275,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Session 使用 SqlServer</h1>
+          <h1 class="post-title" itemprop="name headline">Session 使用 Redis</h1>
         
 
         <div class="post-meta">
@@ -287,7 +292,7 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-29T12:05:44+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-29T15:12:56+08:00">
                 2019-04-29
               </time>
             
@@ -347,13 +352,57 @@
       
 
       
-        <h1 id="建置-Database"><a href="#建置-Database" class="headerlink" title="建置 Database"></a>建置 Database</h1><h3 id="使用-aspnet-regsql-ext-工具建立"><a href="#使用-aspnet-regsql-ext-工具建立" class="headerlink" title="使用 aspnet_regsql.ext 工具建立"></a>使用 aspnet_regsql.ext 工具建立</h3><p>複製路徑 <code>C:\Windows\Microsoft.NET\Framework64\v4.0.30319</code><br>命令提示字元輸入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> C:\Windows\Microsoft.NET\Framework64\v4.0.30319</span><br><span class="line">$ aspnet_regsql.exe -S &lt;serverIP&gt; -U &lt;userName&gt; -P &lt;strongPassword&gt; -ssadd -sstype p</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/1.png" alt="SQLConnectionOptions"><br><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/2.png" alt="SessionStateOptions"></p>
-<p>可看到資料庫已建置完成<br><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/3.png" alt="CreateTable"></p>
-<h1 id="修改-Web-Config"><a href="#修改-Web-Config" class="headerlink" title="修改 Web.Config"></a>修改 Web.Config</h1><p><strong>Web.Config</strong> 裡的 <code>system.web</code> 區塊 <code>seesionState</code> 修改</p>
-<pre><code>&lt;sessionState mode=&quot;SQLServer&quot; allowCustomSqlDatabase=&quot;true&quot; sqlConnectionString=&quot;data source=&lt;serverIP&gt;;initial catalog=ASPState;user id=&lt;userName&gt;;password=&lt;strongPassword&gt;&quot;  sqlCommandTimeout=&quot;60&quot; cookieless=&quot;false&quot; cookieName=&quot;ASP.NET_SessionId&quot; timeout=&quot;60&quot;/&gt;
-</code></pre><p><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/4.png" alt="SelectTable"></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://docs.microsoft.com/en-us/previous-versions/ms229862(v=vs.100)" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/previous-versions/ms229862(v=vs.100)</a><br><a href="https://www.youtube.com/watch?v=o-8vjQu6SmI" target="_blank" rel="noopener">SQLServer asp.net session state mode management Part 66</a><br><a href="https://blog.miniasp.com/post/2011/09/13/Configure-SQL-Server-Session-State-Modes-for-ASPNET" target="_blank" rel="noopener">如何設定與啟用 ASP.NET 的 SQLServer 工作階段狀態模式</a><br><a href="http://kyleap.blogspot.com/2013/12/aspnetiissession.html" target="_blank" rel="noopener">相同的IIS，讓多個網站共用Session資訊</a></p>
+        <h1 id="安裝-Redis"><a href="#安裝-Redis" class="headerlink" title="安裝 Redis"></a>安裝 Redis</h1><h3 id="下載"><a href="#下載" class="headerlink" title="下載"></a>下載</h3><p><a href="https://github.com/MicrosoftArchive/redis/releases/download/win-3.0.504/Redis-x64-3.0.504.msi" target="_blank" rel="noopener">Redis</a></p>
+<h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><p>預設使用 <code>6379</code> <strong>port</strong>，勾選加入防火牆例外清單<br><img src="/2019/04/29/AspNetSessionStateUsingRedis/1.png" alt="DefaultPort"></p>
+<h3 id="設定使用記憶體上限"><a href="#設定使用記憶體上限" class="headerlink" title="設定使用記憶體上限"></a>設定使用記憶體上限</h3><p>依實際最大值設定，而不是平均值，官方建議要設，防止 <strong>out of max memory</strong><br><img src="/2019/04/29/AspNetSessionStateUsingRedis/2.png" alt="MaxMemory"></p>
+<h1 id="安裝套件"><a href="#安裝套件" class="headerlink" title="安裝套件"></a>安裝套件</h1><h3 id="NuGet-GUI"><a href="#NuGet-GUI" class="headerlink" title="NuGet GUI"></a>NuGet GUI</h3><p>使用 <strong>NuGet</strong> 下載 <code>Microsoft.Web.RedisSessionStateProvider</code><br><strong>Web.Config</strong> 自動產生下列資訊</p>
+<pre><code>  &lt;sessionState mode=&quot;Custom&quot; customProvider=&quot;MySessionStateStore&quot;&gt;
+  &lt;providers&gt;
+    &lt;!-- For more details check https://github.com/Azure/aspnet-redis-providers/wiki --&gt;
+    &lt;!-- Either use &apos;connectionString&apos; OR &apos;settingsClassName&apos; and &apos;settingsMethodName&apos; OR use &apos;host&apos;,&apos;port&apos;,&apos;accessKey&apos;,&apos;ssl&apos;,&apos;connectionTimeoutInMilliseconds&apos; and &apos;operationTimeoutInMilliseconds&apos;. --&gt;
+    &lt;!-- &apos;throwOnError&apos;,&apos;retryTimeoutInMilliseconds&apos;,&apos;databaseId&apos; and &apos;applicationName&apos; can be used with both options. --&gt;
+    &lt;!--
+      &lt;add name=&quot;MySessionStateStore&quot; 
+        host = &quot;127.0.0.1&quot; [String]
+        port = &quot;&quot; [number]
+        accessKey = &quot;&quot; [String]
+        ssl = &quot;false&quot; [true|false]
+        throwOnError = &quot;true&quot; [true|false]
+        retryTimeoutInMilliseconds = &quot;5000&quot; [number]
+        databaseId = &quot;0&quot; [number]
+        applicationName = &quot;&quot; [String]
+        connectionTimeoutInMilliseconds = &quot;5000&quot; [number]
+        operationTimeoutInMilliseconds = &quot;1000&quot; [number]
+        connectionString = &quot;&lt;Valid StackExchange.Redis connection string&gt;&quot; [String]
+        settingsClassName = &quot;&lt;Assembly qualified class name that contains settings method specified below. Which basically return &apos;connectionString&apos; value&gt;&quot; [String]
+        settingsMethodName = &quot;&lt;Settings method should be defined in settingsClass. It should be public, static, does not take any parameters and should have a return type of &apos;String&apos;, which is basically &apos;connectionString&apos; value.&gt;&quot; [String]
+        loggingClassName = &quot;&lt;Assembly qualified class name that contains logging method specified below&gt;&quot; [String]
+        loggingMethodName = &quot;&lt;Logging method should be defined in loggingClass. It should be public, static, does not take any parameters and should have a return type of System.IO.TextWriter.&gt;&quot; [String]
+        redisSerializerType = &quot;&lt;Assembly qualified class name that implements Microsoft.Web.Redis.ISerializer&gt;&quot; [String]
+      /&gt;
+    --&gt;
+    &lt;add name=&quot;MySessionStateStore&quot; type=&quot;Microsoft.Web.Redis.RedisSessionStateProvider&quot; host=&quot;&quot; accessKey=&quot;&quot; ssl=&quot;true&quot; /&gt;
+  &lt;/providers&gt;
+&lt;/sessionState&gt;
+</code></pre><h3 id="啟用-redis-server"><a href="#啟用-redis-server" class="headerlink" title="啟用 redis-server"></a>啟用 redis-server</h3><p>點擊 <code>C:\Program Files\Redis\redis-server.exe</code> 啟用<br><img src="/2019/04/29/AspNetSessionStateUsingRedis/3.png" alt="RedisServer"></p>
+<p>出現 <strong>No connection is available</strong> 錯誤<br><img src="/2019/04/29/AspNetSessionStateUsingRedis/4.png" alt="ConnectionError"><br>修改 <strong>ssl=”<font color="red">false</font>“</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;add name=<span class="string">"MySessionStateStore"</span> <span class="built_in">type</span>=<span class="string">"Microsoft.Web.Redis.RedisSessionStateProvider"</span> host=<span class="string">""</span> accessKey=<span class="string">""</span> ssl=<span class="string">"false"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Command-驗證-Session"><a href="#Command-驗證-Session" class="headerlink" title="Command 驗證 Session"></a>Command 驗證 Session</h3><ol>
+<li><p>加入 <strong>Session</strong><br><img src="/2019/04/29/AspNetSessionStateUsingRedis/5.png" alt="AddSession"></p>
+</li>
+<li><p>開啟 <strong>redis-cli.exe</strong><br><img src="/2019/04/29/AspNetSessionStateUsingRedis/6.png" alt="OpenRedis-cli"></p>
+</li>
+<li><p>查看所有 <strong>key</strong><br>輸入 <strong>keys *</strong><br><img src="/2019/04/29/AspNetSessionStateUsingRedis/7.png" alt="ListKeys"></p>
+</li>
+<li><p>查看特定 <strong>key</strong> 內容<br>輸入 <strong>hgetall key</strong><br><img src="/2019/04/29/AspNetSessionStateUsingRedis/8.png" alt="SpecificKey"></p>
+</li>
+</ol>
+<h3 id="Redis-Desktop-Manager-驗證-Session"><a href="#Redis-Desktop-Manager-驗證-Session" class="headerlink" title="Redis Desktop Manager 驗證 Session"></a>Redis Desktop Manager 驗證 Session</h3><ol>
+<li><p>開啟 <strong>Redis Desktop Manager 工具</strong><br><img src="/2019/04/29/AspNetSessionStateUsingRedis/9.png" alt="InputInformation"></p>
+</li>
+<li><p>查看 <strong>Session</strong> 資訊<br><img src="/2019/04/29/AspNetSessionStateUsingRedis/10.png" alt="OpenInformation"></p>
+</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://docs.microsoft.com/zh-tw/azure/azure-cache-for-redis/cache-aspnet-session-state-provider" target="_blank" rel="noopener">適用於 Azure Cache for Redis 的 ASP.NET 工作階段狀態提供者</a><br><a href="https://blog.yowko.com/redis-aspnet-mvc-session-state-server/" target="_blank" rel="noopener">使用 Redis 當做 ASP.NET MVC 的 Session State Server</a><br><a href="https://dotblogs.com.tw/zackmyself/2017/04/27/005621" target="_blank" rel="noopener">Windows 安裝 Redis</a></p>
 
       
     </div>
@@ -369,14 +418,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Config/" rel="tag"># Config</a>
-          
-            <a href="/tags/Session/" rel="tag"># Session</a>
-          
-        </div>
-      
 
       
       
@@ -386,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/26/NetworkLoadBalancing/" rel="next" title="NLB 網路負載平衡">
-                <i class="fa fa-chevron-left"></i> NLB 網路負載平衡
+              <a href="/2019/04/29/AspNetSessionStateUsingSqlServer/" rel="next" title="Session 使用 SqlServer">
+                <i class="fa fa-chevron-left"></i> Session 使用 SqlServer
               </a>
             
           </div>
@@ -395,10 +436,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/29/AspNetSessionStateUsingRedis/" rel="prev" title="Session 使用 Redis">
-                Session 使用 Redis <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -532,7 +569,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#建置-Database"><span class="nav-number">1.</span> <span class="nav-text">建置 Database</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-aspnet-regsql-ext-工具建立"><span class="nav-number">1.0.1.</span> <span class="nav-text">使用 aspnet_regsql.ext 工具建立</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#修改-Web-Config"><span class="nav-number">2.</span> <span class="nav-text">修改 Web.Config</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-Redis"><span class="nav-number">1.</span> <span class="nav-text">安裝 Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下載"><span class="nav-number">1.0.1.</span> <span class="nav-text">下載</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝"><span class="nav-number">1.0.2.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定使用記憶體上限"><span class="nav-number">1.0.3.</span> <span class="nav-text">設定使用記憶體上限</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝套件"><span class="nav-number">2.</span> <span class="nav-text">安裝套件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NuGet-GUI"><span class="nav-number">2.0.1.</span> <span class="nav-text">NuGet GUI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#啟用-redis-server"><span class="nav-number">2.0.2.</span> <span class="nav-text">啟用 redis-server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Command-驗證-Session"><span class="nav-number">2.0.3.</span> <span class="nav-text">Command 驗證 Session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-Desktop-Manager-驗證-Session"><span class="nav-number">2.0.4.</span> <span class="nav-text">Redis Desktop Manager 驗證 Session</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
