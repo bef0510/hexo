@@ -7,6 +7,7 @@ tags:
 categories: 
  - ASP.Net
 ---
+
 # SessionState 模式
 1. **Off**
 2. **InProc** (預設模式)
