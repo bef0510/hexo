@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Angular,Bootstrap,VS Core,">
+  <meta name="keywords" content="Angular,">
 
 
 
@@ -79,21 +79,20 @@
 
 
 
-<meta name="description" content="準備環境Node.js 下載並安裝Visual Studio Code 下載並安裝1$ npm install -g @angular/cli 建立專案用 VS Code 開啟檔案，預設 Port http://localhost:4200/123$ ng new my-angular$ cd my-angular$ ng serve -o Bootstrap &amp;amp; jQuery透過 npm">
-<meta name="keywords" content="Angular,Bootstrap,VS Core">
+<meta name="description" content="使用路由app.component.html 修改成下列程式 &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;     &amp;lt;nav class=&amp;quot;navbar navbar-default&amp;quot;&amp;gt;         &amp;lt;ul class=&amp;quot;nav navbar-nav&amp;quot;&amp;gt;             &amp;lt;li&amp;gt">
+<meta name="keywords" content="Angular">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Angular 建置，使用 Bootstrap">
-<meta property="og:url" content="http://yoursite.com/2019/04/30/AngularCreateProjectAndUseBootstrap/index.html">
+<meta property="og:title" content="Router">
+<meta property="og:url" content="http://yoursite.com/2019/04/30/AngularUseRouter/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="準備環境Node.js 下載並安裝Visual Studio Code 下載並安裝1$ npm install -g @angular/cli 建立專案用 VS Code 開啟檔案，預設 Port http://localhost:4200/123$ ng new my-angular$ cd my-angular$ ng serve -o Bootstrap &amp;amp; jQuery透過 npm">
+<meta property="og:description" content="使用路由app.component.html 修改成下列程式 &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;     &amp;lt;nav class=&amp;quot;navbar navbar-default&amp;quot;&amp;gt;         &amp;lt;ul class=&amp;quot;nav navbar-nav&amp;quot;&amp;gt;             &amp;lt;li&amp;gt">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/04/30/AngularCreateProjectAndUseBootstrap/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/30/AngularCreateProjectAndUseBootstrap/2.png">
-<meta property="og:updated_time" content="2019-04-30T07:27:06.465Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/30/AngularUseRouter/1.gif">
+<meta property="og:updated_time" content="2019-04-30T09:53:28.685Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Angular 建置，使用 Bootstrap">
-<meta name="twitter:description" content="準備環境Node.js 下載並安裝Visual Studio Code 下載並安裝1$ npm install -g @angular/cli 建立專案用 VS Code 開啟檔案，預設 Port http://localhost:4200/123$ ng new my-angular$ cd my-angular$ ng serve -o Bootstrap &amp;amp; jQuery透過 npm">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/30/AngularCreateProjectAndUseBootstrap/1.png">
+<meta name="twitter:title" content="Router">
+<meta name="twitter:description" content="使用路由app.component.html 修改成下列程式 &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;     &amp;lt;nav class=&amp;quot;navbar navbar-default&amp;quot;&amp;gt;         &amp;lt;ul class=&amp;quot;nav navbar-nav&amp;quot;&amp;gt;             &amp;lt;li&amp;gt">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/30/AngularUseRouter/1.gif">
 
 
 
@@ -123,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/30/AngularCreateProjectAndUseBootstrap/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/30/AngularUseRouter/">
 
 
 
 
 
-  <title>Angular 建置，使用 Bootstrap | D & E's Notes</title>
+  <title>Router | D & E's Notes</title>
   
 
 
@@ -256,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/30/AngularCreateProjectAndUseBootstrap/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/30/AngularUseRouter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -273,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Angular 建置，使用 Bootstrap</h1>
+          <h1 class="post-title" itemprop="name headline">Router</h1>
         
 
         <div class="post-meta">
@@ -285,7 +284,7 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-30T15:03:57+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-30T17:22:21+08:00">
                 2019-04-30
               </time>
             
@@ -345,27 +344,45 @@
       
 
       
-        <h1 id="準備環境"><a href="#準備環境" class="headerlink" title="準備環境"></a>準備環境</h1><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a> 下載並安裝<br><a href="https://code.visualstudio.com/docs/?dv=win" target="_blank" rel="noopener">Visual Studio Code</a> 下載並安裝<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g @angular/cli</span><br></pre></td></tr></table></figure></p>
-<h3 id="建立專案"><a href="#建立專案" class="headerlink" title="建立專案"></a>建立專案</h3><p>用 <strong>VS Code</strong> 開啟檔案，預設 <strong>Port</strong> <code>http://localhost:4200/</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ng new my-angular</span><br><span class="line">$ <span class="built_in">cd</span> my-angular</span><br><span class="line">$ ng serve -o</span><br></pre></td></tr></table></figure></p>
-<h3 id="Bootstrap-amp-jQuery"><a href="#Bootstrap-amp-jQuery" class="headerlink" title="Bootstrap &amp; jQuery"></a>Bootstrap &amp; jQuery</h3><p>透過 <strong>npm</strong> 載入 <strong>Bootstrap</strong> 及 <strong>jQuery</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install bootstrap@3 jquery --save</span><br></pre></td></tr></table></figure></p>
-<p><code>angular.json</code> 加入 <strong>styles</strong> 及 <strong>scripts</strong> 設定</p>
-<pre><code>&quot;styles&quot;: [
-    &quot;src/styles.css&quot;,
-    &quot;node_modules/bootstrap/dist/css/bootstrap.min.css&quot;
-],
-&quot;scripts&quot;: [
-    &quot;node_modules/jquery/dist/jquery.min.js&quot;,
-    &quot;node_modules/bootstrap/dist/js/bootstrap.min.js&quot;
-],
-</code></pre><p>啟動 <strong>Server</strong>，確認 <strong>Bootstrap</strong> 有引用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng s</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/04/30/AngularCreateProjectAndUseBootstrap/1.png" alt="ImportBootstrap"></p>
-<p><code>app.component.html</code> 加入 <strong>Bootstrap button</strong></p>
-<pre><code>&lt;li&gt;
-    &lt;button class=&quot;btn btn-primary&quot;&gt;Bootstrap Styled Button&lt;/button&gt;
-&lt;/li&gt;
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng s</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/04/30/AngularCreateProjectAndUseBootstrap/2.png" alt="BootstrapButton"></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://cli.angular.io/" target="_blank" rel="noopener">Angular CLI</a></p>
+        <h1 id="使用路由"><a href="#使用路由" class="headerlink" title="使用路由"></a>使用路由</h1><p><code>app.component.html</code> 修改成下列程式</p>
+<pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;nav class=&quot;navbar navbar-default&quot;&gt;
+        &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+            &lt;li&gt;
+                &lt;a routerLinkActive=&quot;active&quot; routerLink=&quot;list&quot;&gt;List&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a routerLinkActive=&quot;active&quot; routerLink=&quot;create&quot;&gt;Create&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+&lt;/div&gt;
+</code></pre><p>加入路由<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng g m app-routing --flat --module=app</span><br></pre></td></tr></table></figure></p>
+<p><code>app-routing.module.ts</code> 修改成下列程式</p>
+<pre><code>import { NgModule } from &apos;@angular/core&apos;;
+import { Routes, RouterModule } from &apos;@angular/router&apos;;
+import { ListStudentsComponent } from &apos;./student/list-students/list-students.component&apos;;
+import { CreateStudentComponent } from &apos;./student/create-student/create-student.component&apos;;
+import { ErrorPageComponent } from &apos;./error-page/error-page.component&apos;;
+
+const routes: Routes = [
+    { path: &apos;list&apos;, component: ListStudentsComponent },
+    { path: &apos;create&apos;, component: CreateStudentComponent },
+    { path: &apos;&apos;, redirectTo: &apos;/list&apos;, pathMatch: &apos;full&apos; },
+    { path: &apos;not-found&apos;, component: ErrorPageComponent },
+    { path: &apos;**&apos;, redirectTo: &apos;/not-found&apos; }
+];
+
+@NgModule({
+    declarations: [],
+    imports: [ RouterModule.forRoot(routes) ],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }
+</code></pre><p>啟動 <strong>Server</strong> 確認<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng s</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/04/30/AngularUseRouter/1.gif" alt="Router"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://angular.io/cli/generate" target="_blank" rel="noopener">Angular-generate</a><br><a href="https://angular.io/tutorial/toh-pt5" target="_blank" rel="noopener">Angular-Routing</a></p>
 
       
     </div>
@@ -385,10 +402,6 @@
           
             <a href="/tags/Angular/" rel="tag"># Angular</a>
           
-            <a href="/tags/Bootstrap/" rel="tag"># Bootstrap</a>
-          
-            <a href="/tags/VS-Core/" rel="tag"># VS Core</a>
-          
         </div>
       
 
@@ -400,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/30/AspNetSessionMode/" rel="next" title="SessionState 模式">
-                <i class="fa fa-chevron-left"></i> SessionState 模式
+              <a href="/2019/04/30/AngularCreateProjectAndUseBootstrap/" rel="next" title="Angular 建置，使用 Bootstrap">
+                <i class="fa fa-chevron-left"></i> Angular 建置，使用 Bootstrap
               </a>
             
           </div>
@@ -409,10 +422,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/30/AngularUseRouter/" rel="prev" title="Router">
-                Router <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -546,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#準備環境"><span class="nav-number">1.</span> <span class="nav-text">準備環境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立專案"><span class="nav-number">1.0.1.</span> <span class="nav-text">建立專案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap-amp-jQuery"><span class="nav-number">1.0.2.</span> <span class="nav-text">Bootstrap &amp; jQuery</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用路由"><span class="nav-number">1.</span> <span class="nav-text">使用路由</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
