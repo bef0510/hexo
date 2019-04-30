@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="GitHub,Hexo,">
+  <meta name="keywords" content="Config,Session,">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="基本安裝確認 已安裝Node.jsGit for Windows1$ npm install -g hexo-cli 或123$ npm version$ git version$ hexo version Hexo 建立1234$ hexo init 文件名稱$ cd 文件名稱$ npm install$ npm install hexo-deployer-git --save 取出 GitHu">
-<meta name="keywords" content="GitHub,Hexo">
+<meta name="description" content="SessionState 模式 Off InProc (預設模式) StateServer SqlServer Custom for Redis  StateServer、SqlServer、Redis 除了 .Net 預設型別，皆需在 class 加上 Serializable 關鍵字12c# [Serializable]VB &amp;lt;Serializable()&amp;gt;  Off關閉 Sess">
+<meta name="keywords" content="Config,Session">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 從 GitHub 還原">
-<meta property="og:url" content="http://yoursite.com/2019/04/26/HexoRecoveryFromGitHub/index.html">
+<meta property="og:title" content="SessionState 模式">
+<meta property="og:url" content="http://yoursite.com/2019/04/30/AspNetSessionMode/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="基本安裝確認 已安裝Node.jsGit for Windows1$ npm install -g hexo-cli 或123$ npm version$ git version$ hexo version Hexo 建立1234$ hexo init 文件名稱$ cd 文件名稱$ npm install$ npm install hexo-deployer-git --save 取出 GitHu">
+<meta property="og:description" content="SessionState 模式 Off InProc (預設模式) StateServer SqlServer Custom for Redis  StateServer、SqlServer、Redis 除了 .Net 預設型別，皆需在 class 加上 Serializable 關鍵字12c# [Serializable]VB &amp;lt;Serializable()&amp;gt;  Off關閉 Sess">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-04-26T06:32:55.078Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/30/AspNetSessionMode/1.png">
+<meta property="og:updated_time" content="2019-04-30T03:54:08.305Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 從 GitHub 還原">
-<meta name="twitter:description" content="基本安裝確認 已安裝Node.jsGit for Windows1$ npm install -g hexo-cli 或123$ npm version$ git version$ hexo version Hexo 建立1234$ hexo init 文件名稱$ cd 文件名稱$ npm install$ npm install hexo-deployer-git --save 取出 GitHu">
+<meta name="twitter:title" content="SessionState 模式">
+<meta name="twitter:description" content="SessionState 模式 Off InProc (預設模式) StateServer SqlServer Custom for Redis  StateServer、SqlServer、Redis 除了 .Net 預設型別，皆需在 class 加上 Serializable 關鍵字12c# [Serializable]VB &amp;lt;Serializable()&amp;gt;  Off關閉 Sess">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/30/AspNetSessionMode/1.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/26/HexoRecoveryFromGitHub/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/30/AspNetSessionMode/">
 
 
 
 
 
-  <title>Hexo 從 GitHub 還原 | D & E's Notes</title>
+  <title>SessionState 模式 | D & E's Notes</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/26/HexoRecoveryFromGitHub/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/30/AspNetSessionMode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo 從 GitHub 還原</h1>
+          <h1 class="post-title" itemprop="name headline">SessionState 模式</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-26T13:12:02+08:00">
-                2019-04-26
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-30T10:56:11+08:00">
+                2019-04-30
               </time>
             
 
@@ -305,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Blog/" itemprop="url" rel="index">
-                    <span itemprop="name">Blog</span>
+                  <a href="/categories/ASP-Net/" itemprop="url" rel="index">
+                    <span itemprop="name">ASP.Net</span>
                   </a>
                 </span>
 
@@ -342,18 +344,25 @@
       
 
       
-        <h1 id="基本安裝"><a href="#基本安裝" class="headerlink" title="基本安裝"></a>基本安裝</h1><h3 id="確認-已安裝"><a href="#確認-已安裝" class="headerlink" title="確認 已安裝"></a>確認 已安裝</h3><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a><br><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git for Windows</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
-<p>或<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm version</span><br><span class="line">$ git version</span><br><span class="line">$ hexo version</span><br></pre></td></tr></table></figure></p>
-<h1 id="Hexo-建立"><a href="#Hexo-建立" class="headerlink" title="Hexo 建立"></a>Hexo 建立</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init 文件名稱</span><br><span class="line">$ <span class="built_in">cd</span> 文件名稱</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<h1 id="取出-GitHub-檔案"><a href="#取出-GitHub-檔案" class="headerlink" title="取出 GitHub 檔案"></a>取出 GitHub 檔案</h1><ol>
-<li><p><strong>clone</strong> 一份到 <strong>temp</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/username/repository temp</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>copy temp</strong> 裡的檔案至新建立的文件名稱裡，除了 <strong>.git</strong></p>
-</li>
-<li>刪除 <strong>temp</strong> 檔</li>
+        <h1 id="SessionState-模式"><a href="#SessionState-模式" class="headerlink" title="SessionState 模式"></a>SessionState 模式</h1><ol>
+<li><strong>Off</strong></li>
+<li><strong>InProc</strong> (預設模式)</li>
+<li><strong>StateServer</strong></li>
+<li><strong>SqlServer</strong></li>
+<li><strong>Custom for Redis</strong></li>
 </ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://whatbeg.com/2016/09/17/hexo-migrate.html" target="_blank" rel="noopener">Hexo部署环境迁移–多台电脑搭建Hexo环境</a><br><a href="http://lonka.github.io/blog/2016/04/27/hexo/hexo-revert/" target="_blank" rel="noopener">Hexo－還原</a></p>
+<p><strong>StateServer</strong>、<strong>SqlServer</strong>、<strong>Redis</strong> 除了 <strong>.Net</strong> 預設型別，皆需在 <code>class</code> 加上 <code>Serializable</code> 關鍵字<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c<span class="comment"># [Serializable]</span></span><br><span class="line">VB &lt;Serializable()&gt;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/04/30/AspNetSessionMode/1.png" alt="Serializable"></p>
+<h3 id="Off"><a href="#Off" class="headerlink" title="Off"></a>Off</h3><p>關閉 <strong>Session</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.web&gt;</span><br><span class="line">    &lt;sessionState mode=<span class="string">"off"</span> /&gt;</span><br><span class="line">&lt;/sytem.web&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="InProc-預設模式"><a href="#InProc-預設模式" class="headerlink" title="InProc (預設模式)"></a>InProc (預設模式)</h3><p><strong>Session</strong> 存在 <strong>IIS</strong> 中，預設 <strong>time out</strong> <code>20</code> 分鐘<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.web&gt;</span><br><span class="line">    &lt;sessionState mode=<span class="string">"InProc"</span> timeout=<span class="string">"30"</span> /&gt;</span><br><span class="line">&lt;/system.web&gt;</span><br></pre></td></tr></table></figure></p>
+<p>優點：獲取 <strong>Session</strong> 狀態的速度快<br>缺點：易丟失</p>
+<h3 id="StateServer"><a href="#StateServer" class="headerlink" title="StateServer"></a>StateServer</h3><p><strong>Session</strong> 儲存在當前應用程式域之外的 <code>asp.net_state.exe</code> 服務，獨立於 <strong>IIS</strong> 之外的 <strong>Windows</strong> 服務<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.web&gt;</span><br><span class="line">    &lt;sessionState mode=<span class="string">"StateServer"</span></span><br><span class="line">        stateConnectionString=<span class="string">"tcpip=localhost:42424"</span></span><br><span class="line">        cookieless=<span class="string">"false"</span></span><br><span class="line">        timeout=<span class="string">"20"</span>/&gt;</span><br><span class="line">&lt;/sytem.web&gt;</span><br></pre></td></tr></table></figure></p>
+<p>優點：<strong>Session</strong> 單獨存在一個程序中，不會因 <strong>IIS</strong> 重啟而丟失。<br>缺點：因是兩個不同程序，獲取速度比 <code>InProc</code> 慢<br>&emsp;&emsp;&emsp;過多的序列化和反序列化</p>
+<h3 id="SqlServer"><a href="#SqlServer" class="headerlink" title="SqlServer"></a>SqlServer</h3><p><strong>Session</strong> 序列化後，儲存到 <strong>SQL Server</strong> 資料庫中，可使用在 <strong>NLB</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.web&gt;</span><br><span class="line">    &lt;sessionState mode=<span class="string">"SQLServer"</span> </span><br><span class="line">        allowCustomSqlDatabase=<span class="string">"true"</span> </span><br><span class="line">        sqlConnectionString=<span class="string">"Server=.;Database=ASPState;Integrated Security=true"</span> </span><br><span class="line">        sqlCommandTimeout=<span class="string">"60"</span> </span><br><span class="line">        cookieless=<span class="string">"false"</span> </span><br><span class="line">        cookieName=<span class="string">"ASP.NET_SessionId"</span> </span><br><span class="line">        timeout=<span class="string">"60"</span> /&gt;</span><br><span class="line">&lt;/system.web&gt;</span><br></pre></td></tr></table></figure></p>
+<p>優點：較高的擴展性及可靠性<br>缺點：影響 <strong>DB</strong> 效能<br>&emsp;&emsp;&emsp;獲取速度比 <code>StateServer</code> 慢<br>&emsp;&emsp;&emsp;過多的序列化和反序列化</p>
+<h3 id="Custom-for-Redis"><a href="#Custom-for-Redis" class="headerlink" title="Custom for Redis"></a>Custom for Redis</h3><p><strong>Session</strong> 序列化後，儲存到 <strong>Redis</strong> 是內存，<strong>Redis</strong> 是內存 <code>key-value</code> 數據存儲最快。功能最豐富的一種<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.web&gt;</span><br><span class="line">    &lt;sessionState mode=<span class="string">"Custom"</span> customProvider=<span class="string">"MySessionStateStore"</span>&gt;</span><br><span class="line">        &lt;providers&gt;</span><br><span class="line">            &lt;add name=<span class="string">"MySessionStateStore"</span> <span class="built_in">type</span>=<span class="string">"Microsoft.Web.Redis.RedisSessionStateProvider"</span> host=<span class="string">""</span> accessKey=<span class="string">""</span> ssl=<span class="string">"false"</span> /&gt;</span><br><span class="line">        &lt;/providers&gt;</span><br><span class="line">    &lt;/sessionState&gt;</span><br><span class="line">&lt;/system.web&gt;</span><br></pre></td></tr></table></figure></p>
+<p>優點：較高的擴展性及可靠性<br>&emsp;&emsp;&emsp;可做為 <strong>memory server</strong><br>缺點：沒有本地數據緩衝(像 <strong>Azure</strong> 緩存上同步的本地數據緩衝)<br>&emsp;&emsp;&emsp;伺服器數量需為單數台<br>&emsp;&emsp;&emsp;過多的序列化和反序列化</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.itread01.com/p/603636.html" target="_blank" rel="noopener">ASP.NET MVC中的Session以及處理方式</a><br><a href="https://www.itread01.com/content/1546942022.html" target="_blank" rel="noopener">ASP.NET程式中Session儲存的幾種模式</a><br><a href="https://dotblogs.com.tw/wasichris/2017/03/14/184803" target="_blank" rel="noopener">ASP.NET 多台 Web 伺服陣列透過 SQL Server 保存共同工作階段狀態</a><br><a href="https://www.itread01.com/article/1491448567.html" target="_blank" rel="noopener">C# SESSION丟失問題的解決辦法</a></p>
 
       
     </div>
@@ -371,9 +380,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            <a href="/tags/Config/" rel="tag"># Config</a>
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/Session/" rel="tag"># Session</a>
           
         </div>
       
@@ -386,8 +395,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/26/HexoChangeThemeWithNexT/" rel="next" title="Hexo 更換主題 NexT">
-                <i class="fa fa-chevron-left"></i> Hexo 更換主題 NexT
+              <a href="/2019/04/29/AspNetSessionStateUsingRedis/" rel="next" title="Session 使用 Redis">
+                <i class="fa fa-chevron-left"></i> Session 使用 Redis
               </a>
             
           </div>
@@ -395,10 +404,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/26/GithubCommand/" rel="prev" title="Git 常用指令">
-                Git 常用指令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -532,7 +537,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本安裝"><span class="nav-number">1.</span> <span class="nav-text">基本安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#確認-已安裝"><span class="nav-number">1.0.1.</span> <span class="nav-text">確認 已安裝</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-建立"><span class="nav-number">2.</span> <span class="nav-text">Hexo 建立</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取出-GitHub-檔案"><span class="nav-number">3.</span> <span class="nav-text">取出 GitHub 檔案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SessionState-模式"><span class="nav-number">1.</span> <span class="nav-text">SessionState 模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Off"><span class="nav-number">1.0.1.</span> <span class="nav-text">Off</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#InProc-預設模式"><span class="nav-number">1.0.2.</span> <span class="nav-text">InProc (預設模式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StateServer"><span class="nav-number">1.0.3.</span> <span class="nav-text">StateServer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SqlServer"><span class="nav-number">1.0.4.</span> <span class="nav-text">SqlServer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Custom-for-Redis"><span class="nav-number">1.0.5.</span> <span class="nav-text">Custom for Redis</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
