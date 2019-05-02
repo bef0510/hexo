@@ -11,6 +11,7 @@ categories:
 1. **A server IP ：** `192.168.1.101`
 2. **B server IP ：** `192.168.1.102`
 3. **叢集 IP ：** `192.168.1.103`
+![Architecture](1.gif)
 
 ### A server 管理 B server
 在 **A server**
