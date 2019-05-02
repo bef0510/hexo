@@ -24,6 +24,13 @@ categories:
         <router-outlet></router-outlet>
     </div>
 
+加入三個 **Component**
+~~~ bash
+$ ng g c list --spec false
+$ ng g c create --spec false
+$ ng g c not-fond --spec false
+~~~
+
 加入路由
 ~~~ bash
 $ ng g m app-routing --flat --module=app
