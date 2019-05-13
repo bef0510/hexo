@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Config,Session,">
+  <meta name="keywords" content="Creational,">
 
 
 
@@ -79,23 +79,18 @@
 
 
 
-<meta name="description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
-<meta name="keywords" content="Config,Session">
+<meta name="description" content="單例模式在應用這個模式時，單例對象的類必須保證只有一個實例存在。許多時候整個系統只需要擁有一個的全局對象，這樣有利於我們協調系統整體的行為 單一執行緒做法public class Singleton {     private static Singleton instance = null;      private Singleton() { }      public static Sing">
+<meta name="keywords" content="Creational">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Session 使用 SQLServer">
-<meta property="og:url" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/index.html">
+<meta property="og:title" content="設計模式 - 單例模式">
+<meta property="og:url" content="http://yoursite.com/2019/05/13/DesignPatternWithSingleton/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
+<meta property="og:description" content="單例模式在應用這個模式時，單例對象的類必須保證只有一個實例存在。許多時候整個系統只需要擁有一個的全局對象，這樣有利於我們協調系統整體的行為 單一執行緒做法public class Singleton {     private static Singleton instance = null;      private Singleton() { }      public static Sing">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/4.png">
-<meta property="og:updated_time" content="2019-04-29T08:49:18.115Z">
+<meta property="og:updated_time" content="2019-05-13T03:21:03.440Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Session 使用 SQLServer">
-<meta name="twitter:description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/1.png">
+<meta name="twitter:title" content="設計模式 - 單例模式">
+<meta name="twitter:description" content="單例模式在應用這個模式時，單例對象的類必須保證只有一個實例存在。許多時候整個系統只需要擁有一個的全局對象，這樣有利於我們協調系統整體的行為 單一執行緒做法public class Singleton {     private static Singleton instance = null;      private Singleton() { }      public static Sing">
 
 
 
@@ -125,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/13/DesignPatternWithSingleton/">
 
 
 
 
 
-  <title>Session 使用 SQLServer | D & E's Notes</title>
+  <title>設計模式 - 單例模式 | D & E's Notes</title>
   
 
 
@@ -258,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/13/DesignPatternWithSingleton/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -275,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Session 使用 SQLServer</h1>
+          <h1 class="post-title" itemprop="name headline">設計模式 - 單例模式</h1>
         
 
         <div class="post-meta">
@@ -287,8 +282,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-29T12:05:44+08:00">
-                2019-04-29
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-05-13T10:03:03+08:00">
+                2019-05-13
               </time>
             
 
@@ -310,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ASP-Net/" itemprop="url" rel="index">
-                    <span itemprop="name">ASP.Net</span>
+                  <a href="/categories/Design-Pattern/" itemprop="url" rel="index">
+                    <span itemprop="name">Design Pattern</span>
                   </a>
                 </span>
 
@@ -347,13 +342,145 @@
       
 
       
-        <h1 id="建置-Database"><a href="#建置-Database" class="headerlink" title="建置 Database"></a>建置 Database</h1><h3 id="使用-aspnet-regsql-ext-工具建立"><a href="#使用-aspnet-regsql-ext-工具建立" class="headerlink" title="使用 aspnet_regsql.ext 工具建立"></a>使用 aspnet_regsql.ext 工具建立</h3><p>複製路徑 <code>C:\Windows\Microsoft.NET\Framework64\v4.0.30319</code><br>命令提示字元輸入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> C:\Windows\Microsoft.NET\Framework64\v4.0.30319</span><br><span class="line">$ aspnet_regsql.exe -S &lt;serverIP&gt; -U &lt;userName&gt; -P &lt;strongPassword&gt; -ssadd -sstype p</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/1.png" alt="SQLConnectionOptions"><br><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/2.png" alt="SessionStateOptions"></p>
-<p>可看到資料庫已建置完成<br><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/3.png" alt="CreateTable"></p>
-<h1 id="修改-Web-Config"><a href="#修改-Web-Config" class="headerlink" title="修改 Web.Config"></a>修改 Web.Config</h1><p><strong>Web.Config</strong> 裡的 <code>system.web</code> 區塊 <code>seesionState</code> 修改</p>
-<pre><code>&lt;sessionState mode=&quot;SQLServer&quot; allowCustomSqlDatabase=&quot;true&quot; sqlConnectionString=&quot;data source=&lt;serverIP&gt;;initial catalog=ASPState;user id=&lt;userName&gt;;password=&lt;strongPassword&gt;&quot;  sqlCommandTimeout=&quot;60&quot; cookieless=&quot;false&quot; cookieName=&quot;ASP.NET_SessionId&quot; timeout=&quot;60&quot;/&gt;
-</code></pre><p><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/4.png" alt="SelectTable"></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://docs.microsoft.com/en-us/previous-versions/ms229862(v=vs.100)" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/previous-versions/ms229862(v=vs.100)</a><br><a href="https://www.youtube.com/watch?v=o-8vjQu6SmI" target="_blank" rel="noopener">SQLServer asp.net session state mode management Part 66</a><br><a href="https://blog.miniasp.com/post/2011/09/13/Configure-SQL-Server-Session-State-Modes-for-ASPNET" target="_blank" rel="noopener">如何設定與啟用 ASP.NET 的 SQLServer 工作階段狀態模式</a><br><a href="http://kyleap.blogspot.com/2013/12/aspnetiissession.html" target="_blank" rel="noopener">相同的IIS，讓多個網站共用Session資訊</a></p>
+        <h1 id="單例模式"><a href="#單例模式" class="headerlink" title="單例模式"></a>單例模式</h1><p>在應用這個模式時，單例對象的類必須保證只有一個實例存在。許多時候整個系統只需要擁有一個的全局對象，這樣有利於我們協調系統整體的行為</p>
+<h4 id="單一執行緒做法"><a href="#單一執行緒做法" class="headerlink" title="單一執行緒做法"></a>單一執行緒做法</h4><pre><code>public class Singleton
+{
+    private static Singleton instance = null;
+
+    private Singleton() { }
+
+    public static Singleton Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new Singleton();
+            }
+            return instance;
+        }
+    }
+
+    public static void Hello()
+    {
+        Console.WriteLine(&quot;Hello World!&quot;);
+    }
+
+    public void DoSomething()
+    {
+        Console.WriteLine(&quot;Do something!&quot;);
+    }
+}
+</code></pre><h4 id="多執行緒做法"><a href="#多執行緒做法" class="headerlink" title="多執行緒做法"></a>多執行緒做法</h4><pre><code>public class Singleton
+{
+    private static Singleton instance = null;
+    private static readonly object padlock = new object();
+
+    private Singleton() { }
+
+    public static Singleton Instance
+    {
+        get
+        {
+            lock (padlock)
+            {
+                if(instance == null)
+                {
+                    instance = new Singleton();
+                }
+                return instance;
+            }
+        }
+    }
+
+    public static void Hello()
+    {
+        Console.WriteLine(&quot;Hello World!&quot;);
+    }
+
+    public void DoSomething()
+    {
+        Console.WriteLine(&quot;Do something!&quot;);
+    }
+}
+</code></pre><h4 id="NET-4-0-前做法"><a href="#NET-4-0-前做法" class="headerlink" title=".NET 4.0 前做法"></a>.NET 4.0 前做法</h4><pre><code>public class Singleton
+{
+    private class Nested
+    {
+        internal static readonly Singleton instance = new Singleton();
+
+        static Nested() { }
+    }
+    private Singleton() { }
+
+    public static Singleton Instance
+    {
+        get
+        {
+            return Nested.instance;
+        }
+    }
+
+    public static void Hello()
+    {
+        Console.WriteLine(&quot;Hello World!&quot;);
+    }
+
+    public void DoSomething()
+    {
+        Console.WriteLine(&quot;Do something!&quot;);
+    }
+}
+</code></pre><h4 id="Lazy-泛型做法"><a href="#Lazy-泛型做法" class="headerlink" title="Lazy 泛型做法"></a>Lazy<t> 泛型做法</t></h4><pre><code>public class Singleton
+{
+    private static readonly Lazy&lt;Singleton&gt; LazyInstance = new Lazy&lt;Singleton&gt;(() =&gt; new Singleton());
+
+    private Singleton() { }
+
+    public static Singleton Instance
+    {
+        get
+        {
+            return LazyInstance.Value;
+        }
+    }
+
+    public static void Hello()
+    {
+        Console.WriteLine(&quot;Hello World!&quot;);
+    }
+
+    public void DoSomething()
+    {
+        Console.WriteLine(&quot;Do something!&quot;);
+    }
+}
+</code></pre><h4 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h4><pre><code>class Program
+{
+    static void Main(string[] args)
+    {
+        var instance = Singleton.Instance;
+        Singleton.Hello();
+        instance.DoSomething();
+
+        Console.ReadKey();
+    }
+}
+</code></pre><h4 id="適用場景"><a href="#適用場景" class="headerlink" title="適用場景"></a>適用場景</h4><ol>
+<li>需要生成唯一序列的環境</li>
+<li>需要頻繁實例化然後銷毀的對象</li>
+<li>創建對象時耗時過多或者耗資源過多，但又經常用到的對象</li>
+<li>方便資源相互通信的環境</li>
+</ol>
+<h4 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h4><ol>
+<li>實現了對唯一實例訪問的可控</li>
+<li>對於一些需要頻繁創建和銷毀的對象來說可以提高系統的性能</li>
+</ol>
+<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ol>
+<li>不適用於變化頻繁的對象</li>
+<li>開發人員必須記住自己不能使用新的關鍵字實例化對象</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zh.wikipedia.org/wiki/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">維基百科-單例模式</a><br><a href="https://csharpindepth.com/Articles/Singleton" target="_blank" rel="noopener">C# in Depth</a></p>
 
       
     </div>
@@ -371,9 +498,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Config/" rel="tag"># Config</a>
-          
-            <a href="/tags/Session/" rel="tag"># Session</a>
+            <a href="/tags/Creational/" rel="tag"># Creational</a>
           
         </div>
       
@@ -386,8 +511,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/26/NetworkLoadBalancing/" rel="next" title="NLB 網路負載平衡">
-                <i class="fa fa-chevron-left"></i> NLB 網路負載平衡
+              <a href="/2019/05/10/DesignPatternWithBridge/" rel="next" title="設計模式 - 橋接模式">
+                <i class="fa fa-chevron-left"></i> 設計模式 - 橋接模式
               </a>
             
           </div>
@@ -395,10 +520,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/29/AspNetSessionStateUsingRedis/" rel="prev" title="Session 使用 Redis">
-                Session 使用 Redis <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -532,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#建置-Database"><span class="nav-number">1.</span> <span class="nav-text">建置 Database</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-aspnet-regsql-ext-工具建立"><span class="nav-number">1.0.1.</span> <span class="nav-text">使用 aspnet_regsql.ext 工具建立</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#修改-Web-Config"><span class="nav-number">2.</span> <span class="nav-text">修改 Web.Config</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#單例模式"><span class="nav-number">1.</span> <span class="nav-text">單例模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#單一執行緒做法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">單一執行緒做法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多執行緒做法"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">多執行緒做法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NET-4-0-前做法"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">.NET 4.0 前做法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lazy-泛型做法"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Lazy 泛型做法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
