@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Config,Session,">
+  <meta name="keywords" content="Creational,">
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="SessionState 模式 Off InProc (預設模式) StateServer SqlServer Custom for Redis  StateServer、SqlServer、Redis 除了 .Net 預設型別，皆需在 class 加上 Serializable 關鍵字12c# [Serializable]VB &amp;lt;Serializable()&amp;gt;  Off關閉 Sess">
-<meta name="keywords" content="Config,Session">
+<meta name="description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 車子public abstract class Car {     public string Vehicle { get; set; }     public string Mode { get; set; }     public int En">
+<meta name="keywords" content="Creational">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SessionState 模式">
-<meta property="og:url" content="http://yoursite.com/2019/04/30/AspNetSessionMode/index.html">
+<meta property="og:title" content="設計模式 - 工廠方法模式">
+<meta property="og:url" content="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="SessionState 模式 Off InProc (預設模式) StateServer SqlServer Custom for Redis  StateServer、SqlServer、Redis 除了 .Net 預設型別，皆需在 class 加上 Serializable 關鍵字12c# [Serializable]VB &amp;lt;Serializable()&amp;gt;  Off關閉 Sess">
+<meta property="og:description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 車子public abstract class Car {     public string Vehicle { get; set; }     public string Mode { get; set; }     public int En">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/04/30/AspNetSessionMode/1.png">
-<meta property="og:updated_time" content="2019-04-30T07:05:38.122Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/1.png">
+<meta property="og:updated_time" content="2019-05-13T08:54:29.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SessionState 模式">
-<meta name="twitter:description" content="SessionState 模式 Off InProc (預設模式) StateServer SqlServer Custom for Redis  StateServer、SqlServer、Redis 除了 .Net 預設型別，皆需在 class 加上 Serializable 關鍵字12c# [Serializable]VB &amp;lt;Serializable()&amp;gt;  Off關閉 Sess">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/30/AspNetSessionMode/1.png">
+<meta name="twitter:title" content="設計模式 - 工廠方法模式">
+<meta name="twitter:description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 車子public abstract class Car {     public string Vehicle { get; set; }     public string Mode { get; set; }     public int En">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/1.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/30/AspNetSessionMode/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/">
 
 
 
 
 
-  <title>SessionState 模式 | D & E's Notes</title>
+  <title>設計模式 - 工廠方法模式 | D & E's Notes</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/30/AspNetSessionMode/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SessionState 模式</h1>
+          <h1 class="post-title" itemprop="name headline">設計模式 - 工廠方法模式</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-30T10:56:11+08:00">
-                2019-04-30
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-05-13T16:28:42+08:00">
+                2019-05-13
               </time>
             
 
@@ -307,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ASP-Net/" itemprop="url" rel="index">
-                    <span itemprop="name">ASP.Net</span>
+                  <a href="/categories/Design-Pattern/" itemprop="url" rel="index">
+                    <span itemprop="name">Design Pattern</span>
                   </a>
                 </span>
 
@@ -344,25 +344,165 @@
       
 
       
-        <h1 id="SessionState-模式"><a href="#SessionState-模式" class="headerlink" title="SessionState 模式"></a>SessionState 模式</h1><ol>
-<li><strong>Off</strong></li>
-<li><strong>InProc</strong> (預設模式)</li>
-<li><strong>StateServer</strong></li>
-<li><strong>SqlServer</strong></li>
-<li><strong>Custom for Redis</strong></li>
+        <h1 id="工廠方法模式"><a href="#工廠方法模式" class="headerlink" title="工廠方法模式"></a>工廠方法模式</h1><p>工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現<br><img src="/2019/05/13/DesignPatternWithFactoryMethod/1.png" alt="Architecture"></p>
+<h4 id="建立一個抽象類別-車子"><a href="#建立一個抽象類別-車子" class="headerlink" title="建立一個抽象類別 車子"></a>建立一個抽象類別 車子</h4><pre><code>public abstract class Car
+{
+    public string Vehicle { get; set; }
+    public string Mode { get; set; }
+    public int EngineDisplacement { get; set; }
+
+    public void Information()
+    {
+        Console.WriteLine($&quot;Vehicle: {Vehicle}&quot;);
+        Console.WriteLine($&quot;Mode: {Mode}&quot;);
+        Console.WriteLine($&quot;EngineDisplacement: {EngineDisplacement}&quot;);
+    }
+
+    public virtual void Price()
+    {
+        Console.WriteLine($&quot;Cost: 1,300,000&quot;);
+    }
+}
+</code></pre><h4 id="建立一個抽象類別-商店"><a href="#建立一個抽象類別-商店" class="headerlink" title="建立一個抽象類別 商店"></a>建立一個抽象類別 商店</h4><pre><code>public abstract class CarStore
+{
+    public Car CarInfor(string type)
+    {
+        Car car = GetCar(type);
+
+        car.Information();
+        car.Price();
+
+        return car;
+    }
+
+    protected abstract Car GetCar(string type);
+}
+</code></pre><h4 id="建立各種車型對應"><a href="#建立各種車型對應" class="headerlink" title="建立各種車型對應"></a>建立各種車型對應</h4><pre><code>public class BMWM : Car
+{
+    public BMWM()
+    {
+        Vehicle = &quot;BMW 330i M&quot;;
+        Mode = &quot;Sport&quot;;
+        EngineDisplacement = 1998;
+    }
+
+    public override void Price()
+    {
+        Console.WriteLine($&quot;Cost: 2,750,000&quot;);
+    }
+}
+
+public class BMWi : Car
+{
+    public BMWi()
+    {
+        Vehicle = &quot;BMW 320i&quot;;
+        Mode = &quot;Sedan&quot;;
+        EngineDisplacement = 1998;
+    }
+
+    public override void Price()
+    {
+        Console.WriteLine($&quot;Cost: 1,880,000&quot;);
+    }
+}
+
+public class Auris : Car
+{
+    public Auris()
+    {
+        Vehicle = &quot;Auris&quot;;
+        Mode = &quot;Hatch&quot;;
+        EngineDisplacement = 1987;
+    }
+
+    public override void Price()
+    {
+        Console.WriteLine($&quot;Cost: 885,000&quot;);
+    }
+}
+
+public class RAV4 : Car
+{
+    public RAV4()
+    {
+        Vehicle = &quot;RAV4&quot;;
+        Mode = &quot;SUV&quot;;
+        EngineDisplacement = 2478;
+    }
+
+    public override void Price()
+    {
+        Console.WriteLine($&quot;Cost: 1,209,000&quot;);
+    }
+}
+</code></pre><h4 id="BMW"><a href="#BMW" class="headerlink" title="BMW"></a>BMW</h4><pre><code>public class BMWStore : CarStore
+{
+    protected override Car GetCar(string type)
+    {
+        Car car = null;
+
+        switch (type)
+        {
+            case &quot;BMWM&quot;:
+                car = new BMWM();
+                break;
+            case &quot;BMWi&quot;:
+                car = new BMWi();
+                break;
+        }
+
+        return car;
+    }
+}
+</code></pre><h4 id="Toyota"><a href="#Toyota" class="headerlink" title="Toyota"></a>Toyota</h4><pre><code>public class ToyotaStore : CarStore
+{
+    protected override Car GetCar(string type)
+    {
+        Car car = null;
+
+        switch (type)
+        {
+            case &quot;Auris&quot;:
+                car = new Auris();
+                break;
+            case &quot;RAV4&quot;:
+                car = new RAV4();
+                break;
+        }
+
+        return car;
+    }
+}
+</code></pre><h4 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h4><pre><code>class Program
+{
+    static void Main(string[] args)
+    {
+        var bmw = new BMWStore();
+        bmw.CarInfor(&quot;BMWM&quot;);
+        var toyota = new ToyotaStore();
+        toyota.CarInfor(&quot;RAV4&quot;);
+
+        Console.ReadKey();
+    }
+}
+</code></pre><h4 id="適用場景"><a href="#適用場景" class="headerlink" title="適用場景"></a>適用場景</h4><ol>
+<li>客戶端不需要知道具體產品類的類名，只需要知道所對應的工廠即可</li>
+<li>對於抽象工廠類只需要提供一個創建產品的接口，而由其子類來確定具體要創建的對象，利用面向對象的多態性和裡氏代換原則，在程序運行時，子類對象將覆蓋父類對象，從而使得系統更容易擴展</li>
+<li>將創建對象的任務委託給多個工廠子類中的某一個，客戶端在使用時可以無須關心是哪一個工廠子類創建產品子類，需要時再動態指定，可將具體工廠類的類名存儲在配置文件或數據庫中</li>
 </ol>
-<p><strong>StateServer</strong>、<strong>SqlServer</strong>、<strong>Redis</strong> 除了 <strong>.Net</strong> 預設型別，皆需在 <code>class</code> 加上 <code>Serializable</code> 關鍵字<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c<span class="comment"># [Serializable]</span></span><br><span class="line">VB &lt;Serializable()&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/04/30/AspNetSessionMode/1.png" alt="Serializable"></p>
-<h3 id="Off"><a href="#Off" class="headerlink" title="Off"></a>Off</h3><p>關閉 <strong>Session</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.web&gt;</span><br><span class="line">    &lt;sessionState mode=<span class="string">"off"</span> /&gt;</span><br><span class="line">&lt;/sytem.web&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="InProc-預設模式"><a href="#InProc-預設模式" class="headerlink" title="InProc (預設模式)"></a>InProc (預設模式)</h3><p><strong>Session</strong> 存在 <strong>IIS</strong> 中，預設 <strong>time out</strong> <code>20</code> 分鐘<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.web&gt;</span><br><span class="line">    &lt;sessionState mode=<span class="string">"InProc"</span> timeout=<span class="string">"30"</span> /&gt;</span><br><span class="line">&lt;/system.web&gt;</span><br></pre></td></tr></table></figure></p>
-<p>優點：獲取 <strong>Session</strong> 狀態的速度快<br>缺點：易丟失</p>
-<h3 id="StateServer"><a href="#StateServer" class="headerlink" title="StateServer"></a>StateServer</h3><p><strong>Session</strong> 儲存在當前應用程式域之外的 <code>asp.net_state.exe</code> 服務，獨立於 <strong>IIS</strong> 之外的 <strong>Windows</strong> 服務<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.web&gt;</span><br><span class="line">    &lt;sessionState mode=<span class="string">"StateServer"</span></span><br><span class="line">        stateConnectionString=<span class="string">"tcpip=localhost:42424"</span></span><br><span class="line">        cookieless=<span class="string">"false"</span></span><br><span class="line">        timeout=<span class="string">"20"</span>/&gt;</span><br><span class="line">&lt;/sytem.web&gt;</span><br></pre></td></tr></table></figure></p>
-<p>優點：<strong>Session</strong> 單獨存在一個程序中，不會因 <strong>IIS</strong> 重啟而丟失。<br>缺點：因是兩個不同程序，獲取速度比 <code>InProc</code> 慢<br>&emsp;&emsp;&emsp;過多的序列化和反序列化</p>
-<h3 id="SqlServer"><a href="#SqlServer" class="headerlink" title="SqlServer"></a>SqlServer</h3><p><strong>Session</strong> 序列化後，儲存到 <strong>SQL Server</strong> 資料庫中，可使用在 <strong>NLB</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.web&gt;</span><br><span class="line">    &lt;sessionState mode=<span class="string">"SQLServer"</span> </span><br><span class="line">        allowCustomSqlDatabase=<span class="string">"true"</span> </span><br><span class="line">        sqlConnectionString=<span class="string">"Server=.;Database=ASPState;Integrated Security=true"</span> </span><br><span class="line">        sqlCommandTimeout=<span class="string">"60"</span> </span><br><span class="line">        cookieless=<span class="string">"false"</span> </span><br><span class="line">        cookieName=<span class="string">"ASP.NET_SessionId"</span> </span><br><span class="line">        timeout=<span class="string">"60"</span> /&gt;</span><br><span class="line">&lt;/system.web&gt;</span><br></pre></td></tr></table></figure></p>
-<p>優點：較高的擴展性及可靠性<br>缺點：影響 <strong>DB</strong> 效能<br>&emsp;&emsp;&emsp;獲取速度比 <code>StateServer</code> 慢<br>&emsp;&emsp;&emsp;過多的序列化和反序列化</p>
-<h3 id="Custom-for-Redis"><a href="#Custom-for-Redis" class="headerlink" title="Custom for Redis"></a>Custom for Redis</h3><p><strong>Session</strong> 序列化後，儲存到 <strong>Redis</strong> 是內存，<strong>Redis</strong> 是內存 <code>key-value</code> 數據存儲最快。功能最豐富的一種<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.web&gt;</span><br><span class="line">    &lt;sessionState mode=<span class="string">"Custom"</span> customProvider=<span class="string">"MySessionStateStore"</span>&gt;</span><br><span class="line">        &lt;providers&gt;</span><br><span class="line">            &lt;add name=<span class="string">"MySessionStateStore"</span> <span class="built_in">type</span>=<span class="string">"Microsoft.Web.Redis.RedisSessionStateProvider"</span> host=<span class="string">""</span> accessKey=<span class="string">""</span> ssl=<span class="string">"false"</span> /&gt;</span><br><span class="line">        &lt;/providers&gt;</span><br><span class="line">    &lt;/sessionState&gt;</span><br><span class="line">&lt;/system.web&gt;</span><br></pre></td></tr></table></figure></p>
-<p>優點：較高的擴展性及可靠性<br>&emsp;&emsp;&emsp;可做為 <strong>memory server</strong><br>缺點：沒有本地數據緩衝(像 <strong>Azure</strong> 緩存上同步的本地數據緩衝)<br>&emsp;&emsp;&emsp;伺服器數量需為單數台<br>&emsp;&emsp;&emsp;過多的序列化和反序列化</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.itread01.com/p/603636.html" target="_blank" rel="noopener">ASP.NET MVC中的Session以及處理方式</a><br><a href="https://www.itread01.com/content/1546942022.html" target="_blank" rel="noopener">ASP.NET程式中Session儲存的幾種模式</a><br><a href="https://dotblogs.com.tw/wasichris/2017/03/14/184803" target="_blank" rel="noopener">ASP.NET 多台 Web 伺服陣列透過 SQL Server 保存共同工作階段狀態</a><br><a href="https://www.itread01.com/article/1491448567.html" target="_blank" rel="noopener">C# SESSION丟失問題的解決辦法</a></p>
+<h4 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h4><ol>
+<li>新增一種產品時，只需要增加相應的具體產品類和相應的工廠子類即可</li>
+<li>每個具體工廠類只負責創建對應的產品</li>
+<li>不使用靜態工廠方法，可以形成基於繼承的等級結構</li>
+</ol>
+<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ol>
+<li>添加新產品時，除了增加新產品類外，還要提供與之對應的具體工廠類，系統類的個數將成對增加，在一定程度上增加了系統的複雜度;同時，有更多的類需要編譯和運行，會給系統帶來一些額外的開銷</li>
+<li>由於考慮到系統的可擴展性，需要引入抽象層，在客戶端代碼中均使用抽象層進行定義，增加了系統的抽象性和理解難度，且在實現時可能需要用到DOM，反射等技術，增加了系統的實現難度</li>
+<li>雖然保證了工廠方法內的對修改關閉，但對於使用工廠方法的類，如果要更換另外一種產品，仍然需要修改實例化的具體工廠類</li>
+<li>一個具體工廠只能創建一種具體產品</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zh.wikipedia.org/wiki/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">維基百科-工廠方法</a><br><a href="https://www.cnblogs.com/cgzl/p/8760250.html" target="_blank" rel="noopener">和工厂方法设计模式</a><br><a href="https://blog.techbridge.cc/2017/05/22/factory-method-and-abstract-factory/" target="_blank" rel="noopener">設計模式 - 工廠方法及抽象工廠</a></p>
 
       
     </div>
@@ -380,9 +520,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Config/" rel="tag"># Config</a>
-          
-            <a href="/tags/Session/" rel="tag"># Session</a>
+            <a href="/tags/Creational/" rel="tag"># Creational</a>
           
         </div>
       
@@ -395,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/29/AspNetSessionStateUsingRedis/" rel="next" title="Session 使用 Redis">
-                <i class="fa fa-chevron-left"></i> Session 使用 Redis
+              <a href="/2019/05/13/DesignPatternOverAll/" rel="next" title="設計模式">
+                <i class="fa fa-chevron-left"></i> 設計模式
               </a>
             
           </div>
@@ -404,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/30/AngularCreateProjectAndUseBootstrap/" rel="prev" title="Angular 建置，使用 Bootstrap">
-                Angular 建置，使用 Bootstrap <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -541,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SessionState-模式"><span class="nav-number">1.</span> <span class="nav-text">SessionState 模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Off"><span class="nav-number">1.0.1.</span> <span class="nav-text">Off</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#InProc-預設模式"><span class="nav-number">1.0.2.</span> <span class="nav-text">InProc (預設模式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StateServer"><span class="nav-number">1.0.3.</span> <span class="nav-text">StateServer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SqlServer"><span class="nav-number">1.0.4.</span> <span class="nav-text">SqlServer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Custom-for-Redis"><span class="nav-number">1.0.5.</span> <span class="nav-text">Custom for Redis</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工廠方法模式"><span class="nav-number">1.</span> <span class="nav-text">工廠方法模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個抽象類別-車子"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立一個抽象類別 車子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個抽象類別-商店"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立一個抽象類別 商店</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立各種車型對應"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">建立各種車型對應</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BMW"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">BMW</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Toyota"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">Toyota</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
