@@ -1,5 +1,5 @@
 ---
-title: 設計模式 - 單例模式
+title: 創建型模式 - 單例模式
 date: 2019-05-13 10:03:03
 tags:
  - Creational

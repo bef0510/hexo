@@ -1,5 +1,5 @@
 ---
-title: 設計模式 - 工廠方法模式
+title: 創建型模式 - 工廠方法模式
 date: 2019-05-13 16:28:42
 tags:
  - Creational

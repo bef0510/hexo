@@ -1,5 +1,5 @@
 ---
-title: 設計模式 - 橋接模式
+title: 結構型模式 - 橋接模式
 date: 2019-05-10 15:56:02
 tags:
  - Structural
