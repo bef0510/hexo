@@ -13,7 +13,7 @@ categories:
     各種車子，有不同顏色
     廠牌：BMW、BENZ、Toyota...
     顏色：紅、藍、黑
-![Architecture](1.png)
+![Architecture](2.png)
 
 定義一個 抽象類別 讓各廠牌繼承
 
@@ -95,7 +95,7 @@ categories:
 
 #### 缺點
 
-- 橋接模式的引入會增加系統的理解與設計難度，由於聚合關聯關係建立在抽象層，要求開發者針對抽象進
+- 橋接模式的引入會增加系統的理解與設計難度，由於聚合關聯hＨ關係建立在抽象層，要求開發者針對抽象進
 
 # Reference
 [大話設計模式-橋接模式](https://kknews.cc/tech/8m2kv9g.html)
