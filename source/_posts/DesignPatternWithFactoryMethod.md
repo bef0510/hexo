@@ -11,142 +11,158 @@ categories:
 工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現
 ![Architecture](1.png)
 
-#### 建立一個抽象類別 車子
-    public abstract class Car
+#### 建立一個抽象類別 飲料
+    public abstract class SoftDrinks
     {
-        public string Vehicle { get; set; }
-        public string Mode { get; set; }
-        public int EngineDisplacement { get; set; }
+        public string Name { get; protected set; }
+        public string Sugar { get; protected set; }
+        public string Ice { get; protected set; }
+        public string Vendor { get; protected set; }
 
-        public void Information()
+        public List<string> Toppings = new List<string>();
+
+        public void Prepare()
         {
-            Console.WriteLine($"Vehicle: {Vehicle}");
-            Console.WriteLine($"Mode: {Mode}");
-            Console.WriteLine($"EngineDisplacement: {EngineDisplacement}");
+            Console.WriteLine($"Preparing: {Name}");
+            Console.WriteLine($"Adding Sugar: {Sugar}");
+            Console.WriteLine($"Adding Ice: {Ice}");
+            Console.WriteLine($"Vendor: {Vendor}");
+            Console.WriteLine("Adding toppings: ");
+            Toppings.ForEach(x => Console.WriteLine($"  {x}"));
         }
 
-        public virtual void Price()
+        public void Shake() => Console.WriteLine("Shake for 5 times");
+
+        public void Bag() => Console.WriteLine("Reusable shopping bag");
+    }
+
+#### 建立 各種飲料 類別繼承 飲料
+    public class TPBubbleTea : SoftDrinks
+    {
+        public TPBubbleTea()
         {
-            Console.WriteLine($"Cost: 1,300,000");
+            Name = "Bubble Tea";
+            Sugar = "Half Sugar";
+            Ice = "Less Ice";
+            Vendor = "Wei Chuan";
+            Toppings.Add("Coconut Jelly");
+            Toppings.Add("Grass Jelly");
+        }
+    }
+
+    public class TPDongdingOolongTea : SoftDrinks
+    {
+        public TPDongdingOolongTea()
+        {
+            Name = "Dongding Oolong Tea";
+            Sugar = "No Sugar";
+            Ice = "Light Ice";
+            Vendor = "Lugu Township Farmers' Association";
+        }
+    }
+
+    public class TPGreenTeaYakult : SoftDrinks
+    {
+        public TPGreenTeaYakult()
+        {
+            Name = "Green Tea Yakult";
+            Sugar = "Less Sugar";
+            Ice = "Extra Ice";
+            Vendor = "Yakult";
+            Toppings.Add("Aloe");
+        }
+    }
+
+    public class HLBubbleTea : SoftDrinks
+    {
+        public HLBubbleTea()
+        {
+            Name = "Bubble Tea";
+            Sugar = "Half Sugar";
+            Ice = "Less Ice";
+            Vendor = "Kuang Chuan";
+            Toppings.Add("Coconut Jelly");
+            Toppings.Add("Grass Jelly");
+        }
+    }
+
+    public class HLDongdingOolongTea : SoftDrinks
+    {
+        public HLDongdingOolongTea()
+        {
+            Name = "Dongding Oolong Tea";
+            Sugar = "No Sugar";
+            Ice = "Light Ice";
+            Vendor = "Nantou";
+        }
+    }
+
+    public class HLGreenTeaYakult : SoftDrinks
+    {
+        public HLGreenTeaYakult()
+        {
+            Name = "Green Tea Yakult";
+            Sugar = "Less Sugar";
+            Ice = "Extra Ice";
+            Vendor = "FreshDelight";
+            Toppings.Add("Aloe");
         }
     }
 
 #### 建立一個抽象類別 商店
-    public abstract class CarStore
+    public abstract class SoftDrinksStore
     {
-        public Car CarInfor(string type)
+        public SoftDrinks OrderSoftDrinks(string type)
         {
-            Car car = GetCar(type);
-
-            car.Information();
-            car.Price();
-
-            return car;
+            SoftDrinks softDrinks = CreateSoftDrinks(type);
+            softDrinks.Prepare();
+            softDrinks.Shake();
+            softDrinks.Bag();
+            return softDrinks;
         }
-
-        protected abstract Car GetCar(string type);
+        protected abstract SoftDrinks CreateSoftDrinks(string type);
     }
 
-#### 建立各種車型對應
-    public class BMWM : Car
+#### 建立 各地區商店 類別繼承 商店
+    public class TaiPeiSoftDrinksStore : SoftDrinksStore
     {
-        public BMWM()
+        protected override SoftDrinks CreateSoftDrinks(string type)
         {
-            Vehicle = "BMW 330i M";
-            Mode = "Sport";
-            EngineDisplacement = 1998;
-        }
-
-        public override void Price()
-        {
-            Console.WriteLine($"Cost: 2,750,000");
-        }
-    }
-
-    public class BMWi : Car
-    {
-        public BMWi()
-        {
-            Vehicle = "BMW 320i";
-            Mode = "Sedan";
-            EngineDisplacement = 1998;
-        }
-
-        public override void Price()
-        {
-            Console.WriteLine($"Cost: 1,880,000");
-        }
-    }
-
-    public class Auris : Car
-    {
-        public Auris()
-        {
-            Vehicle = "Auris";
-            Mode = "Hatch";
-            EngineDisplacement = 1987;
-        }
-
-        public override void Price()
-        {
-            Console.WriteLine($"Cost: 885,000");
-        }
-    }
-
-    public class RAV4 : Car
-    {
-        public RAV4()
-        {
-            Vehicle = "RAV4";
-            Mode = "SUV";
-            EngineDisplacement = 2478;
-        }
-
-        public override void Price()
-        {
-            Console.WriteLine($"Cost: 1,209,000");
-        }
-    }
-
-#### BMW
-    public class BMWStore : CarStore
-    {
-        protected override Car GetCar(string type)
-        {
-            Car car = null;
-
+            SoftDrinks softDrinks = null;
             switch (type)
             {
-                case "BMWM":
-                    car = new BMWM();
+                case "BubbleTea":
+                    softDrinks = new TPBubbleTea();
                     break;
-                case "BMWi":
-                    car = new BMWi();
+                case "DongdingOolongTea":
+                    softDrinks = new TPDongdingOolongTea();
+                    break;
+                case "GreenTeaYakult":
+                    softDrinks = new TPGreenTeaYakult();
                     break;
             }
-
-            return car;
+            return softDrinks;
         }
     }
 
-#### Toyota
-    public class ToyotaStore : CarStore
+    public class HuaLienSoftDrinksStore : SoftDrinksStore
     {
-        protected override Car GetCar(string type)
+        protected override SoftDrinks CreateSoftDrinks(string type)
         {
-            Car car = null;
-
+            SoftDrinks softDrinks = null;
             switch (type)
             {
-                case "Auris":
-                    car = new Auris();
+                case "BubbleTea":
+                    softDrinks = new HLBubbleTea();
                     break;
-                case "RAV4":
-                    car = new RAV4();
+                case "DongdingOolongTea":
+                    softDrinks = new HLDongdingOolongTea();
+                    break;
+                case "GreenTeaYakult":
+                    softDrinks = new HLGreenTeaYakult();
                     break;
             }
-
-            return car;
+            return softDrinks;
         }
     }
 
@@ -155,10 +171,15 @@ categories:
     {
         static void Main(string[] args)
         {
-            var bmw = new BMWStore();
-            bmw.CarInfor("BMWM");
-            var toyota = new ToyotaStore();
-            toyota.CarInfor("RAV4");
+            var tpStore = new TaiPeiSoftDrinksStore();
+            var hlStore = new HuaLienSoftDrinksStore();
+
+            var softDrinks = tpStore.OrderSoftDrinks("BubbleTea");
+            Console.WriteLine($"Ordered a {softDrinks.Name} in TaiPei");
+            Console.WriteLine();
+
+            var softDrinks2 = hlStore.OrderSoftDrinks("DongdingOolongTea");
+            Console.WriteLine($"Ordered a {softDrinks2.Name} in HuaLien");
 
             Console.ReadKey();
         }
