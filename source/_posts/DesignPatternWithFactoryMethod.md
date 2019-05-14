@@ -11,22 +11,22 @@ categories:
 工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現
 ![Architecture](1.png)
 
-#### 建立一個抽象類別 飲料
-    public abstract class SoftDrinks
+#### 建立一個抽象類別 珍奶
+    public abstract class BubbleTea
     {
         public string Name { get; protected set; }
+        public string Tea { get; protected set; }
         public string Sugar { get; protected set; }
-        public string Ice { get; protected set; }
-        public string Vendor { get; protected set; }
+        public string Tapioca { get; protected set; }
 
         public List<string> Toppings = new List<string>();
 
         public void Prepare()
         {
             Console.WriteLine($"Preparing: {Name}");
-            Console.WriteLine($"Adding Sugar: {Sugar}");
-            Console.WriteLine($"Adding Ice: {Ice}");
-            Console.WriteLine($"Vendor: {Vendor}");
+            Console.WriteLine($"Tea: {Tea}");
+            Console.WriteLine($"Sugar: {Sugar}");
+            Console.WriteLine($"Tapioca: {Tapioca}");
             Console.WriteLine("Adding toppings: ");
             Toppings.ForEach(x => Console.WriteLine($"  {x}"));
         }
@@ -36,133 +36,99 @@ categories:
         public void Bag() => Console.WriteLine("Reusable shopping bag");
     }
 
-#### 建立 各種飲料 類別繼承 飲料
-    public class TPBubbleTea : SoftDrinks
+#### 建立 各種珍奶 類別繼承 珍奶
+    public class TPPearlMilkTea : BubbleTea
     {
-        public TPBubbleTea()
+        public TPPearlMilkTea()
         {
-            Name = "Bubble Tea";
-            Sugar = "Half Sugar";
-            Ice = "Less Ice";
-            Vendor = "Wei Chuan";
+            Name = "TaiPei Bubble Tea";
+            Sugar = "Sucrose Sugar";
+            Tapioca = "Cassava Tapioca";
             Toppings.Add("Coconut Jelly");
             Toppings.Add("Grass Jelly");
         }
     }
 
-    public class TPDongdingOolongTea : SoftDrinks
+    public class TPCaramelMilkTea : BubbleTea
     {
-        public TPDongdingOolongTea()
+        public TPCaramelMilkTea()
         {
-            Name = "Dongding Oolong Tea";
-            Sugar = "No Sugar";
-            Ice = "Light Ice";
-            Vendor = "Lugu Township Farmers' Association";
+            Name = "TaiPei Caramel Milk Tea";
+            Sugar = "Fructose Sugar";
+            Tapioca = "Potato Tapioca";
         }
     }
 
-    public class TPGreenTeaYakult : SoftDrinks
+    public class HLPearlMilkTea : BubbleTea
     {
-        public TPGreenTeaYakult()
+        public HLPearlMilkTea()
         {
-            Name = "Green Tea Yakult";
-            Sugar = "Less Sugar";
-            Ice = "Extra Ice";
-            Vendor = "Yakult";
-            Toppings.Add("Aloe");
-        }
-    }
-
-    public class HLBubbleTea : SoftDrinks
-    {
-        public HLBubbleTea()
-        {
-            Name = "Bubble Tea";
-            Sugar = "Half Sugar";
-            Ice = "Less Ice";
-            Vendor = "Kuang Chuan";
+            Name = "HuaLien Bubble Tea";
+            Sugar = "Sucrose Sugar";
+            Tapioca = "Cassava Tapioca";
             Toppings.Add("Coconut Jelly");
             Toppings.Add("Grass Jelly");
         }
     }
 
-    public class HLDongdingOolongTea : SoftDrinks
+    public class HLCaramelMilkTea : BubbleTea
     {
-        public HLDongdingOolongTea()
+        public HLCaramelMilkTea()
         {
-            Name = "Dongding Oolong Tea";
-            Sugar = "No Sugar";
-            Ice = "Light Ice";
-            Vendor = "Nantou";
-        }
-    }
-
-    public class HLGreenTeaYakult : SoftDrinks
-    {
-        public HLGreenTeaYakult()
-        {
-            Name = "Green Tea Yakult";
-            Sugar = "Less Sugar";
-            Ice = "Extra Ice";
-            Vendor = "FreshDelight";
-            Toppings.Add("Aloe");
+            Name = "HuaLien Caramel Milk Tea";
+            Sugar = "Fructose Sugar";
+            Tapioca = "Potato Tapioca";
         }
     }
 
 #### 建立一個抽象類別 商店
-    public abstract class SoftDrinksStore
+    public abstract class BubbleTeaStore
     {
-        public SoftDrinks OrderSoftDrinks(string type)
+        public BubbleTea OrderBubbleTea(string type)
         {
-            SoftDrinks softDrinks = CreateSoftDrinks(type);
-            softDrinks.Prepare();
-            softDrinks.Shake();
-            softDrinks.Bag();
-            return softDrinks;
+            BubbleTea bubbleTea = CreateBubbleTea(type);
+            bubbleTea.Prepare();
+            bubbleTea.Shake();
+            bubbleTea.Bag();
+            return bubbleTea;
         }
-        protected abstract SoftDrinks CreateSoftDrinks(string type);
+        protected abstract BubbleTea CreateBubbleTea(string type);
     }
 
 #### 建立 各地區商店 類別繼承 商店
-    public class TaiPeiSoftDrinksStore : SoftDrinksStore
+    public class TaiPeiBubbleTeaStore : BubbleTeaStore
     {
-        protected override SoftDrinks CreateSoftDrinks(string type)
+        protected override BubbleTea CreateBubbleTea(string type)
         {
-            SoftDrinks softDrinks = null;
+            BubbleTea bubbleTea = null;
             switch (type)
             {
-                case "BubbleTea":
-                    softDrinks = new TPBubbleTea();
+                case "pearl":
+                    bubbleTea = new TPPearlMilkTea();
                     break;
-                case "DongdingOolongTea":
-                    softDrinks = new TPDongdingOolongTea();
-                    break;
-                case "GreenTeaYakult":
-                    softDrinks = new TPGreenTeaYakult();
+                case "caramel":
+                    bubbleTea = new TPCaramelMilkTea();
                     break;
             }
-            return softDrinks;
+            return bubbleTea;
         }
     }
 
-    public class HuaLienSoftDrinksStore : SoftDrinksStore
+    public class HuaLienBubbleTeaStore : BubbleTeaStore
     {
-        protected override SoftDrinks CreateSoftDrinks(string type)
+        protected override BubbleTea CreateBubbleTea(string type)
         {
-            SoftDrinks softDrinks = null;
+            BubbleTea bubbleTea = null;
             switch (type)
             {
-                case "BubbleTea":
-                    softDrinks = new HLBubbleTea();
+                case "pearl":
+                    bubbleTea = new HLPearlMilkTea();
                     break;
-                case "DongdingOolongTea":
-                    softDrinks = new HLDongdingOolongTea();
-                    break;
-                case "GreenTeaYakult":
-                    softDrinks = new HLGreenTeaYakult();
+                case "caramel":
+                    bubbleTea = new HLCaramelMilkTea();
                     break;
             }
-            return softDrinks;
+            return bubbleTea;
         }
     }
 
@@ -171,14 +137,15 @@ categories:
     {
         static void Main(string[] args)
         {
-            var tpStore = new TaiPeiSoftDrinksStore();
-            var hlStore = new HuaLienSoftDrinksStore();
+            var tpStore = new TaiPeiBubbleTeaStore();
+            var hlStore = new HuaLienBubbleTeaStore();
 
-            var softDrinks = tpStore.OrderSoftDrinks("BubbleTea");
+            var softDrinks = tpStore.OrderBubbleTea("pearl");
             Console.WriteLine($"Ordered a {softDrinks.Name} in TaiPei");
-            Console.WriteLine();
 
-            var softDrinks2 = hlStore.OrderSoftDrinks("DongdingOolongTea");
+            Console.WriteLine("-----------------------------------------------------------");
+
+            var softDrinks2 = hlStore.OrderBubbleTea("caramel");
             Console.WriteLine($"Ordered a {softDrinks2.Name} in HuaLien");
 
             Console.ReadKey();

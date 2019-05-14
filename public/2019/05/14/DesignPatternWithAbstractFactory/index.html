@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 珍奶public abstract class BubbleTea {     public string Name { get; protected set; }     public string Tea { get; protected se">
+<meta name="description" content="抽象工廠模式抽象工廠模式的實質是「提供介面，建立一系列相關或獨立的物件，而不指定這些物件的具體類 建立一個 原料 介面public interface IIngredient {     string Name { get; } }  public interface ITea : IIngredient { }  public interface ITapioca : IIngredient {">
 <meta name="keywords" content="Creational">
 <meta property="og:type" content="article">
-<meta property="og:title" content="創建型模式 - 工廠方法模式">
-<meta property="og:url" content="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/index.html">
+<meta property="og:title" content="創建型模式 - 抽象工廠模式">
+<meta property="og:url" content="http://yoursite.com/2019/05/14/DesignPatternWithAbstractFactory/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 珍奶public abstract class BubbleTea {     public string Name { get; protected set; }     public string Tea { get; protected se">
+<meta property="og:description" content="抽象工廠模式抽象工廠模式的實質是「提供介面，建立一系列相關或獨立的物件，而不指定這些物件的具體類 建立一個 原料 介面public interface IIngredient {     string Name { get; } }  public interface ITea : IIngredient { }  public interface ITapioca : IIngredient {">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/1.png">
-<meta property="og:updated_time" content="2019-05-14T07:44:53.745Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/14/DesignPatternWithAbstractFactory/1.png">
+<meta property="og:updated_time" content="2019-05-14T08:01:08.131Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="創建型模式 - 工廠方法模式">
-<meta name="twitter:description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 珍奶public abstract class BubbleTea {     public string Name { get; protected set; }     public string Tea { get; protected se">
-<meta name="twitter:image" content="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/1.png">
+<meta name="twitter:title" content="創建型模式 - 抽象工廠模式">
+<meta name="twitter:description" content="抽象工廠模式抽象工廠模式的實質是「提供介面，建立一系列相關或獨立的物件，而不指定這些物件的具體類 建立一個 原料 介面public interface IIngredient {     string Name { get; } }  public interface ITea : IIngredient { }  public interface ITapioca : IIngredient {">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/14/DesignPatternWithAbstractFactory/1.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/14/DesignPatternWithAbstractFactory/">
 
 
 
 
 
-  <title>創建型模式 - 工廠方法模式 | D & E's Notes</title>
+  <title>創建型模式 - 抽象工廠模式 | D & E's Notes</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/DesignPatternWithAbstractFactory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">創建型模式 - 工廠方法模式</h1>
+          <h1 class="post-title" itemprop="name headline">創建型模式 - 抽象工廠模式</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-05-13T16:28:42+08:00">
-                2019-05-13
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-05-14T15:47:28+08:00">
+                2019-05-14
               </time>
             
 
@@ -344,97 +344,170 @@
       
 
       
-        <h1 id="工廠方法模式"><a href="#工廠方法模式" class="headerlink" title="工廠方法模式"></a>工廠方法模式</h1><p>工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現<br><img src="/2019/05/13/DesignPatternWithFactoryMethod/1.png" alt="Architecture"></p>
-<h4 id="建立一個抽象類別-珍奶"><a href="#建立一個抽象類別-珍奶" class="headerlink" title="建立一個抽象類別 珍奶"></a>建立一個抽象類別 珍奶</h4><pre><code>public abstract class BubbleTea
+        <h1 id="抽象工廠模式"><a href="#抽象工廠模式" class="headerlink" title="抽象工廠模式"></a>抽象工廠模式</h1><p>抽象工廠模式的實質是「提供介面，建立一系列相關或獨立的物件，而不指定這些物件的具體類<br><img src="/2019/05/14/DesignPatternWithAbstractFactory/1.png" alt="Architecture"></p>
+<h4 id="建立一個-原料-介面"><a href="#建立一個-原料-介面" class="headerlink" title="建立一個 原料 介面"></a>建立一個 原料 介面</h4><pre><code>public interface IIngredient
 {
-    public string Name { get; protected set; }
-    public string Tea { get; protected set; }
-    public string Sugar { get; protected set; }
-    public string Tapioca { get; protected set; }
+    string Name { get; }
+}
 
-    public List&lt;string&gt; Toppings = new List&lt;string&gt;();
+public interface ITea : IIngredient { }
 
-    public void Prepare()
-    {
-        Console.WriteLine($&quot;Preparing: {Name}&quot;);
-        Console.WriteLine($&quot;Tea: {Tea}&quot;);
-        Console.WriteLine($&quot;Sugar: {Sugar}&quot;);
-        Console.WriteLine($&quot;Tapioca: {Tapioca}&quot;);
-        Console.WriteLine(&quot;Adding toppings: &quot;);
-        Toppings.ForEach(x =&gt; Console.WriteLine($&quot;  {x}&quot;));
-    }
+public interface ITapioca : IIngredient { }
+
+public interface ISugar : IIngredient { }
+
+public interface IBubbleTeaIngredientFactory
+{
+    ITea CreateTea();
+    ITapioca CreateTapioca();
+    ISugar CreateSugar();
+}
+</code></pre><h4 id="建立類別-實作原料"><a href="#建立類別-實作原料" class="headerlink" title="建立類別 實作原料"></a>建立類別 實作原料</h4><pre><code>public class BlackTea : ITea
+{
+    public string Name =&gt; &quot;Black Tea&quot;;
+}
+
+public class GreenTea : ITea
+{
+    public string Name =&gt; &quot;Green Tea&quot;;
+}
+
+public class SucroseSugar : ISugar
+{
+    public string Name =&gt; &quot;Sucrose Sugar&quot;;
+}
+
+public class FructoseSugar : ISugar
+{
+    public string Name =&gt; &quot;Fructose Sugar&quot;;
+}
+
+public class CassavaTapioca : ITapioca
+{
+    public string Name =&gt; &quot;Cassava Tapioca&quot;;
+}
+
+public class PotatoTapioca : ITapioca
+{
+    public string Name =&gt; &quot;Potato Tapioca&quot;;
+}
+</code></pre><h4 id="建立一個抽象類別-珍奶"><a href="#建立一個抽象類別-珍奶" class="headerlink" title="建立一個抽象類別 珍奶"></a>建立一個抽象類別 珍奶</h4><pre><code>public abstract class BubbleTea
+{
+    public string Name { get; set; }
+    public ITea Tea { get; protected set; }
+    public ISugar Sugar { get; protected set; }
+    public ITapioca Tapioca { get; protected set; }
+
+    public abstract void Prepare();
 
     public void Shake() =&gt; Console.WriteLine(&quot;Shake for 5 times&quot;);
 
     public void Bag() =&gt; Console.WriteLine(&quot;Reusable shopping bag&quot;);
 }
-</code></pre><h4 id="建立-各種珍奶-類別繼承-珍奶"><a href="#建立-各種珍奶-類別繼承-珍奶" class="headerlink" title="建立 各種珍奶 類別繼承 珍奶"></a>建立 各種珍奶 類別繼承 珍奶</h4><pre><code>public class TPPearlMilkTea : BubbleTea
+</code></pre><h4 id="建立一個類別-實作各式珍奶"><a href="#建立一個類別-實作各式珍奶" class="headerlink" title="建立一個類別 實作各式珍奶"></a>建立一個類別 實作各式珍奶</h4><pre><code>public class PearlMilkTea : BubbleTea
 {
-    public TPPearlMilkTea()
+    private readonly IBubbleTeaIngredientFactory bubbleTeaIngredientFactory;
+
+    public PearlMilkTea(IBubbleTeaIngredientFactory bubbleTeaIngredientFactory)
     {
-        Name = &quot;TaiPei Bubble Tea&quot;;
-        Sugar = &quot;Sucrose Sugar&quot;;
-        Tapioca = &quot;Cassava Tapioca&quot;;
-        Toppings.Add(&quot;Coconut Jelly&quot;);
-        Toppings.Add(&quot;Grass Jelly&quot;);
+        this.bubbleTeaIngredientFactory = bubbleTeaIngredientFactory;
+    }
+
+    public override void Prepare()
+    {
+        Console.WriteLine($&quot;Preparing: {Name}&quot;);
+        Tea = this.bubbleTeaIngredientFactory.CreateTea();
+        Sugar = this.bubbleTeaIngredientFactory.CreateSugar();
+        Tapioca = this.bubbleTeaIngredientFactory.CreateTapioca();
+        Console.WriteLine($&quot;    {Tea.Name}&quot;);
+        Console.WriteLine($&quot;    {Sugar.Name}&quot;);
+        Console.WriteLine($&quot;    {Tapioca.Name}&quot;);
     }
 }
 
-public class TPCaramelMilkTea : BubbleTea
+public class CaramelMilkTea : BubbleTea
 {
-    public TPCaramelMilkTea()
+    private readonly IBubbleTeaIngredientFactory bubbleTeaIngredientFactory;
+
+    public CaramelMilkTea(IBubbleTeaIngredientFactory bubbleTeaIngredientFactory)
     {
-        Name = &quot;TaiPei Caramel Milk Tea&quot;;
-        Sugar = &quot;Fructose Sugar&quot;;
-        Tapioca = &quot;Potato Tapioca&quot;;
+        this.bubbleTeaIngredientFactory = bubbleTeaIngredientFactory;
+    }
+
+    public override void Prepare()
+    {
+        Console.WriteLine($&quot;Preparing: {Name}&quot;);
+        Tea = this.bubbleTeaIngredientFactory.CreateTea();
+        Sugar = this.bubbleTeaIngredientFactory.CreateSugar();
+        Tapioca = this.bubbleTeaIngredientFactory.CreateTapioca();
+        Console.WriteLine($&quot;    {Tea.Name}&quot;);
+        Console.WriteLine($&quot;    {Sugar.Name}&quot;);
+        Console.WriteLine($&quot;    {Tapioca.Name}&quot;);
+    }
+}
+</code></pre><h4 id="建立一個類別-繼承-原料，實作-各地原料"><a href="#建立一個類別-繼承-原料，實作-各地原料" class="headerlink" title="建立一個類別 繼承 原料，實作 各地原料"></a>建立一個類別 繼承 原料，實作 各地原料</h4><pre><code>public class TaiPeiBubbleTeaIngredientFactory : IBubbleTeaIngredientFactory
+{
+    public ITea CreateTea()
+    {
+        return new BlackTea();
+    }
+
+    public ISugar CreateSugar()
+    {
+        return new SucroseSugar();
+    }
+
+    public ITapioca CreateTapioca()
+    {
+        return new CassavaTapioca();
     }
 }
 
-public class HLPearlMilkTea : BubbleTea
+public class HuaLienBubbleTeaIngredientFactory : IBubbleTeaIngredientFactory
 {
-    public HLPearlMilkTea()
+    public ITea CreateTea()
     {
-        Name = &quot;HuaLien Bubble Tea&quot;;
-        Sugar = &quot;Sucrose Sugar&quot;;
-        Tapioca = &quot;Cassava Tapioca&quot;;
-        Toppings.Add(&quot;Coconut Jelly&quot;);
-        Toppings.Add(&quot;Grass Jelly&quot;);
+        return new GreenTea();
     }
-}
 
-public class HLCaramelMilkTea : BubbleTea
-{
-    public HLCaramelMilkTea()
+    public ISugar CreateSugar()
     {
-        Name = &quot;HuaLien Caramel Milk Tea&quot;;
-        Sugar = &quot;Fructose Sugar&quot;;
-        Tapioca = &quot;Potato Tapioca&quot;;
+        return new FructoseSugar();
+    }
+
+    public ITapioca CreateTapioca()
+    {
+        return new PotatoTapioca();
     }
 }
 </code></pre><h4 id="建立一個抽象類別-商店"><a href="#建立一個抽象類別-商店" class="headerlink" title="建立一個抽象類別 商店"></a>建立一個抽象類別 商店</h4><pre><code>public abstract class BubbleTeaStore
 {
     public BubbleTea OrderBubbleTea(string type)
     {
-        BubbleTea bubbleTea = CreateBubbleTea(type);
+        var bubbleTea = CreateBubbleTea(type);
         bubbleTea.Prepare();
         bubbleTea.Shake();
         bubbleTea.Bag();
         return bubbleTea;
     }
+
     protected abstract BubbleTea CreateBubbleTea(string type);
 }
-</code></pre><h4 id="建立-各地區商店-類別繼承-商店"><a href="#建立-各地區商店-類別繼承-商店" class="headerlink" title="建立 各地區商店 類別繼承 商店"></a>建立 各地區商店 類別繼承 商店</h4><pre><code>public class TaiPeiBubbleTeaStore : BubbleTeaStore
+</code></pre><h4 id="建立一個類別-實作-各地商店"><a href="#建立一個類別-實作-各地商店" class="headerlink" title="建立一個類別 實作 各地商店"></a>建立一個類別 實作 各地商店</h4><pre><code>public class TaiPeiBubbleTeaStore : BubbleTeaStore
 {
     protected override BubbleTea CreateBubbleTea(string type)
     {
+        var factory = new TaiPeiBubbleTeaIngredientFactory();
         BubbleTea bubbleTea = null;
         switch (type)
         {
             case &quot;pearl&quot;:
-                bubbleTea = new TPPearlMilkTea();
+                bubbleTea = new PearlMilkTea(factory);
+                bubbleTea.Name = &quot;TaiPei Bubble Tea&quot;;
                 break;
             case &quot;caramel&quot;:
-                bubbleTea = new TPCaramelMilkTea();
+                bubbleTea = new CaramelMilkTea(factory);
+                bubbleTea.Name = &quot;TaiPei Caramel Milk Tea&quot;;
                 break;
         }
         return bubbleTea;
@@ -445,14 +518,17 @@ public class HuaLienBubbleTeaStore : BubbleTeaStore
 {
     protected override BubbleTea CreateBubbleTea(string type)
     {
+        var factory = new HuaLienBubbleTeaIngredientFactory();
         BubbleTea bubbleTea = null;
         switch (type)
         {
             case &quot;pearl&quot;:
-                bubbleTea = new HLPearlMilkTea();
+                bubbleTea = new PearlMilkTea(factory);
+                bubbleTea.Name = &quot;HuaLien Bubble Tea&quot;;
                 break;
             case &quot;caramel&quot;:
-                bubbleTea = new HLCaramelMilkTea();
+                bubbleTea = new CaramelMilkTea(factory);
+                bubbleTea.Name = &quot;HuaLien Caramel Milk Tea&quot;;
                 break;
         }
         return bubbleTea;
@@ -466,33 +542,29 @@ public class HuaLienBubbleTeaStore : BubbleTeaStore
         var hlStore = new HuaLienBubbleTeaStore();
 
         var softDrinks = tpStore.OrderBubbleTea(&quot;pearl&quot;);
-        Console.WriteLine($&quot;Ordered a {softDrinks.Name} in TaiPei&quot;);
 
         Console.WriteLine(&quot;-----------------------------------------------------------&quot;);
 
         var softDrinks2 = hlStore.OrderBubbleTea(&quot;caramel&quot;);
-        Console.WriteLine($&quot;Ordered a {softDrinks2.Name} in HuaLien&quot;);
 
         Console.ReadKey();
     }
 }
 </code></pre><h4 id="適用場景"><a href="#適用場景" class="headerlink" title="適用場景"></a>適用場景</h4><ol>
-<li>客戶端不需要知道具體產品類的類名，只需要知道所對應的工廠即可</li>
-<li>對於抽象工廠類只需要提供一個創建產品的接口，而由其子類來確定具體要創建的對象，利用面向對象的多態性和裡氏代換原則，在程序運行時，子類對象將覆蓋父類對象，從而使得系統更容易擴展</li>
-<li>將創建對象的任務委託給多個工廠子類中的某一個，客戶端在使用時可以無須關心是哪一個工廠子類創建產品子類，需要時再動態指定，可將具體工廠類的類名存儲在配置文件或數據庫中</li>
+<li>一個系統要獨立於它的產品的建立、組合和表示時</li>
+<li>一個系統要由多個產品系列中的一個來組態時</li>
+<li>需要強調一系列相關的產品物件的設計以便進行聯合使用時</li>
+<li>提供一個產品類別庫，而只想顯示它們的介面而不是實現時</li>
 </ol>
 <h4 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h4><ol>
-<li>新增一種產品時，只需要增加相應的具體產品類和相應的工廠子類即可</li>
-<li>每個具體工廠類只負責創建對應的產品</li>
-<li>不使用靜態工廠方法，可以形成基於繼承的等級結構</li>
+<li>具體產品從客戶程式碼中被分離出來</li>
+<li>容易改變產品的系列</li>
+<li>將一個系列的產品族統一到一起建立</li>
 </ol>
 <h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ol>
-<li>添加新產品時，除了增加新產品類外，還要提供與之對應的具體工廠類，系統類的個數將成對增加，在一定程度上增加了系統的複雜度;同時，有更多的類需要編譯和運行，會給系統帶來一些額外的開銷</li>
-<li>由於考慮到系統的可擴展性，需要引入抽象層，在客戶端代碼中均使用抽象層進行定義，增加了系統的抽象性和理解難度，且在實現時可能需要用到DOM，反射等技術，增加了系統的實現難度</li>
-<li>雖然保證了工廠方法內的對修改關閉，但對於使用工廠方法的類，如果要更換另外一種產品，仍然需要修改實例化的具體工廠類</li>
-<li>一個具體工廠只能創建一種具體產品</li>
+<li>在產品族中擴充新的產品是很困難的，它需要修改抽象工廠的介面</li>
 </ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zh.wikipedia.org/wiki/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">維基百科-工廠方法</a><br><a href="https://www.cnblogs.com/cgzl/p/8760250.html" target="_blank" rel="noopener">和工厂方法设计模式</a><br><a href="https://blog.techbridge.cc/2017/05/22/factory-method-and-abstract-factory/" target="_blank" rel="noopener">設計模式 - 工廠方法及抽象工廠</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zh.wikipedia.org/wiki/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82" target="_blank" rel="noopener">維基百科-抽象工廠</a><br><a href="https://www.cnblogs.com/cgzl/p/8776868.html" target="_blank" rel="noopener">抽象工厂设计模式</a></p>
 
       
     </div>
@@ -523,8 +595,8 @@ public class HuaLienBubbleTeaStore : BubbleTeaStore
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/13/DesignPatternOverAll/" rel="next" title="設計模式">
-                <i class="fa fa-chevron-left"></i> 設計模式
+              <a href="/2019/05/13/DesignPatternWithFactoryMethod/" rel="next" title="創建型模式 - 工廠方法模式">
+                <i class="fa fa-chevron-left"></i> 創建型模式 - 工廠方法模式
               </a>
             
           </div>
@@ -532,10 +604,6 @@ public class HuaLienBubbleTeaStore : BubbleTeaStore
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/14/DesignPatternWithAbstractFactory/" rel="prev" title="創建型模式 - 抽象工廠模式">
-                創建型模式 - 抽象工廠模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -669,7 +737,7 @@ public class HuaLienBubbleTeaStore : BubbleTeaStore
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工廠方法模式"><span class="nav-number">1.</span> <span class="nav-text">工廠方法模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個抽象類別-珍奶"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立一個抽象類別 珍奶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-各種珍奶-類別繼承-珍奶"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立 各種珍奶 類別繼承 珍奶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個抽象類別-商店"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">建立一個抽象類別 商店</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-各地區商店-類別繼承-商店"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">建立 各地區商店 類別繼承 商店</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#抽象工廠模式"><span class="nav-number">1.</span> <span class="nav-text">抽象工廠模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-原料-介面"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立一個 原料 介面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立類別-實作原料"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立類別 實作原料</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個抽象類別-珍奶"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">建立一個抽象類別 珍奶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個類別-實作各式珍奶"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">建立一個類別 實作各式珍奶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個類別-繼承-原料，實作-各地原料"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">建立一個類別 繼承 原料，實作 各地原料</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個抽象類別-商店"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">建立一個抽象類別 商店</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個類別-實作-各地商店"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">建立一個類別 實作 各地商店</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.10.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.11.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
