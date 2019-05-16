@@ -17,14 +17,14 @@ categories:
 `深複製`：建立新的物件。
 
 ### 淺複製
-#### 建立一個 類別 (Feature)
+#### 建立一個 類別 `Feature`
     public class Feature
     {
         public string Grade { get; set; }
         public string ChargeMode { get; set; }
     }
 
-#### 建立一個 類別 (Robot) 繼承 ICloneable
+#### 建立一個 類別 `Robot` 繼承 `ICloneable`
     public class Robot : ICloneable
     {
         private string name;
@@ -169,7 +169,7 @@ categories:
             Console.ReadKey();
         }
     }
-    
+
 #### 適用場景
 1. 當要實例化的類別是在運行時刻指定時，例如，通過動態裝載
 2. 當一個類的實例只能有幾個不同狀態組合中的一種時

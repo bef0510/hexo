@@ -15,21 +15,21 @@ categories:
     顏色：紅、藍、黑
 ![Architecture](2.png)
 
-定義一個 抽象類別 讓各廠牌繼承
+#### 定義一個 抽象類別 廠牌 `CarBase`
 
     public abstract class CarBase
     {
         public abstract void GetCar(IColor color);
     }
 
-定義一個 介面 提供 取得顏色方法
+#### 定義一個 介面 提供 取得顏色方法 `IColor`
 
     public interface IColor
     {
         string GetColor();
     }
 
-實作 各顏色，繼承 `IColor`
+#### 實作 各顏色，繼承 `IColor`
 
     public class BlueColor : IColor
     {
@@ -47,7 +47,7 @@ categories:
         }
     }
 
-實作 各廠牌，繼承 `CarBase`
+#### 實作 各廠牌，繼承 `CarBase`
 
     public class Toyota : CarBase
     {
@@ -65,7 +65,7 @@ categories:
         }
     }
 
-呼叫方式
+#### 引用方式
 
     class Program
     {

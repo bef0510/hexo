@@ -11,7 +11,7 @@ categories:
 抽象工廠模式的實質是「提供介面，建立一系列相關或獨立的物件，而不指定這些物件的具體類
 ![Architecture](1.png)
 
-#### 建立一個 原料 介面
+#### 建立一個 原料 介面 `IBubbleTeaIngredientFactory`
     public interface IIngredient
     {
         string Name { get; }
@@ -61,7 +61,7 @@ categories:
         public string Name => "Potato Tapioca";
     }
 
-#### 建立一個抽象類別 珍奶
+#### 建立一個抽象類別 `BubbleTea`
     public abstract class BubbleTea
     {
         public string Name { get; set; }
@@ -76,7 +76,7 @@ categories:
         public void Bag() => Console.WriteLine("Reusable shopping bag");
     }
 
-#### 建立一個類別 實作各式珍奶
+#### 建立一個類別 實作各式 `BubbleTea`
     public class PearlMilkTea : BubbleTea
     {
         private readonly IBubbleTeaIngredientFactory bubbleTeaIngredientFactory;
@@ -119,7 +119,7 @@ categories:
         }
     }
 
-#### 建立一個類別 繼承 原料，實作 各地原料
+#### 建立一個類別 繼承 原料，實作 各地原料 `IBubbleTeaIngredientFactory`
     public class TaiPeiBubbleTeaIngredientFactory : IBubbleTeaIngredientFactory
     {
         public ITea CreateTea()
@@ -156,7 +156,7 @@ categories:
         }
     }
 
-#### 建立一個抽象類別 商店
+#### 建立一個抽象類別 `BubbleTeaStore`
     public abstract class BubbleTeaStore
     {
         public BubbleTea OrderBubbleTea(string type)
@@ -171,7 +171,7 @@ categories:
         protected abstract BubbleTea CreateBubbleTea(string type);
     }
 
-#### 建立一個類別 實作 各地商店
+#### 建立一個類別 實作 各地商店 `BubbleTeaStore`
     public class TaiPeiBubbleTeaStore : BubbleTeaStore
     {
         protected override BubbleTea CreateBubbleTea(string type)

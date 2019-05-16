@@ -11,19 +11,19 @@ categories:
 將一個類別的介面轉接成用戶所期待的。一個適配使得因介面不相容而不能在一起工作的類別能在一起工作，做法是將類別自己的介面包裹在一個已存在的類別中
 ![Architecture](1.jpg)
 
-#### 建立一個 抽象類別 (Target)
+#### 建立一個 抽象類別 `Target`
     public abstract class Target
     {
         public abstract void Request();
     }
 
-#### 建立一個 類別 (Adaptee)
+#### 建立一個 類別 `Adaptee`
     public class Adaptee
     {
         public void SepecificRequest() => Console.WriteLine("執行要適配器的特殊請求方法");
     }
 
-#### 建立一個 類別 (Adapter) 繼承 (Target)
+#### 建立一個 類別 `Adapter` 繼承 `Target`
     public class Adapter : Target
     {
         private Adaptee adaptee;

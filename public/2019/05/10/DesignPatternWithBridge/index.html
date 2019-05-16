@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="橋接模式將一個抽象與實現解耦，以便兩者可以獨立的變化 各種車子，有不同顏色 廠牌：BMW、BENZ、Toyota... 顏色：紅、藍、黑  定義一個 抽象類別 讓各廠牌繼承 public abstract class CarBase {     public abstract void GetCar(IColor color); } 定義一個 介面 提供 取得顏色方法 public interfa">
+<meta name="description" content="橋接模式將一個抽象與實現解耦，以便兩者可以獨立的變化 各種車子，有不同顏色 廠牌：BMW、BENZ、Toyota... 顏色：紅、藍、黑  定義一個 抽象類別 廠牌 CarBasepublic abstract class CarBase {     public abstract void GetCar(IColor color); } 定義一個 介面 提供 取得顏色方法 IColorpubli">
 <meta name="keywords" content="Structural">
 <meta property="og:type" content="article">
 <meta property="og:title" content="結構型模式 - 橋接模式">
 <meta property="og:url" content="http://yoursite.com/2019/05/10/DesignPatternWithBridge/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="橋接模式將一個抽象與實現解耦，以便兩者可以獨立的變化 各種車子，有不同顏色 廠牌：BMW、BENZ、Toyota... 顏色：紅、藍、黑  定義一個 抽象類別 讓各廠牌繼承 public abstract class CarBase {     public abstract void GetCar(IColor color); } 定義一個 介面 提供 取得顏色方法 public interfa">
+<meta property="og:description" content="橋接模式將一個抽象與實現解耦，以便兩者可以獨立的變化 各種車子，有不同顏色 廠牌：BMW、BENZ、Toyota... 顏色：紅、藍、黑  定義一個 抽象類別 廠牌 CarBasepublic abstract class CarBase {     public abstract void GetCar(IColor color); } 定義一個 介面 提供 取得顏色方法 IColorpubli">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://yoursite.com/2019/05/10/DesignPatternWithBridge/2.png">
-<meta property="og:updated_time" content="2019-05-13T09:01:27.825Z">
+<meta property="og:updated_time" content="2019-05-16T01:25:39.230Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="結構型模式 - 橋接模式">
-<meta name="twitter:description" content="橋接模式將一個抽象與實現解耦，以便兩者可以獨立的變化 各種車子，有不同顏色 廠牌：BMW、BENZ、Toyota... 顏色：紅、藍、黑  定義一個 抽象類別 讓各廠牌繼承 public abstract class CarBase {     public abstract void GetCar(IColor color); } 定義一個 介面 提供 取得顏色方法 public interfa">
+<meta name="twitter:description" content="橋接模式將一個抽象與實現解耦，以便兩者可以獨立的變化 各種車子，有不同顏色 廠牌：BMW、BENZ、Toyota... 顏色：紅、藍、黑  定義一個 抽象類別 廠牌 CarBasepublic abstract class CarBase {     public abstract void GetCar(IColor color); } 定義一個 介面 提供 取得顏色方法 IColorpubli">
 <meta name="twitter:image" content="http://yoursite.com/2019/05/10/DesignPatternWithBridge/2.png">
 
 
@@ -349,18 +349,15 @@
 廠牌：BMW、BENZ、Toyota...
 顏色：紅、藍、黑
 </code></pre><p><img src="/2019/05/10/DesignPatternWithBridge/2.png" alt="Architecture"></p>
-<p>定義一個 抽象類別 讓各廠牌繼承</p>
-<pre><code>public abstract class CarBase
+<h4 id="定義一個-抽象類別-廠牌-CarBase"><a href="#定義一個-抽象類別-廠牌-CarBase" class="headerlink" title="定義一個 抽象類別 廠牌 CarBase"></a>定義一個 抽象類別 廠牌 <code>CarBase</code></h4><pre><code>public abstract class CarBase
 {
     public abstract void GetCar(IColor color);
 }
-</code></pre><p>定義一個 介面 提供 取得顏色方法</p>
-<pre><code>public interface IColor
+</code></pre><h4 id="定義一個-介面-提供-取得顏色方法-IColor"><a href="#定義一個-介面-提供-取得顏色方法-IColor" class="headerlink" title="定義一個 介面 提供 取得顏色方法 IColor"></a>定義一個 介面 提供 取得顏色方法 <code>IColor</code></h4><pre><code>public interface IColor
 {
     string GetColor();
 }
-</code></pre><p>實作 各顏色，繼承 <code>IColor</code></p>
-<pre><code>public class BlueColor : IColor
+</code></pre><h4 id="實作-各顏色，繼承-IColor"><a href="#實作-各顏色，繼承-IColor" class="headerlink" title="實作 各顏色，繼承 IColor"></a>實作 各顏色，繼承 <code>IColor</code></h4><pre><code>public class BlueColor : IColor
 {
     public string GetColor()
     {
@@ -375,8 +372,7 @@ public class RedColor : IColor
         return &quot;Red&quot;;
     }
 }
-</code></pre><p>實作 各廠牌，繼承 <code>CarBase</code></p>
-<pre><code>public class Toyota : CarBase
+</code></pre><h4 id="實作-各廠牌，繼承-CarBase"><a href="#實作-各廠牌，繼承-CarBase" class="headerlink" title="實作 各廠牌，繼承 CarBase"></a>實作 各廠牌，繼承 <code>CarBase</code></h4><pre><code>public class Toyota : CarBase
 {
     public override void GetCar(IColor color)
     {
@@ -391,8 +387,7 @@ public class BMW : CarBase
         Console.WriteLine($&quot;It&apos;s BMW, color is {color.GetColor()}&quot;);
     }
 }
-</code></pre><p>呼叫方式</p>
-<pre><code>class Program
+</code></pre><h4 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h4><pre><code>class Program
 {
     static void Main(string[] args)
     {
@@ -599,7 +594,7 @@ public class BMW : CarBase
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#橋接模式"><span class="nav-number">1.</span> <span class="nav-text">橋接模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">優點:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#橋接模式"><span class="nav-number">1.</span> <span class="nav-text">橋接模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定義一個-抽象類別-廠牌-CarBase"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">定義一個 抽象類別 廠牌 CarBase</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定義一個-介面-提供-取得顏色方法-IColor"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">定義一個 介面 提供 取得顏色方法 IColor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#實作-各顏色，繼承-IColor"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">實作 各顏色，繼承 IColor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#實作-各廠牌，繼承-CarBase"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">實作 各廠牌，繼承 CarBase</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">優點:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>

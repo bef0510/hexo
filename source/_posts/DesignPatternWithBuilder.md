@@ -11,7 +11,7 @@ categories:
 是一種對象構建模式。它可以將複雜對象的建造過程抽象出來（抽象類別），使這個抽象過程的不同實現方法可以構造出不同表現（屬性）的對象
 ![Architecture](1.jpg)
 
-#### 建立一個 產品角色 (Product)
+#### 建立一個 產品角色 `Product`
     public class Pizza
     {
         private List<string> parts = new List<string>();
@@ -26,7 +26,7 @@ categories:
         }
     }
 
-#### 建立一個 抽象建造者 (Builder)
+#### 建立一個 抽象建造者 `Builder`
     public abstract class PizzaBuilder
     {
         public abstract void BuildDough();
@@ -35,7 +35,7 @@ categories:
         public abstract Pizza GetPizza();
     }
 
-#### 建立一個 具體建造者 (ConcreteBuilder)
+#### 建立一個 具體建造者 `ConcreteBuilder` 繼承 `Builder`
     public class HawaiianPizzaBuilder : PizzaBuilder
     {
         Pizza pizza = new Pizza();
@@ -60,7 +60,7 @@ categories:
         public override Pizza GetPizza() => this.pizza;
     }
 
-#### 建立一個 指揮者 (Director)
+#### 建立一個 指揮者 `Director`
     public class Waiter
     {
         public void ConstructPizza(PizzaBuilder pizzaBuilder)

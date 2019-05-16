@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 珍奶public abstract class BubbleTea {     public string Name { get; protected set; }     public string Tea { get; protected se">
+<meta name="description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 產品 BubbleTeapublic abstract class BubbleTea {     public string Name { get; protected set; }     public string Tea { get; pr">
 <meta name="keywords" content="Creational">
 <meta property="og:type" content="article">
 <meta property="og:title" content="創建型模式 - 工廠方法模式">
 <meta property="og:url" content="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 珍奶public abstract class BubbleTea {     public string Name { get; protected set; }     public string Tea { get; protected se">
+<meta property="og:description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 產品 BubbleTeapublic abstract class BubbleTea {     public string Name { get; protected set; }     public string Tea { get; pr">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/1.png">
-<meta property="og:updated_time" content="2019-05-14T07:44:53.745Z">
+<meta property="og:updated_time" content="2019-05-16T01:21:52.747Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="創建型模式 - 工廠方法模式">
-<meta name="twitter:description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 珍奶public abstract class BubbleTea {     public string Name { get; protected set; }     public string Tea { get; protected se">
+<meta name="twitter:description" content="工廠方法模式工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現 建立一個抽象類別 產品 BubbleTeapublic abstract class BubbleTea {     public string Name { get; protected set; }     public string Tea { get; pr">
 <meta name="twitter:image" content="http://yoursite.com/2019/05/13/DesignPatternWithFactoryMethod/1.png">
 
 
@@ -345,7 +345,7 @@
 
       
         <h1 id="工廠方法模式"><a href="#工廠方法模式" class="headerlink" title="工廠方法模式"></a>工廠方法模式</h1><p>工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現<br><img src="/2019/05/13/DesignPatternWithFactoryMethod/1.png" alt="Architecture"></p>
-<h4 id="建立一個抽象類別-珍奶"><a href="#建立一個抽象類別-珍奶" class="headerlink" title="建立一個抽象類別 珍奶"></a>建立一個抽象類別 珍奶</h4><pre><code>public abstract class BubbleTea
+<h4 id="建立一個抽象類別-產品-BubbleTea"><a href="#建立一個抽象類別-產品-BubbleTea" class="headerlink" title="建立一個抽象類別 產品 BubbleTea"></a>建立一個抽象類別 產品 <code>BubbleTea</code></h4><pre><code>public abstract class BubbleTea
 {
     public string Name { get; protected set; }
     public string Tea { get; protected set; }
@@ -368,7 +368,7 @@
 
     public void Bag() =&gt; Console.WriteLine(&quot;Reusable shopping bag&quot;);
 }
-</code></pre><h4 id="建立-各種珍奶-類別繼承-珍奶"><a href="#建立-各種珍奶-類別繼承-珍奶" class="headerlink" title="建立 各種珍奶 類別繼承 珍奶"></a>建立 各種珍奶 類別繼承 珍奶</h4><pre><code>public class TPPearlMilkTea : BubbleTea
+</code></pre><h4 id="建立-類別-產品-TPPearlMilkTea-繼承-BubbleTea"><a href="#建立-類別-產品-TPPearlMilkTea-繼承-BubbleTea" class="headerlink" title="建立 類別 產品 TPPearlMilkTea 繼承 BubbleTea"></a>建立 類別 產品 <code>TPPearlMilkTea</code> 繼承 <code>BubbleTea</code></h4><pre><code>public class TPPearlMilkTea : BubbleTea
 {
     public TPPearlMilkTea()
     {
@@ -411,7 +411,7 @@ public class HLCaramelMilkTea : BubbleTea
         Tapioca = &quot;Potato Tapioca&quot;;
     }
 }
-</code></pre><h4 id="建立一個抽象類別-商店"><a href="#建立一個抽象類別-商店" class="headerlink" title="建立一個抽象類別 商店"></a>建立一個抽象類別 商店</h4><pre><code>public abstract class BubbleTeaStore
+</code></pre><h4 id="建立一個抽象類別-商店-BubbleTeaStore"><a href="#建立一個抽象類別-商店-BubbleTeaStore" class="headerlink" title="建立一個抽象類別 商店 BubbleTeaStore"></a>建立一個抽象類別 商店 <code>BubbleTeaStore</code></h4><pre><code>public abstract class BubbleTeaStore
 {
     public BubbleTea OrderBubbleTea(string type)
     {
@@ -423,7 +423,7 @@ public class HLCaramelMilkTea : BubbleTea
     }
     protected abstract BubbleTea CreateBubbleTea(string type);
 }
-</code></pre><h4 id="建立-各地區商店-類別繼承-商店"><a href="#建立-各地區商店-類別繼承-商店" class="headerlink" title="建立 各地區商店 類別繼承 商店"></a>建立 各地區商店 類別繼承 商店</h4><pre><code>public class TaiPeiBubbleTeaStore : BubbleTeaStore
+</code></pre><h4 id="建立-類別-各地區商店-TaiPeiBubbleTeaStore-繼承-BubbleTeaStore"><a href="#建立-類別-各地區商店-TaiPeiBubbleTeaStore-繼承-BubbleTeaStore" class="headerlink" title="建立 類別 各地區商店 TaiPeiBubbleTeaStore 繼承 BubbleTeaStore"></a>建立 類別 各地區商店 <code>TaiPeiBubbleTeaStore</code> 繼承 <code>BubbleTeaStore</code></h4><pre><code>public class TaiPeiBubbleTeaStore : BubbleTeaStore
 {
     protected override BubbleTea CreateBubbleTea(string type)
     {
@@ -669,7 +669,7 @@ public class HuaLienBubbleTeaStore : BubbleTeaStore
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工廠方法模式"><span class="nav-number">1.</span> <span class="nav-text">工廠方法模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個抽象類別-珍奶"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立一個抽象類別 珍奶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-各種珍奶-類別繼承-珍奶"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立 各種珍奶 類別繼承 珍奶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個抽象類別-商店"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">建立一個抽象類別 商店</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-各地區商店-類別繼承-商店"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">建立 各地區商店 類別繼承 商店</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工廠方法模式"><span class="nav-number">1.</span> <span class="nav-text">工廠方法模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個抽象類別-產品-BubbleTea"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立一個抽象類別 產品 BubbleTea</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-類別-產品-TPPearlMilkTea-繼承-BubbleTea"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立 類別 產品 TPPearlMilkTea 繼承 BubbleTea</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個抽象類別-商店-BubbleTeaStore"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">建立一個抽象類別 商店 BubbleTeaStore</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-類別-各地區商店-TaiPeiBubbleTeaStore-繼承-BubbleTeaStore"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">建立 類別 各地區商店 TaiPeiBubbleTeaStore 繼承 BubbleTeaStore</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>

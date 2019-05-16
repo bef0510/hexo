@@ -11,7 +11,7 @@ categories:
 工廠方法模式定義了一個創建對象的接口，但是讓子類來決定具體創建的是哪一個對象。工廠方法讓一個類延遲實例化，直到子類的出現
 ![Architecture](1.png)
 
-#### 建立一個抽象類別 珍奶
+#### 建立一個抽象類別 產品 `BubbleTea`
     public abstract class BubbleTea
     {
         public string Name { get; protected set; }
@@ -36,7 +36,7 @@ categories:
         public void Bag() => Console.WriteLine("Reusable shopping bag");
     }
 
-#### 建立 各種珍奶 類別繼承 珍奶
+#### 建立 類別 產品 `TPPearlMilkTea` 繼承 `BubbleTea`
     public class TPPearlMilkTea : BubbleTea
     {
         public TPPearlMilkTea()
@@ -81,7 +81,7 @@ categories:
         }
     }
 
-#### 建立一個抽象類別 商店
+#### 建立一個抽象類別 商店 `BubbleTeaStore`
     public abstract class BubbleTeaStore
     {
         public BubbleTea OrderBubbleTea(string type)
@@ -95,7 +95,7 @@ categories:
         protected abstract BubbleTea CreateBubbleTea(string type);
     }
 
-#### 建立 各地區商店 類別繼承 商店
+#### 建立 類別 各地區商店 `TaiPeiBubbleTeaStore` 繼承 `BubbleTeaStore`
     public class TaiPeiBubbleTeaStore : BubbleTeaStore
     {
         protected override BubbleTea CreateBubbleTea(string type)

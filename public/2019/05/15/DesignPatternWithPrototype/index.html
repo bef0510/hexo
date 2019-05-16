@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="原型模式通過「複製」一個已經存在的實例來返回新的實例,而不是新建實例。被複製的實例就是我們所稱的「原型」，這個原型是可定製的 原型模式其實就是從一個物件再建立另外一個可訂製的物件，而且不須知道任何建立的細節。其中有區分為「淺複製」與「深複製」淺複製：複製所有欄位，參考型別只複製參考。深複製：建立新的物件。 淺複製建立一個 類別 (Feature)public class Feature {">
+<meta name="description" content="原型模式通過「複製」一個已經存在的實例來返回新的實例,而不是新建實例。被複製的實例就是我們所稱的「原型」，這個原型是可定製的 原型模式其實就是從一個物件再建立另外一個可訂製的物件，而且不須知道任何建立的細節。其中有區分為「淺複製」與「深複製」淺複製：複製所有欄位，參考型別只複製參考。深複製：建立新的物件。 淺複製建立一個 類別 Featurepublic class Feature {     p">
 <meta name="keywords" content="Creational">
 <meta property="og:type" content="article">
 <meta property="og:title" content="創建型模式 - 原型模式">
 <meta property="og:url" content="http://yoursite.com/2019/05/15/DesignPatternWithPrototype/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="原型模式通過「複製」一個已經存在的實例來返回新的實例,而不是新建實例。被複製的實例就是我們所稱的「原型」，這個原型是可定製的 原型模式其實就是從一個物件再建立另外一個可訂製的物件，而且不須知道任何建立的細節。其中有區分為「淺複製」與「深複製」淺複製：複製所有欄位，參考型別只複製參考。深複製：建立新的物件。 淺複製建立一個 類別 (Feature)public class Feature {">
+<meta property="og:description" content="原型模式通過「複製」一個已經存在的實例來返回新的實例,而不是新建實例。被複製的實例就是我們所稱的「原型」，這個原型是可定製的 原型模式其實就是從一個物件再建立另外一個可訂製的物件，而且不須知道任何建立的細節。其中有區分為「淺複製」與「深複製」淺複製：複製所有欄位，參考型別只複製參考。深複製：建立新的物件。 淺複製建立一個 類別 Featurepublic class Feature {     p">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://yoursite.com/2019/05/15/DesignPatternWithPrototype/1.png">
-<meta property="og:updated_time" content="2019-05-15T03:20:10.966Z">
+<meta property="og:updated_time" content="2019-05-16T01:22:13.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="創建型模式 - 原型模式">
-<meta name="twitter:description" content="原型模式通過「複製」一個已經存在的實例來返回新的實例,而不是新建實例。被複製的實例就是我們所稱的「原型」，這個原型是可定製的 原型模式其實就是從一個物件再建立另外一個可訂製的物件，而且不須知道任何建立的細節。其中有區分為「淺複製」與「深複製」淺複製：複製所有欄位，參考型別只複製參考。深複製：建立新的物件。 淺複製建立一個 類別 (Feature)public class Feature {">
+<meta name="twitter:description" content="原型模式通過「複製」一個已經存在的實例來返回新的實例,而不是新建實例。被複製的實例就是我們所稱的「原型」，這個原型是可定製的 原型模式其實就是從一個物件再建立另外一個可訂製的物件，而且不須知道任何建立的細節。其中有區分為「淺複製」與「深複製」淺複製：複製所有欄位，參考型別只複製參考。深複製：建立新的物件。 淺複製建立一個 類別 Featurepublic class Feature {     p">
 <meta name="twitter:image" content="http://yoursite.com/2019/05/15/DesignPatternWithPrototype/1.png">
 
 
@@ -346,12 +346,12 @@
       
         <h1 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h1><p>通過「複製」一個已經存在的實例來返回新的實例,而不是新建實例。被複製的實例就是我們所稱的「原型」，這個原型是可定製的<br><img src="/2019/05/15/DesignPatternWithPrototype/1.png" alt="Architecture"></p>
 <p>原型模式其實就是從一個物件再建立另外一個可訂製的物件，而且不須知道任何建立的細節。<br>其中有區分為「淺複製」與「深複製」<br><code>淺複製</code>：複製所有欄位，參考型別只複製參考。<br><code>深複製</code>：建立新的物件。</p>
-<h3 id="淺複製"><a href="#淺複製" class="headerlink" title="淺複製"></a>淺複製</h3><h4 id="建立一個-類別-Feature"><a href="#建立一個-類別-Feature" class="headerlink" title="建立一個 類別 (Feature)"></a>建立一個 類別 (Feature)</h4><pre><code>public class Feature
+<h3 id="淺複製"><a href="#淺複製" class="headerlink" title="淺複製"></a>淺複製</h3><h4 id="建立一個-類別-Feature"><a href="#建立一個-類別-Feature" class="headerlink" title="建立一個 類別 Feature"></a>建立一個 類別 <code>Feature</code></h4><pre><code>public class Feature
 {
     public string Grade { get; set; }
     public string ChargeMode { get; set; }
 }
-</code></pre><h4 id="建立一個-類別-Robot-繼承-ICloneable"><a href="#建立一個-類別-Robot-繼承-ICloneable" class="headerlink" title="建立一個 類別 (Robot) 繼承 ICloneable"></a>建立一個 類別 (Robot) 繼承 ICloneable</h4><pre><code>public class Robot : ICloneable
+</code></pre><h4 id="建立一個-類別-Robot-繼承-ICloneable"><a href="#建立一個-類別-Robot-繼承-ICloneable" class="headerlink" title="建立一個 類別 Robot 繼承 ICloneable"></a>建立一個 類別 <code>Robot</code> 繼承 <code>ICloneable</code></h4><pre><code>public class Robot : ICloneable
 {
     private string name;
     private string weight;
@@ -677,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原型模式"><span class="nav-number">1.</span> <span class="nav-text">原型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#淺複製"><span class="nav-number">1.0.1.</span> <span class="nav-text">淺複製</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Feature"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">建立一個 類別 (Feature)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Robot-繼承-ICloneable"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">建立一個 類別 (Robot) 繼承 ICloneable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">引用方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深複製"><span class="nav-number">1.0.2.</span> <span class="nav-text">深複製</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Feature-1"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">建立一個 類別 (Feature)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Robot-繼承-ICloneable-1"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">建立一個 類別 (Robot) 繼承 ICloneable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式-1"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.2.6.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原型模式"><span class="nav-number">1.</span> <span class="nav-text">原型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#淺複製"><span class="nav-number">1.0.1.</span> <span class="nav-text">淺複製</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Feature"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">建立一個 類別 Feature</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Robot-繼承-ICloneable"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">建立一個 類別 Robot 繼承 ICloneable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">引用方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深複製"><span class="nav-number">1.0.2.</span> <span class="nav-text">深複製</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Feature-1"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">建立一個 類別 (Feature)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Robot-繼承-ICloneable-1"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">建立一個 類別 (Robot) 繼承 ICloneable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式-1"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.2.6.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
