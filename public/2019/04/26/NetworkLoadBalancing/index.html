@@ -79,20 +79,42 @@
 
 
 
-<meta name="description" content="網路負載平衡設定 A server IP ： 192.168.1.101 B server IP ： 192.168.1.102 叢集 IP ： 192.168.1.103  A server 管理 B server在 A server[伺服器管理員] →[管理] →[新增伺服器][立即尋抓] B server B server 開啟 網路負載平衡 功能[伺服器管理員] →[管理] →[新增角色及">
+<meta name="description" content="網路負載平衡設定IP 皆為固定，叢集 IP 不能被使用  A server IP ： 172.27.59.161 B server IP ： 172.27.59.162 叢集 IP ： 172.27.59.163  安裝 NLBServer 設定  Server Manager → Add roles and features  Next  Next  Next  勾選 Network Load">
 <meta name="keywords" content="Server,IIS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLB 網路負載平衡">
 <meta property="og:url" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="網路負載平衡設定 A server IP ： 192.168.1.101 B server IP ： 192.168.1.102 叢集 IP ： 192.168.1.103  A server 管理 B server在 A server[伺服器管理員] →[管理] →[新增伺服器][立即尋抓] B server B server 開啟 網路負載平衡 功能[伺服器管理員] →[管理] →[新增角色及">
+<meta property="og:description" content="網路負載平衡設定IP 皆為固定，叢集 IP 不能被使用  A server IP ： 172.27.59.161 B server IP ： 172.27.59.162 叢集 IP ： 172.27.59.163  安裝 NLBServer 設定  Server Manager → Add roles and features  Next  Next  Next  勾選 Network Load">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/1.gif">
-<meta property="og:updated_time" content="2019-05-17T03:10:55.665Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/0.gif">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/8.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/10.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/11.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/12.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/13.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/14.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/15.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/16.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/17.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/18.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/20.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/21.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/22.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/23.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/24.png">
+<meta property="og:updated_time" content="2019-05-22T08:37:29.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLB 網路負載平衡">
-<meta name="twitter:description" content="網路負載平衡設定 A server IP ： 192.168.1.101 B server IP ： 192.168.1.102 叢集 IP ： 192.168.1.103  A server 管理 B server在 A server[伺服器管理員] →[管理] →[新增伺服器][立即尋抓] B server B server 開啟 網路負載平衡 功能[伺服器管理員] →[管理] →[新增角色及">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/1.gif">
+<meta name="twitter:description" content="網路負載平衡設定IP 皆為固定，叢集 IP 不能被使用  A server IP ： 172.27.59.161 B server IP ： 172.27.59.162 叢集 IP ： 172.27.59.163  安裝 NLBServer 設定  Server Manager → Add roles and features  Next  Next  Next  勾選 Network Load">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/26/NetworkLoadBalancing/0.gif">
 
 
 
@@ -344,41 +366,62 @@
       
 
       
-        <h1 id="網路負載平衡設定"><a href="#網路負載平衡設定" class="headerlink" title="網路負載平衡設定"></a>網路負載平衡設定</h1><ol>
-<li><strong>A server IP ：</strong> <code>192.168.1.101</code></li>
-<li><strong>B server IP ：</strong> <code>192.168.1.102</code></li>
-<li><strong>叢集 IP ：</strong> <code>192.168.1.103</code><br><img src="/2019/04/26/NetworkLoadBalancing/1.gif" alt="Architecture"></li>
+        <h1 id="網路負載平衡設定"><a href="#網路負載平衡設定" class="headerlink" title="網路負載平衡設定"></a>網路負載平衡設定</h1><pre><code>IP 皆為固定，叢集 IP 不能被使用
+</code></pre><ol>
+<li><strong>A server IP ：</strong> <code>172.27.59.161</code></li>
+<li><strong>B server IP ：</strong> <code>172.27.59.162</code></li>
+<li><strong>叢集 IP ：</strong> <code>172.27.59.163</code><br><img src="/2019/04/26/NetworkLoadBalancing/0.gif" alt="Architecture"></li>
 </ol>
-<h3 id="A-server-管理-B-server"><a href="#A-server-管理-B-server" class="headerlink" title="A server 管理 B server"></a>A server 管理 B server</h3><p>在 <strong>A server</strong><br>[伺服器管理員] →[管理] →[新增伺服器]<br>[立即尋抓] <strong>B server</strong></p>
-<h3 id="B-server-開啟-網路負載平衡-功能"><a href="#B-server-開啟-網路負載平衡-功能" class="headerlink" title="B server 開啟 網路負載平衡 功能"></a>B server 開啟 網路負載平衡 功能</h3><p>[伺服器管理員] →[管理] →[新增角色及功能]<br>選 <strong>B server</strong> [下一步]<br>[功能] → 勾選 [網路負載平衡]<br>[安裝]</p>
-<h3 id="A-server-開啟-網路負載平衡-功能"><a href="#A-server-開啟-網路負載平衡-功能" class="headerlink" title="A server 開啟 網路負載平衡 功能"></a>A server 開啟 網路負載平衡 功能</h3><p>重覆 <strong>B server</strong> 動作，改選 <strong>A server</strong></p>
-<h3 id="叢集設定"><a href="#叢集設定" class="headerlink" title="叢集設定"></a>叢集設定</h3><p>在 <strong>A server</strong> 開啟 [網路負載平衡管理]<br><strong>A server</strong> 設定</p>
+<h3 id="安裝-NLB"><a href="#安裝-NLB" class="headerlink" title="安裝 NLB"></a>安裝 NLB</h3><p><strong>Server</strong> 設定</p>
 <ol>
-<li>在 <span style="background-color:#f8f906;color:#0000FF;">[網路負載平衡叢集]</span> 按右鍵 →<span style="background-color:#f8f906;color:#0000FF;">[新增叢集]</span></li>
-<li>主機：輸入 <code>192.168.1.101</code> →<span style="background-color:#f8f906;color:#0000FF;">[連線]</span></li>
-<li><span style="background-color:#f8f906;color:#0000FF;">[下一步]</span> (不要點其他地方，<span style="background-color:#f8f906;color:#0000FF;">[下一步]</span> 會不見，<strong>Server 2019</strong> 也還沒修好)</li>
-<li><span style="background-color:#f8f906;color:#0000FF;">[優先順序]</span> 選 <code>1</code></li>
-<li><span style="background-color:#f8f906;color:#0000FF;">[下一步]</span></li>
-<li>新增 <strong>叢集 IP</strong> <code>192.168.1.103</code></li>
-<li><span style="background-color:#f8f906;color:#0000FF;">[下一步]</span></li>
-<li><span style="background-color:#f8f906;color:#0000FF;">[叢集操作模式]</span> 選 <span style="background-color:#f8f906;color:#0000FF;">[多點傳送]</span> <span style="background-color:#f8f906;color:#0000FF;">[下一步]</span> (虛擬機只能選多點，實體機能選單點、多點)</li>
-<li>等漏斗跑完就完成 <span style="background-color:#f8f906;color:#0000FF;">[交集]</span></li>
+<li><p><strong>Server Manager</strong> → <strong>Add roles and features</strong><br><img src="/2019/04/26/NetworkLoadBalancing/1.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Next</strong><br><img src="/2019/04/26/NetworkLoadBalancing/2.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Next</strong><br><img src="/2019/04/26/NetworkLoadBalancing/3.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Next</strong><br><img src="/2019/04/26/NetworkLoadBalancing/4.png" alt="Architecture"></p>
+</li>
+<li><p>勾選 <strong>Network Load Balancing</strong> → <strong>Next</strong><br><img src="/2019/04/26/NetworkLoadBalancing/5.png" alt="Architecture"></p>
+</li>
+<li><p>勾選 重啟電腦 → 點擊 <strong>Specify an alternate source path</strong><br><img src="/2019/04/26/NetworkLoadBalancing/6.png" alt="Architecture"></p>
+</li>
+<li><p>輸入 <code>sxs</code> <strong>Path</strong><br><img src="/2019/04/26/NetworkLoadBalancing/7.png" alt="Architecture"></p>
+</li>
+<li><p>點擊 <strong>Install</strong><br><img src="/2019/04/26/NetworkLoadBalancing/8.png" alt="Architecture"></p>
+</li>
 </ol>
-<p><strong>B server</strong> 設定</p>
-<ol>
-<li>在 IP <span style="background-color:#f8f906;color:#0000FF;">192.168.1.100</span> 按右鍵 →新增主機到叢集</li>
-<li>主機：<strong>B server</strong> <code>192.168.1.102</code> →連線 (因遠端，會比較久，要有耐心)</li>
-<li><span style="background-color:#f8f906;color:#0000FF;">下一步</span> (不要點其他地方，下一步會不見，把生命浪費在有意義的地方)</li>
-<li><span style="background-color:#f8f906;color:#0000FF;">優先順序</span> 選 <code>2</code></li>
-<li><span style="background-color:#f8f906;color:#0000FF;">下一步</span></li>
-<li><span style="background-color:#f8f906;color:#0000FF;">完成</span></li>
-<li>等漏斗跑完就完成 <span style="background-color:#f8f906;color:#0000FF;">[交集]</span></li>
+<h3 id="設定-A-Server-及-叢集"><a href="#設定-A-Server-及-叢集" class="headerlink" title="設定 A Server 及 叢集"></a>設定 A Server 及 叢集</h3><ol>
+<li><p><strong>Server Manager</strong> → <strong>Tools</strong> → 點擊 <strong>Network Load Balancing Manager</strong><br><img src="/2019/04/26/NetworkLoadBalancing/10.png" alt="Architecture"></p>
+</li>
+<li><p>右鍵 → 點擊 <strong>New Cluster</strong><br><img src="/2019/04/26/NetworkLoadBalancing/11.png" alt="Architecture"></p>
+</li>
+<li><p>輸入 <strong>A Server IP</strong><br><img src="/2019/04/26/NetworkLoadBalancing/12.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Next</strong><br><img src="/2019/04/26/NetworkLoadBalancing/13.png" alt="Architecture"></p>
+</li>
+<li><p>點擊 <strong>Add</strong><br><img src="/2019/04/26/NetworkLoadBalancing/14.png" alt="Architecture"></p>
+</li>
+<li><p>輸入 <strong>叢集 IP</strong><br><img src="/2019/04/26/NetworkLoadBalancing/15.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Next</strong><br><img src="/2019/04/26/NetworkLoadBalancing/16.png" alt="Architecture"></p>
+</li>
+<li><p>選擇 <strong>Multicast</strong><br><img src="/2019/04/26/NetworkLoadBalancing/17.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Finish</strong><br><img src="/2019/04/26/NetworkLoadBalancing/18.png" alt="Architecture"></p>
+</li>
 </ol>
-<p><strong>A B server</strong> 已 <span style="background-color:#f8f906;color:#0000FF;">[交集]</span> 後，兩台 <strong>server</strong> 都要重開機</p>
-<h1 id="DNS-server-設定"><a href="#DNS-server-設定" class="headerlink" title="DNS server 設定"></a>DNS server 設定</h1><ol>
-<li>新增主機</li>
-<li>輸入名稱</li>
-<li>輸入 <strong>IP</strong> <code>192.168.1.100</code></li>
+<h3 id="設定-B-Server"><a href="#設定-B-Server" class="headerlink" title="設定 B Server"></a>設定 B Server</h3><ol>
+<li><p>叢集右鍵 → <strong>Add Host To Cluster</strong><br><img src="/2019/04/26/NetworkLoadBalancing/20.png" alt="Architecture"></p>
+</li>
+<li><p>輸入 <strong>B Server IP</strong><br><img src="/2019/04/26/NetworkLoadBalancing/21.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Priority</strong> 選 <strong>2</strong><br><img src="/2019/04/26/NetworkLoadBalancing/22.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Finish</strong><br><img src="/2019/04/26/NetworkLoadBalancing/23.png" alt="Architecture"></p>
+</li>
+<li><p>設定完成<br><img src="/2019/04/26/NetworkLoadBalancing/24.png" alt="Architecture"></p>
+</li>
 </ol>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://docs.microsoft.com/zh-tw/windows-server/networking/technologies/network-load-balancing" target="_blank" rel="noopener">網路負載平衡| Microsoft Docs</a><br><a href="https://www.youtube.com/watch?v=Zx4s59nFX3E&amp;t=1093s" target="_blank" rel="noopener">108-1網工班-Windows Server 2019-IIS Server 網路負載平衡-16-1</a></p>
 
@@ -504,7 +547,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -526,7 +569,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>
@@ -559,7 +602,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#網路負載平衡設定"><span class="nav-number">1.</span> <span class="nav-text">網路負載平衡設定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-server-管理-B-server"><span class="nav-number">1.0.1.</span> <span class="nav-text">A server 管理 B server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-server-開啟-網路負載平衡-功能"><span class="nav-number">1.0.2.</span> <span class="nav-text">B server 開啟 網路負載平衡 功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-server-開啟-網路負載平衡-功能"><span class="nav-number">1.0.3.</span> <span class="nav-text">A server 開啟 網路負載平衡 功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#叢集設定"><span class="nav-number">1.0.4.</span> <span class="nav-text">叢集設定</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#DNS-server-設定"><span class="nav-number">2.</span> <span class="nav-text">DNS server 設定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#網路負載平衡設定"><span class="nav-number">1.</span> <span class="nav-text">網路負載平衡設定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝-NLB"><span class="nav-number">1.0.1.</span> <span class="nav-text">安裝 NLB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定-A-Server-及-叢集"><span class="nav-number">1.0.2.</span> <span class="nav-text">設定 A Server 及 叢集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定-B-Server"><span class="nav-number">1.0.3.</span> <span class="nav-text">設定 B Server</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>

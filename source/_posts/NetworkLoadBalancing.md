@@ -9,54 +9,82 @@ categories:
 ---
 
 # 網路負載平衡設定
-1. **A server IP ：** `192.168.1.101`
-2. **B server IP ：** `192.168.1.102`
-3. **叢集 IP ：** `192.168.1.103`
-![Architecture](1.gif)
+    IP 皆為固定，叢集 IP 不能被使用
+1. **A server IP ：** `172.27.59.161`
+2. **B server IP ：** `172.27.59.162`
+3. **叢集 IP ：** `172.27.59.163`
+![Architecture](0.gif)
 
-### A server 管理 B server
-在 **A server**
-[伺服器管理員] →[管理] →[新增伺服器]
-[立即尋抓] **B server**
+### 安裝 NLB
+**Server** 設定
 
-### B server 開啟 網路負載平衡 功能
-[伺服器管理員] →[管理] →[新增角色及功能]
-選 **B server** [下一步]
-[功能] → 勾選 [網路負載平衡]
-[安裝]
+1. **Server Manager** → **Add roles and features**
+![Architecture](1.png)
 
-### A server 開啟 網路負載平衡 功能
-重覆 **B server** 動作，改選 **A server**
+2. **Next**
+![Architecture](2.png)
 
-### 叢集設定
-在 **A server** 開啟 [網路負載平衡管理]
-**A server** 設定
+3. **Next**
+![Architecture](3.png)
 
-1. 在 <span style="background-color:#f8f906;color:#0000FF;">[網路負載平衡叢集]</span> 按右鍵 →<span style="background-color:#f8f906;color:#0000FF;">[新增叢集]</span>
-2. 主機：輸入 `192.168.1.101` →<span style="background-color:#f8f906;color:#0000FF;">[連線]</span>
-3. <span style="background-color:#f8f906;color:#0000FF;">[下一步]</span> (不要點其他地方，<span style="background-color:#f8f906;color:#0000FF;">[下一步]</span> 會不見，**Server 2019** 也還沒修好)
-4. <span style="background-color:#f8f906;color:#0000FF;">[優先順序]</span> 選 `1`
-5. <span style="background-color:#f8f906;color:#0000FF;">[下一步]</span>
-6. 新增 **叢集 IP** `192.168.1.103`
-7. <span style="background-color:#f8f906;color:#0000FF;">[下一步]</span>
-8. <span style="background-color:#f8f906;color:#0000FF;">[叢集操作模式]</span> 選 <span style="background-color:#f8f906;color:#0000FF;">[多點傳送]</span> <span style="background-color:#f8f906;color:#0000FF;">[下一步]</span> (虛擬機只能選多點，實體機能選單點、多點)
-9. 等漏斗跑完就完成 <span style="background-color:#f8f906;color:#0000FF;">[交集]</span>
+4. **Next**
+![Architecture](4.png)
 
-**B server** 設定
-1. 在 IP <span style="background-color:#f8f906;color:#0000FF;">192.168.1.100</span> 按右鍵 →新增主機到叢集
-2. 主機：**B server** `192.168.1.102` →連線 (因遠端，會比較久，要有耐心)
-3. <span style="background-color:#f8f906;color:#0000FF;">下一步</span> (不要點其他地方，下一步會不見，把生命浪費在有意義的地方)
-4. <span style="background-color:#f8f906;color:#0000FF;">優先順序</span> 選 `2`
-5. <span style="background-color:#f8f906;color:#0000FF;">下一步</span>
-6. <span style="background-color:#f8f906;color:#0000FF;">完成</span>
-7. 等漏斗跑完就完成 <span style="background-color:#f8f906;color:#0000FF;">[交集]</span>
+5. 勾選 **Network Load Balancing** → **Next**
+![Architecture](5.png)
 
-**A B server** 已 <span style="background-color:#f8f906;color:#0000FF;">[交集]</span> 後，兩台 **server** 都要重開機
+6. 勾選 重啟電腦 → 點擊 **Specify an alternate source path**
+![Architecture](6.png)
 
-# DNS server 設定
-1. 新增主機
-2. 輸入名稱
-3. 輸入 **IP** `192.168.1.100`
+7. 輸入 `sxs` **Path**
+![Architecture](7.png)
+
+8. 點擊 **Install**
+![Architecture](8.png)
+
+### 設定 A Server 及 叢集
+1. **Server Manager** → **Tools** → 點擊 **Network Load Balancing Manager**
+![Architecture](10.png)
+
+2. 右鍵 → 點擊 **New Cluster**
+![Architecture](11.png)
+
+3. 輸入 **A Server IP**
+![Architecture](12.png)
+
+4. **Next**
+![Architecture](13.png)
+
+5. 點擊 **Add**
+![Architecture](14.png)
+
+6. 輸入 **叢集 IP**
+![Architecture](15.png)
+
+7. **Next**
+![Architecture](16.png)
+
+8. 選擇 **Multicast**
+![Architecture](17.png)
+
+9. **Finish**
+![Architecture](18.png)
+
+### 設定 B Server
+1. 叢集右鍵 → **Add Host To Cluster**
+![Architecture](20.png)
+
+2. 輸入 **B Server IP**
+![Architecture](21.png)
+
+3. **Priority** 選 **2**
+![Architecture](22.png)
+
+4. **Finish**
+![Architecture](23.png)
+
+5. 設定完成
+![Architecture](24.png)
 
 # Reference
 [網路負載平衡| Microsoft Docs](https://docs.microsoft.com/zh-tw/windows-server/networking/technologies/network-load-balancing)
