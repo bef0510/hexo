@@ -9,50 +9,50 @@ categories:
 ---
 
 # 啟用 IIS
-1. 開啟 `Server Manager` → 點選 `Add roles and features`
+1. 開啟 **Server Manager** → 點選 **Add roles and features**
 ![Architecture](1.png)
 
-2. 下一步
+2. **Next**
 ![Architecture](2.png)
 
-3. 選擇 `Role-base or feature-based installation`
+3. 選擇 **Role-base or feature-based installation**
 ![Architecture](3.png)
 
-4. 點選 `Server Pool`
+4. 點選 **Server Pool**
 ![Architecture](4.png)
 
-5. 點選 `Add Features`
+5. 點選 **Add Features**
 ![Architecture](5.png)
 
-6. 勾選 `Web Server (IIS)`
+6. 勾選 **Web Server (IIS)**
 ![Architecture](6.png)
 
-7. 勾選 `.NET Framework 3.5`
-   勾選 `ASP.NET 4.6`
+7. 勾選 **.NET Framework 3.5**
+   勾選 **ASP.NET 4.6**
 ![Architecture](7.png)
 
 8. 下一步
 ![Architecture](8.png)
 
-9. 勾選 `.NET Extensibility 3.5`
-   勾選 `.NET Extensibility 4.6`
-   勾選 `Application Initialization`
-   勾選 `ASP`
-   勾選 `ASP.NET 3.5`
-   勾選 `ASP.NET 4.6`
+9. 勾選 **.NET Extensibility 3.5**
+   勾選 **.NET Extensibility 4.6**
+   勾選 **Application Initialization**
+   勾選 **ASP**
+   勾選 **ASP.NET 3.5**
+   勾選 **ASP.NET 4.6**
 ![Architecture](9.png)
 
-10. 勾選 `Restart the destination server automatically if required`
-    點選 `Specify an alternate source path`
+10. 勾選 **Restart the destination server automatically if required**
+    點選 **Specify an alternate source path**
 ![Architecture](10.png)
 
-11. 輸入 `SxS` 路徑
+11. 輸入 **SxS** 路徑
 ![Architecture](11.png)
 
-12. 點選 `Install`
+12. 點擊 **Install**
 ![Architecture](12.png)
 
-13. Installing
+13. **Installing**
 ![Architecture](13.png)
 
 14. 完成

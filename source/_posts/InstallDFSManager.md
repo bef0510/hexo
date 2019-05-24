@@ -112,7 +112,7 @@ categories:
 11. **Create**
 ![Architecture](32.png)
 
-12. **Create**
+12. **Close**
 ![Architecture](33.png)
 
 ### Folder Share
