@@ -1,5 +1,5 @@
 ---
-title: 創建型模式 - 適配器模式
+title: 結構型模式 - 適配器模式
 date: 2019-05-15 17:47:53
 tags:
  - Structural
