@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Structural,">
+  <meta name="keywords" content="Class,">
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="組合模式樹狀結構的物件，每個物件有相同的介面 建立一個 抽象類別 Organizationpublic abstract class Organization {     protected string name;     protected string desc;     protected List&amp;lt;Organization&amp;gt; organizations = new List&amp;">
-<meta name="keywords" content="Structural">
+<meta name="description" content="C# 屬性 GET/SETc# 1.0public class Employee {     private string name;      public string Name     {         get { return this.name; }         set { this.name = value; }     }      private int age;">
+<meta name="keywords" content="Class">
 <meta property="og:type" content="article">
-<meta property="og:title" content="結構型模式 - 組合模式">
-<meta property="og:url" content="http://yoursite.com/2019/05/27/DesignPatternWithComposite/index.html">
+<meta property="og:title" content="C# 屬性 GET&#x2F;SET 演變">
+<meta property="og:url" content="http://yoursite.com/2019/05/28/AspNetPropertyGetterSetter/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="組合模式樹狀結構的物件，每個物件有相同的介面 建立一個 抽象類別 Organizationpublic abstract class Organization {     protected string name;     protected string desc;     protected List&amp;lt;Organization&amp;gt; organizations = new List&amp;">
+<meta property="og:description" content="C# 屬性 GET/SETc# 1.0public class Employee {     private string name;      public string Name     {         get { return this.name; }         set { this.name = value; }     }      private int age;">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/05/27/DesignPatternWithComposite/1.png">
-<meta property="og:updated_time" content="2019-05-27T01:50:32.595Z">
+<meta property="og:updated_time" content="2019-05-28T04:29:17.622Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="結構型模式 - 組合模式">
-<meta name="twitter:description" content="組合模式樹狀結構的物件，每個物件有相同的介面 建立一個 抽象類別 Organizationpublic abstract class Organization {     protected string name;     protected string desc;     protected List&amp;lt;Organization&amp;gt; organizations = new List&amp;">
-<meta name="twitter:image" content="http://yoursite.com/2019/05/27/DesignPatternWithComposite/1.png">
+<meta name="twitter:title" content="C# 屬性 GET&#x2F;SET 演變">
+<meta name="twitter:description" content="C# 屬性 GET/SETc# 1.0public class Employee {     private string name;      public string Name     {         get { return this.name; }         set { this.name = value; }     }      private int age;">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/27/DesignPatternWithComposite/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/28/AspNetPropertyGetterSetter/">
 
 
 
 
 
-  <title>結構型模式 - 組合模式 | D & E's Notes</title>
+  <title>C# 屬性 GET/SET 演變 | D & E's Notes</title>
   
 
 
@@ -255,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/27/DesignPatternWithComposite/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/AspNetPropertyGetterSetter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -272,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">結構型模式 - 組合模式</h1>
+          <h1 class="post-title" itemprop="name headline">C# 屬性 GET/SET 演變</h1>
         
 
         <div class="post-meta">
@@ -284,8 +282,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-05-27T09:36:00+08:00">
-                2019-05-27
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-05-28T12:10:41+08:00">
+                2019-05-28
               </time>
             
 
@@ -307,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Design-Pattern/" itemprop="url" rel="index">
-                    <span itemprop="name">Design Pattern</span>
+                  <a href="/categories/ASP-Net/" itemprop="url" rel="index">
+                    <span itemprop="name">ASP.Net</span>
                   </a>
                 </span>
 
@@ -344,84 +342,73 @@
       
 
       
-        <h1 id="組合模式"><a href="#組合模式" class="headerlink" title="組合模式"></a>組合模式</h1><p>樹狀結構的物件，每個物件有相同的介面<br><img src="/2019/05/27/DesignPatternWithComposite/1.png" alt="Architecture"></p>
-<h4 id="建立一個-抽象類別-Organization"><a href="#建立一個-抽象類別-Organization" class="headerlink" title="建立一個 抽象類別 Organization"></a>建立一個 抽象類別 <code>Organization</code></h4><pre><code>public abstract class Organization
+        <h1 id="C-屬性-GET-SET"><a href="#C-屬性-GET-SET" class="headerlink" title="C# 屬性 GET/SET"></a>C# 屬性 GET/SET</h1><h4 id="c-1-0"><a href="#c-1-0" class="headerlink" title="c# 1.0"></a>c# 1.0</h4><pre><code>public class Employee
 {
-    protected string name;
-    protected string desc;
-    protected List&lt;Organization&gt; organizations = new List&lt;Organization&gt;();
+    private string name;
 
-    public Organization(string name, string desc)
+    public string Name
+    {
+        get { return this.name; }
+        set { this.name = value; }
+    }
+
+    private int age;
+
+    public int Age
+    {
+        get { return this.age; }
+        set { this.age = value; }
+    }
+}
+</code></pre><h4 id="c-2-0-可限定存取範圍"><a href="#c-2-0-可限定存取範圍" class="headerlink" title="c# 2.0 可限定存取範圍"></a>c# 2.0 可限定存取範圍</h4><pre><code>public class Employee
+{
+    private string name;
+
+    public Employee(string name, int age)
     {
         this.name = name;
-        this.desc = desc;
+        this.age = age;
     }
 
-    public virtual void AddDepartment(Organization organization) =&gt; this.organizations.Add(organization);
+    public string Name
+    {
+        get { return this.name; }
+        private set { this.name = value; }
+    }
 
-    public virtual void RemoveDepartment(Organization organization) =&gt; this.organizations.Remove(organization);
+    private int age;
 
-    public virtual List&lt;Organization&gt; GetAllDepartment(Organization organization) =&gt; this.organizations;
-
-    public abstract string GetString();
+    public int Age
+    {
+        get { return this.age; }
+        private set { this.age = value; }
+    }
 }
-</code></pre><h4 id="建立一個-類別-Company-繼承-Organization"><a href="#建立一個-類別-Company-繼承-Organization" class="headerlink" title="建立一個 類別 Company 繼承 Organization"></a>建立一個 類別 <code>Company</code> 繼承 <code>Organization</code></h4><pre><code>public class Company : Organization
+</code></pre><h4 id="c-3-0-自動屬性"><a href="#c-3-0-自動屬性" class="headerlink" title="c# 3.0 自動屬性"></a>c# 3.0 自動屬性</h4><pre><code>public class Employee
 {
-    public Company(string name, string desc) : base(name, desc)
+    public Employee(int age)
     {
+        this.Age = age;
     }
 
-    public override string GetString()
-    {
-        StringBuilder sb = new StringBuilder($&quot;\n【公司】：{this.name} 說明： {this.desc} \n&quot;);
+    public string Name { get; set; }
 
-        foreach (var organization in this.organizations)
-        {
-            sb.Append(organization.GetString()).Append(&quot;\n&quot;);
-        }
-
-        return sb.ToString();
-    }
+    public int Age { get; private set; }
 }
-</code></pre><h4 id="建立一個-類別-Dept-繼承-Organization"><a href="#建立一個-類別-Dept-繼承-Organization" class="headerlink" title="建立一個 類別 Dept 繼承 Organization"></a>建立一個 類別 <code>Dept</code> 繼承 <code>Organization</code></h4><pre><code>public class Dept : Organization
+</code></pre><h4 id="c-6-0-唯讀自動屬性"><a href="#c-6-0-唯讀自動屬性" class="headerlink" title="c# 6.0 唯讀自動屬性"></a>c# 6.0 唯讀自動屬性</h4><pre><code>public class Employee
 {
-    public Dept(string name, string desc) : base(name, desc)
+    public Employee(int age)
     {
+        this.Age = age;
     }
 
-    public override string GetString() =&gt; $&quot; - 部門：{this.name} 說明： {this.desc}&quot;;
+    public string Name { get; set; } = &quot;Michael&quot;;
+
+    public int Age { get; } = 30;
+
+    public string Birth =&gt; &quot;1989/12/31&quot;;
 }
-</code></pre><h4 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h4><pre><code>class Program
-{
-    static void Main(string[] args)
-    {
-        Organization company = new Company(&quot;HQ&quot;, &quot;總公司&quot;);
-
-        Organization hrDept = new Dept(&quot;HR&quot;, &quot;人力資源部&quot;);
-        Organization accountDept = new Dept(&quot;Account&quot;, &quot;會計部&quot;);
-        Organization financeDept = new Dept(&quot;Finance&quot;, &quot;財務部&quot;);
-
-        company.AddDepartment(hrDept);
-        company.AddDepartment(accountDept);
-        company.AddDepartment(financeDept);
-
-        Console.WriteLine(company.GetString());
-
-        Console.ReadKey();
-    }
-}
-</code></pre><h4 id="適用場景"><a href="#適用場景" class="headerlink" title="適用場景"></a>適用場景</h4><ol>
-<li>需分層管理多物件時</li>
-</ol>
-<h4 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h4><ol>
-<li>容易新增組件</li>
-<li>介面與功能分離，更具移植性</li>
-</ol>
-<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ol>
-<li>不能依靠編譯期的類型約束來實現，必須在運行期間動態檢測</li>
-<li>元件更名不易</li>
-</ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.itread01.com/content/1546887006.html" target="_blank" rel="noopener">設計模式（C#）——組合模式</a></p>
+</code></pre><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.huanlintalk.com/2018/02/c-readonly-auto-property-from-beginning.html" target="_blank" rel="noopener">C# 的唯讀自動屬性是怎樣煉成的</a></p>
 
       
     </div>
@@ -439,7 +426,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Structural/" rel="tag"># Structural</a>
+            <a href="/tags/Class/" rel="tag"># Class</a>
           
         </div>
       
@@ -452,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/24/InstallADAndDNS/" rel="next" title="Windows Server 2016 啟用 AD 及 DNS">
-                <i class="fa fa-chevron-left"></i> Windows Server 2016 啟用 AD 及 DNS
+              <a href="/2019/05/28/AspNetDelegateEvolution/" rel="next" title="C# 委派演變">
+                <i class="fa fa-chevron-left"></i> C# 委派演變
               </a>
             
           </div>
@@ -461,10 +448,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/28/AspNetDelegateEvolution/" rel="prev" title="C# 委派演變">
-                C# 委派演變 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -598,7 +581,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#組合模式"><span class="nav-number">1.</span> <span class="nav-text">組合模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-抽象類別-Organization"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立一個 抽象類別 Organization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Company-繼承-Organization"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立一個 類別 Company 繼承 Organization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Dept-繼承-Organization"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">建立一個 類別 Dept 繼承 Organization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-屬性-GET-SET"><span class="nav-number">1.</span> <span class="nav-text">C# 屬性 GET/SET</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#c-1-0"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">c# 1.0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-2-0-可限定存取範圍"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">c# 2.0 可限定存取範圍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-3-0-自動屬性"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">c# 3.0 自動屬性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-6-0-唯讀自動屬性"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">c# 6.0 唯讀自動屬性</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>

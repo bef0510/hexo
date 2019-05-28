@@ -1,5 +1,5 @@
 ---
-title: 委派演變
+title: C# 委派演變
 date: 2019-05-28 10:14:46
 tags:
  - delegate
@@ -7,7 +7,7 @@ categories:
  - ASP.Net
 ---
 
-# 委派
+# C# 委派
 1. 使用 delegate 定義委派名稱、傳入參數及回傳值。
 2. 定義委派型別的 signature 的方法。
 3. 建立委派物件，並指定委派方法。
@@ -54,32 +54,20 @@ categories:
     public class Employee
     {
 
-        private string _name;
+        private string name;
 
         public string Name
         {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
+            get { return this.name; }
+            set { this.name = value; }
         }
 
-        private int _age;
+        private int age;
 
         public int Age
         {
-            get
-            {
-                return _age;
-            }
-            set
-            {
-                _age = value;
-            }
+            get { return this.age; }
+            set { this.age = value; }
         }
     }
 
