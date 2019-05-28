@@ -71,7 +71,7 @@ categories:
         }
     }
 
-#### 委派 1.0 具名委派
+#### C# 1.0 具名委派
     class Program
     {
         static void Main(string[] args)
@@ -98,7 +98,7 @@ categories:
         }
     }
 
-#### 委派 2.0 匿名委派
+#### C# 2.0 匿名委派
     class Program
     {
         static void Main(string[] args)
@@ -122,7 +122,7 @@ categories:
         }
     }
 
-#### 委派 3.0 Lambda
+#### C# 3.0 Lambda
     class Program
     {
         static void Main(string[] args)

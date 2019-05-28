@@ -8,7 +8,7 @@ categories:
 ---
 
 # C# 屬性 GET/SET
-#### c# 1.0 
+#### C# 1.0 
     public class Employee
     {
         private string name;
@@ -28,7 +28,7 @@ categories:
         }
     }
 
-#### c# 2.0 可限定存取範圍
+#### C# 2.0 可限定存取範圍
     public class Employee
     {
         private string name;
@@ -54,7 +54,7 @@ categories:
         }
     }
 
-#### c# 3.0 自動屬性
+#### C# 3.0 自動屬性
     public class Employee
     {
         public Employee(int age)
@@ -67,7 +67,7 @@ categories:
         public int Age { get; private set; }
     }
 
-#### c# 6.0 唯讀自動屬性
+#### C# 6.0 唯讀自動屬性
     public class Employee
     {
         public Employee(int age)

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Server,">
+  <meta name="keywords" content="Thread,">
 
 
 
@@ -79,25 +79,18 @@
 
 
 
-<meta name="description" content="修改電腦名稱 點選 開始 → 設定  點選 系統  點選 關於  點選 重新命名電腦  輸入電腦名稱  重新啟動   Reference如何更改Win10電腦名稱">
-<meta name="keywords" content="Server">
+<meta name="description" content="C# 多執行緒C# 1.0 具名public class MultiThread10 {     private int itemCount = 0;     private object locker = new object();     public void Run()     {         Thread t = new Thread(Work);         t.Start(3">
+<meta name="keywords" content="Thread">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows Server 2016 修改電腦名稱">
-<meta property="og:url" content="http://yoursite.com/2019/05/17/ModifyComputerName/index.html">
+<meta property="og:title" content="C# 多執行緒 演變">
+<meta property="og:url" content="http://yoursite.com/2019/05/28/AspNetMultiThread/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="修改電腦名稱 點選 開始 → 設定  點選 系統  點選 關於  點選 重新命名電腦  輸入電腦名稱  重新啟動   Reference如何更改Win10電腦名稱">
+<meta property="og:description" content="C# 多執行緒C# 1.0 具名public class MultiThread10 {     private int itemCount = 0;     private object locker = new object();     public void Run()     {         Thread t = new Thread(Work);         t.Start(3">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/05/17/ModifyComputerName/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/05/17/ModifyComputerName/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/05/17/ModifyComputerName/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/05/17/ModifyComputerName/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/05/17/ModifyComputerName/5.png">
-<meta property="og:image" content="http://yoursite.com/2019/05/17/ModifyComputerName/6.png">
-<meta property="og:updated_time" content="2019-05-17T02:34:07.585Z">
+<meta property="og:updated_time" content="2019-05-28T06:57:23.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows Server 2016 修改電腦名稱">
-<meta name="twitter:description" content="修改電腦名稱 點選 開始 → 設定  點選 系統  點選 關於  點選 重新命名電腦  輸入電腦名稱  重新啟動   Reference如何更改Win10電腦名稱">
-<meta name="twitter:image" content="http://yoursite.com/2019/05/17/ModifyComputerName/1.png">
+<meta name="twitter:title" content="C# 多執行緒 演變">
+<meta name="twitter:description" content="C# 多執行緒C# 1.0 具名public class MultiThread10 {     private int itemCount = 0;     private object locker = new object();     public void Run()     {         Thread t = new Thread(Work);         t.Start(3">
 
 
 
@@ -127,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/17/ModifyComputerName/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/28/AspNetMultiThread/">
 
 
 
 
 
-  <title>Windows Server 2016 修改電腦名稱 | D & E's Notes</title>
+  <title>C# 多執行緒 演變 | D & E's Notes</title>
   
 
 
@@ -260,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/17/ModifyComputerName/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/AspNetMultiThread/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -277,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Windows Server 2016 修改電腦名稱</h1>
+          <h1 class="post-title" itemprop="name headline">C# 多執行緒 演變</h1>
         
 
         <div class="post-meta">
@@ -289,8 +282,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-05-17T10:25:14+08:00">
-                2019-05-17
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-05-28T14:50:21+08:00">
+                2019-05-28
               </time>
             
 
@@ -312,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MIS/" itemprop="url" rel="index">
-                    <span itemprop="name">MIS</span>
+                  <a href="/categories/ASP-Net/" itemprop="url" rel="index">
+                    <span itemprop="name">ASP.Net</span>
                   </a>
                 </span>
 
@@ -349,21 +342,175 @@
       
 
       
-        <h1 id="修改電腦名稱"><a href="#修改電腦名稱" class="headerlink" title="修改電腦名稱"></a>修改電腦名稱</h1><ol>
-<li><p>點選 <code>開始</code> → <code>設定</code><br><img src="/2019/05/17/ModifyComputerName/1.png" alt="Architecture"></p>
-</li>
-<li><p>點選 <code>系統</code><br><img src="/2019/05/17/ModifyComputerName/2.png" alt="Architecture"></p>
-</li>
-<li><p>點選 <code>關於</code><br><img src="/2019/05/17/ModifyComputerName/3.png" alt="Architecture"></p>
-</li>
-<li><p>點選 <code>重新命名電腦</code><br><img src="/2019/05/17/ModifyComputerName/4.png" alt="Architecture"></p>
-</li>
-<li><p>輸入電腦名稱<br><img src="/2019/05/17/ModifyComputerName/5.png" alt="Architecture"></p>
-</li>
-<li><p>重新啟動<br><img src="/2019/05/17/ModifyComputerName/6.png" alt="Architecture"></p>
-</li>
-</ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.itread01.com/articles/1491176308.html" target="_blank" rel="noopener">如何更改Win10電腦名稱</a></p>
+        <h1 id="C-多執行緒"><a href="#C-多執行緒" class="headerlink" title="C# 多執行緒"></a>C# 多執行緒</h1><h4 id="C-1-0-具名"><a href="#C-1-0-具名" class="headerlink" title="C# 1.0 具名"></a>C# 1.0 具名</h4><pre><code>public class MultiThread10
+{
+    private int itemCount = 0;
+    private object locker = new object();
+    public void Run()
+    {
+        Thread t = new Thread(Work);
+        t.Start(300);
+
+        Thread t1 = new Thread(Work);
+        t1.Start(100);
+    }
+
+    private void Work(object delay)
+    {
+        lock (locker)
+        {
+            this.itemCount++;
+
+            Thread.Sleep((int)delay);
+
+            Console.WriteLine($&quot;C# 1.0 Items in cart：{itemCount}&quot;);
+        }
+    }
+}
+</code></pre><h4 id="C-2-0-匿名"><a href="#C-2-0-匿名" class="headerlink" title="C# 2.0 匿名"></a>C# 2.0 匿名</h4><pre><code>public class MultiThread20
+{
+    private int itemCount = 0;
+    private object locker = new object();
+
+    public void Run()
+    {
+        Thread t = new Thread(delegate (object delay)
+        {
+            lock (locker)
+            {
+                this.itemCount++;
+
+                Thread.Sleep((int)delay);
+
+                Console.WriteLine($&quot;C# 2.0 Items in cart：{itemCount}&quot;);
+            }
+        });
+
+        t.Start(300);
+
+        Thread t1 = new Thread(delegate (object delay)
+        {
+            lock (locker)
+            {
+                this.itemCount++;
+
+                Thread.Sleep((int)delay);
+
+                Console.WriteLine($&quot;C# 2.0 Items in cart：{itemCount}&quot;);
+            }
+        });
+
+        t1.Start(100);
+    }
+}
+</code></pre><h4 id="C-3-0-Lambda"><a href="#C-3-0-Lambda" class="headerlink" title="C# 3.0 Lambda"></a>C# 3.0 Lambda</h4><pre><code>public class MultiThread30
+{
+    private int itemCount = 0;
+    private object locker = new object();
+
+    public void Run()
+    {
+        Thread t = new Thread((object delay) =&gt;
+        {
+            lock (locker)
+            {
+                this.itemCount++;
+
+                Thread.Sleep((int)delay);
+
+                Console.WriteLine($&quot;C# 3.0 Items in cart：{itemCount}&quot;);
+            }
+        });
+
+        t.Start(300);
+
+        Thread t1 = new Thread((object delay) =&gt;
+        {
+            lock (locker)
+            {
+                this.itemCount++;
+
+                Thread.Sleep((int)delay);
+
+                Console.WriteLine($&quot;C# 3.0 Items in cart：{itemCount}&quot;);
+            }
+        });
+
+        t1.Start(100);
+    }
+}
+</code></pre><h4 id="C-4-0-Task"><a href="#C-4-0-Task" class="headerlink" title="C# 4.0 Task"></a>C# 4.0 Task</h4><pre><code>public class MultiThread40
+{
+    private int itemCount = 0;
+    private object locker = new object();
+
+    public void Run()
+    {
+        Task t = new Task(() =&gt;
+        {
+            lock (locker)
+            {
+                this.itemCount++;
+
+                Thread.Sleep(300);
+
+                Console.WriteLine($&quot;C# 4.0 Items in cart：{itemCount}&quot;);
+            }
+        });
+
+        t.Start();
+
+        Task t1 = new Task(() =&gt;
+        {
+            lock (locker)
+            {
+                this.itemCount++;
+
+                Thread.Sleep(100);
+
+                Console.WriteLine($&quot;C# 4.0 Items in cart：{itemCount}&quot;);
+            }
+        });
+
+        t1.Start();
+    }
+}
+</code></pre><h4 id="C-4-0-Async-Await"><a href="#C-4-0-Async-Await" class="headerlink" title="C# 4.0 Async/Await"></a>C# 4.0 Async/Await</h4><pre><code>public class MultiThreadAync
+{
+    private int itemCount = 0;
+    private object locker = new object();
+
+    public void Run()
+    {
+        T1();
+        T2();
+    }
+
+    public async void T1()
+    {
+        await Task.Delay(3000);
+
+        lock (locker)
+        {
+            this.itemCount++;
+
+            Console.WriteLine($&quot;C# Aync Items in cart：{itemCount}&quot;);
+        }
+    }
+
+    public async void T2()
+    {
+        await Task.Delay(1000);
+
+        lock (locker)
+        {
+            this.itemCount++;
+
+            Console.WriteLine($&quot;C# Aync Items in cart：{itemCount}&quot;);
+        }
+    }
+}
+</code></pre><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.huanlintalk.com/2013/05/csharp-notes-multithreading-2.html" target="_blank" rel="noopener">C# 學習筆記：多執行緒 (2) - 分道揚鑣</a></p>
 
       
     </div>
@@ -381,7 +528,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Server/" rel="tag"># Server</a>
+            <a href="/tags/Thread/" rel="tag"># Thread</a>
           
         </div>
       
@@ -394,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/15/DesignPatternWithAdapter/" rel="next" title="結構型模式 - 適配器模式">
-                <i class="fa fa-chevron-left"></i> 結構型模式 - 適配器模式
+              <a href="/2019/05/28/AspNetPropertyGetterSetter/" rel="next" title="C# 屬性 GET/SET 演變">
+                <i class="fa fa-chevron-left"></i> C# 屬性 GET/SET 演變
               </a>
             
           </div>
@@ -403,10 +550,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/17/HyperVRestoreVHDX/" rel="prev" title="Hyper-V 還原 .vhdx">
-                Hyper-V 還原 .vhdx <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -540,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#修改電腦名稱"><span class="nav-number">1.</span> <span class="nav-text">修改電腦名稱</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-多執行緒"><span class="nav-number">1.</span> <span class="nav-text">C# 多執行緒</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-1-0-具名"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">C# 1.0 具名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-2-0-匿名"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">C# 2.0 匿名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-3-0-Lambda"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">C# 3.0 Lambda</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-4-0-Task"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">C# 4.0 Task</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-4-0-Async-Await"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">C# 4.0 Async/Await</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
