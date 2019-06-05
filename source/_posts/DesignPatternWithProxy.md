@@ -11,7 +11,7 @@ categories:
 為其他對象提供一種代理以控制對這個對象的訪問
 ![Architecture](1.png)
 
-#### 建立 介面 `IGiveGift`
+#### 建立一個 介面 `IGiveGift`
     public interface IGiveGift
     {
         void GiveDolls();
@@ -19,13 +19,13 @@ categories:
         void GiveChocolate();
     }
 
-#### 建立 類別 `Favorite`
+#### 建立一個 類別 `Favorite`
     public class Favorite
     {
         public string Name { get; set; }
     }
 
-#### 建立 類別 `Pursuit` 繼承 `IGiveGift`
+#### 建立一個 類別 `Pursuit` 繼承 `IGiveGift`
     public class Pursuit : IGiveGift
     {
         Favorite favorite;
@@ -40,7 +40,7 @@ categories:
         public void GiveChocolate() => Console.WriteLine($"送 {favorite.Name} 巧克力");
     }
 
-#### 建立 代理類別 `FriendProxy` 繼承 `IGiveGift`
+#### 建立一個 代理類別 `FriendProxy` 繼承 `IGiveGift`
     public class FriendProxy : IGiveGift
     {
         Pursuit pursuit;
@@ -79,9 +79,9 @@ categories:
 
 #### 缺點
 1. 由於在客戶端和真實主題之間增加了代理對象，因此會造成請求的處理速度變慢
-2. 
-實現代理模式需要額外的工作，從而增加了系統實現的複雜度
+2. 實現代理模式需要額外的工作，從而增加了系統實現的複雜度
 
 # Reference
+[維基百科-代理模式](https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F)
 [[設計模式] 代理模式 (Proxy Pattern)](https://dotblogs.com.tw/atowngit/2010/03/09/13956)
 [C#设计模式(13)——代理模式（Proxy Pattern）](https://www.cnblogs.com/zhili/p/ProxyPattern.html)

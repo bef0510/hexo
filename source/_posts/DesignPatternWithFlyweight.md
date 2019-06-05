@@ -44,7 +44,7 @@ categories:
         public string Number { get; set; }
     }
 
-#### 建立 工廠模式
+#### 建立一個 工廠模式
     public class PokerFactory
     {
         public static Dictionary<int, Card> pokers = new Dictionary<int, Card>();
@@ -135,4 +135,5 @@ categories:
 1. 使得系統變得複雜，需要分離出內部狀態和外部狀態，這使得程序的邏輯複雜化
 
 # Reference
+[維基百科-享元模式](https://zh.wikipedia.org/wiki/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F)
 [一起学设计模式 - 享元模式](https://segmentfault.com/a/1190000012037596)

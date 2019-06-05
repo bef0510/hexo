@@ -96,4 +96,5 @@ categories:
 2. 元件更名不易
 
 # Reference
+[MBA智库百科-組合模式](https://wiki.mbalib.com/wiki/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F)
 [設計模式（C#）——組合模式](https://www.itread01.com/content/1546887006.html)

@@ -118,5 +118,6 @@ categories:
 1. 會出現許多類別，如過度使用程式會變得很複雜
 
 # Reference
+[維基百科-修飾模式](https://zh.wikipedia.org/wiki/%E4%BF%AE%E9%A5%B0%E6%A8%A1%E5%BC%8F)
 [裝飾者模式筆記](https://dotblogs.com.tw/pin0513/archive/2010/01/04/12779.aspx)
 [使用C# (.NET Core) 实现装饰模式 (Decorator Pattern) 并介绍 .NET/Core的Stream](https://www.cnblogs.com/cgzl/p/8697949.html)

@@ -123,4 +123,5 @@ categories:
 1. 不能很好地限制客戶使用子系統類，如果對客戶訪問子系統類做太多的限制則減少了可變性和靈活性
 
 # Reference
+[維基百科-外觀模式](https://zh.wikipedia.org/wiki/%E5%A4%96%E8%A7%80%E6%A8%A1%E5%BC%8F)
 [表象模式(Facade Pattern)](https://dotblogs.com.tw/pin0513/2010/11/01/18721)
