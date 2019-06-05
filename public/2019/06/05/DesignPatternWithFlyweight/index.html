@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="外觀模式為子系統中的一組接口提供一個統一的高層接口，使得子系統更容易使用 建立 子類別public class Audioelectronics {     public void On() =&amp;gt;         Console.WriteLine(&amp;quot;Audioelectronics is On&amp;quot;);      public void Off() =&amp;gt;">
+<meta name="description" content="享元模式通過共用以便有效的支援大量小顆粒物件 建立 類別public abstract class Card {     public abstract string ShowCard(string num); }  public class Spade : Card {     public override string ShowCard(string num) =&amp;gt; $&amp;quot;Sp">
 <meta name="keywords" content="Structural">
 <meta property="og:type" content="article">
-<meta property="og:title" content="結構型模式 - 外觀模式">
-<meta property="og:url" content="http://yoursite.com/2019/06/05/DesignPatternWithFacade/index.html">
+<meta property="og:title" content="結構型模式 - 享元模式">
+<meta property="og:url" content="http://yoursite.com/2019/06/05/DesignPatternWithFlyweight/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="外觀模式為子系統中的一組接口提供一個統一的高層接口，使得子系統更容易使用 建立 子類別public class Audioelectronics {     public void On() =&amp;gt;         Console.WriteLine(&amp;quot;Audioelectronics is On&amp;quot;);      public void Off() =&amp;gt;">
+<meta property="og:description" content="享元模式通過共用以便有效的支援大量小顆粒物件 建立 類別public abstract class Card {     public abstract string ShowCard(string num); }  public class Spade : Card {     public override string ShowCard(string num) =&amp;gt; $&amp;quot;Sp">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/06/05/DesignPatternWithFacade/1.png">
-<meta property="og:updated_time" content="2019-06-05T03:35:07.750Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/05/DesignPatternWithFlyweight/1.png">
+<meta property="og:updated_time" content="2019-06-05T07:06:02.205Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="結構型模式 - 外觀模式">
-<meta name="twitter:description" content="外觀模式為子系統中的一組接口提供一個統一的高層接口，使得子系統更容易使用 建立 子類別public class Audioelectronics {     public void On() =&amp;gt;         Console.WriteLine(&amp;quot;Audioelectronics is On&amp;quot;);      public void Off() =&amp;gt;">
-<meta name="twitter:image" content="http://yoursite.com/2019/06/05/DesignPatternWithFacade/1.png">
+<meta name="twitter:title" content="結構型模式 - 享元模式">
+<meta name="twitter:description" content="享元模式通過共用以便有效的支援大量小顆粒物件 建立 類別public abstract class Card {     public abstract string ShowCard(string num); }  public class Spade : Card {     public override string ShowCard(string num) =&amp;gt; $&amp;quot;Sp">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/05/DesignPatternWithFlyweight/1.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/05/DesignPatternWithFacade/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/05/DesignPatternWithFlyweight/">
 
 
 
 
 
-  <title>結構型模式 - 外觀模式 | D & E's Notes</title>
+  <title>結構型模式 - 享元模式 | D & E's Notes</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/05/DesignPatternWithFacade/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/05/DesignPatternWithFlyweight/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">結構型模式 - 外觀模式</h1>
+          <h1 class="post-title" itemprop="name headline">結構型模式 - 享元模式</h1>
         
 
         <div class="post-meta">
@@ -284,7 +284,7 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-06-05T11:12:22+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-06-05T14:51:14+08:00">
                 2019-06-05
               </time>
             
@@ -344,113 +344,125 @@
       
 
       
-        <h1 id="外觀模式"><a href="#外觀模式" class="headerlink" title="外觀模式"></a>外觀模式</h1><p>為子系統中的一組接口提供一個統一的高層接口，使得子系統更容易使用<br><img src="/2019/06/05/DesignPatternWithFacade/1.png" alt="Architecture"></p>
-<h4 id="建立-子類別"><a href="#建立-子類別" class="headerlink" title="建立 子類別"></a>建立 子類別</h4><pre><code>public class Audioelectronics
+        <h1 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h1><p>通過共用以便有效的支援大量小顆粒物件<br><img src="/2019/06/05/DesignPatternWithFlyweight/1.png" alt="Architecture"></p>
+<h4 id="建立-類別"><a href="#建立-類別" class="headerlink" title="建立 類別"></a>建立 類別</h4><pre><code>public abstract class Card
 {
-    public void On() =&gt;
-        Console.WriteLine(&quot;Audioelectronics is On&quot;);
-
-    public void Off() =&gt;
-        Console.WriteLine(&quot;Audioelectronics is Off&quot;);
+    public abstract string ShowCard(string num);
 }
 
-public class PowerWindow
+public class Spade : Card
 {
-    public void Up() =&gt;
-        Console.WriteLine(&quot;PowerWindow is Up&quot;);
+    public override string ShowCard(string num) =&gt; $&quot;Spade  ：{num}&quot;;
 
-    public void Down() =&gt;
-        Console.WriteLine(&quot;PowerWindow is Down&quot;);
 }
 
-public class SideviewMirror
+public class Heart : Card
 {
-    public void Fold() =&gt;
-        Console.WriteLine(&quot;SideviewMirror is Fold&quot;);
-
-    public void Unfold() =&gt;
-        Console.WriteLine(&quot;SideviewMirror is Unfold&quot;);
+    public override string ShowCard(string num) =&gt; $&quot;Heart  ：{num}&quot;;
 }
 
-
-public class AirConditioning
+public class Diamond : Card
 {
-    public void On() =&gt; 
-        Console.WriteLine(&quot;AirConditioning is On&quot;);
-
-    public void Off() =&gt; 
-        Console.WriteLine(&quot;AirConditioning is Off&quot;);
-
-    public void SetTemperature(int temperature) =&gt; 
-        Console.WriteLine($&quot;temperature is {temperature}&quot;);
+    public override string ShowCard(string num) =&gt; $&quot;Diamond：{num}&quot;;
 }
-</code></pre><h4 id="建立-類別"><a href="#建立-類別" class="headerlink" title="建立 類別"></a>建立 類別</h4><pre><code>public class ControlPanel
-{
-    private readonly Audioelectronics audioelectronics;
-    private readonly PowerWindow powerWindow;
-    private readonly SideviewMirror sideviewMirror;
-    private readonly AirConditioning airConditioning;
 
-    public ControlPanel(Audioelectronics audioelectronics, PowerWindow powerWindow,
-        SideviewMirror sideviewMirror, AirConditioning airConditioning)
+public class Club : Card
+{
+    public override string ShowCard(string num) =&gt; $&quot;Club   ：{num}&quot;;
+}
+
+public class Poker
+{
+    public Card Card { get; set; }
+    public string Number { get; set; }
+}
+</code></pre><h4 id="建立-工廠模式"><a href="#建立-工廠模式" class="headerlink" title="建立 工廠模式"></a>建立 工廠模式</h4><pre><code>public class PokerFactory
+{
+    public static Dictionary&lt;int, Card&gt; pokers = new Dictionary&lt;int, Card&gt;();
+
+    public static Card GetPoker(int color)
     {
-        this.audioelectronics = audioelectronics;
-        this.powerWindow = powerWindow;
-        this.sideviewMirror = sideviewMirror;
-        this.airConditioning = airConditioning;
-    }
-
-    public void TurnOnEngine()
-    {
-        Console.WriteLine(&quot;starting...&quot;);
-
-        audioelectronics.On();
-        powerWindow.Down();
-        sideviewMirror.Unfold();
-        airConditioning.On();
-        airConditioning.SetTemperature(23);
-
-        Console.WriteLine(&quot;Engine is started&quot;);
-    }
-
-    public void TurnOffEngine()
-    {
-        Console.WriteLine(&quot;Shutting down...&quot;);
-
-        audioelectronics.Off();
-        powerWindow.Up();
-        sideviewMirror.Fold();
-        airConditioning.Off();
-
-        Console.WriteLine(&quot;Engine is off&quot;);
+        if (pokers.ContainsKey(color))
+        {
+            return pokers[color];
+        }else
+        {
+            Card card;
+            switch (color)
+            {
+                case 0:
+                    card = new Spade();
+                    break;
+                case 1:
+                    card = new Heart();
+                    break;
+                case 2:
+                    card = new Diamond();
+                    break;
+                case 3:
+                    card = new Club();
+                    break;
+                default:
+                    card = new Spade();
+                    break;
+            }
+            pokers.Add(color, card);
+            return pokers[color];
+        }
     }
 }
 </code></pre><h4 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h4><pre><code>class Program
 {
     static void Main(string[] args)
     {
-        ControlPanel controlPanel = new ControlPanel(new Audioelectronics(), new PowerWindow(), 
-            new SideviewMirror(), new AirConditioning());
+        Card card;
+        string poker = string.Empty;
+        Random random = new Random();
 
-        controlPanel.TurnOnEngine();
+        for (int i = 0; i &lt; 5; i++)
+        {
+            int colorRandom = random.Next(4) + 1;
+            card = PokerFactory.GetPoker(colorRandom);
 
-        controlPanel.TurnOffEngine();
+            if (card != null)
+            {
+                int numRandom = random.Next(13) + 1;
+                switch (numRandom)
+                {
+                    case 1:
+                        poker = card.ShowCard(&quot;A&quot;);
+                        break;
+                    case 11:
+                        poker = card.ShowCard(&quot;J&quot;);
+                        break;
+                    case 12:
+                        poker = card.ShowCard(&quot;Q&quot;);
+                        break;
+                    case 13:
+                        poker = card.ShowCard(&quot;K&quot;);
+                        break;
+                    default:
+                        poker = card.ShowCard(numRandom.ToString());
+                        break;
+                }
+
+                Console.WriteLine(poker);
+            }
+        }
 
         Console.ReadKey();
     }
 }
 </code></pre><h4 id="適用場景"><a href="#適用場景" class="headerlink" title="適用場景"></a>適用場景</h4><ol>
-<li>為一個複雜的子系統對外提供一個簡單的接口</li>
-<li>提供子系統的獨立性</li>
+<li>系統有大量相同或者相似的對象，消耗大量內存</li>
 </ol>
 <h4 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h4><ol>
-<li>降低與子類別的耦合度，實現子類別與客戶之間的松耦合關係</li>
-<li>降低原有系統的複雜度和系統中的編譯依賴性，並簡化了系統在不同平台之間的移植過程</li>
+<li>減少對象的創建，降低系統的內存，使效率提高</li>
 </ol>
 <h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ol>
-<li>不能很好地限制客戶使用子系統類，如果對客戶訪問子系統類做太多的限制則減少了可變性和靈活性</li>
+<li>使得系統變得複雜，需要分離出內部狀態和外部狀態，這使得程序的邏輯複雜化</li>
 </ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://dotblogs.com.tw/pin0513/2010/11/01/18721" target="_blank" rel="noopener">表象模式(Facade Pattern)</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://segmentfault.com/a/1190000012037596" target="_blank" rel="noopener">一起学设计模式 - 享元模式</a></p>
 
       
     </div>
@@ -481,8 +493,8 @@ public class AirConditioning
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/05/DesignPatternWithDecorator/" rel="next" title="結構型模式 - 裝飾模式">
-                <i class="fa fa-chevron-left"></i> 結構型模式 - 裝飾模式
+              <a href="/2019/06/05/DesignPatternWithFacade/" rel="next" title="結構型模式 - 外觀模式">
+                <i class="fa fa-chevron-left"></i> 結構型模式 - 外觀模式
               </a>
             
           </div>
@@ -491,8 +503,8 @@ public class AirConditioning
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/05/DesignPatternWithFlyweight/" rel="prev" title="結構型模式 - 享元模式">
-                結構型模式 - 享元模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/05/DesignPatternWithProxy/" rel="prev" title="結構型模式 - 代理模式">
+                結構型模式 - 代理模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -627,7 +639,7 @@ public class AirConditioning
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#外觀模式"><span class="nav-number">1.</span> <span class="nav-text">外觀模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-子類別"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立 子類別</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-類別"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立 類別</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#享元模式"><span class="nav-number">1.</span> <span class="nav-text">享元模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-類別"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立 類別</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-工廠模式"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立 工廠模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>

@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="外觀模式為子系統中的一組接口提供一個統一的高層接口，使得子系統更容易使用 建立 子類別public class Audioelectronics {     public void On() =&amp;gt;         Console.WriteLine(&amp;quot;Audioelectronics is On&amp;quot;);      public void Off() =&amp;gt;">
+<meta name="description" content="代理模式為其他對象提供一種代理以控制對這個對象的訪問 建立 介面 IGiveGiftpublic interface IGiveGift {     void GiveDolls();     void GiveMoneyFlowers();     void GiveChocolate(); } 建立 類別 Favoritepublic class Favorite {     public s">
 <meta name="keywords" content="Structural">
 <meta property="og:type" content="article">
-<meta property="og:title" content="結構型模式 - 外觀模式">
-<meta property="og:url" content="http://yoursite.com/2019/06/05/DesignPatternWithFacade/index.html">
+<meta property="og:title" content="結構型模式 - 代理模式">
+<meta property="og:url" content="http://yoursite.com/2019/06/05/DesignPatternWithProxy/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="外觀模式為子系統中的一組接口提供一個統一的高層接口，使得子系統更容易使用 建立 子類別public class Audioelectronics {     public void On() =&amp;gt;         Console.WriteLine(&amp;quot;Audioelectronics is On&amp;quot;);      public void Off() =&amp;gt;">
+<meta property="og:description" content="代理模式為其他對象提供一種代理以控制對這個對象的訪問 建立 介面 IGiveGiftpublic interface IGiveGift {     void GiveDolls();     void GiveMoneyFlowers();     void GiveChocolate(); } 建立 類別 Favoritepublic class Favorite {     public s">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/06/05/DesignPatternWithFacade/1.png">
-<meta property="og:updated_time" content="2019-06-05T03:35:07.750Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/05/DesignPatternWithProxy/1.png">
+<meta property="og:updated_time" content="2019-06-05T07:41:03.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="結構型模式 - 外觀模式">
-<meta name="twitter:description" content="外觀模式為子系統中的一組接口提供一個統一的高層接口，使得子系統更容易使用 建立 子類別public class Audioelectronics {     public void On() =&amp;gt;         Console.WriteLine(&amp;quot;Audioelectronics is On&amp;quot;);      public void Off() =&amp;gt;">
-<meta name="twitter:image" content="http://yoursite.com/2019/06/05/DesignPatternWithFacade/1.png">
+<meta name="twitter:title" content="結構型模式 - 代理模式">
+<meta name="twitter:description" content="代理模式為其他對象提供一種代理以控制對這個對象的訪問 建立 介面 IGiveGiftpublic interface IGiveGift {     void GiveDolls();     void GiveMoneyFlowers();     void GiveChocolate(); } 建立 類別 Favoritepublic class Favorite {     public s">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/05/DesignPatternWithProxy/1.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/05/DesignPatternWithFacade/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/05/DesignPatternWithProxy/">
 
 
 
 
 
-  <title>結構型模式 - 外觀模式 | D & E's Notes</title>
+  <title>結構型模式 - 代理模式 | D & E's Notes</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/05/DesignPatternWithFacade/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/05/DesignPatternWithProxy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">結構型模式 - 外觀模式</h1>
+          <h1 class="post-title" itemprop="name headline">結構型模式 - 代理模式</h1>
         
 
         <div class="post-meta">
@@ -284,7 +284,7 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-06-05T11:12:22+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-06-05T15:32:48+08:00">
                 2019-06-05
               </time>
             
@@ -344,113 +344,68 @@
       
 
       
-        <h1 id="外觀模式"><a href="#外觀模式" class="headerlink" title="外觀模式"></a>外觀模式</h1><p>為子系統中的一組接口提供一個統一的高層接口，使得子系統更容易使用<br><img src="/2019/06/05/DesignPatternWithFacade/1.png" alt="Architecture"></p>
-<h4 id="建立-子類別"><a href="#建立-子類別" class="headerlink" title="建立 子類別"></a>建立 子類別</h4><pre><code>public class Audioelectronics
+        <h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><p>為其他對象提供一種代理以控制對這個對象的訪問<br><img src="/2019/06/05/DesignPatternWithProxy/1.png" alt="Architecture"></p>
+<h4 id="建立-介面-IGiveGift"><a href="#建立-介面-IGiveGift" class="headerlink" title="建立 介面 IGiveGift"></a>建立 介面 <code>IGiveGift</code></h4><pre><code>public interface IGiveGift
 {
-    public void On() =&gt;
-        Console.WriteLine(&quot;Audioelectronics is On&quot;);
-
-    public void Off() =&gt;
-        Console.WriteLine(&quot;Audioelectronics is Off&quot;);
+    void GiveDolls();
+    void GiveMoneyFlowers();
+    void GiveChocolate();
 }
-
-public class PowerWindow
+</code></pre><h4 id="建立-類別-Favorite"><a href="#建立-類別-Favorite" class="headerlink" title="建立 類別 Favorite"></a>建立 類別 <code>Favorite</code></h4><pre><code>public class Favorite
 {
-    public void Up() =&gt;
-        Console.WriteLine(&quot;PowerWindow is Up&quot;);
-
-    public void Down() =&gt;
-        Console.WriteLine(&quot;PowerWindow is Down&quot;);
+    public string Name { get; set; }
 }
-
-public class SideviewMirror
+</code></pre><h4 id="建立-類別-Pursuit-繼承-IGiveGift"><a href="#建立-類別-Pursuit-繼承-IGiveGift" class="headerlink" title="建立 類別 Pursuit 繼承 IGiveGift"></a>建立 類別 <code>Pursuit</code> 繼承 <code>IGiveGift</code></h4><pre><code>public class Pursuit : IGiveGift
 {
-    public void Fold() =&gt;
-        Console.WriteLine(&quot;SideviewMirror is Fold&quot;);
+    Favorite favorite;
 
-    public void Unfold() =&gt;
-        Console.WriteLine(&quot;SideviewMirror is Unfold&quot;);
-}
-
-
-public class AirConditioning
-{
-    public void On() =&gt; 
-        Console.WriteLine(&quot;AirConditioning is On&quot;);
-
-    public void Off() =&gt; 
-        Console.WriteLine(&quot;AirConditioning is Off&quot;);
-
-    public void SetTemperature(int temperature) =&gt; 
-        Console.WriteLine($&quot;temperature is {temperature}&quot;);
-}
-</code></pre><h4 id="建立-類別"><a href="#建立-類別" class="headerlink" title="建立 類別"></a>建立 類別</h4><pre><code>public class ControlPanel
-{
-    private readonly Audioelectronics audioelectronics;
-    private readonly PowerWindow powerWindow;
-    private readonly SideviewMirror sideviewMirror;
-    private readonly AirConditioning airConditioning;
-
-    public ControlPanel(Audioelectronics audioelectronics, PowerWindow powerWindow,
-        SideviewMirror sideviewMirror, AirConditioning airConditioning)
+    public Pursuit(Favorite favorite)
     {
-        this.audioelectronics = audioelectronics;
-        this.powerWindow = powerWindow;
-        this.sideviewMirror = sideviewMirror;
-        this.airConditioning = airConditioning;
+        this.favorite = favorite;
     }
 
-    public void TurnOnEngine()
+    public void GiveDolls() =&gt; Console.WriteLine($&quot;送 {favorite.Name} 洋娃娃&quot;);
+    public void GiveMoneyFlowers() =&gt; Console.WriteLine($&quot;送 {favorite.Name} 錢摺的花&quot;);
+    public void GiveChocolate() =&gt; Console.WriteLine($&quot;送 {favorite.Name} 巧克力&quot;);
+}
+</code></pre><h4 id="建立-代理類別-FriendProxy-繼承-IGiveGift"><a href="#建立-代理類別-FriendProxy-繼承-IGiveGift" class="headerlink" title="建立 代理類別 FriendProxy 繼承 IGiveGift"></a>建立 代理類別 <code>FriendProxy</code> 繼承 <code>IGiveGift</code></h4><pre><code>public class FriendProxy : IGiveGift
+{
+    Pursuit pursuit;
+
+    public FriendProxy(Favorite favorite)
     {
-        Console.WriteLine(&quot;starting...&quot;);
-
-        audioelectronics.On();
-        powerWindow.Down();
-        sideviewMirror.Unfold();
-        airConditioning.On();
-        airConditioning.SetTemperature(23);
-
-        Console.WriteLine(&quot;Engine is started&quot;);
+        pursuit = new Pursuit(favorite);
     }
 
-    public void TurnOffEngine()
-    {
-        Console.WriteLine(&quot;Shutting down...&quot;);
-
-        audioelectronics.Off();
-        powerWindow.Up();
-        sideviewMirror.Fold();
-        airConditioning.Off();
-
-        Console.WriteLine(&quot;Engine is off&quot;);
-    }
+    public void GiveDolls() =&gt; pursuit.GiveDolls();
+    public void GiveMoneyFlowers() =&gt; pursuit.GiveMoneyFlowers();
+    public void GiveChocolate() =&gt; pursuit.GiveChocolate();
 }
 </code></pre><h4 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h4><pre><code>class Program
 {
     static void Main(string[] args)
     {
-        ControlPanel controlPanel = new ControlPanel(new Audioelectronics(), new PowerWindow(), 
-            new SideviewMirror(), new AirConditioning());
+        FriendProxy proxy = new FriendProxy(new Favorite() { Name = &quot;SomeOne&quot;});
 
-        controlPanel.TurnOnEngine();
-
-        controlPanel.TurnOffEngine();
+        proxy.GiveDolls();
+        proxy.GiveMoneyFlowers();
+        proxy.GiveChocolate();
 
         Console.ReadKey();
     }
 }
 </code></pre><h4 id="適用場景"><a href="#適用場景" class="headerlink" title="適用場景"></a>適用場景</h4><ol>
-<li>為一個複雜的子系統對外提供一個簡單的接口</li>
-<li>提供子系統的獨立性</li>
+<li>需要為一個對象再不同的地址空間提供局部的代表時</li>
 </ol>
 <h4 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h4><ol>
-<li>降低與子類別的耦合度，實現子類別與客戶之間的松耦合關係</li>
-<li>降低原有系統的複雜度和系統中的編譯依賴性，並簡化了系統在不同平台之間的移植過程</li>
+<li>協調調用者和被調用者，降低了系統的耦合度</li>
+<li>代理對象作為客戶端和目標對象之間的中介，起到了保護目標對象的作用</li>
 </ol>
 <h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ol>
-<li>不能很好地限制客戶使用子系統類，如果對客戶訪問子系統類做太多的限制則減少了可變性和靈活性</li>
+<li>由於在客戶端和真實主題之間增加了代理對象，因此會造成請求的處理速度變慢</li>
+<li>實現代理模式需要額外的工作，從而增加了系統實現的複雜度</li>
 </ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://dotblogs.com.tw/pin0513/2010/11/01/18721" target="_blank" rel="noopener">表象模式(Facade Pattern)</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://dotblogs.com.tw/atowngit/2010/03/09/13956" target="_blank" rel="noopener">[設計模式] 代理模式 (Proxy Pattern)</a><br><a href="https://www.cnblogs.com/zhili/p/ProxyPattern.html" target="_blank" rel="noopener">C#设计模式(13)——代理模式（Proxy Pattern）</a></p>
 
       
     </div>
@@ -481,8 +436,8 @@ public class AirConditioning
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/05/DesignPatternWithDecorator/" rel="next" title="結構型模式 - 裝飾模式">
-                <i class="fa fa-chevron-left"></i> 結構型模式 - 裝飾模式
+              <a href="/2019/06/05/DesignPatternWithFlyweight/" rel="next" title="結構型模式 - 享元模式">
+                <i class="fa fa-chevron-left"></i> 結構型模式 - 享元模式
               </a>
             
           </div>
@@ -490,10 +445,6 @@ public class AirConditioning
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/05/DesignPatternWithFlyweight/" rel="prev" title="結構型模式 - 享元模式">
-                結構型模式 - 享元模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -627,7 +578,7 @@ public class AirConditioning
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#外觀模式"><span class="nav-number">1.</span> <span class="nav-text">外觀模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-子類別"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立 子類別</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-類別"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立 類別</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代理模式"><span class="nav-number">1.</span> <span class="nav-text">代理模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-介面-IGiveGift"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立 介面 IGiveGift</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-類別-Favorite"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立 類別 Favorite</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-類別-Pursuit-繼承-IGiveGift"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">建立 類別 Pursuit 繼承 IGiveGift</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-代理類別-FriendProxy-繼承-IGiveGift"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">建立 代理類別 FriendProxy 繼承 IGiveGift</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
