@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Config,Session,">
+  <meta name="keywords" content="Behavioral,">
 
 
 
@@ -79,23 +79,20 @@
 
 
 
-<meta name="description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
-<meta name="keywords" content="Config,Session">
+<meta name="description" content="迭代器模式提供一種方法順序訪問一個聚合對象中的各種元素，而又不暴露該對象的內部表示 建立 介面 Iterator 及 IListCollectionpublic interface Iterator {     bool MoveNext();      object GetCurrent();      void Next();      void Reset(); }  public inte">
+<meta name="keywords" content="Behavioral">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Session 使用 SQLServer">
-<meta property="og:url" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/index.html">
+<meta property="og:title" content="行為型模式 - 迭代器模式">
+<meta property="og:url" content="http://yoursite.com/2019/06/06/DesignPatternWithIterator/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
+<meta property="og:description" content="迭代器模式提供一種方法順序訪問一個聚合對象中的各種元素，而又不暴露該對象的內部表示 建立 介面 Iterator 及 IListCollectionpublic interface Iterator {     bool MoveNext();      object GetCurrent();      void Next();      void Reset(); }  public inte">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/4.png">
-<meta property="og:updated_time" content="2019-04-29T08:49:18.115Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/06/DesignPatternWithIterator/1.png">
+<meta property="og:updated_time" content="2019-06-06T09:23:16.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Session 使用 SQLServer">
-<meta name="twitter:description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/1.png">
+<meta name="twitter:title" content="行為型模式 - 迭代器模式">
+<meta name="twitter:description" content="迭代器模式提供一種方法順序訪問一個聚合對象中的各種元素，而又不暴露該對象的內部表示 建立 介面 Iterator 及 IListCollectionpublic interface Iterator {     bool MoveNext();      object GetCurrent();      void Next();      void Reset(); }  public inte">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/06/DesignPatternWithIterator/1.png">
 
 
 
@@ -125,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/06/DesignPatternWithIterator/">
 
 
 
 
 
-  <title>Session 使用 SQLServer | D & E's Notes</title>
+  <title>行為型模式 - 迭代器模式 | D & E's Notes</title>
   
 
 
@@ -258,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/06/DesignPatternWithIterator/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -275,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Session 使用 SQLServer</h1>
+          <h1 class="post-title" itemprop="name headline">行為型模式 - 迭代器模式</h1>
         
 
         <div class="post-meta">
@@ -287,8 +284,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-29T12:05:44+08:00">
-                2019-04-29
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-06-06T17:15:52+08:00">
+                2019-06-06
               </time>
             
 
@@ -310,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ASP-Net/" itemprop="url" rel="index">
-                    <span itemprop="name">ASP.Net</span>
+                  <a href="/categories/Design-Pattern/" itemprop="url" rel="index">
+                    <span itemprop="name">Design Pattern</span>
                   </a>
                 </span>
 
@@ -347,13 +344,100 @@
       
 
       
-        <h1 id="建置-Database"><a href="#建置-Database" class="headerlink" title="建置 Database"></a>建置 Database</h1><h3 id="使用-aspnet-regsql-ext-工具建立"><a href="#使用-aspnet-regsql-ext-工具建立" class="headerlink" title="使用 aspnet_regsql.ext 工具建立"></a>使用 aspnet_regsql.ext 工具建立</h3><p>複製路徑 <code>C:\Windows\Microsoft.NET\Framework64\v4.0.30319</code><br>命令提示字元輸入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> C:\Windows\Microsoft.NET\Framework64\v4.0.30319</span><br><span class="line">$ aspnet_regsql.exe -S &lt;serverIP&gt; -U &lt;userName&gt; -P &lt;strongPassword&gt; -ssadd -sstype p</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/1.png" alt="SQLConnectionOptions"><br><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/2.png" alt="SessionStateOptions"></p>
-<p>可看到資料庫已建置完成<br><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/3.png" alt="CreateTable"></p>
-<h1 id="修改-Web-Config"><a href="#修改-Web-Config" class="headerlink" title="修改 Web.Config"></a>修改 Web.Config</h1><p><strong>Web.Config</strong> 裡的 <code>system.web</code> 區塊 <code>seesionState</code> 修改</p>
-<pre><code>&lt;sessionState mode=&quot;SQLServer&quot; allowCustomSqlDatabase=&quot;true&quot; sqlConnectionString=&quot;data source=&lt;serverIP&gt;;initial catalog=ASPState;user id=&lt;userName&gt;;password=&lt;strongPassword&gt;&quot;  sqlCommandTimeout=&quot;60&quot; cookieless=&quot;false&quot; cookieName=&quot;ASP.NET_SessionId&quot; timeout=&quot;60&quot;/&gt;
-</code></pre><p><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/4.png" alt="SelectTable"></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://docs.microsoft.com/en-us/previous-versions/ms229862(v=vs.100)" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/previous-versions/ms229862(v=vs.100)</a><br><a href="https://www.youtube.com/watch?v=o-8vjQu6SmI" target="_blank" rel="noopener">SQLServer asp.net session state mode management Part 66</a><br><a href="https://blog.miniasp.com/post/2011/09/13/Configure-SQL-Server-Session-State-Modes-for-ASPNET" target="_blank" rel="noopener">如何設定與啟用 ASP.NET 的 SQLServer 工作階段狀態模式</a><br><a href="http://kyleap.blogspot.com/2013/12/aspnetiissession.html" target="_blank" rel="noopener">相同的IIS，讓多個網站共用Session資訊</a></p>
+        <h1 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h1><p>提供一種方法順序訪問一個聚合對象中的各種元素，而又不暴露該對象的內部表示<br><img src="/2019/06/06/DesignPatternWithIterator/1.png" alt="Architecture"></p>
+<h4 id="建立-介面-Iterator-及-IListCollection"><a href="#建立-介面-Iterator-及-IListCollection" class="headerlink" title="建立 介面 Iterator 及 IListCollection"></a>建立 介面 <code>Iterator</code> 及 <code>IListCollection</code></h4><pre><code>public interface Iterator
+{
+    bool MoveNext();
+
+    object GetCurrent();
+
+    void Next();
+
+    void Reset();
+}
+
+public interface IListCollection
+{
+    Iterator GetIterator();
+}
+</code></pre><h4 id="建立一個-類別-ConcreteList-繼承-IListCollection"><a href="#建立一個-類別-ConcreteList-繼承-IListCollection" class="headerlink" title="建立一個 類別 ConcreteList 繼承 IListCollection"></a>建立一個 類別 <code>ConcreteList</code> 繼承 <code>IListCollection</code></h4><pre><code>public class ConcreteList : IListCollection
+{
+    int[] collection;
+
+    public ConcreteList()
+    {
+        this.collection = new int[] { 1, 2, 3, 4, 5, 6 };
+    }
+
+    public Iterator GetIterator() =&gt; new ConcreteIterator(this);
+
+    public int Length =&gt; this.collection.Length;
+
+    public int GetElement(int index) =&gt; this.collection[index];
+}
+</code></pre><h4 id="建立一個-類別-ConcreteIterator-繼承-Iterator"><a href="#建立一個-類別-ConcreteIterator-繼承-Iterator" class="headerlink" title="建立一個 類別 ConcreteIterator 繼承 Iterator"></a>建立一個 類別 <code>ConcreteIterator</code> 繼承 <code>Iterator</code></h4><pre><code>public class ConcreteIterator : Iterator
+{
+    private ConcreteList list;
+    private int index;
+
+    public ConcreteIterator(ConcreteList list)
+    {
+        this.list = list;
+        this.index = 0;
+    }
+
+    public bool MoveNext()
+    {
+        if (this.index &lt; this.list.Length)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public object GetCurrent() =&gt; this.list.GetElement(this.index);
+
+    public void Reset() =&gt; this.index = 0;
+
+    public void Next()
+    {
+        if (this.index &lt; this.list.Length)
+        {
+            this.index++;
+        }
+    }
+}
+</code></pre><h4 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h4><pre><code>class Program
+{
+    static void Main(string[] args)
+    {
+        Iterator iterator;
+        IListCollection list = new ConcreteList();
+        iterator = list.GetIterator();
+        int i = 0;
+
+        while (iterator.MoveNext())
+        {
+            i = (int)iterator.GetCurrent();
+            Console.WriteLine(i.ToString());
+            iterator.Next();
+        }
+
+        Console.ReadKey();
+    }
+}
+</code></pre><h4 id="適用場景"><a href="#適用場景" class="headerlink" title="適用場景"></a>適用場景</h4><ol>
+<li>訪問一個聚合對象的內容而無需暴露它的內部表示</li>
+<li>支持對聚合對象的多種遍歷</li>
+</ol>
+<h4 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h4><ol>
+<li>迭代器模式使得訪問一個聚合對象的內容而無需暴露它的內部表示</li>
+<li>迭代器模式為遍歷不同的集合結構提供了一個統一的接口，從而支持同樣的算法在不同的集合結構上進行操作</li>
+</ol>
+<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ol>
+<li>迭代器模式在遍歷的同時更改迭代器所在的集合結構會導致出現異常。所以使用的foreach語句只能在對集合進行遍歷，不能在遍歷的同時更改集合中的元素</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zh.wikipedia.org/wiki/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">維基百科-疊代器模式</a><br><a href="https://blog.csdn.net/heyangyi_19940703/article/details/51330510" target="_blank" rel="noopener">C#设计模式-迭代器模式</a></p>
 
       
     </div>
@@ -371,9 +455,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Config/" rel="tag"># Config</a>
-          
-            <a href="/tags/Session/" rel="tag"># Session</a>
+            <a href="/tags/Behavioral/" rel="tag"># Behavioral</a>
           
         </div>
       
@@ -386,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/26/NetworkLoadBalancing/" rel="next" title="NLB 網路負載平衡">
-                <i class="fa fa-chevron-left"></i> NLB 網路負載平衡
+              <a href="/2019/06/06/DesignPatternWithInterpreter/" rel="next" title="行為型模式 - 解釋器模式">
+                <i class="fa fa-chevron-left"></i> 行為型模式 - 解釋器模式
               </a>
             
           </div>
@@ -395,10 +477,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/29/AspNetSessionStateUsingRedis/" rel="prev" title="Session 使用 Redis">
-                Session 使用 Redis <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -532,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#建置-Database"><span class="nav-number">1.</span> <span class="nav-text">建置 Database</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-aspnet-regsql-ext-工具建立"><span class="nav-number">1.0.1.</span> <span class="nav-text">使用 aspnet_regsql.ext 工具建立</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#修改-Web-Config"><span class="nav-number">2.</span> <span class="nav-text">修改 Web.Config</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#迭代器模式"><span class="nav-number">1.</span> <span class="nav-text">迭代器模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-介面-Iterator-及-IListCollection"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立 介面 Iterator 及 IListCollection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-ConcreteList-繼承-IListCollection"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立一個 類別 ConcreteList 繼承 IListCollection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-ConcreteIterator-繼承-Iterator"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">建立一個 類別 ConcreteIterator 繼承 Iterator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
