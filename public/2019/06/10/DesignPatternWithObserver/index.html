@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,">
+  <meta name="keywords" content="Behavioral,">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="更換主題安裝 NexT使用 Git checkout1$ git clone https://github.com/iissnan/hexo-theme-next themes/next config 設定根目錄 _config.yml 修改 themetheme: next Schemes 設定themes/next/_config.yml 修改 Schemes#Schemes&amp;emsp;&amp;em">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="觀察者模式一對多的依賴關系，讓多個觀察者對象同時監聽某一個主題對象 建立 介面public interface IObserver {     void Update(string message); } public interface IObserverable {     void Add(IObserver observer);     void Remove(IObserver obse">
+<meta name="keywords" content="Behavioral">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 更換主題 NexT">
-<meta property="og:url" content="http://yoursite.com/2019/04/26/HexoChangeThemeWithNexT/index.html">
+<meta property="og:title" content="行為型模式 - 觀察者模式">
+<meta property="og:url" content="http://yoursite.com/2019/06/10/DesignPatternWithObserver/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="更換主題安裝 NexT使用 Git checkout1$ git clone https://github.com/iissnan/hexo-theme-next themes/next config 設定根目錄 _config.yml 修改 themetheme: next Schemes 設定themes/next/_config.yml 修改 Schemes#Schemes&amp;emsp;&amp;em">
+<meta property="og:description" content="觀察者模式一對多的依賴關系，讓多個觀察者對象同時監聽某一個主題對象 建立 介面public interface IObserver {     void Update(string message); } public interface IObserverable {     void Add(IObserver observer);     void Remove(IObserver obse">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-04-26T06:32:57.445Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/10/DesignPatternWithObserver/1.png">
+<meta property="og:updated_time" content="2019-06-10T07:12:42.133Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 更換主題 NexT">
-<meta name="twitter:description" content="更換主題安裝 NexT使用 Git checkout1$ git clone https://github.com/iissnan/hexo-theme-next themes/next config 設定根目錄 _config.yml 修改 themetheme: next Schemes 設定themes/next/_config.yml 修改 Schemes#Schemes&amp;emsp;&amp;em">
+<meta name="twitter:title" content="行為型模式 - 觀察者模式">
+<meta name="twitter:description" content="觀察者模式一對多的依賴關系，讓多個觀察者對象同時監聽某一個主題對象 建立 介面public interface IObserver {     void Update(string message); } public interface IObserverable {     void Add(IObserver observer);     void Remove(IObserver obse">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/10/DesignPatternWithObserver/1.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/26/HexoChangeThemeWithNexT/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/10/DesignPatternWithObserver/">
 
 
 
 
 
-  <title>Hexo 更換主題 NexT | D & E's Notes</title>
+  <title>行為型模式 - 觀察者模式 | D & E's Notes</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/26/HexoChangeThemeWithNexT/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/DesignPatternWithObserver/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo 更換主題 NexT</h1>
+          <h1 class="post-title" itemprop="name headline">行為型模式 - 觀察者模式</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-26T11:39:07+08:00">
-                2019-04-26
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-06-10T14:57:47+08:00">
+                2019-06-10
               </time>
             
 
@@ -305,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Blog/" itemprop="url" rel="index">
-                    <span itemprop="name">Blog</span>
+                  <a href="/categories/Design-Pattern/" itemprop="url" rel="index">
+                    <span itemprop="name">Design Pattern</span>
                   </a>
                 </span>
 
@@ -342,17 +344,89 @@
       
 
       
-        <h1 id="更換主題"><a href="#更換主題" class="headerlink" title="更換主題"></a>更換主題</h1><h3 id="安裝-NexT"><a href="#安裝-NexT" class="headerlink" title="安裝 NexT"></a>安裝 NexT</h3><p>使用 <strong>Git checkout</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
-<h3 id="config-設定"><a href="#config-設定" class="headerlink" title="config 設定"></a>config 設定</h3><p>根目錄 <code>_config.yml</code> 修改 <strong>theme</strong><br><div class="note default"><p>theme: next</p></div></p>
-<h3 id="Schemes-設定"><a href="#Schemes-設定" class="headerlink" title="Schemes 設定"></a>Schemes 設定</h3><p><code>themes/next/_config.yml</code> 修改 <strong>Schemes</strong><br><div class="note default"><p>#Schemes<br>&emsp;&emsp;scheme: Muse<br>&emsp;&emsp;#scheme: Mist<br>&emsp;&emsp;#scheme: Pisces<br>&emsp;&emsp;#scheme: Gemini</p></div></p>
-<h3 id="menu-設定"><a href="#menu-設定" class="headerlink" title="menu 設定"></a>menu 設定</h3><p>將需要的打開<br><div class="note default"><p>menu:<br>&emsp;&emsp;home: / || home<br>&emsp;&emsp;#about: /about/ || user<br>&emsp;&emsp;tags: /tags/ || tags<br>&emsp;&emsp;categories: /categories/ || th<br>&emsp;&emsp;archives: /archives/ || archive<br>&emsp;&emsp;#schedule: /schedule/ || calendar<br>&emsp;&emsp;#sitemap: /sitemap.xml || sitemap<br>&emsp;&emsp;#commonweal: /404/ || heartbeat</p></div></p>
-<h3 id="sidebar-設定"><a href="#sidebar-設定" class="headerlink" title="sidebar 設定"></a>sidebar 設定</h3><div class="note default"><p>sidebar:<br>&emsp;&emsp;position: left</p></div>
-<h3 id="新增-menu-對應資料"><a href="#新增-menu-對應資料" class="headerlink" title="新增 menu 對應資料"></a>新增 menu 對應資料</h3><p>增加 <strong>tags</strong>，在 <code>/source/</code> 下產生相對應資料<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"tags"</span></span><br></pre></td></tr></table></figure></p>
-<div class="note default"><p>修改 <code>title: 標籤</code><br>/source/tags/index.md 加入 <code>type: &quot;tags&quot;</code></p></div>
-<p>增加 <strong>categories</strong>，在 <code>/source/</code> 下產生相對應資料<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure></p>
-<div class="note default"><p>修改 <code>title: 分類</code><br>/source/categories/index.md 加入 <code>type: &quot;categories&quot;</code></p></div>
-<h3 id="新增文章"><a href="#新增文章" class="headerlink" title="新增文章"></a>新增文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">"Title-1"</span></span><br></pre></td></tr></table></figure>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="noopener">Hexo</a><br><a href="https://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT</a><br><a href="https://ithelp.ithome.com.tw/articles/10207997" target="_blank" rel="noopener">Hexo - 前端也能建置部落格！更換主題與發表文章篇</a></p>
+        <h1 id="觀察者模式"><a href="#觀察者模式" class="headerlink" title="觀察者模式"></a>觀察者模式</h1><p>一對多的依賴關系，讓多個觀察者對象同時監聽某一個主題對象<br><img src="/2019/06/10/DesignPatternWithObserver/1.png" alt="Architecture"></p>
+<h4 id="建立-介面"><a href="#建立-介面" class="headerlink" title="建立 介面"></a>建立 介面</h4><pre><code>public interface IObserver
+{
+    void Update(string message);
+}
+public interface IObserverable
+{
+    void Add(IObserver observer);
+    void Remove(IObserver observer);
+    void NotifyObservers(string content);
+}
+</code></pre><h4 id="建立一個-類別-Subject-繼承-IObserverable"><a href="#建立一個-類別-Subject-繼承-IObserverable" class="headerlink" title="建立一個 類別 Subject 繼承 IObserverable"></a>建立一個 類別 <code>Subject</code> 繼承 <code>IObserverable</code></h4><pre><code>public class Subject : IObserverable
+{
+    List&lt;IObserver&gt; observers;
+    public string Name = &quot;Youtube&quot;;
+
+    public Subject()
+    {
+        this.observers = new List&lt;IObserver&gt;();
+    }
+
+    public void Add(IObserver observer)
+    {
+        this.observers.Add(observer);
+    }
+
+    public void Remove(IObserver observer)
+    {
+        if (this.observers.IndexOf(observer) &gt;=0)
+        {
+            this.observers.Remove(observer);
+        }
+    }
+
+    public void NotifyObservers(string content)
+    {
+        foreach(IObserver observer in this.observers)
+        {
+            observer.Update(content);
+        }
+    }
+}
+</code></pre><h4 id="建立一個-類別-Customer-繼承-IObserver"><a href="#建立一個-類別-Customer-繼承-IObserver" class="headerlink" title="建立一個 類別 Customer 繼承 IObserver"></a>建立一個 類別 <code>Customer</code> 繼承 <code>IObserver</code></h4><pre><code>public class Customer : IObserver
+{
+    public string Name { get; set; }
+
+    public Customer(string name)
+    {
+        this.Name = name;
+    }
+
+    public void Update(string message)
+    {
+        Console.WriteLine($&quot;{this.Name} used channel from {message}&quot;);
+    }
+}
+</code></pre><h4 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h4><pre><code>class Program
+{
+    static void Main(string[] args)
+    {
+        Subject subject = new Subject();
+        IObserver customer = new Customer(&quot;Joey&quot;);
+        subject.Add(customer);
+
+        IObserver customer1 = new Customer(&quot;Ross&quot;);
+        subject.Add(customer1);
+        subject.NotifyObservers(&quot;Youtube&quot;);
+
+        Console.ReadKey();
+    }
+}
+</code></pre><h4 id="適用場景"><a href="#適用場景" class="headerlink" title="適用場景"></a>適用場景</h4><ol>
+<li>當對一個對象的改變需要同時改變其他對象，而又不知道具體有多少對象有待改變的情況下</li>
+<li>當一個對象必須通知其他對象，而又不能假定其他對象是誰的情況下</li>
+</ol>
+<h4 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h4><ol>
+<li>可以有各種各樣不同的表示層</li>
+<li>抽象主題只依賴於抽象觀察者</li>
+</ol>
+<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ol>
+<li>如果某些觀察者的響應方法被阻塞，整個通知過程即被阻塞，其它觀察者不能及時被通知</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zh.wikipedia.org/wiki/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">維基百科-觀察者模式</a></p>
 
       
     </div>
@@ -370,7 +444,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/Behavioral/" rel="tag"># Behavioral</a>
           
         </div>
       
@@ -383,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/26/HexoAndGithubCreateBlog/" rel="next" title="使用 Hexo 及 GitHub 建立 Blog">
-                <i class="fa fa-chevron-left"></i> 使用 Hexo 及 GitHub 建立 Blog
+              <a href="/2019/06/10/DesignPatternWithMemento/" rel="next" title="行為型模式 - 備忘錄模式">
+                <i class="fa fa-chevron-left"></i> 行為型模式 - 備忘錄模式
               </a>
             
           </div>
@@ -393,8 +467,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/26/HexoRecoveryFromGitHub/" rel="prev" title="Hexo 從 GitHub 還原">
-                Hexo 從 GitHub 還原 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/10/AspNetDelegateAdvanced/" rel="prev" title="C# Delegate、Action、Func、Predicate">
+                C# Delegate、Action、Func、Predicate <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -529,7 +603,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更換主題"><span class="nav-number">1.</span> <span class="nav-text">更換主題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝-NexT"><span class="nav-number">1.0.1.</span> <span class="nav-text">安裝 NexT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#config-設定"><span class="nav-number">1.0.2.</span> <span class="nav-text">config 設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Schemes-設定"><span class="nav-number">1.0.3.</span> <span class="nav-text">Schemes 設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#menu-設定"><span class="nav-number">1.0.4.</span> <span class="nav-text">menu 設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sidebar-設定"><span class="nav-number">1.0.5.</span> <span class="nav-text">sidebar 設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增-menu-對應資料"><span class="nav-number">1.0.6.</span> <span class="nav-text">新增 menu 對應資料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增文章"><span class="nav-number">1.0.7.</span> <span class="nav-text">新增文章</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#觀察者模式"><span class="nav-number">1.</span> <span class="nav-text">觀察者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-介面"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立 介面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Subject-繼承-IObserverable"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立一個 類別 Subject 繼承 IObserverable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Customer-繼承-IObserver"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">建立一個 類別 Customer 繼承 IObserver</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
