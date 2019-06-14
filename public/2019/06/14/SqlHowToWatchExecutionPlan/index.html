@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Creational,">
+  <meta name="keywords" content="Performance,">
 
 
 
@@ -79,20 +79,26 @@
 
 
 
-<meta name="description" content="建造者模式是一種對象構建模式。它可以將複雜對象的建造過程抽象出來（抽象類別），使這個抽象過程的不同實現方法可以構造出不同表現（屬性）的對象 建立一個 產品角色 Productpublic class Pizza {     private List&amp;lt;string&amp;gt; parts = new List&amp;lt;string&amp;gt;();      public void Add(string">
-<meta name="keywords" content="Creational">
+<meta name="description" content="查看執行計畫 查看方式從右到左(平行處理)  減少資料量資料量越大，箭頭會越粗，盡可能篩選出所需資料  耗費成本針對成本比例高的地方進行調效  避免型態轉換型別不同 Join 條件或 Where 條件  警告訊息  避免排序">
+<meta name="keywords" content="Performance">
 <meta property="og:type" content="article">
-<meta property="og:title" content="創建型模式 - 建造者模式">
-<meta property="og:url" content="http://yoursite.com/2019/05/14/DesignPatternWithBuilder/index.html">
+<meta property="og:title" content="SQL Server - 查看執行計畫">
+<meta property="og:url" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="建造者模式是一種對象構建模式。它可以將複雜對象的建造過程抽象出來（抽象類別），使這個抽象過程的不同實現方法可以構造出不同表現（屬性）的對象 建立一個 產品角色 Productpublic class Pizza {     private List&amp;lt;string&amp;gt; parts = new List&amp;lt;string&amp;gt;();      public void Add(string">
+<meta property="og:description" content="查看執行計畫 查看方式從右到左(平行處理)  減少資料量資料量越大，箭頭會越粗，盡可能篩選出所需資料  耗費成本針對成本比例高的地方進行調效  避免型態轉換型別不同 Join 條件或 Where 條件  警告訊息  避免排序">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/05/14/DesignPatternWithBuilder/1.jpg">
-<meta property="og:updated_time" content="2019-05-16T01:16:48.402Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/7.png">
+<meta property="og:updated_time" content="2019-06-14T08:58:08.112Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="創建型模式 - 建造者模式">
-<meta name="twitter:description" content="建造者模式是一種對象構建模式。它可以將複雜對象的建造過程抽象出來（抽象類別），使這個抽象過程的不同實現方法可以構造出不同表現（屬性）的對象 建立一個 產品角色 Productpublic class Pizza {     private List&amp;lt;string&amp;gt; parts = new List&amp;lt;string&amp;gt;();      public void Add(string">
-<meta name="twitter:image" content="http://yoursite.com/2019/05/14/DesignPatternWithBuilder/1.jpg">
+<meta name="twitter:title" content="SQL Server - 查看執行計畫">
+<meta name="twitter:description" content="查看執行計畫 查看方式從右到左(平行處理)  減少資料量資料量越大，箭頭會越粗，盡可能篩選出所需資料  耗費成本針對成本比例高的地方進行調效  避免型態轉換型別不同 Join 條件或 Where 條件  警告訊息  避免排序">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/1.png">
 
 
 
@@ -122,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/14/DesignPatternWithBuilder/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/">
 
 
 
 
 
-  <title>創建型模式 - 建造者模式 | D & E's Notes</title>
+  <title>SQL Server - 查看執行計畫 | D & E's Notes</title>
   
 
 
@@ -255,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/DesignPatternWithBuilder/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -272,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">創建型模式 - 建造者模式</h1>
+          <h1 class="post-title" itemprop="name headline">SQL Server - 查看執行計畫</h1>
         
 
         <div class="post-meta">
@@ -284,8 +290,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-05-14T17:18:49+08:00">
-                2019-05-14
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-06-14T14:20:36+08:00">
+                2019-06-14
               </time>
             
 
@@ -307,8 +313,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Design-Pattern/" itemprop="url" rel="index">
-                    <span itemprop="name">Design Pattern</span>
+                  <a href="/categories/MS-SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MS SQL</span>
                   </a>
                 </span>
 
@@ -344,95 +350,20 @@
       
 
       
-        <h1 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h1><p>是一種對象構建模式。它可以將複雜對象的建造過程抽象出來（抽象類別），使這個抽象過程的不同實現方法可以構造出不同表現（屬性）的對象<br><img src="/2019/05/14/DesignPatternWithBuilder/1.jpg" alt="Architecture"></p>
-<h4 id="建立一個-產品角色-Product"><a href="#建立一個-產品角色-Product" class="headerlink" title="建立一個 產品角色 Product"></a>建立一個 產品角色 <code>Product</code></h4><pre><code>public class Pizza
-{
-    private List&lt;string&gt; parts = new List&lt;string&gt;();
-
-    public void Add(string part) =&gt; this.parts.Add(part);
-
-    public void Show()
-    {
-        this.parts.ForEach(x =&gt; Console.WriteLine($&quot;材料 {x} 備好了！&quot;));
-
-        Console.WriteLine(&quot;可以烤了！&quot;);
-    }
-}
-</code></pre><h4 id="建立一個-抽象建造者-Builder"><a href="#建立一個-抽象建造者-Builder" class="headerlink" title="建立一個 抽象建造者 Builder"></a>建立一個 抽象建造者 <code>Builder</code></h4><pre><code>public abstract class PizzaBuilder
-{
-    public abstract void BuildDough();
-    public abstract void BuildSauce();
-    public abstract void BuildTopping();
-    public abstract Pizza GetPizza();
-}
-</code></pre><h4 id="建立一個-具體建造者-ConcreteBuilder-繼承-Builder"><a href="#建立一個-具體建造者-ConcreteBuilder-繼承-Builder" class="headerlink" title="建立一個 具體建造者 ConcreteBuilder 繼承 Builder"></a>建立一個 具體建造者 <code>ConcreteBuilder</code> 繼承 <code>Builder</code></h4><pre><code>public class HawaiianPizzaBuilder : PizzaBuilder
-{
-    Pizza pizza = new Pizza();
-    public override void BuildDough() =&gt; this.pizza.Add(&quot;Dough cross&quot;);
-
-    public override void BuildSauce() =&gt; this.pizza.Add(&quot;Sauce mild&quot;);
-
-    public override void BuildTopping() =&gt; this.pizza.Add(&quot;Topping ham + pineapple&quot;);
-
-    public override Pizza GetPizza() =&gt; this.pizza;
-}
-
-public class SpicyPizzaBuilder : PizzaBuilder
-{
-    Pizza pizza = new Pizza();
-    public override void BuildDough() =&gt; this.pizza.Add(&quot;Dough pan baked&quot;);
-
-    public override void BuildSauce() =&gt; this.pizza.Add(&quot;Sauce hot&quot;);
-
-    public override void BuildTopping() =&gt; this.pizza.Add(&quot;Topping pepperoni + salami&quot;);
-
-    public override Pizza GetPizza() =&gt; this.pizza;
-}
-</code></pre><h4 id="建立一個-指揮者-Director"><a href="#建立一個-指揮者-Director" class="headerlink" title="建立一個 指揮者 Director"></a>建立一個 指揮者 <code>Director</code></h4><pre><code>public class Waiter
-{
-    public void ConstructPizza(PizzaBuilder pizzaBuilder)
-    {
-        pizzaBuilder.BuildDough();
-        pizzaBuilder.BuildSauce();
-        pizzaBuilder.BuildTopping();
-    }
-}
-</code></pre><h4 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h4><pre><code>class Program
-{
-    static void Main(string[] args)
-    {
-        Waiter waiter = new Waiter();
-        PizzaBuilder hawaiian_pizzabuilder = new HawaiianPizzaBuilder();
-        PizzaBuilder spicy_pizzabuilder = new SpicyPizzaBuilder();
-
-        waiter.ConstructPizza(hawaiian_pizzabuilder);
-        waiter.ConstructPizza(spicy_pizzabuilder);
-
-        Pizza pizza = hawaiian_pizzabuilder.GetPizza();
-        pizza.Show();
-
-        Console.WriteLine(&quot;======================&quot;);
-
-        Pizza pizza2 = spicy_pizzabuilder.GetPizza();
-        pizza2.Show();
-
-        Console.ReadKey();
-    }
-}
-</code></pre><h4 id="適用場景"><a href="#適用場景" class="headerlink" title="適用場景"></a>適用場景</h4><ol>
-<li>當創建複雜對象的算法應該獨立於該對象的組成部分以及它們的裝配方式時</li>
-<li>當構造過程必須允許被構造的對象有不同的表示時</li>
+        <h1 id="查看執行計畫"><a href="#查看執行計畫" class="headerlink" title="查看執行計畫"></a>查看執行計畫</h1><ol>
+<li><p>查看方式<br>從右到左(平行處理)<br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/1.png" alt="Architecture"></p>
+</li>
+<li><p>減少資料量<br>資料量越大，箭頭會越粗，盡可能篩選出所需資料<br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/2.png" alt="Architecture"></p>
+</li>
+<li><p>耗費成本<br>針對成本比例高的地方進行調效<br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/3.png" alt="Architecture"></p>
+</li>
+<li><p>避免型態轉換<br>型別不同 <code>Join</code> 條件或 <code>Where</code> 條件<br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/4.png" alt="Architecture"><br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/5.png" alt="Architecture"></p>
+</li>
+<li><p>警告訊息<br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/6.png" alt="Architecture"></p>
+</li>
+<li><p>避免排序<br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/7.png" alt="Architecture"></p>
+</li>
 </ol>
-<h4 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h4><ol>
-<li>將產品本身與產品創建過程進行解耦，可以使用相同的創建過程來得到不同的產品。也就說細節依賴抽象</li>
-<li>將複雜產品的創建步驟分解在不同的方法中，使得創建過程更加清晰</li>
-<li>增加新的具體建造者無需修改原有類庫的代碼，易於拓展，符合”開閉原則”</li>
-</ol>
-<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ol>
-<li>建造者模式所創建的產品一般具有較多的共同點，其組成部分相似;如果產品之間的差異性很大，則不適合使用建造者模式，因此其使用範圍受到一定的限制</li>
-<li>如果產品的內部變化複雜，可能會導致需要定義很多具體建造者類來實現這種變化，導致系統變得很龐大</li>
-</ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zh.wikipedia.org/wiki/%E7%94%9F%E6%88%90%E5%99%A8%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">維基百科-生成器模式</a><br><a href="https://www.bookstack.cn/read/Design-Pattern/lesson14-README.md" target="_blank" rel="noopener">建造者模式(Builder Pattern)</a><br><a href="https://blog.csdn.net/carson_ho/article/details/54910597" target="_blank" rel="noopener">建造者模式（Builder Pattern）- 最易懂的设计模式解析</a></p>
 
       
     </div>
@@ -450,7 +381,7 @@ public class SpicyPizzaBuilder : PizzaBuilder
       
         <div class="post-tags">
           
-            <a href="/tags/Creational/" rel="tag"># Creational</a>
+            <a href="/tags/Performance/" rel="tag"># Performance</a>
           
         </div>
       
@@ -463,8 +394,8 @@ public class SpicyPizzaBuilder : PizzaBuilder
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/14/DesignPatternWithAbstractFactory/" rel="next" title="創建型模式 - 抽象工廠模式">
-                <i class="fa fa-chevron-left"></i> 創建型模式 - 抽象工廠模式
+              <a href="/2019/06/14/SqlGetAllTableNameAndColumn/" rel="next" title="SQL Server - 取得所有資料表及欄位">
+                <i class="fa fa-chevron-left"></i> SQL Server - 取得所有資料表及欄位
               </a>
             
           </div>
@@ -472,10 +403,6 @@ public class SpicyPizzaBuilder : PizzaBuilder
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/15/DesignPatternWithPrototype/" rel="prev" title="創建型模式 - 原型模式">
-                創建型模式 - 原型模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -609,7 +536,7 @@ public class SpicyPizzaBuilder : PizzaBuilder
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#建造者模式"><span class="nav-number">1.</span> <span class="nav-text">建造者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-產品角色-Product"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立一個 產品角色 Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-抽象建造者-Builder"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立一個 抽象建造者 Builder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-具體建造者-ConcreteBuilder-繼承-Builder"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">建立一個 具體建造者 ConcreteBuilder 繼承 Builder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-指揮者-Director"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">建立一個 指揮者 Director</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查看執行計畫"><span class="nav-number">1.</span> <span class="nav-text">查看執行計畫</span></a></li></ol></div>
             
 
           </div>
