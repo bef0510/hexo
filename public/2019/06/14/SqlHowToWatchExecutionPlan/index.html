@@ -79,25 +79,26 @@
 
 
 
-<meta name="description" content="查看執行計畫 查看方式從右到左(平行處理)  減少資料量資料量越大，箭頭會越粗，盡可能篩選出所需資料  耗費成本針對成本比例高的地方進行調效  避免型態轉換型別不同 Join 條件或 Where 條件  警告訊息  避免排序">
+<meta name="description" content="查看執行計畫 查看方式從右到左(平行處理)  Index 是否正確一般來說 Seek 比 Scan 快，若撈出的資料量很大，資料庫覺得掃描比搜尋更有效率，會自行用掃描  減少資料量資料量越大，箭頭會越粗，盡可能篩選出所需資料  耗費成本針對成本比例高的地方進行調效  避免型態轉換型別不同 Join 條件或 Where 條件  警告訊息  避免排序   ReferenceSSMS–執行計畫SQL S">
 <meta name="keywords" content="Performance">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL Server - 查看執行計畫">
 <meta property="og:url" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="查看執行計畫 查看方式從右到左(平行處理)  減少資料量資料量越大，箭頭會越粗，盡可能篩選出所需資料  耗費成本針對成本比例高的地方進行調效  避免型態轉換型別不同 Join 條件或 Where 條件  警告訊息  避免排序">
+<meta property="og:description" content="查看執行計畫 查看方式從右到左(平行處理)  Index 是否正確一般來說 Seek 比 Scan 快，若撈出的資料量很大，資料庫覺得掃描比搜尋更有效率，會自行用掃描  減少資料量資料量越大，箭頭會越粗，盡可能篩選出所需資料  耗費成本針對成本比例高的地方進行調效  避免型態轉換型別不同 Join 條件或 Where 條件  警告訊息  避免排序   ReferenceSSMS–執行計畫SQL S">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/8.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/2.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/3.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/4.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/5.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/6.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/7.png">
-<meta property="og:updated_time" content="2019-06-14T08:58:08.112Z">
+<meta property="og:updated_time" content="2019-06-14T09:49:10.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL Server - 查看執行計畫">
-<meta name="twitter:description" content="查看執行計畫 查看方式從右到左(平行處理)  減少資料量資料量越大，箭頭會越粗，盡可能篩選出所需資料  耗費成本針對成本比例高的地方進行調效  避免型態轉換型別不同 Join 條件或 Where 條件  警告訊息  避免排序">
+<meta name="twitter:description" content="查看執行計畫 查看方式從右到左(平行處理)  Index 是否正確一般來說 Seek 比 Scan 快，若撈出的資料量很大，資料庫覺得掃描比搜尋更有效率，會自行用掃描  減少資料量資料量越大，箭頭會越粗，盡可能篩選出所需資料  耗費成本針對成本比例高的地方進行調效  避免型態轉換型別不同 Join 條件或 Where 條件  警告訊息  避免排序   ReferenceSSMS–執行計畫SQL S">
 <meta name="twitter:image" content="http://yoursite.com/2019/06/14/SqlHowToWatchExecutionPlan/1.png">
 
 
@@ -353,6 +354,8 @@
         <h1 id="查看執行計畫"><a href="#查看執行計畫" class="headerlink" title="查看執行計畫"></a>查看執行計畫</h1><ol>
 <li><p>查看方式<br>從右到左(平行處理)<br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/1.png" alt="Architecture"></p>
 </li>
+<li><p>Index 是否正確<br>一般來說 <code>Seek</code> 比 <code>Scan</code> 快，若撈出的資料量很大，資料庫覺得掃描比搜尋更有效率，會自行用掃描<br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/8.png" alt="Architecture"></p>
+</li>
 <li><p>減少資料量<br>資料量越大，箭頭會越粗，盡可能篩選出所需資料<br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/2.png" alt="Architecture"></p>
 </li>
 <li><p>耗費成本<br>針對成本比例高的地方進行調效<br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/3.png" alt="Architecture"></p>
@@ -364,6 +367,7 @@
 <li><p>避免排序<br><img src="/2019/06/14/SqlHowToWatchExecutionPlan/7.png" alt="Architecture"></p>
 </li>
 </ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.kkbruce.net/2011/01/ssms.html#.XQNsE4gzaUk" target="_blank" rel="noopener">SSMS–執行計畫</a><br><a href="http://sharedderrick.blogspot.com/2017/12/sql-server-look-at-execution-plan-and.html" target="_blank" rel="noopener">SQL Server 學習筆記</a><br><a href="http://vito-note.blogspot.com/2013/05/blog-post_2862.html" target="_blank" rel="noopener">效能調校(2)-分析執行計畫</a><br><a href="https://dotblogs.com.tw/eganblog/2019/05/07/sql_datatypeconversion" target="_blank" rel="noopener">[SQL]MSSQL隱含轉換造成的效能影響</a></p>
 
       
     </div>
@@ -536,7 +540,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查看執行計畫"><span class="nav-number">1.</span> <span class="nav-text">查看執行計畫</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查看執行計畫"><span class="nav-number">1.</span> <span class="nav-text">查看執行計畫</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
