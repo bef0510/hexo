@@ -5,6 +5,7 @@ tags:
  - delegate
 categories: 
  - ASP.Net
+ - C#
 ---
 
 # 委派 Delegate、Action、Func、Predicate

@@ -6,6 +6,8 @@ tags:
  - Session
 categories: 
  - ASP.Net
+ - C#
+ - VB
 ---
 
 # SessionState 模式

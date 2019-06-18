@@ -7,6 +7,7 @@ tags:
  - Redis
 categories: 
  - ASP.Net
+ - C#
 ---
 
 # 安裝 Redis

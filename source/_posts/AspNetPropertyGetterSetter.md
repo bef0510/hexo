@@ -5,6 +5,7 @@ tags:
  - Class
 categories: 
  - ASP.Net
+ - C#
 ---
 
 # C# 屬性 GET/SET

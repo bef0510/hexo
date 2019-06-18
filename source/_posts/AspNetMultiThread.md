@@ -5,6 +5,7 @@ tags:
  - Thread
 categories: 
  - ASP.Net
+ - C#
 ---
 
 # C# 多執行緒
