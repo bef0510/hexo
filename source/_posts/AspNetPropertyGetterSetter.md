@@ -2,10 +2,10 @@
 title: C# 屬性 GET/SET 演變
 date: 2019-05-28 12:10:41
 tags:
+ - C#
  - Class
 categories: 
  - ASP.Net
- - C#
 ---
 
 # C# 屬性 GET/SET

@@ -3,11 +3,11 @@ title: MVC 跨網域要求 CORS
 date: 2019-06-18 10:42:29
 tags:
  - Ajax
+ - C#
+ - MVC
  - CORS
 categories: 
  - ASP.Net
- - MVC
- - C#
 ---
 
 # Allow CORS

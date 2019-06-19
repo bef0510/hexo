@@ -2,6 +2,7 @@
 title: 結構型模式 - 享元模式
 date: 2019-06-05 14:51:14
 tags:
+ - C#
  - Structural
 categories: 
  - Design Pattern

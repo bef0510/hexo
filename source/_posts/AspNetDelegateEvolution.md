@@ -2,10 +2,10 @@
 title: C# 委派演變
 date: 2019-05-28 10:14:46
 tags:
+ - C#
  - delegate
 categories: 
  - ASP.Net
- - C#
 ---
 
 # C# 委派

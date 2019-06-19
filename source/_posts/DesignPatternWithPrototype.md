@@ -2,6 +2,7 @@
 title: 創建型模式 - 原型模式
 date: 2019-05-15 10:24:45
 tags:
+ - C#
  - Creational
 categories: 
  - Design Pattern

@@ -2,6 +2,7 @@
 title: 行為型模式 - 觀察者模式
 date: 2019-06-10 14:57:47
 tags:
+ - C#
  - Behavioral
 categories: 
  - Design Pattern

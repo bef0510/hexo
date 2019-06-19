@@ -2,10 +2,10 @@
 title: C# Delegate、Action、Func、Predicate
 date: 2019-06-10 15:24:24
 tags:
+ - C#
  - delegate
 categories: 
  - ASP.Net
- - C#
 ---
 
 # 委派 Delegate、Action、Func、Predicate

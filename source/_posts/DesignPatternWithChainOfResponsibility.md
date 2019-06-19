@@ -2,6 +2,7 @@
 title: 行為型模式 - 責任鏈模式
 date: 2019-06-05 16:31:04
 tags:
+ - C#
  - Behavioral
 categories: 
  - Design Pattern

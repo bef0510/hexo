@@ -58,5 +58,14 @@ categories:
 14. 完成
 ![Architecture](14.png)
 
+15. 新增 Web Site
+![Architecture](15.png)
+
+16. 輸入 資訊
+![Architecture](16.png)
+
+17. 完成
+![Architecture](17.png)
+
 # Reference
 [How To Install IIS In Windows Server 2016](https://www.rootusers.com/how-to-install-iis-in-windows-server-2016/)

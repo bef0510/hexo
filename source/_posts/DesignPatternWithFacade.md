@@ -2,6 +2,7 @@
 title: 結構型模式 - 外觀模式
 date: 2019-06-05 11:12:22
 tags:
+ - C#
  - Structural
 categories: 
  - Design Pattern

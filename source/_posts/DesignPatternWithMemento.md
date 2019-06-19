@@ -2,6 +2,7 @@
 title: 行為型模式 - 備忘錄模式 
 date: 2019-06-10 12:19:59
 tags:
+ - C#
  - Behavioral
 categories: 
  - Design Pattern

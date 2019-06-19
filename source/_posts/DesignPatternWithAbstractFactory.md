@@ -2,6 +2,7 @@
 title: 創建型模式 - 抽象工廠模式
 date: 2019-05-14 15:47:28
 tags:
+ - C#
  - Creational
 categories: 
  - Design Pattern

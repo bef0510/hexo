@@ -10,7 +10,8 @@ categories:
 ---
 
 # DFS 複寫備援
-    需先安裝 DNS 及 AD
+    需先安裝 AD 及 DNS
+ [Windows Server 2016 啟用 AD 及 DNS](/2019/05/24/InstallADAndDNS/)
 
 ### DFS 安裝
 **Server** 設定

@@ -2,6 +2,7 @@
 title: 結構型模式 - 代理模式
 date: 2019-06-05 15:32:48
 tags:
+ - C#
  - Structural
 categories: 
  - Design Pattern

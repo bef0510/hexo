@@ -5,6 +5,7 @@ tags:
  - Creational
  - Structural
  - Behavior
+ - C#
 categories: 
  - Design Pattern
 ---
