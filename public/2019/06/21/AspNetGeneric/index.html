@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C#,Config,Session,">
+  <meta name="keywords" content="C#,Generic,">
 
 
 
@@ -79,23 +79,18 @@
 
 
 
-<meta name="description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
-<meta name="keywords" content="C#,Config,Session">
+<meta name="description" content="泛型泛型類別public class Generic&amp;lt;T&amp;gt; {     public T Name;     public T NickName; }  class Program {     static void Main(string[] args)     {         Generic&amp;lt;string&amp;gt; generic = new Generic&amp;lt;stri">
+<meta name="keywords" content="C#,Generic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Session 使用 SQLServer">
-<meta property="og:url" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/index.html">
+<meta property="og:title" content="C# 泛型">
+<meta property="og:url" content="http://yoursite.com/2019/06/21/AspNetGeneric/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
+<meta property="og:description" content="泛型泛型類別public class Generic&amp;lt;T&amp;gt; {     public T Name;     public T NickName; }  class Program {     static void Main(string[] args)     {         Generic&amp;lt;string&amp;gt; generic = new Generic&amp;lt;stri">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/4.png">
-<meta property="og:updated_time" content="2019-06-19T06:33:18.255Z">
+<meta property="og:updated_time" content="2019-06-21T06:40:42.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Session 使用 SQLServer">
-<meta name="twitter:description" content="建置 Database使用 aspnet_regsql.ext 工具建立複製路徑 C:\Windows\Microsoft.NET\Framework64\v4.0.30319命令提示字元輸入12$ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319$ aspnet_regsql.exe -S &amp;lt;serverIP&amp;gt; -U &amp;lt;use">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/1.png">
+<meta name="twitter:title" content="C# 泛型">
+<meta name="twitter:description" content="泛型泛型類別public class Generic&amp;lt;T&amp;gt; {     public T Name;     public T NickName; }  class Program {     static void Main(string[] args)     {         Generic&amp;lt;string&amp;gt; generic = new Generic&amp;lt;stri">
 
 
 
@@ -125,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/21/AspNetGeneric/">
 
 
 
 
 
-  <title>Session 使用 SQLServer | D & E's Notes</title>
+  <title>C# 泛型 | D & E's Notes</title>
   
 
 
@@ -258,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/AspNetSessionStateUsingSqlServer/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/AspNetGeneric/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -275,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Session 使用 SQLServer</h1>
+          <h1 class="post-title" itemprop="name headline">C# 泛型</h1>
         
 
         <div class="post-meta">
@@ -287,8 +282,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-04-29T12:05:44+08:00">
-                2019-04-29
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-06-21T11:26:41+08:00">
+                2019-06-21
               </time>
             
 
@@ -347,13 +342,211 @@
       
 
       
-        <h1 id="建置-Database"><a href="#建置-Database" class="headerlink" title="建置 Database"></a>建置 Database</h1><h3 id="使用-aspnet-regsql-ext-工具建立"><a href="#使用-aspnet-regsql-ext-工具建立" class="headerlink" title="使用 aspnet_regsql.ext 工具建立"></a>使用 aspnet_regsql.ext 工具建立</h3><p>複製路徑 <code>C:\Windows\Microsoft.NET\Framework64\v4.0.30319</code><br>命令提示字元輸入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> C:\Windows\Microsoft.NET\Framework64\v4.0.30319</span><br><span class="line">$ aspnet_regsql.exe -S &lt;serverIP&gt; -U &lt;userName&gt; -P &lt;strongPassword&gt; -ssadd -sstype p</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/1.png" alt="SQLConnectionOptions"><br><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/2.png" alt="SessionStateOptions"></p>
-<p>可看到資料庫已建置完成<br><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/3.png" alt="CreateTable"></p>
-<h1 id="修改-Web-Config"><a href="#修改-Web-Config" class="headerlink" title="修改 Web.Config"></a>修改 Web.Config</h1><p><strong>Web.Config</strong> 裡的 <code>system.web</code> 區塊 <code>seesionState</code> 修改</p>
-<pre><code>&lt;sessionState mode=&quot;SQLServer&quot; allowCustomSqlDatabase=&quot;true&quot; sqlConnectionString=&quot;data source=&lt;serverIP&gt;;initial catalog=ASPState;user id=&lt;userName&gt;;password=&lt;strongPassword&gt;&quot;  sqlCommandTimeout=&quot;60&quot; cookieless=&quot;false&quot; cookieName=&quot;ASP.NET_SessionId&quot; timeout=&quot;60&quot;/&gt;
-</code></pre><p><img src="/2019/04/29/AspNetSessionStateUsingSqlServer/4.png" alt="SelectTable"></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://docs.microsoft.com/en-us/previous-versions/ms229862(v=vs.100)" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/previous-versions/ms229862(v=vs.100)</a><br><a href="https://www.youtube.com/watch?v=o-8vjQu6SmI" target="_blank" rel="noopener">SQLServer asp.net session state mode management Part 66</a><br><a href="https://blog.miniasp.com/post/2011/09/13/Configure-SQL-Server-Session-State-Modes-for-ASPNET" target="_blank" rel="noopener">如何設定與啟用 ASP.NET 的 SQLServer 工作階段狀態模式</a><br><a href="http://kyleap.blogspot.com/2013/12/aspnetiissession.html" target="_blank" rel="noopener">相同的IIS，讓多個網站共用Session資訊</a></p>
+        <h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h4 id="泛型類別"><a href="#泛型類別" class="headerlink" title="泛型類別"></a>泛型類別</h4><pre><code>public class Generic&lt;T&gt;
+{
+    public T Name;
+    public T NickName;
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Generic&lt;string&gt; generic = new Generic&lt;string&gt;();
+        generic.Name = &quot;Patrick&quot;;
+        generic.NickName = &quot;Pat&quot;;
+
+        Console.WriteLine($&quot;Name：{generic.Name}&quot;);
+        Console.WriteLine($&quot;NickName：{generic.NickName}&quot;);
+
+        Console.ReadKey();
+    }
+}
+</code></pre><h4 id="泛型方法-使用型別參數宣告的方法"><a href="#泛型方法-使用型別參數宣告的方法" class="headerlink" title="泛型方法 使用型別參數宣告的方法"></a>泛型方法 使用型別參數宣告的方法</h4><pre><code>public class Generic
+{
+    public void Dump&lt;T&gt;(T s)
+    {
+        Console.WriteLine(s.ToString());
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Generic generic = new Generic();
+
+        generic.Dump(&quot;Patrick&quot;);
+
+        Console.ReadKey();
+    }
+}
+</code></pre><h4 id="泛型方法-條件約束"><a href="#泛型方法-條件約束" class="headerlink" title="泛型方法 + 條件約束"></a>泛型方法 + 條件約束</h4><pre><code>public class Generic
+{
+    public T Max&lt;T&gt;(T param1, T param2) where T : IComparable&lt;T&gt;
+    {
+        T result = param2;
+
+        if (param1.CompareTo(param2) &gt; 0)
+        {
+            result = param1;
+        }
+
+        return result;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Generic generic = new Generic();
+
+        int resultInt = generic.Max&lt;int&gt;(10, 12);
+
+        // 推論型別 省略 &lt;float&gt;
+        float resultFloat = generic.Max(3.6F, 3.5F);
+
+        // 推論型別 使用 var
+        var resultObject = generic.Max(&quot;Gen&quot;, &quot;Eric&quot;);
+
+        Console.WriteLine(resultInt);
+        Console.WriteLine(resultFloat);
+        Console.WriteLine(resultObject);
+
+        Console.ReadKey();
+    }
+}
+</code></pre><h4 id="泛型方法-條件約束-擴充方法"><a href="#泛型方法-條件約束-擴充方法" class="headerlink" title="泛型方法 + 條件約束 + 擴充方法"></a>泛型方法 + 條件約束 + 擴充方法</h4><pre><code>public class Student
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public DateTime Time { get; set; }
+}
+
+public static class StringExtension
+{
+    public static void Dump&lt;T&gt;(this T s) =&gt; Console.WriteLine(s.ToString());
+
+    public static void Dump&lt;T&gt;(this T s, string formate)
+    {
+        if (s.GetType() == typeof(DateTime))
+        {
+            DateTimeOffset.Parse(s.ToString()).DateTime.ToString(formate).Dump();
+        }
+    }
+
+    public static void ObjectDump&lt;T&gt;(this T obj) where T : class, new()
+    {
+        Type type = obj.GetType();
+        PropertyInfo[] props = type.GetProperties();
+        foreach(var prop in props)
+        {
+            if(prop.GetIndexParameters().Length == 0)
+            {
+                $&quot;({prop.PropertyType.Name}) {prop.Name}：{prop.GetValue(obj)}&quot;.Dump();
+            }
+            else
+            {
+                $&quot;({prop.PropertyType.Name}) {prop.Name}：&lt;Indexed&gt;&quot;.Dump();
+            }
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string name = &quot;Patrick&quot;;
+        int age = 26;
+        DateTime time = DateTime.Now;
+        Student student = new Student() { Name = name, Age = age, Time = time };
+
+        name.Dump();
+        age.Dump();
+        time.Dump(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+        student.ObjectDump();
+
+        Console.ReadKey();
+    }
+}
+</code></pre><h4 id="泛型委派"><a href="#泛型委派" class="headerlink" title="泛型委派"></a>泛型委派</h4><pre><code>class Program
+{
+    public delegate T Payment&lt;T, T1, T2&gt;(T1 momey1, T2 momey2);
+
+    static string Bill(int momey1, int momey2)
+    {
+        string result = &quot;超商繳款&quot;;
+
+        int total = momey1 + momey2;
+
+        if (total &gt; 30000)
+        {
+            result = &quot;銀行繳款&quot;;
+        }
+        return result;
+    }
+
+    static bool Bill(float momey1, float momey2)
+    {
+        return (momey1 + momey2) &gt; 30000;
+    }
+
+    static void Main(string[] args)
+    {
+        Payment&lt;string, int, int&gt; paymentType = new Payment&lt;string, int, int&gt;(Bill);
+        string resultString = paymentType(10000, 16000);
+
+        Payment&lt;bool, float, float&gt; isByBank = new Payment&lt;bool, float, float&gt;(Bill);
+        bool resultBool = isByBank(16000.0F, 20000.0F);
+
+        Console.WriteLine(resultString);
+        Console.WriteLine(resultBool);
+
+        Console.ReadKey();
+    }
+}
+</code></pre><h4 id="泛型委派-泛型類別"><a href="#泛型委派-泛型類別" class="headerlink" title="泛型委派 + 泛型類別"></a>泛型委派 + 泛型類別</h4><pre><code>class Stack&lt;T&gt;
+{
+    T[] items;
+    int index;
+
+    public delegate void StackDelegate(T[] items, int index = -1);
+}
+
+class Program
+{
+    public static void DoWork(float[] items, int index)
+    {
+        if (index &gt;= 0)
+        {
+            if(index &gt;= items.Length)
+            {
+                index = items.Length - 1;
+            }
+            Console.WriteLine(items[index]);
+        }
+        else
+        {
+            foreach (float item in items)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        float[] items = new float[] { 4.5F, 4.8F };
+        Stack&lt;float&gt; s = new Stack&lt;float&gt;();
+        Stack&lt;float&gt;.StackDelegate d = DoWork;
+        d(items);
+
+        Console.ReadKey();
+    }
+}
+</code></pre><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://docs.microsoft.com/zh-tw/dotnet/csharp/programming-guide/generics/" target="_blank" rel="noopener">泛型 (C# 程式設計手冊)</a><br><a href="https://docs.microsoft.com/zh-tw/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters" target="_blank" rel="noopener">型別參數的條件約束 (C# 程式設計手冊)</a><br><a href="https://docs.microsoft.com/zh-tw/dotnet/api/system.reflection.propertyinfo.getvalue?view=netframework-4.8" target="_blank" rel="noopener">PropertyInfo.GetValue Method</a></p>
 
       
     </div>
@@ -373,9 +566,7 @@
           
             <a href="/tags/C/" rel="tag"># C#</a>
           
-            <a href="/tags/Config/" rel="tag"># Config</a>
-          
-            <a href="/tags/Session/" rel="tag"># Session</a>
+            <a href="/tags/Generic/" rel="tag"># Generic</a>
           
         </div>
       
@@ -388,8 +579,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/26/NetworkLoadBalancing/" rel="next" title="NLB 網路負載平衡">
-                <i class="fa fa-chevron-left"></i> NLB 網路負載平衡
+              <a href="/2019/06/20/AspNetNugetPackageWithNugetPackager/" rel="next" title="ASP.NET NuGet 打包，使用 NuGet Packager">
+                <i class="fa fa-chevron-left"></i> ASP.NET NuGet 打包，使用 NuGet Packager
               </a>
             
           </div>
@@ -397,10 +588,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/29/AspNetSessionStateUsingRedis/" rel="prev" title="Session 使用 Redis">
-                Session 使用 Redis <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -534,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#建置-Database"><span class="nav-number">1.</span> <span class="nav-text">建置 Database</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-aspnet-regsql-ext-工具建立"><span class="nav-number">1.0.1.</span> <span class="nav-text">使用 aspnet_regsql.ext 工具建立</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#修改-Web-Config"><span class="nav-number">2.</span> <span class="nav-text">修改 Web.Config</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#泛型"><span class="nav-number">1.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型類別"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">泛型類別</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型方法-使用型別參數宣告的方法"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">泛型方法 使用型別參數宣告的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型方法-條件約束"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">泛型方法 + 條件約束</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型方法-條件約束-擴充方法"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">泛型方法 + 條件約束 + 擴充方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型委派"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">泛型委派</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型委派-泛型類別"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">泛型委派 + 泛型類別</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
