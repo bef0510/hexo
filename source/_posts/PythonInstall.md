@@ -3,6 +3,7 @@ title: 使用 Visual Studio Code 開發 Python
 date: 2019-07-04 13:42:54
 tags:
  - Visual Studio Code
+ - Python Basic
 categories: 
  - Python
 ---
