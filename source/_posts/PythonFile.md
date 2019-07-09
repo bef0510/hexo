@@ -26,19 +26,23 @@ categories:
     with open("data.txt", mode="w", encoding="utf-8") as file:
         file.write("測試中文\nSecond Line")
 
+#### 省略 mode
+    with open("data.txt", "w", encoding="utf-8") as file:
+        file.write("測試中文\nSecond Line")
+
 #### 讀取檔案
-    with open("data.txt", mode="r", encoding="utf-8") as file:
+    with open("data.txt", "r", encoding="utf-8") as file:
         data = file.read()
     print(data)
 
 #### 把檔案中的數字資料，一行一行的讀出來，計算總合
     # 先寫入
-    with open("data.txt", mode="w", encoding="utf-8") as file:
+    with open("data.txt", "w", encoding="utf-8") as file:
         file.write("5\n3")
 
     # 讀出及計算
     sum = 0
-    with open("data.txt", mode="r", encoding="utf-8") as file:
+    with open("data.txt", "r", encoding="utf-8") as file:
         for line in file:
             sum += int(line)
     print(sum)
@@ -47,9 +51,11 @@ categories:
 新增一個 **config.json** 檔，及輸入 **json** 字串
 ![Architecture](3.png)
 
+要先 **import json**
+
 #### 基本運用
     import json
-    with open("config.json", mode="r") as file:
+    with open("config.json", "r") as file:
         data = json.load(file)
     
     print(data) # data 是一個 Dictionary
@@ -58,14 +64,14 @@ categories:
 
 #### 讀取及寫入檔案
     import json
-    with open("config.json", mode="r") as file:
+    with open("config.json", "r") as file:
         data = json.load(file)
 
     print(data)
     data["name"] = "New Name" # 修改變數中的資料
 
     # 把更新的資料複寫回檔案中
-    with open("config.json", mode="w") as file:
+    with open("config.json", "w") as file:
         json.dump(data, file)
 
 # Reference
