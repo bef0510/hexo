@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Server,">
+  <meta name="keywords" content="Python Basic,">
 
 
 
@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="開啟遠端桌面 開啟 Server Manager  點選 Local Server → 點選 Remote Desktop  選擇 Remote Tab → 選擇 Allo remote connections to this computer   Reference如何開啟 Windows Server 2016 遠端桌面">
-<meta name="keywords" content="Server">
+<meta name="description" content="隨機模組要先 import random 從列表中隨機選取import random data = random.choice([1, 5, 6, 10, 20]) print(data) 從列表中隨機選取 N 筆資料，不能大於列表長度data = random.sample([1, 5, 6, 10, 20], 3) print(data) 隨機調換順序，洗牌的概念data = [1, 5, 8">
+<meta name="keywords" content="Python Basic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows Server 2016 開啟遠端桌面">
-<meta property="og:url" content="http://yoursite.com/2019/05/17/StartRemoteAssistance/index.html">
+<meta property="og:title" content="Python 隨機模組、統計模組">
+<meta property="og:url" content="http://yoursite.com/2019/07/09/PythonRandomAndStatistics/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="開啟遠端桌面 開啟 Server Manager  點選 Local Server → 點選 Remote Desktop  選擇 Remote Tab → 選擇 Allo remote connections to this computer   Reference如何開啟 Windows Server 2016 遠端桌面">
+<meta property="og:description" content="隨機模組要先 import random 從列表中隨機選取import random data = random.choice([1, 5, 6, 10, 20]) print(data) 從列表中隨機選取 N 筆資料，不能大於列表長度data = random.sample([1, 5, 6, 10, 20], 3) print(data) 隨機調換順序，洗牌的概念data = [1, 5, 8">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/05/17/StartRemoteAssistance/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/05/17/StartRemoteAssistance/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/05/17/StartRemoteAssistance/3.png">
-<meta property="og:updated_time" content="2019-07-04T04:21:16.895Z">
+<meta property="og:updated_time" content="2019-07-09T02:32:32.079Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows Server 2016 開啟遠端桌面">
-<meta name="twitter:description" content="開啟遠端桌面 開啟 Server Manager  點選 Local Server → 點選 Remote Desktop  選擇 Remote Tab → 選擇 Allo remote connections to this computer   Reference如何開啟 Windows Server 2016 遠端桌面">
-<meta name="twitter:image" content="http://yoursite.com/2019/05/17/StartRemoteAssistance/1.png">
+<meta name="twitter:title" content="Python 隨機模組、統計模組">
+<meta name="twitter:description" content="隨機模組要先 import random 從列表中隨機選取import random data = random.choice([1, 5, 6, 10, 20]) print(data) 從列表中隨機選取 N 筆資料，不能大於列表長度data = random.sample([1, 5, 6, 10, 20], 3) print(data) 隨機調換順序，洗牌的概念data = [1, 5, 8">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/17/StartRemoteAssistance/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/09/PythonRandomAndStatistics/">
 
 
 
 
 
-  <title>Windows Server 2016 開啟遠端桌面 | D & E's Notes</title>
+  <title>Python 隨機模組、統計模組 | D & E's Notes</title>
   
 
 
@@ -257,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/17/StartRemoteAssistance/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/PythonRandomAndStatistics/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -274,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Windows Server 2016 開啟遠端桌面</h1>
+          <h1 class="post-title" itemprop="name headline">Python 隨機模組、統計模組</h1>
         
 
         <div class="post-meta">
@@ -286,8 +282,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-05-17T10:59:22+08:00">
-                2019-05-17
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-07-09T10:25:58+08:00">
+                2019-07-09
               </time>
             
 
@@ -309,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MIS/" itemprop="url" rel="index">
-                    <span itemprop="name">MIS</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -346,15 +342,44 @@
       
 
       
-        <h1 id="開啟遠端桌面"><a href="#開啟遠端桌面" class="headerlink" title="開啟遠端桌面"></a>開啟遠端桌面</h1><ol>
-<li><p>開啟 <code>Server Manager</code><br><img src="/2019/05/17/StartRemoteAssistance/1.png" alt="Architecture"></p>
-</li>
-<li><p>點選 <code>Local Server</code> → 點選 <code>Remote Desktop</code><br><img src="/2019/05/17/StartRemoteAssistance/2.png" alt="Architecture"></p>
-</li>
-<li><p>選擇 <code>Remote</code> Tab → 選擇 <code>Allo remote connections to this computer</code><br><img src="/2019/05/17/StartRemoteAssistance/3.png" alt="Architecture"></p>
-</li>
-</ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.yowko.com/windows-server-2016-enable-remote-desktop/" target="_blank" rel="noopener">如何開啟 Windows Server 2016 遠端桌面</a></p>
+        <h1 id="隨機模組"><a href="#隨機模組" class="headerlink" title="隨機模組"></a>隨機模組</h1><p>要先 <strong>import random</strong></p>
+<h4 id="從列表中隨機選取"><a href="#從列表中隨機選取" class="headerlink" title="從列表中隨機選取"></a>從列表中隨機選取</h4><pre><code>import random
+data = random.choice([1, 5, 6, 10, 20])
+print(data)
+</code></pre><h4 id="從列表中隨機選取-N-筆資料，不能大於列表長度"><a href="#從列表中隨機選取-N-筆資料，不能大於列表長度" class="headerlink" title="從列表中隨機選取 N 筆資料，不能大於列表長度"></a>從列表中隨機選取 N 筆資料，不能大於列表長度</h4><pre><code>data = random.sample([1, 5, 6, 10, 20], 3)
+print(data)
+</code></pre><h4 id="隨機調換順序，洗牌的概念"><a href="#隨機調換順序，洗牌的概念" class="headerlink" title="隨機調換順序，洗牌的概念"></a>隨機調換順序，洗牌的概念</h4><pre><code>data = [1, 5, 8, 20]
+random.shuffle(data)
+print(data)
+</code></pre><h4 id="0-1-之間的隨機亂數"><a href="#0-1-之間的隨機亂數" class="headerlink" title="0 ~ 1 之間的隨機亂數"></a>0 ~ 1 之間的隨機亂數</h4><pre><code>data = random.random()
+print(data)
+</code></pre><h4 id="自訂義亂數"><a href="#自訂義亂數" class="headerlink" title="自訂義亂數"></a>自訂義亂數</h4><pre><code>data = random.uniform(0.0, 1.0) # 0.0 ~ 1.0 之間的隨機亂數
+print(data)
+
+data = random.uniform(60, 100) # 60 ~ 100 之間的隨機亂數
+print(data)
+</code></pre><h4 id="取得常態分配亂數"><a href="#取得常態分配亂數" class="headerlink" title="取得常態分配亂數"></a>取得常態分配亂數</h4><pre><code># 平均數 100，標準差 10，多數落在 90 ~ 110 之間
+data = random.normalvariate(100, 10)
+print(data)
+
+# 平均數 0，標準差 5，多數落在 -5 ~ 5 之間
+data = random.normalvariate(0, 5)
+print(data)
+</code></pre><h1 id="統計模組"><a href="#統計模組" class="headerlink" title="統計模組"></a>統計模組</h1><p>要先 <strong>import statistics</strong></p>
+<h4 id="平均數"><a href="#平均數" class="headerlink" title="平均數"></a>平均數</h4><pre><code>import statistics as stat
+data = stat.mean([1, 4, 5, 8])
+print(data)
+
+data = stat.mean([1, 2, 3, 4, 5, 8, 100])
+print(data)
+</code></pre><h4 id="中位數"><a href="#中位數" class="headerlink" title="中位數"></a>中位數</h4><pre><code>data = stat.median([1, 2, 3, 4, 5, 8, 100])
+print(data)
+</code></pre><h4 id="標準差"><a href="#標準差" class="headerlink" title="標準差"></a>標準差</h4><pre><code>data = stat.stdev([1, 2, 3, 4, 5, 8, 100])
+print(data)
+
+data = stat.stdev([1, 2, 3, 4, 5, 8, 10])
+print(data)
+</code></pre><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.youtube.com/watch?v=-xwCu6PN1jU" target="_blank" rel="noopener">Python 亂數與統計模組 By 彭彭</a></p>
 
       
     </div>
@@ -372,7 +397,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Server/" rel="tag"># Server</a>
+            <a href="/tags/Python-Basic/" rel="tag"># Python Basic</a>
           
         </div>
       
@@ -385,8 +410,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/17/HyperVRestoreVHDX/" rel="next" title="Hyper-V 還原 .vhdx">
-                <i class="fa fa-chevron-left"></i> Hyper-V 還原 .vhdx
+              <a href="/2019/07/09/PythonFile/" rel="next" title="Python 文字檔案讀取與儲存">
+                <i class="fa fa-chevron-left"></i> Python 文字檔案讀取與儲存
               </a>
             
           </div>
@@ -394,10 +419,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/17/InstallIIS/" rel="prev" title="Windows Server 2016 啟用 IIS">
-                Windows Server 2016 啟用 IIS <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -531,7 +552,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#開啟遠端桌面"><span class="nav-number">1.</span> <span class="nav-text">開啟遠端桌面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#隨機模組"><span class="nav-number">1.</span> <span class="nav-text">隨機模組</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#從列表中隨機選取"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">從列表中隨機選取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#從列表中隨機選取-N-筆資料，不能大於列表長度"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">從列表中隨機選取 N 筆資料，不能大於列表長度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隨機調換順序，洗牌的概念"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">隨機調換順序，洗牌的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0-1-之間的隨機亂數"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">0 ~ 1 之間的隨機亂數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自訂義亂數"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">自訂義亂數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#取得常態分配亂數"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">取得常態分配亂數</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#統計模組"><span class="nav-number">2.</span> <span class="nav-text">統計模組</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#平均數"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">平均數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中位數"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">中位數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#標準差"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">標準差</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
