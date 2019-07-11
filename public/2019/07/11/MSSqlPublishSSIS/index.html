@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Server,SSIS,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="SSIS 佈署建置部署公用程式 開啟 SQL Server Business Intelligence Development Studio  開啟 .sln 檔  設定參數  建置  檢查是否有產生部署公用程式   建立封裝組態目的若佈署到 SQL Server 上，要多設定一個「封裝組態」，否則會因為帳號密碼權限的問題，不能執行封裝 Source DB 新增欄位，重新部署 先將原始檔案複製一份">
+<meta name="keywords" content="Server,SSIS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MS SQL SSIS 佈署">
+<meta property="og:url" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/index.html">
+<meta property="og:site_name" content="D &amp; E&#39;s Notes">
+<meta property="og:description" content="SSIS 佈署建置部署公用程式 開啟 SQL Server Business Intelligence Development Studio  開啟 .sln 檔  設定參數  建置  檢查是否有產生部署公用程式   建立封裝組態目的若佈署到 SQL Server 上，要多設定一個「封裝組態」，否則會因為帳號密碼權限的問題，不能執行封裝 Source DB 新增欄位，重新部署 先將原始檔案複製一份">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/8.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/9.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/10.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/11.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/12.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/13.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/14.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/15.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/16.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/17.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/18.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/19.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/20.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/21.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/22.png">
+<meta property="og:updated_time" content="2019-07-11T07:45:51.640Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MS SQL SSIS 佈署">
+<meta name="twitter:description" content="SSIS 佈署建置部署公用程式 開啟 SQL Server Business Intelligence Development Studio  開啟 .sln 檔  設定參數  建置  檢查是否有產生部署公用程式   建立封裝組態目的若佈署到 SQL Server 上，要多設定一個「封裝組態」，否則會因為帳號密碼權限的問題，不能執行封裝 Source DB 新增欄位，重新部署 先將原始檔案複製一份">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/">
+
+
+
+
+
+  <title>MS SQL SSIS 佈署 | D & E's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D & E's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/11/MSSqlPublishSSIS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="D & E">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D & E's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MS SQL SSIS 佈署</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-07-11T15:26:46+08:00">
+                2019-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MS-SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MS SQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="SSIS-佈署"><a href="#SSIS-佈署" class="headerlink" title="SSIS 佈署"></a>SSIS 佈署</h1><h4 id="建置部署公用程式"><a href="#建置部署公用程式" class="headerlink" title="建置部署公用程式"></a>建置部署公用程式</h4><ol>
+<li><p>開啟 <strong>SQL Server Business Intelligence Development Studio</strong><br><img src="/2019/07/11/MSSqlPublishSSIS/1.png" alt="Architecture"></p>
+</li>
+<li><p>開啟 <strong>.sln</strong> 檔<br><img src="/2019/07/11/MSSqlPublishSSIS/2.png" alt="Architecture"></p>
+</li>
+<li><p>設定參數<br><img src="/2019/07/11/MSSqlPublishSSIS/3.png" alt="Architecture"></p>
+</li>
+<li><p>建置<br><img src="/2019/07/11/MSSqlPublishSSIS/4.png" alt="Architecture"></p>
+</li>
+<li><p>檢查是否有產生部署公用程式<br><img src="/2019/07/11/MSSqlPublishSSIS/5.png" alt="Architecture"></p>
+</li>
+</ol>
+<h2 id="建立封裝組態"><a href="#建立封裝組態" class="headerlink" title="建立封裝組態"></a>建立封裝組態</h2><h4 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h4><p>若佈署到 <strong>SQL Server</strong> 上，要多設定一個「封裝組態」，否則會因為帳號密碼權限的問題，不能執行封裝</p>
+<h4 id="Source-DB-新增欄位，重新部署"><a href="#Source-DB-新增欄位，重新部署" class="headerlink" title="Source DB 新增欄位，重新部署"></a>Source DB 新增欄位，重新部署</h4><ol>
+<li><p>先將原始檔案複製一份，留存</p>
+</li>
+<li><p>開啟 <strong>.sln</strong> 檔<br><img src="/2019/07/11/MSSqlPublishSSIS/6.png" alt="Architecture"></p>
+</li>
+<li><p>將資料來源 設定帳密<br>&nbsp;&nbsp;&nbsp;&nbsp;目的：開啟 <strong>Source DB</strong>、<strong>Targer DB</strong> 可以看到欄位，並建立關連<br><img src="/2019/07/11/MSSqlPublishSSIS/7.png" alt="Architecture"></p>
+</li>
+<li><p>檢查 <strong>Source DB</strong> 的 <strong>SCHEMA</strong> 是否已建立<br><img src="/2019/07/11/MSSqlPublishSSIS/8.png" alt="Architecture"></p>
+</li>
+<li><p>新增 <strong>Target DB SCHEMA</strong><br><img src="/2019/07/11/MSSqlPublishSSIS/9.png" alt="Architecture"></p>
+</li>
+<li><p>建立 <strong>Source DB &amp; Target DB</strong> 對應<br><img src="/2019/07/11/MSSqlPublishSSIS/10.png" alt="Architecture"></p>
+</li>
+<li><p>依照 <code>Z:\經營總表\10-BI\系統文件\BI 平台系統文件-SSIS封裝佈署.doc</code> 步驟，重新部署<br> 7.1 啟用封裝組態<br> <img src="/2019/07/11/MSSqlPublishSSIS/11.png" alt="Architecture"></p>
+<p> 7.2 切換至「屬性」，於 <strong>ProtectionLevel</strong> 下拉選單，選取 <strong>DontSaveSensitive</strong><br> <img src="/2019/07/11/MSSqlPublishSSIS/12.jpg" alt="Architecture"></p>
+<p> 7.3 CUBE封裝以外的其他三個封裝皆完成以上動作後，請切換回「方案總管」，並於資料庫上按右鍵，選取「建置」<br> <img src="/2019/07/11/MSSqlPublishSSIS/13.jpg" alt="Architecture"></p>
+<p> 7.4 佈署封裝檔：</p>
+<pre><code>封裝建置完成後，請開啟檔案總管，至 `D:\BI\SSIS\禮儀資料轉檔\bin\Deployment` 目錄下，點選檔案「禮儀資料轉檔 **.SSISDeploymentManifest** 」
+</code></pre><p> <img src="/2019/07/11/MSSqlPublishSSIS/14.jpg" alt="Architecture"></p>
+<p> 7.5 點選後會開啟以下的封裝安裝精靈，請按下一步<br> <img src="/2019/07/11/MSSqlPublishSSIS/15.jpg" alt="Architecture"></p>
+<p> 7.6 封裝安裝位置請選「SQL Server佈署」，請按下一步<br> <img src="/2019/07/11/MSSqlPublishSSIS/16.jpg" alt="Architecture"></p>
+<p> 7.7 伺服器名稱預設為 ( <strong>local</strong> ) 無需修改，帳密資訊輸入後，封裝路徑請按右方「<strong>…</strong>」按鈕，再點選「<strong>SSIS</strong>封裝」目錄，即根目錄，按確定後回到主畫面按下一步<br> <img src="/2019/07/11/MSSqlPublishSSIS/17.jpg" alt="Architecture"></p>
+<p> 7.8 安裝資料夾依預設值即可，無需修改，請持續按下一步至設定封裝畫面<br> <img src="/2019/07/11/MSSqlPublishSSIS/18.jpg" alt="Architecture"></p>
+<p> 7.9 設定封裝畫面，可看到有三個組態檔，每個組態檔都要點進去，並點開下方的 <strong>Property</strong> 以輸入密碼，三個組態檔皆完成後，請按下一步進行佈署<br> <img src="/2019/07/11/MSSqlPublishSSIS/19.jpg" alt="Architecture"></p>
+<p> 7.10 出現以下畫面即代表封裝已佈署完成，請按完成按鈕<br> <img src="/2019/07/11/MSSqlPublishSSIS/20.jpg" alt="Architecture"></p>
+</li>
+<li><p>回復原始設定，才能直接用 <strong>SSIS</strong> 介面執行工作<br> 8.1 再將啟用封裝組態 勾勾 拿掉<br> <img src="/2019/07/11/MSSqlPublishSSIS/21.png" alt="Architecture"></p>
+<p> 8.2 「屬性」，於 <strong>ProtectionLevel</strong> 下拉選單，選取「<strong>EncrptSensitiveWithUserKey</strong>」<br> <img src="/2019/07/11/MSSqlPublishSSIS/22.png" alt="Architecture"></p>
+</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://docs.microsoft.com/zh-tw/sql/integration-services/lesson-2-1-building-the-deployment-utility?view=sql-server-2017" target="_blank" rel="noopener">建置部署公用程式</a><br><a href="http://tsengpm.blogspot.com/2011/09/ssis-sql-server.html" target="_blank" rel="noopener">建立封裝組態</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Server/" rel="tag"># Server</a>
+          
+            <a href="/tags/SSIS/" rel="tag"># SSIS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/11/MSSqlDeadLock/" rel="next" title="MS SQL 鎖定 (Dead Lock)">
+                <i class="fa fa-chevron-left"></i> MS SQL 鎖定 (Dead Lock)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="D & E">
+            
+              <p class="site-author-name" itemprop="name">D & E</p>
+              <p class="site-description motion-element" itemprop="description">Just notes</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SSIS-佈署"><span class="nav-number">1.</span> <span class="nav-text">SSIS 佈署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建置部署公用程式"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建置部署公用程式</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#建立封裝組態"><span class="nav-number">1.1.</span> <span class="nav-text">建立封裝組態</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目的"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Source-DB-新增欄位，重新部署"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">Source DB 新增欄位，重新部署</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">D & E</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

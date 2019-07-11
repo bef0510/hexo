@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Structrue,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="鎖定 (Dead Lock)SELECT * FROM sys.dm_tran_locks  共享鎖 (S)：  查詢資料時會在該資源放置共享鎖，允許不同連接讀取相同資料；但此時若有人想要更新資料，必須等到釋放共享鎖後，才可放置獨佔鎖，共享鎖在取完資料後就會釋放，不會等到持續到交易結束。 獨佔鎖 (X)：  新增、修改、刪除時，會對該資料放置獨佔鎖；獨佔鎖會一直保留到交易結束，且一個資源只會有一個">
+<meta name="keywords" content="Structrue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MS SQL 鎖定 (Dead Lock)">
+<meta property="og:url" content="http://yoursite.com/2019/07/11/MSSqlDeadLock/index.html">
+<meta property="og:site_name" content="D &amp; E&#39;s Notes">
+<meta property="og:description" content="鎖定 (Dead Lock)SELECT * FROM sys.dm_tran_locks  共享鎖 (S)：  查詢資料時會在該資源放置共享鎖，允許不同連接讀取相同資料；但此時若有人想要更新資料，必須等到釋放共享鎖後，才可放置獨佔鎖，共享鎖在取完資料後就會釋放，不會等到持續到交易結束。 獨佔鎖 (X)：  新增、修改、刪除時，會對該資料放置獨佔鎖；獨佔鎖會一直保留到交易結束，且一個資源只會有一個">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2019/07/11/MSSqlDeadLock/1.png">
+<meta property="og:updated_time" content="2019-07-11T07:28:25.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MS SQL 鎖定 (Dead Lock)">
+<meta name="twitter:description" content="鎖定 (Dead Lock)SELECT * FROM sys.dm_tran_locks  共享鎖 (S)：  查詢資料時會在該資源放置共享鎖，允許不同連接讀取相同資料；但此時若有人想要更新資料，必須等到釋放共享鎖後，才可放置獨佔鎖，共享鎖在取完資料後就會釋放，不會等到持續到交易結束。 獨佔鎖 (X)：  新增、修改、刪除時，會對該資料放置獨佔鎖；獨佔鎖會一直保留到交易結束，且一個資源只會有一個">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/11/MSSqlDeadLock/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/11/MSSqlDeadLock/">
+
+
+
+
+
+  <title>MS SQL 鎖定 (Dead Lock) | D & E's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D & E's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/11/MSSqlDeadLock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="D & E">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D & E's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MS SQL 鎖定 (Dead Lock)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-07-11T14:57:42+08:00">
+                2019-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MS-SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MS SQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="鎖定-Dead-Lock"><a href="#鎖定-Dead-Lock" class="headerlink" title="鎖定 (Dead Lock)"></a>鎖定 (Dead Lock)</h1><pre><code>SELECT * FROM sys.dm_tran_locks
+</code></pre><ul>
+<li>共享鎖 <strong>(S)</strong>：<br>  查詢資料時會在該資源放置共享鎖，允許不同連接讀取相同資料；但此時若有人想要更新資料，必須等到釋放共享鎖後，才可放置獨佔鎖，共享鎖在取完資料後就會釋放，不會等到持續到交易結束。</li>
+<li>獨佔鎖 <strong>(X)</strong>：<br>  新增、修改、刪除時，會對該資料放置獨佔鎖；獨佔鎖會一直保留到交易結束，且一個資源只會有一個獨佔鎖。</li>
+<li>更新鎖 <strong>(U)</strong>：<br>  當資源由查詢轉換為更新時，鎖定機制會先由共享鎖 –&gt; 更新鎖 –&gt; 獨佔鎖；<br>  例如: <strong>UPDATE…WHETE…</strong>，先搜尋 (放置共享鎖) –&gt; 找到資料後 (放置更新鎖) 共享鎖與更新鎖不互斥，先更新者由共享鎖轉為更新鎖後，因更新鎖彼此互斥，所以後更新者進入停止狀態，先更新者再將更新鎖轉為獨佔鎖，由於獨佔鎖與共享鎖互斥，所以更新時亦不可查詢資料，除非不下共享鎖 ( <strong>With NOLOCK</strong> )</li>
+<li>意圖鎖 <strong>(I)</strong>：<br>  放置共享鎖前，必須對該筆紀錄的更大範圍設定意圖鎖，例如對該筆資料的 <strong>Page</strong> 或 <strong>Table</strong> 放置意圖鎖，以避免其他交易對該 <strong>Page</strong> 或 <strong>Table</strong> 放置獨佔鎖；因為意圖鎖彼此不互斥，當修改某筆記錄，會在該筆記錄放置獨佔鎖，而在該分頁放置意圖獨佔鎖，此時，其他交易要修改同分頁的其他記錄，則可對其記錄下獨佔鎖，對同分頁下意圖獨佔鎖。</li>
+<li>大量更新 <strong>(BU)</strong>：<br>  當大量資料需複製到資料表時，指定 <strong>TABLOCK</strong> 或設 <strong>sp_tableoption</strong> 選項(將資料表設定為 <strong>“table lock on bulk load”</strong> ，則使用大量更新鎖。允許多個執行緒將資料同時大量載入同一資料表，同時禁止非大量載入資料的處理序存取資料，以提升大量匯入作業的效能</li>
+<li>索引鍵範圍 <strong>(Key-Range)</strong>：<br>  使用Serializable的隔離層次，保護使用者查詢時所讀取的資料列範圍，以確保其他交易無法插入受索引鍵範圍保護的資料列。此種鎖定可封鎖任何嘗試插入、更新、刪除含有索引鍵範圍的資料列。另外，<strong>UPDATE…WHERE…</strong> 在搜尋符合記錄時，也有可能下索引鍵範圍鎖。</li>
+<li>結構描述穩定性鎖定 <strong>(Sch-S)</strong>：<br>  查詢資料表結構時下的鎖定，只有在 <strong>Sch-M</strong> 不可執行。</li>
+<li>結構描述修改鎖定 <strong>(Sch-M)</strong>：<br>  變更資料表結構( <strong>DDL</strong> 作業)時下的鎖定，<strong>Sch-M</strong> 鎖定時，<strong>DDL</strong> 作業和並行 <strong>DML</strong> 作業皆無法在資料表上執行</li>
+<li>各種鎖定之間的互斥關係<br><img src="/2019/07/11/MSSqlDeadLock/1.png" alt="Architecture"></li>
+</ul>
+<h1 id="避免LOCK"><a href="#避免LOCK" class="headerlink" title="避免LOCK"></a>避免LOCK</h1><ul>
+<li><strong>NOLOCK</strong>：<br>  忽略鎖，直接從數據庫讀取數據，可能讀取到未認可的資料，使得資料不正確。通常使用在 <strong>Select</strong></li>
+<li><strong>ROWLOCK</strong>：<br>  只對某一行資料上鎖，可避免對同個 <strong>TABLE</strong> 或 <strong>PAGE</strong> 造成 <strong>LOCK</strong>，但過多的行級鎖，在開鎖時會消耗更多的效能，適合用在有指定主鍵的 <strong>Update</strong>、<strong>Delete</strong> 行為上</li>
+<li><strong>UPDLOCK</strong>：<br>  讀取表時使用更新鎖，而不使用共享鎖，並將鎖一直保留到處理序結束，通常使用在先 <strong>Select</strong> 後 <strong>Update</strong>，直接在 <strong>Select</strong> 時下更新鎖，不讓其他處理序有機會上獨佔鎖，直到原處理序結束，其他處理才能執行<br>• 一般使用前兩者皆可</li>
+</ul>
+<h1 id="隔離層次"><a href="#隔離層次" class="headerlink" title="隔離層次"></a>隔離層次</h1><ul>
+<li><strong>Serializable</strong>：<br>  強制所有的交易都必須按照順序，而且外部的查詢在 <strong>Serialize</strong> 的交易結束前，都不能讀取在交易中被鎖定住的資源</li>
+<li><strong>Read Uncommitted</strong>：<br>  允許其他查詢在交易未完成時，就可以讀取交易範圍內的資源</li>
+<li><strong>Read Committed</strong>：<br>  只允許其他查詢讀取已認可 <strong>(Committed)</strong> 的交易資料</li>
+<li><strong>Repeatable Read</strong>：<br>  它具有 <strong>Read Committed</strong> 的特性，但又不允許其他交易修改交易內參考到的資源，以保證資料是可重覆讀取 <strong>(Repeatable Read)</strong> 的</li>
+<li><strong>Snapshot Isolation</strong>：<br>  交易進行前會複製交易內相關的資源的資料到 <strong>tempdb</strong> 中，所有交易會在這個複本中進行，所以原本的資料讀取不會受到鎖定影響，而在多個交易同時進行時，<strong>Snapshot</strong> 會使用資料列版本 <strong>(rowversion)</strong> 的識別機制來判斷認可交易時的寫入順序，也因為它是在副本中進行，所以不會發生 <strong>Dirty Read</strong>, <strong>Nonrepeatable Read</strong> 與 <strong>Phantom Read</strong> 的狀態</li>
+</ul>
+<h1 id="開啟追蹤旗標"><a href="#開啟追蹤旗標" class="headerlink" title="開啟追蹤旗標"></a>開啟追蹤旗標</h1><pre><code>USE master
+GO
+-- 啟用追蹤旗標 1204、1222。
+DBCC TRACEON (1204, 1222,-1)
+GO
+</code></pre><h1 id="SQL-SERVER-記錄檔-查詢死結"><a href="#SQL-SERVER-記錄檔-查詢死結" class="headerlink" title="SQL SERVER  記錄檔 查詢死結"></a>SQL SERVER  記錄檔 查詢死結</h1><pre><code>EXEC master.dbo.xp_readerrorlog 0, 1, N&apos;deadlock-list&apos;
+EXEC master.dbo.xp_readerrorlog 0, 1, NULL,NULL,&apos;2016-08-30 15:32:32.170&apos;,&apos;2016-08-30 15:32:33.170&apos;,&apos;ASC&apos;
+參數說明：
+@p1 參數：0 表示目前的錯誤記錄檔，1 表示前一次的錯誤記錄檔之備份，2 表示前二次的錯誤記錄檔之備份，依此類推。
+@p2 參數：1 或是 NULL 表示 SQL Server 錯誤記錄檔；2 表示 SQL Server Agent 錯誤記錄檔
+@p3 參數：作為要查詢條件字串1。
+@p4 參數：作為要查詢條件字串2，與 @p3 參數為 AND 條件式。
+@p5 參數：指定錯誤記錄檔要讀取的起始日期。
+@p6 參數：指定錯誤記錄檔要讀取的終止日期。
+@p7 參數：可以設定查詢出來的資料之排序方式，依據「LogDate」資料行來排序，可以使用「ASC」或「DESC」參數值。
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Structrue/" rel="tag"># Structrue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/11/MSSqlFunction/" rel="next" title="MS SQL 函式">
+                <i class="fa fa-chevron-left"></i> MS SQL 函式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/11/MSSqlPublishSSIS/" rel="prev" title="MS SQL SSIS 佈署">
+                MS SQL SSIS 佈署 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="D & E">
+            
+              <p class="site-author-name" itemprop="name">D & E</p>
+              <p class="site-description motion-element" itemprop="description">Just notes</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#鎖定-Dead-Lock"><span class="nav-number">1.</span> <span class="nav-text">鎖定 (Dead Lock)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#避免LOCK"><span class="nav-number">2.</span> <span class="nav-text">避免LOCK</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#隔離層次"><span class="nav-number">3.</span> <span class="nav-text">隔離層次</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#開啟追蹤旗標"><span class="nav-number">4.</span> <span class="nav-text">開啟追蹤旗標</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-SERVER-記錄檔-查詢死結"><span class="nav-number">5.</span> <span class="nav-text">SQL SERVER  記錄檔 查詢死結</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">D & E</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
