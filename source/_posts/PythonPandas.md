@@ -1,5 +1,5 @@
 ---
-title: Python Pandas
+title: Python Pandas 模組
 date: 2019-07-09 16:54:20
 tags:
  - Python Module
@@ -7,12 +7,12 @@ categories:
  - Python
 ---
 
-# Pandas
+# Pandas 模組
 1. 安裝模組 **pip install pandas**
 ![Architecture](1.png)
 2. **pan(el)-da(ta)-s**
     2.1 主要提供三個資料結構：**Panel、DataFrame、Series**
-3. 以 **numpy** 為基礎的函式庫
+3. 以 **numpy** 模組為基礎的函式庫
 4. **Series** 就是序列，只會儲存像是 **key:value** 的型態
 5. 大部分談到 **pandas** 都會用 **DataFrame**
 6. 支援多種文字、二進位檔案與資料庫
