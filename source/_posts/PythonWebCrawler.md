@@ -51,7 +51,7 @@ categories:
 ![Architecture](6.png)
 
 ## 使用 BeautifulSoup
-1. 安裝 **pip install beautifulsoup4**
+1. 安裝模組 **pip install beautifulsoup4**
 ![Architecture](7.png)
 
 2. 安裝完成

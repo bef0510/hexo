@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python Module,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Pandas 安裝模組 pip install pandas pan(el)-da(ta)-s 2.1 主要提供三個資料結構：Panel、DataFrame、Series 以 numpy 為基礎的函式庫 Series 就是序列，只會儲存像是 key:value 的型態 大部分談到 pandas 都會用 DataFrame 支援多種文字、二進位檔案與資料庫 6.1 txt、csv、excel、SQL">
+<meta name="keywords" content="Python Module">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Pandas">
+<meta property="og:url" content="http://yoursite.com/2019/07/09/PythonPandas/index.html">
+<meta property="og:site_name" content="D &amp; E&#39;s Notes">
+<meta property="og:description" content="Pandas 安裝模組 pip install pandas pan(el)-da(ta)-s 2.1 主要提供三個資料結構：Panel、DataFrame、Series 以 numpy 為基礎的函式庫 Series 就是序列，只會儲存像是 key:value 的型態 大部分談到 pandas 都會用 DataFrame 支援多種文字、二進位檔案與資料庫 6.1 txt、csv、excel、SQL">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2019/07/09/PythonPandas/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/09/PythonPandas/2.png">
+<meta property="og:updated_time" content="2019-07-11T05:32:00.290Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Pandas">
+<meta name="twitter:description" content="Pandas 安裝模組 pip install pandas pan(el)-da(ta)-s 2.1 主要提供三個資料結構：Panel、DataFrame、Series 以 numpy 為基礎的函式庫 Series 就是序列，只會儲存像是 key:value 的型態 大部分談到 pandas 都會用 DataFrame 支援多種文字、二進位檔案與資料庫 6.1 txt、csv、excel、SQL">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/09/PythonPandas/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/09/PythonPandas/">
+
+
+
+
+
+  <title>Python Pandas | D & E's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D & E's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/PythonPandas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="D & E">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D & E's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python Pandas</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-07-09T16:54:20+08:00">
+                2019-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><ol>
+<li>安裝模組 <strong>pip install pandas</strong><br><img src="/2019/07/09/PythonPandas/1.png" alt="Architecture"></li>
+<li><strong>pan(el)-da(ta)-s</strong><br> 2.1 主要提供三個資料結構：<strong>Panel、DataFrame、Series</strong></li>
+<li>以 <strong>numpy</strong> 為基礎的函式庫</li>
+<li><strong>Series</strong> 就是序列，只會儲存像是 <strong>key:value</strong> 的型態</li>
+<li>大部分談到 <strong>pandas</strong> 都會用 <strong>DataFrame</strong></li>
+<li>支援多種文字、二進位檔案與資料庫<br> 6.1 <strong>txt、csv、excel、SQL</strong></li>
+</ol>
+<h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><ol>
+<li>要先 <strong>import pandas</strong></li>
+</ol>
+<h4 id="基本運用"><a href="#基本運用" class="headerlink" title="基本運用"></a>基本運用</h4><pre><code>import pandas as pd
+# 直接給一個 dictionary
+scores = pd.Series({&apos;小明&apos;:90, &apos;小華&apos;:80, &apos;小李&apos;:70})
+
+# 新增資料的方法
+scores[&apos;小強&apos;] = 55
+print(scores)
+
+# 統計數據
+print(scores.describe())
+# 平均值
+print(scores.mean())
+
+a = [&apos;apple&apos;, &apos;banana&apos;, &apos;cat&apos;, &apos;dog&apos;] #陣列一
+b = [123, 456, 789, 56789] #陣列二
+sr = pd.Series(b, index = a) # 合併陣列，指定 a 為 index
+print(sr)
+
+c = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# pd.date_range是內建的日期序列產生器
+sr_2 = pd.Series(c, pd.date_range(start=&apos;2018-05-01&apos;, end=&apos;2018-05-9&apos;))
+print(sr_2)
+</code></pre><h4 id="判斷大小"><a href="#判斷大小" class="headerlink" title="判斷大小"></a>判斷大小</h4><pre><code>scores = pd.Series({&apos;小明&apos;:90, &apos;小華&apos;:80, &apos;小李&apos;:70, &apos;小強&apos;:55})
+print(scores &gt; 60)
+
+print(scores[scores &gt; 60])
+
+print((scores &gt; 60) &amp; (scores &lt; 90))
+
+print(scores[(scores &gt; 60) &amp; (scores &lt; 90)])
+
+new_scores = scores ** 0.5 * 10
+print(new_scores)
+</code></pre><h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><ol>
+<li><strong>df.shape：</strong> 這個 <strong>DataFrame</strong> 有幾列有幾欄</li>
+<li><strong>df.columns：</strong> 這個 <strong>DataFrame</strong> 的變數資訊</li>
+<li><strong>df.index：</strong> 這個 <strong>DataFrame</strong> 的列索引資訊</li>
+<li><strong>df.info()：</strong> 關於 <strong>DataFrame</strong> 的詳細資訊</li>
+<li><strong>df.describe()：</strong> 關於 <strong>DataFrame</strong> 各數值變數的描述統計</li>
+</ol>
+<h4 id="基本運用-三種方法結果一樣"><a href="#基本運用-三種方法結果一樣" class="headerlink" title="基本運用 (三種方法結果一樣)"></a>基本運用 (三種方法結果一樣)</h4><pre><code>import pandas as pd
+
+scores = [{&quot;姓名&quot;:&quot;小華&quot;, &quot;國文&quot;:80, &quot;數學&quot;:90},
+        {&quot;姓名&quot;:&quot;小明&quot;, &quot;國文&quot;:55, &quot;數學&quot;:70},
+        {&quot;姓名&quot;:&quot;小李&quot;, &quot;國文&quot;:75, &quot;數學&quot;:45}]
+score_df = pd.DataFrame(scores)
+print(score_df)
+
+# 純字典格式 -&gt; 利用 from_dict 功能
+scores = {&quot;姓名&quot;:[&quot;小華&quot;, &quot;小明&quot;, &quot;小李&quot;],
+        &quot;國文&quot;:[80, 55, 75],
+        &quot;數學&quot;:[90, 70, 45]}
+score_df = pd.DataFrame.from_dict(scores)
+print(score_df)
+
+a = {&quot;數學&quot;:90, &quot;國文&quot;:80}
+b = {&quot;數學&quot;:70, &quot;國文&quot;:55}
+c = {&quot;數學&quot;:45, &quot;國文&quot;:75}
+df = pd.DataFrame.from_dict([a, b, c])
+# 增加一列的方法
+df[&quot;姓名&quot;] = [&quot;小華&quot;, &quot;小明&quot;, &quot;小李&quot;]
+print(df)
+</code></pre><h4 id="Series-轉-Dataframe"><a href="#Series-轉-Dataframe" class="headerlink" title="Series 轉 Dataframe"></a>Series 轉 Dataframe</h4><pre><code>scores = pd.Series({&quot;小明&quot;:90, &quot;小華&quot;:80, &quot;小李&quot;:70, &quot;小強&quot;:55})
+score_df = scores.to_frame()
+print(score_df)
+</code></pre><h2 id="匯入檔案"><a href="#匯入檔案" class="headerlink" title="匯入檔案"></a>匯入檔案</h2><ol>
+<li>匯入 Excel 檔前要先安裝 <strong>pip install xlrd</strong><br><img src="/2019/07/09/PythonPandas/2.png" alt="Architecture"></li>
+</ol>
+<h4 id="CSV-檔"><a href="#CSV-檔" class="headerlink" title="CSV 檔"></a>CSV 檔</h4><pre><code>import pandas as pd
+
+csv_file = &quot;https://storage.googleapis.com/learn_pd_like_tidyverse/gapminder.csv&quot;
+gapminder = pd.read_csv(csv_file)
+print(type(gapminder))
+head5 = gapminder.head()   # 抓取最前面的值，預設值 5
+head3 = gapminder.head(3)
+tail5 = gapminder.tail()   # 抓取最後面的值，預設值 5
+print(head5)
+print(head3)
+print(tail5)
+</code></pre><h4 id="Excel-檔"><a href="#Excel-檔" class="headerlink" title="Excel 檔"></a>Excel 檔</h4><pre><code>import pandas as pd
+
+xlsx_file = &quot;https://storage.googleapis.com/learn_pd_like_tidyverse/gapminder.xlsx&quot;
+gapminder = pd.read_excel(xlsx_file)
+print(type(gapminder))
+head5 = gapminder.head()   # 抓取最前面的值，預設值 5
+tail5 = gapminder.tail()   # 抓取最後面的值，預設值 5
+print(head5)
+print(tail5)
+</code></pre><h4 id="Excel-結合-DataFrame-函式"><a href="#Excel-結合-DataFrame-函式" class="headerlink" title="Excel 結合 DataFrame 函式"></a>Excel 結合 DataFrame 函式</h4><pre><code>dfShape = gapminder.shape
+dfColumns = gapminder.columns
+dfIndex = gapminder.index
+gapminder.info()    # 直接 print 出來
+dfDescribe = gapminder.describe()
+
+print(dfShape)
+print(dfColumns)
+print(dfIndex)
+print(dfDescribe)
+</code></pre><h2 id="dplyr-的基本功能是六個能與-SQL-查詢語法相互呼應的函數"><a href="#dplyr-的基本功能是六個能與-SQL-查詢語法相互呼應的函數" class="headerlink" title="dplyr 的基本功能是六個能與 SQL 查詢語法相互呼應的函數"></a>dplyr 的基本功能是六個能與 SQL 查詢語法相互呼應的函數</h2><ol>
+<li><strong>filter()</strong> 函數：<strong>SQL</strong> 的 <strong>where</strong></li>
+<li><strong>select()</strong> 函數：<strong>SQL</strong> 的 <strong>select</strong></li>
+<li><strong>mutate()</strong> 函數：<strong>SQL</strong> 的衍生欄位</li>
+<li><strong>arrange()</strong> 函數：<strong>SQL</strong> 的 <strong>order by</strong></li>
+<li><strong>summarise()</strong> 函數：<strong>SQL</strong> 的 <strong>sum、avg</strong></li>
+<li><strong>group_by()</strong> 函數：<strong>SQL</strong> 的 <strong>group by</strong></li>
+</ol>
+<h4 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h4><pre><code>where1 = gapminder[gapminder[&quot;country&quot;] == &quot;Taiwan&quot;]
+where1 = gapminder[gapminder.country == &quot;Taiwan&quot;]
+print(where1)
+
+where2 = gapminder[(gapminder[&quot;year&quot;] == 2007) &amp; (gapminder[&quot;continent&quot;] == &quot;Asia&quot;)]
+where2 = gapminder[(gapminder.year == 2007) &amp; (gapminder.continent == &quot;Asia&quot;)]
+print(where2)
+</code></pre><h4 id="select"><a href="#select" class="headerlink" title="select()"></a>select()</h4><pre><code># 多筆資料
+selectMulty = gapminder[[&quot;country&quot;, &quot;continent&quot;]]
+print(selectMulty)
+
+# 單筆資料
+selectSingle = gapminder[&quot;country&quot;]
+selectSingle = gapminder.country
+print(selectSingle)
+</code></pre><h4 id="mutate"><a href="#mutate" class="headerlink" title="mutate()"></a>mutate()</h4><pre><code>gapminder[&quot;country_abb&quot;] = gapminder[&quot;country&quot;].apply(lambda x: x[:3])
+gapminder[&quot;country_abb&quot;] = gapminder.country.apply(lambda x: x[:3])
+print(gapminder)
+</code></pre><h4 id="arrange"><a href="#arrange" class="headerlink" title="arrange()"></a>arrange()</h4><pre><code>orderby1 = gapminder.sort_values(&quot;year&quot;)
+print(orderby1)
+</code></pre><h4 id="summarise"><a href="#summarise" class="headerlink" title="summarise()"></a>summarise()</h4><pre><code># 總合
+sum1 = gapminder[gapminder[&quot;year&quot;] == 2007][[&quot;pop&quot;]].sum()
+sum1 = gapminder[gapminder.year == 2007][[&quot;pop&quot;]].sum()
+print(sum1)
+
+# 平均
+mean1 = gapminder[gapminder[&quot;year&quot;] == 2007][[&quot;lifeExp&quot;, &quot;gdpPercap&quot;]].mean()
+mean1 = gapminder[gapminder.year == 2007][[&quot;lifeExp&quot;, &quot;gdpPercap&quot;]].mean()
+print(mean1)
+</code></pre><h4 id="group-by"><a href="#group-by" class="headerlink" title="group_by()"></a>group_by()</h4><pre><code>groupby1 = gapminder[gapminder[&quot;year&quot;] == 2007].groupby(by = &quot;continent&quot;)[&quot;pop&quot;].sum()
+groupby1 = gapminder[gapminder.year == 2007].groupby(by = &quot;continent&quot;)[&quot;pop&quot;].sum()
+print(groupby1)
+
+groupby2 = gapminder[gapminder[&quot;year&quot;] == 2007].groupby(by = &quot;continent&quot;)[[&quot;lifeExp&quot;, &quot;gdpPercap&quot;]].mean()
+groupby2 = gapminder[gapminder.year == 2007].groupby(by = &quot;continent&quot;)[[&quot;lifeExp&quot;, &quot;gdpPercap&quot;]].mean()
+print(groupby2)
+</code></pre><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://medium.com/datainpoint/%E5%BE%9E-pandas-%E9%96%8B%E5%A7%8B-python-%E8%88%87%E8%B3%87%E6%96%99%E7%A7%91%E5%AD%B8%E4%B9%8B%E6%97%85-8dee36796d4a" target="_blank" rel="noopener">從 pandas 開始 Python 與資料科學之旅</a>    </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python-Module/" rel="tag"># Python Module</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/09/PythonNumpy/" rel="next" title="Python Numpy 模組">
+                <i class="fa fa-chevron-left"></i> Python Numpy 模組
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="D & E">
+            
+              <p class="site-author-name" itemprop="name">D & E</p>
+              <p class="site-description motion-element" itemprop="description">Just notes</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas"><span class="nav-number">1.</span> <span class="nav-text">Pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Series"><span class="nav-number">1.1.</span> <span class="nav-text">Series</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本運用"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">基本運用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判斷大小"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">判斷大小</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">1.2.</span> <span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本運用-三種方法結果一樣"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">基本運用 (三種方法結果一樣)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Series-轉-Dataframe"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">Series 轉 Dataframe</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#匯入檔案"><span class="nav-number">1.3.</span> <span class="nav-text">匯入檔案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSV-檔"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">CSV 檔</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Excel-檔"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">Excel 檔</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Excel-結合-DataFrame-函式"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">Excel 結合 DataFrame 函式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dplyr-的基本功能是六個能與-SQL-查詢語法相互呼應的函數"><span class="nav-number">1.4.</span> <span class="nav-text">dplyr 的基本功能是六個能與 SQL 查詢語法相互呼應的函數</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">filter()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#select"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">select()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mutate"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">mutate()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#arrange"><span class="nav-number">1.4.0.4.</span> <span class="nav-text">arrange()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#summarise"><span class="nav-number">1.4.0.5.</span> <span class="nav-text">summarise()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#group-by"><span class="nav-number">1.4.0.6.</span> <span class="nav-text">group_by()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">D & E</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

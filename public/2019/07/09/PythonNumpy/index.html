@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python Module,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Numpy 模組 安裝模組 pip install numpy Numpy 的 ndarray 支援多維度陣列；python 的 array 只支援單維度(1維) 支援矩陣 (Martix) 的類別  基本運用import numpy as np  a = np.array([1, 2, 3, 4, 5, 6]) print(&amp;quot;陣列 =&amp;gt; {0}&amp;quot;.format(a))">
+<meta name="keywords" content="Python Module">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Numpy 模組">
+<meta property="og:url" content="http://yoursite.com/2019/07/09/PythonNumpy/index.html">
+<meta property="og:site_name" content="D &amp; E&#39;s Notes">
+<meta property="og:description" content="Numpy 模組 安裝模組 pip install numpy Numpy 的 ndarray 支援多維度陣列；python 的 array 只支援單維度(1維) 支援矩陣 (Martix) 的類別  基本運用import numpy as np  a = np.array([1, 2, 3, 4, 5, 6]) print(&amp;quot;陣列 =&amp;gt; {0}&amp;quot;.format(a))">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2019/07/09/PythonNumpy/1.png">
+<meta property="og:updated_time" content="2019-07-11T02:35:40.600Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Numpy 模組">
+<meta name="twitter:description" content="Numpy 模組 安裝模組 pip install numpy Numpy 的 ndarray 支援多維度陣列；python 的 array 只支援單維度(1維) 支援矩陣 (Martix) 的類別  基本運用import numpy as np  a = np.array([1, 2, 3, 4, 5, 6]) print(&amp;quot;陣列 =&amp;gt; {0}&amp;quot;.format(a))">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/09/PythonNumpy/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/09/PythonNumpy/">
+
+
+
+
+
+  <title>Python Numpy 模組 | D & E's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D & E's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/PythonNumpy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="D & E">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D & E's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python Numpy 模組</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-07-09T15:19:04+08:00">
+                2019-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Numpy-模組"><a href="#Numpy-模組" class="headerlink" title="Numpy 模組"></a>Numpy 模組</h1><ol>
+<li>安裝模組 <strong>pip install numpy</strong><br><img src="/2019/07/09/PythonNumpy/1.png" alt="Architecture"></li>
+<li><strong>Numpy</strong> 的 <strong>ndarray</strong> 支援多維度陣列；<strong>python</strong> 的 <strong>array</strong> 只支援單維度(1維)</li>
+<li>支援矩陣 <strong>(Martix)</strong> 的類別</li>
+</ol>
+<h4 id="基本運用"><a href="#基本運用" class="headerlink" title="基本運用"></a>基本運用</h4><pre><code>import numpy as np
+
+a = np.array([1, 2, 3, 4, 5, 6])
+print(&quot;陣列 =&gt; {0}&quot;.format(a))
+
+# 陣列轉成 m * n 距陣
+a.shape = (3, 2)
+print(&quot;距陣 =&gt; {0}&quot;.format(a))
+
+# 距陣轉成陣列
+b = a.ravel()
+print(&quot;陣列 =&gt; {0}&quot;.format(b))
+</code></pre><h4 id="距陣串接"><a href="#距陣串接" class="headerlink" title="距陣串接"></a>距陣串接</h4><pre><code>a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6], [7, 8]])
+print(&quot;矩陣 =&gt; {0}&quot;.format(a))
+print(&quot;矩陣 =&gt; {0}&quot;.format(b))
+
+c = np.vstack([a, b])
+print(&quot;堆疊串接 =&gt; {0}&quot;.format(c))
+c = np.hstack([a, b])
+print(&quot;水平串接 =&gt; {0}&quot;.format(c))
+</code></pre><h4 id="基本函式"><a href="#基本函式" class="headerlink" title="基本函式"></a>基本函式</h4><pre><code>a = np.exp(2)
+print(&quot;exp =&gt; {0}&quot;.format(a))
+a = np.exp2(2)
+print(&quot;exp2 =&gt; {0}&quot;.format(a))
+a = np.sqrt(2)
+print(&quot;sqrt =&gt; {0}&quot;.format(a))
+a = np.sin([2,3])
+print(&quot;sin =&gt; {0}&quot;.format(a))
+a = np.log(2)
+print(&quot;log =&gt; {0}&quot;.format(a))
+a = np.log10(2)
+print(&quot;log10 =&gt; {0}&quot;.format(a))
+a = np.log2(2)
+print(&quot;log2 =&gt; {0}&quot;.format(a))
+a = np.max([1, 2, 3, 4])
+print(&quot;max =&gt; {0}&quot;.format(a))
+</code></pre><h4 id="二維陣列操作"><a href="#二維陣列操作" class="headerlink" title="二維陣列操作"></a>二維陣列操作</h4><pre><code>a = np.array([[1, 2], [-1, 4]])
+b = np.array([[2, 0], [3, 4]])
+
+c = a * b
+d = np.dot(a, b) # 或者 a.dot(b)
+
+print(&quot;元素相乘 =&gt; {0}&quot;.format(c))
+print(&quot;矩陣相乘 =&gt; {0}&quot;.format(d))
+</code></pre><h4 id="線性代數"><a href="#線性代數" class="headerlink" title="線性代數"></a>線性代數</h4><pre><code>import numpy.linalg as ling 
+# from numpy import linalg 與上方引用相同，建議用上方的寫法
+
+a = np.array([[1, 2], [-1, 4]])
+b = np.array([[2, 0], [3, 4]])
+
+print(&quot;轉置 a =&gt; {0}&quot;.format(a.transpose()))
+print(&quot;逆矩陣 a =&gt; {0}&quot;.format(ling.inv(a)))
+
+eigenvalues, eigenvectors = linalg.eig(a)
+print(&quot;特徵值 a =&gt; {0}&quot;.format(eigenvalues))
+print(&quot;特徵矩陣 a =&gt; {0}&quot;.format(eigenvectors))
+</code></pre><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/Jerr__y/article/details/54968548" target="_blank" rel="noopener">numpy 常用操作</a>    </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python-Module/" rel="tag"># Python Module</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/09/PythonWebCrawler/" rel="next" title="Python 網路爬蟲">
+                <i class="fa fa-chevron-left"></i> Python 網路爬蟲
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/09/PythonPandas/" rel="prev" title="Python Pandas">
+                Python Pandas <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="D & E">
+            
+              <p class="site-author-name" itemprop="name">D & E</p>
+              <p class="site-description motion-element" itemprop="description">Just notes</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Numpy-模組"><span class="nav-number">1.</span> <span class="nav-text">Numpy 模組</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本運用"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">基本運用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#距陣串接"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">距陣串接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本函式"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">基本函式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二維陣列操作"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">二維陣列操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#線性代數"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">線性代數</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">D & E</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
