@@ -190,5 +190,53 @@ categories:
     groupby2 = gapminder[gapminder.year == 2007].groupby(by = "continent")[["lifeExp", "gdpPercap"]].mean()
     print(groupby2)
 
+## Panel
+1. 三維資料，但不常使用
+
+#### 基本運用
+    import pandas as pd
+    
+    p = pd.Panel()
+    print(p)
+
+    dates = pd.date_range("20130101", periods=6)
+    df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list("ABCD"))
+    print(df)
+
+    print(df["A"]) # 等同 df.A
+
+    print(df[["A", "B"]])
+
+    print(df[0:10])
+
+    print(df["20130102":"20130104"])
+
+#### 以 numpy 建立
+    import pandas as pd
+    import numpy as np
+
+    wp = pd.Panel(np.random.randn(2, 5, 4), 
+                items = ["Item1", "Item2"],
+                major_axis = pd.date_range("1/1/2000", periods=5),
+                minor_axis = ["A", "B", "C", "D"])
+    print(wp)
+
+#### 以 DataFrame 建立
+    import pandas as pd
+    import numpy as np
+
+    d = {"Item1" : pd.DataFrame({"one" : pd.Series([1., 2., 3.], index=["a", "b", "c"]),
+                                "two" : pd.Series([1., 2., 3., 4.], index=["a", "b", "c", "d"])}),
+        "Item2" : pd.DataFrame({"thr" : pd.Series([1., 2., 3.], index=["e", "f", "g"])})}
+     
+    wp = pd.Panel(d)
+    
+    print(wp)
+
+    print(wp.to_frame())
+
+    print(wp.to_frame(filter_observations=False))
+
 # Reference
-[從 pandas 開始 Python 與資料科學之旅](https://medium.com/datainpoint/%E5%BE%9E-pandas-%E9%96%8B%E5%A7%8B-python-%E8%88%87%E8%B3%87%E6%96%99%E7%A7%91%E5%AD%B8%E4%B9%8B%E6%97%85-8dee36796d4a)    
+[從 pandas 開始 Python 與資料科學之旅](https://medium.com/datainpoint/%E5%BE%9E-pandas-%E9%96%8B%E5%A7%8B-python-%E8%88%87%E8%B3%87%E6%96%99%E7%A7%91%E5%AD%B8%E4%B9%8B%E6%97%85-8dee36796d4a)
+[[Python] pandas 基本教學](https://zwindr.blogspot.com/2017/03/python-pandas.html)
