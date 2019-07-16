@@ -88,7 +88,7 @@
 <meta property="og:description" content="Binding Interpolation Property Binding Event Binding Two-wan Binding  Interpolation { { } } app.component.ts 123export class AppComponent &amp;#123;  pageTitle = &apos;helloworld&apos;;&amp;#125;  app.component.html 1&amp;">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://yoursite.com/2019/07/15/AngularBinding/1.png">
-<meta property="og:updated_time" content="2019-07-15T10:07:21.075Z">
+<meta property="og:updated_time" content="2019-07-16T02:00:15.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Binding">
 <meta name="twitter:description" content="Binding Interpolation Property Binding Event Binding Two-wan Binding  Interpolation { { } } app.component.ts 123export class AppComponent &amp;#123;  pageTitle = &apos;helloworld&apos;;&amp;#125;  app.component.html 1&amp;">
@@ -360,7 +360,7 @@
 </ol>
 <h4 id="Property-Binding"><a href="#Property-Binding" class="headerlink" title="Property Binding []"></a>Property Binding []</h4><ol>
 <li><p>app.component.ts</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  pageTitle = <span class="string">'helloworld'</span>;</span><br><span class="line">  imgUrl = <span class="string">'https://picsum.photos/200'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  imgUrl = <span class="string">'https://picsum.photos/200'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>app.component.html</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;img [src]=<span class="string">"imgUrl"</span> alt=<span class="string">"Image"</span> /&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
@@ -368,15 +368,31 @@
 </ol>
 <h4 id="Event-Binding"><a href="#Event-Binding" class="headerlink" title="Event Binding ()"></a>Event Binding ()</h4><ol>
 <li><p>app.component.ts</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  pageTitle = <span class="string">'helloworld'</span>;</span><br><span class="line">  imgUrl = <span class="string">'https://picsum.photos/200'</span>;</span><br><span class="line">  count = 0;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">incrementCount</span></span>() &#123;</span><br><span class="line">    this.count += 1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  count = 0;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">incrementCount</span></span>() &#123;</span><br><span class="line">    this.count += 1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>app.component.html</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;button (click)=<span class="string">"incrementCount()"</span>&gt;Click&lt;/button&gt;</span><br><span class="line">  &lt;p&gt;Clicked &#123;&#123; count &#125;&#125; <span class="built_in">times</span>&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="Two-wan-Binding"><a href="#Two-wan-Binding" class="headerlink" title="Two-wan Binding [()]"></a>Two-wan Binding [()]</h4><ol>
+<h2 id="Two-wan-Binding"><a href="#Two-wan-Binding" class="headerlink" title="Two-wan Binding [()]"></a>Two-wan Binding [()]</h2><h4 id="Two-wan-Binding-1"><a href="#Two-wan-Binding-1" class="headerlink" title="Two-wan Binding 1"></a>Two-wan Binding 1</h4><ol>
 <li><p>app.component.ts</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  pageTitle = <span class="string">'helloworld'</span>;</span><br><span class="line">  imgUrl = <span class="string">'https://picsum.photos/200'</span>;</span><br><span class="line">  count = 0;</span><br><span class="line">  name: string;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">incrementCount</span></span>() &#123;</span><br><span class="line">    this.count += 1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  userName: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>app.component.html</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> [ngModel]=<span class="string">"userName"</span> (ngModelChange)=<span class="string">"userName=<span class="variable">$event</span>"</span>&gt;</span><br><span class="line">  &lt;p&gt;Welcome &#123;&#123; userName &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Two-wan-Binding-2"><a href="#Two-wan-Binding-2" class="headerlink" title="Two-wan Binding 2"></a>Two-wan Binding 2</h4><ol>
+<li><p>app.component.ts</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  nickName: string;</span><br><span class="line"></span><br><span class="line">  greetNickName(updatedValue) &#123;</span><br><span class="line">    this.nickName = updatedValue;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(updatedValue == <span class="string">'Nickname'</span>)&#123;</span><br><span class="line">      alert(<span class="string">'Welcome back Nickname'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>app.component.html</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> [ngModel]=<span class="string">"nickName"</span> (ngModelChange)=<span class="string">"greetNickName(<span class="variable">$event</span>)"</span>&gt;</span><br><span class="line">  &lt;p&gt;Welcome &#123;&#123; nickName &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Two-wan-Binding-3"><a href="#Two-wan-Binding-3" class="headerlink" title="Two-wan Binding 3"></a>Two-wan Binding 3</h4><ol>
+<li><p>app.component.ts</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  name: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>app.component.html</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> [(ngModel)]=<span class="string">"name"</span>&gt;</span><br><span class="line">  &lt;p&gt;Welcome &#123;&#123; name &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
@@ -422,6 +438,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/16/AngularGetterAndSetter/" rel="prev" title="Angular Getter and Setter">
+                Angular Getter and Setter <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -500,7 +520,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -555,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Binding"><span class="nav-number">1.</span> <span class="nav-text">Binding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Interpolation"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">Interpolation { { } }</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Property-Binding"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Property Binding []</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Event-Binding"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Event Binding ()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Two-wan-Binding"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Two-wan Binding [()]</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Binding"><span class="nav-number">1.</span> <span class="nav-text">Binding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Interpolation"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">Interpolation { { } }</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Property-Binding"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Property Binding []</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Event-Binding"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Event Binding ()</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-wan-Binding"><span class="nav-number">1.1.</span> <span class="nav-text">Two-wan Binding [()]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Two-wan-Binding-1"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">Two-wan Binding 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Two-wan-Binding-2"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">Two-wan Binding 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Two-wan-Binding-3"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">Two-wan Binding 3</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>

@@ -21,6 +21,7 @@ export class AppComponent {
   pageTitle = 'helloworld';
 }
 ~~~
+
 2. app.component.html
 ~~~ bash
 <h1>{{ pageTitle }}</h1>
@@ -30,10 +31,10 @@ export class AppComponent {
 1. app.component.ts
 ~~~ bash
 export class AppComponent {
-  pageTitle = 'helloworld';
   imgUrl = 'https://picsum.photos/200';
 }
 ~~~
+
 2. app.component.html
 ~~~ bash
 <div>
@@ -45,8 +46,6 @@ export class AppComponent {
 1. app.component.ts
 ~~~ bash
 export class AppComponent {
-  pageTitle = 'helloworld';
-  imgUrl = 'https://picsum.photos/200';
   count = 0;
 
   incrementCount() {
@@ -54,6 +53,7 @@ export class AppComponent {
   }
 }
 ~~~
+
 2. app.component.html
 ~~~ bash
 <div>
@@ -62,20 +62,55 @@ export class AppComponent {
 </div>
 ~~~
 
-#### Two-wan Binding [()]
+## Two-wan Binding [()]
+#### Two-wan Binding 1
 1. app.component.ts
 ~~~ bash
 export class AppComponent {
-  pageTitle = 'helloworld';
-  imgUrl = 'https://picsum.photos/200';
-  count = 0;
-  name: string;
+  userName: string;
+}
+~~~
 
-  incrementCount() {
-    this.count += 1;
+2. app.component.html
+~~~ bash
+<div>
+  <input type="text" [ngModel]="userName" (ngModelChange)="userName=$event">
+  <p>Welcome {{ userName }}</p>
+</div>
+~~~
+
+#### Two-wan Binding 2
+1. app.component.ts
+~~~ bash
+export class AppComponent {
+  nickName: string;
+
+  greetNickName(updatedValue) {
+    this.nickName = updatedValue;
+
+    if(updatedValue == 'Nickname'){
+      alert('Welcome back Nickname');
+    }
   }
 }
 ~~~
+
+2. app.component.html
+~~~ bash
+<div>
+  <input type="text" [ngModel]="nickName" (ngModelChange)="greetNickName($event)">
+  <p>Welcome {{ nickName }}</p>
+</div>
+~~~
+
+#### Two-wan Binding 3
+1. app.component.ts
+~~~ bash
+export class AppComponent {
+  name: string;
+}
+~~~
+
 2. app.component.html
 ~~~ bash
 <div>
