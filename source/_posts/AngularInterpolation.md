@@ -8,11 +8,11 @@ categories:
 ---
 
 # Interpolation 使用 template
-1. template 下無法直接使用 javascript，要透過 ts 給變數
-2. template 無法使用 `a = 2 + 2 運算式`，只能顯示
+1. **template** 下無法直接使用 **javascript**，要透過 **ts** 給變數
+2. 無法使用 `a = 2 + 2 運算式`，只能顯示
 
 #### Interpolation
-1. test.component.ts
+1. **test.component.ts**
 ~~~ bash
 import { Component, OnInit } from '@angular/core';
 
@@ -35,7 +35,7 @@ export class TestComponent implements OnInit {
 
   public name = "Hello World";
   public siteUrl = window.location.href;
-  
+
   constructor() { }
 
   ngOnInit() {
@@ -47,7 +47,7 @@ export class TestComponent implements OnInit {
 }
 ~~~
 
-2. app.component.html
+2. **app.component.html**
 ~~~ bash
 <div style="text-align:center">
   <h1>

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Interpolation 使用 template template 下無法直接使用 javascript，要透過 ts 給變數 template 無法使用 a = 2 + 2 運算式，只能顯示  Interpolation test.component.ts 12345678910111213141516171819202122232425262728293031import &amp;#123; Co">
+<meta name="description" content="Interpolation 使用 template template 下無法直接使用 javascript，要透過 ts 給變數 無法使用 a = 2 + 2 運算式，只能顯示  Interpolation test.component.ts 12345678910111213141516171819202122232425262728293031import &amp;#123; Component,">
 <meta name="keywords" content="Angular Basic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular Interpolation 使用 template">
 <meta property="og:url" content="http://yoursite.com/2019/07/16/AngularInterpolation/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="Interpolation 使用 template template 下無法直接使用 javascript，要透過 ts 給變數 template 無法使用 a = 2 + 2 運算式，只能顯示  Interpolation test.component.ts 12345678910111213141516171819202122232425262728293031import &amp;#123; Co">
+<meta property="og:description" content="Interpolation 使用 template template 下無法直接使用 javascript，要透過 ts 給變數 無法使用 a = 2 + 2 運算式，只能顯示  Interpolation test.component.ts 12345678910111213141516171819202122232425262728293031import &amp;#123; Component,">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-07-16T02:22:21.023Z">
+<meta property="og:updated_time" content="2019-07-16T05:49:27.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Interpolation 使用 template">
-<meta name="twitter:description" content="Interpolation 使用 template template 下無法直接使用 javascript，要透過 ts 給變數 template 無法使用 a = 2 + 2 運算式，只能顯示  Interpolation test.component.ts 12345678910111213141516171819202122232425262728293031import &amp;#123; Co">
+<meta name="twitter:description" content="Interpolation 使用 template template 下無法直接使用 javascript，要透過 ts 給變數 無法使用 a = 2 + 2 運算式，只能顯示  Interpolation test.component.ts 12345678910111213141516171819202122232425262728293031import &amp;#123; Component,">
 
 
 
@@ -343,14 +343,14 @@
 
       
         <h1 id="Interpolation-使用-template"><a href="#Interpolation-使用-template" class="headerlink" title="Interpolation 使用 template"></a>Interpolation 使用 template</h1><ol>
-<li>template 下無法直接使用 javascript，要透過 ts 給變數</li>
-<li>template 無法使用 <code>a = 2 + 2 運算式</code>，只能顯示</li>
+<li><strong>template</strong> 下無法直接使用 <strong>javascript</strong>，要透過 <strong>ts</strong> 給變數</li>
+<li>無法使用 <code>a = 2 + 2 運算式</code>，只能顯示</li>
 </ol>
 <h4 id="Interpolation"><a href="#Interpolation" class="headerlink" title="Interpolation"></a>Interpolation</h4><ol>
-<li><p>test.component.ts</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-test'</span>,</span><br><span class="line">  template: `</span><br><span class="line">    &lt;h2&gt;</span><br><span class="line">      Welcome &#123;&#123; name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; 2 + 2 &#125;&#125; &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; <span class="string">"Welcome "</span> + name &#125;&#125; &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; name.length &#125;&#125; &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; name.toUpperCase() &#125;&#125; &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; greetUser() &#125;&#125; &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; siteUrl &#125;&#125; &lt;/h2&gt;</span><br><span class="line">  `,</span><br><span class="line">  styleUrls: []</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class TestComponent implements OnInit &#123;</span><br><span class="line"></span><br><span class="line">  public name = <span class="string">"Hello World"</span>;</span><br><span class="line">  public siteUrl = window.location.href;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="title">constructor</span></span>() &#123; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">ngOnInit</span></span>() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">greetUser</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="string">"Hi! "</span> + this.name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p><strong>test.component.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-test'</span>,</span><br><span class="line">  template: `</span><br><span class="line">    &lt;h2&gt;</span><br><span class="line">      Welcome &#123;&#123; name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; 2 + 2 &#125;&#125; &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; <span class="string">"Welcome "</span> + name &#125;&#125; &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; name.length &#125;&#125; &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; name.toUpperCase() &#125;&#125; &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; greetUser() &#125;&#125; &lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt; &#123;&#123; siteUrl &#125;&#125; &lt;/h2&gt;</span><br><span class="line">  `,</span><br><span class="line">  styleUrls: []</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class TestComponent implements OnInit &#123;</span><br><span class="line"></span><br><span class="line">  public name = <span class="string">"Hello World"</span>;</span><br><span class="line">  public siteUrl = window.location.href;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">constructor</span></span>() &#123; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">ngOnInit</span></span>() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">greetUser</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="string">"Hi! "</span> + this.name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>app.component.html</p>
+<li><p><strong>app.component.html</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"text-align:center"</span>&gt;</span><br><span class="line">  &lt;h1&gt;</span><br><span class="line">    From AppComponent</span><br><span class="line">  &lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;app-test&gt;&lt;/app-test&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -394,6 +394,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/16/AngularTemplateReference/" rel="prev" title="Angular Template Reference">
+                Angular Template Reference <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -472,7 +476,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
