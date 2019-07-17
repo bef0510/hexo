@@ -8,17 +8,17 @@ categories:
 ---
 
 # Pipe
-1. UpperCasePipe
-2. LowerCasePipe
-3. TitleCasePipe
-4. SlicePipe
-5. JsonPipe
-6. DecimalPipe
-7. PercentPipe
-8. CurrencyPipe
-9. DatePipe
-10. AsyncPipe
-11. Customer
+1. **UpperCasePipe**
+2. **LowerCasePipe**
+3. **TitleCasePipe**
+4. **SlicePipe**
+5. **JsonPipe**
+6. **DecimalPipe**
+7. **PercentPipe**
+8. **CurrencyPipe**
+9. **DatePipe**
+10. **AsyncPipe**
+11. **Customer**
 
 #### UpperCasePipe
 1. **test.component.ts**

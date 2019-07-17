@@ -7,7 +7,10 @@ categories:
  - Angular
 ---
 
-# Input Decorator
+# Input Ouput Decorator
+![Architecture](1.png)
+
+#### Input Decorator
 1. **app.component.ts**
 ~~~ bash
 import { Component } from '@angular/core';
@@ -60,7 +63,7 @@ export class TestComponent implements OnInit {
 <h2> {{ "Hello " + name }} </h2>
 ~~~
 
-# Ouput Decorator
+#### Ouput Decorator
 1. **app.component.ts**
 ~~~ bash
 import { Component } from '@angular/core';
