@@ -3,6 +3,7 @@ title: Angular Structural Directives
 date: 2019-07-16 15:48:31
 tags:
  - Angular Basic
+ - Angular Directives
 categories: 
  - Angular
 ---

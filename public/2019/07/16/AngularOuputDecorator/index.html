@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Getter and SetterBasic app.component.ts 123456789101112131415export class AppComponent &amp;#123;  private _customerName: string;  get customerName(): string &amp;#123;    return this._customerName;  &amp;#125;">
+<meta name="description" content="Input Decorator app.component.ts 1234567891011import &amp;#123; Component &amp;#125; from &apos;@angular/core&apos;;@Component(&amp;#123;  selector: &apos;app-root&apos;,  templateUrl: &apos;./app.component.html&apos;,  styleUrls: [&apos;./app.com">
 <meta name="keywords" content="Angular Basic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Angular Getter and Setter">
-<meta property="og:url" content="http://yoursite.com/2019/07/16/AngularGetterAndSetter/index.html">
+<meta property="og:title" content="Angular Input Ouput Decorator">
+<meta property="og:url" content="http://yoursite.com/2019/07/16/AngularOuputDecorator/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="Getter and SetterBasic app.component.ts 123456789101112131415export class AppComponent &amp;#123;  private _customerName: string;  get customerName(): string &amp;#123;    return this._customerName;  &amp;#125;">
+<meta property="og:description" content="Input Decorator app.component.ts 1234567891011import &amp;#123; Component &amp;#125; from &apos;@angular/core&apos;;@Component(&amp;#123;  selector: &apos;app-root&apos;,  templateUrl: &apos;./app.component.html&apos;,  styleUrls: [&apos;./app.com">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-07-16T07:23:02.060Z">
+<meta property="og:updated_time" content="2019-07-17T02:32:19.099Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Angular Getter and Setter">
-<meta name="twitter:description" content="Getter and SetterBasic app.component.ts 123456789101112131415export class AppComponent &amp;#123;  private _customerName: string;  get customerName(): string &amp;#123;    return this._customerName;  &amp;#125;">
+<meta name="twitter:title" content="Angular Input Ouput Decorator">
+<meta name="twitter:description" content="Input Decorator app.component.ts 1234567891011import &amp;#123; Component &amp;#125; from &apos;@angular/core&apos;;@Component(&amp;#123;  selector: &apos;app-root&apos;,  templateUrl: &apos;./app.component.html&apos;,  styleUrls: [&apos;./app.com">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/16/AngularGetterAndSetter/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/16/AngularOuputDecorator/">
 
 
 
 
 
-  <title>Angular Getter and Setter | D & E's Notes</title>
+  <title>Angular Input Ouput Decorator | D & E's Notes</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/AngularGetterAndSetter/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/AngularOuputDecorator/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Angular Getter and Setter</h1>
+          <h1 class="post-title" itemprop="name headline">Angular Input Ouput Decorator</h1>
         
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-07-16T09:54:59+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-07-16T17:27:19+08:00">
                 2019-07-16
               </time>
             
@@ -342,29 +342,35 @@
       
 
       
-        <h1 id="Getter-and-Setter"><a href="#Getter-and-Setter" class="headerlink" title="Getter and Setter"></a>Getter and Setter</h1><h4 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h4><ol>
+        <h1 id="Input-Decorator"><a href="#Input-Decorator" class="headerlink" title="Input Decorator"></a>Input Decorator</h1><ol>
 <li><p><strong>app.component.ts</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  private _customerName: string;</span><br><span class="line"></span><br><span class="line">  get customerName(): string &#123;</span><br><span class="line">    <span class="built_in">return</span> this._customerName;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">set</span> customerName(value:string) &#123;</span><br><span class="line">    this._customerName = value;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(value == <span class="string">'CustomerName'</span>)&#123;</span><br><span class="line">      alert(<span class="string">'Hello CustomerName'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  title = <span class="string">"app"</span>;</span><br><span class="line">  public name = <span class="string">"Hello World"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>app.component.html</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> [(ngModel)]=<span class="string">"customerName"</span>&gt;</span><br><span class="line">  &lt;p&gt;Welcome &#123;&#123; customerName &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"text-align:center"</span>&gt;</span><br><span class="line">  &lt;h1&gt;</span><br><span class="line">    Welcome to &#123;&#123; title &#125;&#125;!</span><br><span class="line">  &lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;app-test [parentData]=<span class="string">"name"</span> [<span class="built_in">alias</span>]=<span class="string">"name"</span>&gt;&lt;/app-test&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>test.component.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit, Input &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-test'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./test.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./test.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class TestComponent implements OnInit &#123;</span><br><span class="line"></span><br><span class="line">  @Input() public parentData;</span><br><span class="line">  @Input(<span class="string">'alias'</span>) public name;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="title">constructor</span></span>() &#123; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">ngOnInit</span></span>() &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>test.component.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt; &#123;&#123; <span class="string">"Hello "</span> + parentData &#125;&#125; &lt;/h2&gt;</span><br><span class="line">&lt;h2&gt; &#123;&#123; <span class="string">"Hello "</span> + name &#125;&#125; &lt;/h2&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="Input"><a href="#Input" class="headerlink" title="@Input"></a>@Input</h4><ol>
+<h1 id="Ouput-Decorator"><a href="#Ouput-Decorator" class="headerlink" title="Ouput Decorator"></a>Ouput Decorator</h1><ol>
 <li><p><strong>app.component.ts</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  userLoggedIn = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  title = <span class="string">"app"</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="title">greet</span></span>() &#123;</span><br><span class="line">    alert(<span class="string">"Hello World"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  greetParam(name: string) &#123;</span><br><span class="line">    alert(<span class="string">"Hello "</span> + name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>app.component.html</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;Parent Component&lt;/h1&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;button (click)=<span class="string">"userLoggedIn=true"</span>&gt;Login&lt;/button&gt;</span><br><span class="line">    &lt;button (click)=<span class="string">"userLoggedIn=false"</span>&gt;Logout&lt;/button&gt;</span><br><span class="line">    &#123;&#123; userLoggedIn &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;app-child [loggedIn]=<span class="string">"userLoggedIn"</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;Parent Component&lt;/h1&gt;</span><br><span class="line">&lt;app-child (greetEvent)=<span class="string">"greet()"</span>&gt;&lt;/app-child&gt;</span><br><span class="line">&lt;app-child (greetEventParam)=<span class="string">"greetParam(<span class="variable">$event</span>)"</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>child.component.ts</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit, Input &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-child'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./child.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./child.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class ChildComponent implements OnInit &#123;</span><br><span class="line"></span><br><span class="line">  private _loggedIn: boolean;</span><br><span class="line">  message: string;</span><br><span class="line"></span><br><span class="line">  get loggIn(): boolean &#123;</span><br><span class="line">    <span class="built_in">return</span> this._loggedIn;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Input()</span><br><span class="line">  <span class="built_in">set</span> loggedIn(value: boolean) &#123;</span><br><span class="line">    this._loggedIn = value;</span><br><span class="line">    <span class="keyword">if</span>(value == <span class="literal">true</span>)&#123;</span><br><span class="line">      this.message = <span class="string">"Welcome back Vishwas"</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">      this.message = <span class="string">"Please log in"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">constructor</span></span>() &#123; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">ngOnInit</span></span>() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit, Output, EventEmitter &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-child'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./child.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./child.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class ChildComponent implements OnInit &#123;</span><br><span class="line"></span><br><span class="line">  @Output() greetEvent = new EventEmitter();</span><br><span class="line">  @Output() greetEventParam = new EventEmitter();</span><br><span class="line">  name= <span class="string">"Codevolution"</span>;</span><br><span class="line">  <span class="function"><span class="title">constructor</span></span>() &#123; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">ngOnInit</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">callParentGreet</span></span>() &#123;</span><br><span class="line">    this.greetEvent.emit();</span><br><span class="line">    this.greetEventParam.emit(this.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>child.component.html</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;Child Component&lt;/h2&gt;</span><br><span class="line">&#123;&#123; message &#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;Child Component&lt;/h2&gt;</span><br><span class="line">&lt;button (click)=<span class="string">"callParentGreet()"</span>&gt;Greet&lt;/button&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.youtube.com/watch?v=132VfEETYvs&amp;list=PLC3y8-rFHvwgKhaLU8GTyF-5Bb8qT-wzV&amp;index=5" target="_blank" rel="noopener">Angular Component Interaction - 5 - Getters and Setters</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.youtube.com/watch?v=QQ4gYIeZQrs&amp;list=PLC3y8-rFHvwgKhaLU8GTyF-5Bb8qT-wzV&amp;index=13" target="_blank" rel="noopener">Angular Component Interaction - 13 - Output Decorator</a></p>
 
       
     </div>
@@ -395,8 +401,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/15/AngularBinding/" rel="next" title="Angular Binding">
-                <i class="fa fa-chevron-left"></i> Angular Binding
+              <a href="/2019/07/16/AngularStructuralDirectives/" rel="next" title="Angular Structural Directives">
+                <i class="fa fa-chevron-left"></i> Angular Structural Directives
               </a>
             
           </div>
@@ -404,10 +410,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/16/AngularInterpolation/" rel="prev" title="Angular Interpolation 使用 template">
-                Angular Interpolation 使用 template <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -541,7 +543,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Getter-and-Setter"><span class="nav-number">1.</span> <span class="nav-text">Getter and Setter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">Basic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Input"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">@Input</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Input-Decorator"><span class="nav-number">1.</span> <span class="nav-text">Input Decorator</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ouput-Decorator"><span class="nav-number">2.</span> <span class="nav-text">Ouput Decorator</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
