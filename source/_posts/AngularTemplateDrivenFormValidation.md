@@ -22,7 +22,7 @@ categories:
 ~~~
 
 #### Text Validate
-1. **Html**
+1. **.html**
 ~~~ bash
 <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" name="userName" [(ngModel)]="userModel.name" />
 <!--Error Messages-->
@@ -38,7 +38,7 @@ categories:
 ~~~
 
 #### Select Option Validate
-1. **Html**
+1. **.html**
 ~~~ bash
 <select (blur)="validateTopic(topic.value)" (change)="validateTopic(topic.value)" required #topic="ngModel" [class.is-invalid]="topicHasError && topic.touched" class="custom-select" name="topic" [(ngModel)]="userModel.topic">
     <option value="default">I am interested in</option>
@@ -65,13 +65,13 @@ export class AppComponent {
 ~~~
 
 #### Button Submit
-1. **Html**
+1. **.html**
 **Need to be combined with the above verification**
 ~~~ bash
 <button [disabled]="userForm.form.invalid || topicHasError" class="btn btn-primary" type="submit"> Submit form </button>
 ~~~
 
-# All Html
+# All Code
 1. **index.html**
 ~~~ bash
 <!doctype html>

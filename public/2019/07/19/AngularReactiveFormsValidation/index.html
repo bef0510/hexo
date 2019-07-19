@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Angular Basic,Angular Form,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Reactive Forms Validation index.html import bootstrap app.modules.ts import ReactiveFormsModule  Basic validation .ts 12345678get userName() &amp;#123;    return this.registrationForm.get(&quot;userName&quot;);&amp;#12">
+<meta name="keywords" content="Angular Basic,Angular Form">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular Reactive Forms Validation">
+<meta property="og:url" content="http://yoursite.com/2019/07/19/AngularReactiveFormsValidation/index.html">
+<meta property="og:site_name" content="D &amp; E&#39;s Notes">
+<meta property="og:description" content="Reactive Forms Validation index.html import bootstrap app.modules.ts import ReactiveFormsModule  Basic validation .ts 12345678get userName() &amp;#123;    return this.registrationForm.get(&quot;userName&quot;);&amp;#12">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2019/07/19/AngularReactiveFormsValidation/1.gif">
+<meta property="og:image" content="http://yoursite.com/2019/07/19/AngularReactiveFormsValidation/2.png">
+<meta property="og:updated_time" content="2019-07-19T09:26:14.617Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular Reactive Forms Validation">
+<meta name="twitter:description" content="Reactive Forms Validation index.html import bootstrap app.modules.ts import ReactiveFormsModule  Basic validation .ts 12345678get userName() &amp;#123;    return this.registrationForm.get(&quot;userName&quot;);&amp;#12">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/19/AngularReactiveFormsValidation/1.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/19/AngularReactiveFormsValidation/">
+
+
+
+
+
+  <title>Angular Reactive Forms Validation | D & E's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D & E's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/AngularReactiveFormsValidation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="D & E">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D & E's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Angular Reactive Forms Validation</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-07-19T16:42:35+08:00">
+                2019-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Angular/" itemprop="url" rel="index">
+                    <span itemprop="name">Angular</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Reactive-Forms-Validation"><a href="#Reactive-Forms-Validation" class="headerlink" title="Reactive Forms Validation"></a>Reactive Forms Validation</h1><ol>
+<li><strong>index.html import bootstrap</strong></li>
+<li><strong>app.modules.ts import ReactiveFormsModule</strong></li>
+</ol>
+<h4 id="Basic-validation"><a href="#Basic-validation" class="headerlink" title="Basic validation"></a>Basic validation</h4><ol>
+<li><p><strong>.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">get <span class="function"><span class="title">userName</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> this.registrationForm.get(<span class="string">"userName"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">registrationForm = this.fb.group(&#123;</span><br><span class="line">    //userName: [<span class="string">""</span>, Validators.required],</span><br><span class="line">    userName: [<span class="string">""</span>, [Validators.required, Validators.minLength(3)]],</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;input [class.is-invalid]=<span class="string">"userName.invalid &amp;&amp; userName.touched"</span> formControlName=<span class="string">"userName"</span> <span class="built_in">type</span>=<span class="string">"text"</span> class=<span class="string">"form-control"</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--Error Messages (not using get userName)--&gt;</span><br><span class="line">&lt;!--&lt;small [class.d-none]=<span class="string">"registrationForm.get('userName').valid || registrationForm.get('userName').untouched"</span> class=<span class="string">"text-danger"</span>&gt; Username is required &lt;/small&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--Error Messages--&gt;</span><br><span class="line">&lt;div *ngIf=<span class="string">"userName.invalid &amp;&amp; userName.touched"</span>&gt;</span><br><span class="line">    &lt;small *ngIf=<span class="string">"userName.errors?.required"</span> class=<span class="string">"text-danger"</span>&gt; Username is required &lt;/small&gt;</span><br><span class="line">    &lt;small *ngIf=<span class="string">"userName.errors?.minlength"</span> class=<span class="string">"text-danger"</span>&gt; Username must be at least 3 characters &lt;/small&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Custom-validation"><a href="#Custom-validation" class="headerlink" title="Custom validation"></a>Custom validation</h4><ol>
+<li><strong>Create user-name.validator.ts</strong></li>
+<li><p><strong>.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">get <span class="function"><span class="title">userName</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> this.registrationForm.get(<span class="string">"userName"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">constructor(private fb: FormBuilder) &#123;&#125;</span><br><span class="line"></span><br><span class="line">registrationForm = this.fb.group(&#123;</span><br><span class="line">    //userName: [<span class="string">""</span>, [Validators.required, Validators.minLength(3), forbiddenNameValidator]],</span><br><span class="line">    userName: [<span class="string">""</span>, [Validators.required, Validators.minLength(3), forbiddenNameValidator(/password/)]],</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div *ngIf=<span class="string">"userName.invalid &amp;&amp; userName.touched"</span>&gt;</span><br><span class="line">    &lt;!--Custom Validation--&gt;</span><br><span class="line">    &lt;small *ngIf=<span class="string">"userName.errors?.forbiddenName"</span> class=<span class="string">"text-danger"</span>&gt; &#123;&#123; userName.errors?.forbiddenName.value &#125;&#125; Username not allowed &lt;/small&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Cross-Field-validation"><a href="#Cross-Field-validation" class="headerlink" title="Cross Field validation"></a>Cross Field validation</h4><ol>
+<li><strong>Create password.validator.ts</strong></li>
+<li><p><strong>.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">get <span class="function"><span class="title">userName</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> this.registrationForm.get(<span class="string">"userName"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">constructor(private fb: FormBuilder) &#123;&#125;</span><br><span class="line"></span><br><span class="line">registrationForm = this.fb.group(&#123;</span><br><span class="line">    userName: [<span class="string">""</span>, [Validators.required, Validators.minLength(3), forbiddenNameValidator(/password/)]],</span><br><span class="line">&#125;, &#123; validator: passwordValidator&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">    &lt;!--Custom Validation--&gt;</span><br><span class="line">    &lt;small class=<span class="string">"text-danger"</span> *ngIf=<span class="string">"registrationForm.errors?.misMatch"</span>&gt; Passwords <span class="keyword">do</span> not match &lt;/small&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Conditional-validation"><a href="#Conditional-validation" class="headerlink" title="Conditional validation"></a>Conditional validation</h4><p><img src="/2019/07/19/AngularReactiveFormsValidation/1.gif" alt="Architecture"></p>
+<ol>
+<li><p><strong>.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">this.registrationForm.get(<span class="string">"subscribe"</span>).valueChanges</span><br><span class="line">    .subscribe(checkedValue =&gt; &#123;</span><br><span class="line">        const email = this.registrationForm.get(<span class="string">"email"</span>);</span><br><span class="line">        <span class="keyword">if</span> (checkedValue) &#123;</span><br><span class="line">            email.setValidators(Validators.required);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             email.clearValidators();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        email.updateValueAndValidity();</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">    &lt;label&gt; Email &lt;/label&gt;</span><br><span class="line">    &lt;input [class.is-invalid]=<span class="string">"email.invalid &amp;&amp; email.touched"</span> formControlName=<span class="string">"email"</span> <span class="built_in">type</span>=<span class="string">"text"</span> class=<span class="string">"form-control"</span> /&gt;</span><br><span class="line">    &lt;!--Custom Validation--&gt;</span><br><span class="line">    &lt;small [class.d-none]=<span class="string">"email.valid || email.untouched"</span> class=<span class="string">"text-danger"</span>&gt; Email is required &lt;/small&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=<span class="string">"form-check mb-3"</span>&gt;</span><br><span class="line">    &lt;input formControlName=<span class="string">"subscribe"</span> <span class="built_in">type</span>=<span class="string">"checkbox"</span> class=<span class="string">"form-check-input"</span> /&gt;</span><br><span class="line">    &lt;label class=<span class="string">"form-check-label"</span>&gt; Send me promotional offers &lt;/label&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="All-Code"><a href="#All-Code" class="headerlink" title="All Code"></a>All Code</h4><ol>
+<li><p><strong>Folder Struct</strong><br><img src="/2019/07/19/AngularReactiveFormsValidation/2.png" alt="Architecture"></p>
+</li>
+<li><p><strong>index.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">  &lt;title&gt;ReactiveForm&lt;/title&gt;</span><br><span class="line">  &lt;base href=<span class="string">"/"</span>&gt;</span><br><span class="line"></span><br><span class="line">  &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span><br><span class="line">  &lt;link rel=<span class="string">"icon"</span> <span class="built_in">type</span>=<span class="string">"image/x-icon"</span> href=<span class="string">"favicon.ico"</span>&gt;</span><br><span class="line">  &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"</span> integrity=<span class="string">"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"</span> crossorigin=<span class="string">"anonymous"</span>&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;app-root&gt;&lt;/app-root&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>app.module.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserModule &#125; from <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line">import &#123; NgModule &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; ReactiveFormsModule &#125; from <span class="string">'@angular/forms'</span>;</span><br><span class="line">import &#123; AppRoutingModule &#125; from <span class="string">'./app-routing.module'</span>;</span><br><span class="line">import &#123; AppComponent &#125; from <span class="string">'./app.component'</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    AppRoutingModule,</span><br><span class="line">    ReactiveFormsModule</span><br><span class="line">  ],</span><br><span class="line">  providers: [],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>app.component.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; FormBuilder, Validators, FormGroup &#125; from <span class="string">'@angular/forms'</span>;</span><br><span class="line">import &#123; forbiddenNameValidator &#125; from <span class="string">'./shared/user-name.validator'</span>;</span><br><span class="line">import &#123; passwordValidator &#125; from <span class="string">'./shared/password.validator'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppComponent implements OnInit &#123;</span><br><span class="line">  registrationForm: FormGroup;</span><br><span class="line"></span><br><span class="line">  get <span class="function"><span class="title">userName</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> this.registrationForm.get(<span class="string">"userName"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  get <span class="function"><span class="title">email</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> this.registrationForm.get(<span class="string">"email"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  constructor(private fb: FormBuilder) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">ngOnInit</span></span>() &#123;</span><br><span class="line">    this.registrationForm = this.fb.group(&#123;</span><br><span class="line">      userName: [<span class="string">""</span>, [Validators.required, Validators.minLength(3), forbiddenNameValidator(/password/)]],</span><br><span class="line">      email: [<span class="string">""</span>],</span><br><span class="line">      subscribe: [<span class="string">""</span>],</span><br><span class="line">      password: [<span class="string">""</span>],</span><br><span class="line">      confirmPassword: [<span class="string">""</span>],</span><br><span class="line">      address: this.fb.group(&#123;</span><br><span class="line">        city: [<span class="string">""</span>],</span><br><span class="line">        state: [<span class="string">""</span>],</span><br><span class="line">        postalCode: [<span class="string">""</span>]</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;, &#123; validator: passwordValidator&#125;);</span><br><span class="line"></span><br><span class="line">    this.registrationForm.get(<span class="string">"subscribe"</span>).valueChanges</span><br><span class="line">      .subscribe(checkedValue =&gt; &#123;</span><br><span class="line">        const email = this.registrationForm.get(<span class="string">"email"</span>);</span><br><span class="line">        <span class="keyword">if</span> (checkedValue) &#123;</span><br><span class="line">          email.setValidators(Validators.required);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          email.clearValidators();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        email.updateValueAndValidity();</span><br><span class="line"></span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>app.component.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"container-fluid"</span>&gt;</span><br><span class="line">  &lt;h2&gt; Registration Form &lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">  &#123;&#123; registrationForm.value | json &#125;&#125;</span><br><span class="line"></span><br><span class="line">  &lt;form [formGroup]=<span class="string">"registrationForm"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">      &lt;label&gt; Username &lt;/label&gt;</span><br><span class="line">      &lt;input [class.is-invalid]=<span class="string">"userName.invalid &amp;&amp; userName.touched"</span></span><br><span class="line">                                  formControlName=<span class="string">"userName"</span> <span class="built_in">type</span>=<span class="string">"text"</span> class=<span class="string">"form-control"</span> /&gt;</span><br><span class="line">      &lt;!--Error Messages--&gt;</span><br><span class="line">      &lt;!--&lt;small [class.d-none]=<span class="string">"registrationForm.get('userName').valid ||</span></span><br><span class="line"><span class="string">                              registrationForm.get('userName').untouched"</span> class=<span class="string">"text-danger"</span>&gt; Username is required &lt;/small&gt;--&gt;</span><br><span class="line">      &lt;div *ngIf=<span class="string">"userName.invalid &amp;&amp; userName.touched"</span>&gt;</span><br><span class="line">        &lt;small *ngIf=<span class="string">"userName.errors?.required"</span> class=<span class="string">"text-danger"</span>&gt; Username is required &lt;/small&gt;</span><br><span class="line">        &lt;small *ngIf=<span class="string">"userName.errors?.minlength"</span> class=<span class="string">"text-danger"</span>&gt; Username must be at least 3 characters &lt;/small&gt;</span><br><span class="line">        &lt;!--Custom Validation--&gt;</span><br><span class="line">        &lt;small *ngIf=<span class="string">"userName.errors?.forbiddenName"</span> class=<span class="string">"text-danger"</span>&gt; &#123;&#123; userName.errors?.forbiddenName.value &#125;&#125; Username not allowed &lt;/small&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">      &lt;label&gt; Email &lt;/label&gt;</span><br><span class="line">      &lt;input [class.is-invalid]=<span class="string">"email.invalid &amp;&amp; email.touched"</span> formControlName=<span class="string">"email"</span> <span class="built_in">type</span>=<span class="string">"text"</span> class=<span class="string">"form-control"</span> /&gt;</span><br><span class="line">       &lt;!--Custom Validation--&gt;</span><br><span class="line">       &lt;small [class.d-none]=<span class="string">"email.valid || email.untouched"</span> class=<span class="string">"text-danger"</span>&gt; Email is required &lt;/small&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=<span class="string">"form-check mb-3"</span>&gt;</span><br><span class="line">      &lt;input formControlName=<span class="string">"subscribe"</span> <span class="built_in">type</span>=<span class="string">"checkbox"</span> class=<span class="string">"form-check-input"</span> /&gt;</span><br><span class="line">      &lt;label class=<span class="string">"form-check-label"</span>&gt; Send me promotional offers &lt;/label&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">      &lt;label&gt; Password &lt;/label&gt;</span><br><span class="line">      &lt;input formControlName=<span class="string">"password"</span> <span class="built_in">type</span>=<span class="string">"password"</span> class=<span class="string">"form-control"</span> /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">      &lt;label&gt; Confirm Password &lt;/label&gt;</span><br><span class="line">      &lt;input [class.id-invalid]=<span class="string">"registrationForm.errors?.misMatch"</span> formControlName=<span class="string">"confirmPassword"</span> <span class="built_in">type</span>=<span class="string">"password"</span> class=<span class="string">"form-control"</span> /&gt;</span><br><span class="line">      &lt;!--Custom Validation--&gt;</span><br><span class="line">      &lt;small class=<span class="string">"text-danger"</span> *ngIf=<span class="string">"registrationForm.errors?.misMatch"</span>&gt; Passwords <span class="keyword">do</span> not match &lt;/small&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div formGroupName=<span class="string">"address"</span>&gt;</span><br><span class="line">      &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">        &lt;label&gt; City &lt;/label&gt;</span><br><span class="line">        &lt;input formControlName=<span class="string">"city"</span> <span class="built_in">type</span>=<span class="string">"text"</span> class=<span class="string">"form-control"</span>&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">        &lt;label&gt; State &lt;/label&gt;</span><br><span class="line">        &lt;input formControlName=<span class="string">"state"</span> <span class="built_in">type</span>=<span class="string">"text"</span> class=<span class="string">"form-control"</span>&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">        &lt;label&gt; Postal Code &lt;/label&gt;</span><br><span class="line">        &lt;input formControlName=<span class="string">"postalCode"</span> <span class="built_in">type</span>=<span class="string">"text"</span> class=<span class="string">"form-control"</span>&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;button class=<span class="string">"btn btn-primary"</span> <span class="built_in">type</span>=<span class="string">"submit"</span>&gt; Register &lt;/button&gt;</span><br><span class="line">    &lt;button (click)=<span class="string">"loadAPIData()"</span> class=<span class="string">"btn btn-secondary ml-2"</span> <span class="built_in">type</span>=<span class="string">"button"</span>&gt; Load API Data &lt;/button&gt;</span><br><span class="line">    </span><br><span class="line">  &lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>user-name.validator.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import &#123; AbstractControl, ValidatorFn &#125; from <span class="string">"@angular/forms"</span>;</span><br><span class="line"></span><br><span class="line">// basic</span><br><span class="line">// <span class="built_in">export</span> <span class="keyword">function</span> forbiddenNameValidator(control: AbstractControl): &#123; [key: string]: any &#125; | null &#123;</span><br><span class="line">//     const forbidden = /admin/.<span class="built_in">test</span>(control.value);</span><br><span class="line">//     <span class="built_in">return</span> forbidden ? &#123; <span class="string">"forbiddenName"</span>: &#123; value: control.value &#125;&#125; : null;</span><br><span class="line">// &#125;</span><br><span class="line"></span><br><span class="line">// factory <span class="keyword">function</span></span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> forbiddenNameValidator(forbiddenName: RegExp): ValidatorFn &#123;</span><br><span class="line">    <span class="built_in">return</span> (control: AbstractControl): &#123; [key: string]: any &#125; | null =&gt; &#123;</span><br><span class="line">        const forbidden = forbiddenName.test(control.value);</span><br><span class="line">        <span class="built_in">return</span> forbidden ? &#123; <span class="string">"forbiddenName"</span>: &#123; value: control.value &#125;&#125; : null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>password.validator.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &#123; AbstractControl &#125; from <span class="string">"@angular/forms"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> passwordValidator(control: AbstractControl): &#123; [key: string]: boolean &#125; | null &#123;</span><br><span class="line">    const password = control.get(<span class="string">"password"</span>);</span><br><span class="line">    const confirmPassword = control.get(<span class="string">"confirmPassword"</span>);</span><br><span class="line">    <span class="keyword">if</span>(password.pristine || confirmPassword.pristine) &#123;</span><br><span class="line">        <span class="built_in">return</span> null;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> password &amp;&amp; confirmPassword &amp;&amp; password.value !== confirmPassword.value ? &#123; <span class="string">"misMatch"</span>: <span class="literal">true</span> &#125; : null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.youtube.com/watch?v=7y6GV3EeMHE&amp;list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&amp;index=57" target="_blank" rel="noopener">Angular Forms Tutorial - 25 - Conditional Validation</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Angular-Basic/" rel="tag"># Angular Basic</a>
+          
+            <a href="/tags/Angular-Form/" rel="tag"># Angular Form</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/19/AngularReactiveForms/" rel="next" title="Angular Reactive Forms">
+                <i class="fa fa-chevron-left"></i> Angular Reactive Forms
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="D & E">
+            
+              <p class="site-author-name" itemprop="name">D & E</p>
+              <p class="site-description motion-element" itemprop="description">Just notes</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">100</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Reactive-Forms-Validation"><span class="nav-number">1.</span> <span class="nav-text">Reactive Forms Validation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-validation"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">Basic validation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Custom-validation"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Custom validation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cross-Field-validation"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Cross Field validation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Conditional-validation"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Conditional validation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#All-Code"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">All Code</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">D & E</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
