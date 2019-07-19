@@ -153,7 +153,7 @@ export class AppComponent {
 ~~~
 
 #### One way binding
-1. **Create user model**
+1. **Create model**
 `ng g class user --spec false`
 
 2. **app.component.ts**
