@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C#,Behavioral,">
+  <meta name="keywords" content="Server,SSMS,">
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="責任鏈模式避免請求發送者與接收者耦合在一起，讓多個對象都有可能接受請求，將這些對象連接成一條鏈，並且沿著這條鏈傳遞請求，知道有對象處理它為止 建立一個 類別 LeaveRequestpublic class LeaveRequest {     public string Name { get; set; }      public int Days { get; set; }      publ">
-<meta name="keywords" content="C#,Behavioral">
+<meta name="description" content="Only splash screen Replace file Microsoft.VisualStudio.Shell.Interop.8.0.dll Copy from path C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\PrivateAssemblies\Interop\ Repl">
+<meta name="keywords" content="Server,SSMS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="行為型模式 - 責任鏈模式">
-<meta property="og:url" content="http://yoursite.com/2019/06/05/DesignPatternWithChainOfResponsibility/index.html">
+<meta property="og:title" content="MS Sql Splash Screen on server 2016">
+<meta property="og:url" content="http://yoursite.com/2019/07/29/MSSqlSplashScreen/index.html">
 <meta property="og:site_name" content="D &amp; E&#39;s Notes">
-<meta property="og:description" content="責任鏈模式避免請求發送者與接收者耦合在一起，讓多個對象都有可能接受請求，將這些對象連接成一條鏈，並且沿著這條鏈傳遞請求，知道有對象處理它為止 建立一個 類別 LeaveRequestpublic class LeaveRequest {     public string Name { get; set; }      public int Days { get; set; }      publ">
+<meta property="og:description" content="Only splash screen Replace file Microsoft.VisualStudio.Shell.Interop.8.0.dll Copy from path C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\PrivateAssemblies\Interop\ Repl">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2019/06/05/DesignPatternWithChainOfResponsibility/1.png">
-<meta property="og:updated_time" content="2019-07-04T04:21:16.709Z">
+<meta property="og:updated_time" content="2019-07-29T08:55:30.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="行為型模式 - 責任鏈模式">
-<meta name="twitter:description" content="責任鏈模式避免請求發送者與接收者耦合在一起，讓多個對象都有可能接受請求，將這些對象連接成一條鏈，並且沿著這條鏈傳遞請求，知道有對象處理它為止 建立一個 類別 LeaveRequestpublic class LeaveRequest {     public string Name { get; set; }      public int Days { get; set; }      publ">
-<meta name="twitter:image" content="http://yoursite.com/2019/06/05/DesignPatternWithChainOfResponsibility/1.png">
+<meta name="twitter:title" content="MS Sql Splash Screen on server 2016">
+<meta name="twitter:description" content="Only splash screen Replace file Microsoft.VisualStudio.Shell.Interop.8.0.dll Copy from path C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\PrivateAssemblies\Interop\ Repl">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/05/DesignPatternWithChainOfResponsibility/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/29/MSSqlSplashScreen/">
 
 
 
 
 
-  <title>行為型模式 - 責任鏈模式 | D & E's Notes</title>
+  <title>MS Sql Splash Screen on server 2016 | D & E's Notes</title>
   
 
 
@@ -255,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/05/DesignPatternWithChainOfResponsibility/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/MSSqlSplashScreen/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="D & E">
@@ -272,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">行為型模式 - 責任鏈模式</h1>
+          <h1 class="post-title" itemprop="name headline">MS Sql Splash Screen on server 2016</h1>
         
 
         <div class="post-meta">
@@ -284,8 +282,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-06-05T16:31:04+08:00">
-                2019-06-05
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-07-29T16:46:13+08:00">
+                2019-07-29
               </time>
             
 
@@ -307,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Design-Pattern/" itemprop="url" rel="index">
-                    <span itemprop="name">Design Pattern</span>
+                  <a href="/categories/MS-SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MS SQL</span>
                   </a>
                 </span>
 
@@ -344,114 +342,12 @@
       
 
       
-        <h1 id="責任鏈模式"><a href="#責任鏈模式" class="headerlink" title="責任鏈模式"></a>責任鏈模式</h1><p>避免請求發送者與接收者耦合在一起，讓多個對象都有可能接受請求，將這些對象連接成一條鏈，並且沿著這條鏈傳遞請求，知道有對象處理它為止<br><img src="/2019/06/05/DesignPatternWithChainOfResponsibility/1.png" alt="Architecture"></p>
-<h4 id="建立一個-類別-LeaveRequest"><a href="#建立一個-類別-LeaveRequest" class="headerlink" title="建立一個 類別 LeaveRequest"></a>建立一個 類別 <code>LeaveRequest</code></h4><pre><code>public class LeaveRequest
-{
-    public string Name { get; set; }
-
-    public int Days { get; set; }
-
-    public LeaveRequest(string name, int days)
-    {
-        Name = name;
-        Days = days;
-    }
-}
-</code></pre><h4 id="建立一個-抽象類別-Approver"><a href="#建立一個-抽象類別-Approver" class="headerlink" title="建立一個 抽象類別 Approver"></a>建立一個 抽象類別 <code>Approver</code></h4><pre><code>public abstract class Approver
-{
-    public Approver NextApprover { get; set; }
-    public string ApproverName { get; set; }
-    public Approver(string name)
-    {
-        ApproverName = name;
-    }
-
-    public abstract void ProcessReQuest(LeaveRequest request);
-}
-</code></pre><h4 id="建立一個-類別-Manager-繼承-Approver"><a href="#建立一個-類別-Manager-繼承-Approver" class="headerlink" title="建立一個 類別 Manager 繼承 Approver"></a>建立一個 類別 <code>Manager</code> 繼承 <code>Approver</code></h4><pre><code>public class Manager : Approver
-{
-    public Manager(string approverName) : base(approverName) { }
-
-    public override void ProcessReQuest(LeaveRequest request)
-    {
-        if (request.Days &lt;= 3)
-        {
-            Console.WriteLine($&quot;{this.ApproverName} Manager approve {request.Name}&apos;s leave&quot;);
-        }
-        else if (NextApprover != null)
-        {
-            Console.WriteLine($&quot;{this.ApproverName} Manager approve {request.Name}&apos;s leave&quot;);
-            NextApprover.ProcessReQuest(request);
-        }
-    }
-}
-</code></pre><h4 id="建立一個-類別-Director-繼承-Approver"><a href="#建立一個-類別-Director-繼承-Approver" class="headerlink" title="建立一個 類別 Director 繼承 Approver"></a>建立一個 類別 <code>Director</code> 繼承 <code>Approver</code></h4><pre><code>public class Director : Approver
-{
-    public Director(string approverName) : base(approverName) { }
-
-    public override void ProcessReQuest(LeaveRequest request)
-    {
-        if (request.Days &gt; 3 &amp;&amp; request.Days &lt;= 5)
-        {
-            Console.WriteLine($&quot;{this.ApproverName} Director approve {request.Name}&apos;s leave&quot;);
-        }
-        else if (NextApprover != null)
-        {
-            Console.WriteLine($&quot;{this.ApproverName} Director approve {request.Name}&apos;s leave&quot;);
-            NextApprover.ProcessReQuest(request);
-        }
-    }
-}
-</code></pre><h4 id="建立一個-類別-CEO-繼承-Approver"><a href="#建立一個-類別-CEO-繼承-Approver" class="headerlink" title="建立一個 類別 CEO 繼承 Approver"></a>建立一個 類別 <code>CEO</code> 繼承 <code>Approver</code></h4><pre><code>public class CEO : Approver
-{
-    public CEO(string approverName) : base(approverName) { }
-
-    public override void ProcessReQuest(LeaveRequest request)
-    {
-        if (request.Days &gt; 5 &amp;&amp; request.Days &lt;= 7)
-        {
-            Console.WriteLine($&quot;{this.ApproverName} CEO approve {request.Name}&apos;s leave&quot;);
-        }
-        else
-        {
-            Console.WriteLine($&quot;{this.ApproverName} CEO approve {request.Name}&apos;s leave&quot;);
-            Console.WriteLine($&quot;Need running process&quot;);
-        }
-    }
-}
-</code></pre><h4 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h4><pre><code>class Program
-{
-    static void Main(string[] args)
-    {
-        LeaveRequest ericLeave = new LeaveRequest(&quot;Rachel&quot;, 2);
-        LeaveRequest joeyLeave = new LeaveRequest(&quot;Joey&quot;, 4);
-        LeaveRequest monicaLeave = new LeaveRequest(&quot;Monica&quot;, 6);
-
-        Approver manager = new Manager(&quot;Ross&quot;);
-        Approver director = new Director(&quot;Chandler&quot;);
-        Approver ceo = new CEO(&quot;Phoebe&quot;);
-
-        manager.NextApprover = director;
-        director.NextApprover = ceo;
-
-        manager.ProcessReQuest(ericLeave);
-        manager.ProcessReQuest(joeyLeave);
-        manager.ProcessReQuest(monicaLeave);
-
-        Console.ReadKey();
-    }
-}
-</code></pre><h4 id="適用場景"><a href="#適用場景" class="headerlink" title="適用場景"></a>適用場景</h4><ol>
-<li>一個系統的審批需要多個對象才能完成處理的情況下</li>
-<li>代碼中存在多個的 <strong>if-else</strong> 語句的情況下，此時可以考慮使用責任鏈模式來對代碼進行重構</li>
+        <h1 id="Only-splash-screen"><a href="#Only-splash-screen" class="headerlink" title="Only splash screen"></a>Only splash screen</h1><ol>
+<li><strong>Replace file</strong> <code>Microsoft.VisualStudio.Shell.Interop.8.0.dll</code></li>
+<li><strong>Copy from path</strong> <code>C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\PrivateAssemblies\Interop\</code></li>
+<li><strong>Replace to path</strong> <code>C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\PublicAssemblies\</code></li>
 </ol>
-<h4 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h4><ol>
-<li>將職責分類隔離處理，降低耦合，符合開閉原則，不需修改原有代碼，新增一個責任類即可</li>
-</ol>
-<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ol>
-<li>在找到正確的處理對象之前，所有的條件判定都要執行一遍，當責任鏈過長時，可能會引起性能的問題</li>
-</ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zh.wikipedia.org/wiki/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">維基百科-責任鏈模式</a><br><a href="https://www.cnblogs.com/PatrickLiu/p/8109100.html" target="_blank" rel="noopener">C#设计模式之二十职责链模式（Chain of Responsibility Pattern）【行为型】</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://dba.stackexchange.com/questions/237086/sql-server-management-studio-18-wont-open-only-splash-screen-pops-up" target="_blank" rel="noopener">SQL Server Management Studio 18 won’t open (only splash screen pops up)</a></p>
 
       
     </div>
@@ -469,9 +365,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"># C#</a>
+            <a href="/tags/Server/" rel="tag"># Server</a>
           
-            <a href="/tags/Behavioral/" rel="tag"># Behavioral</a>
+            <a href="/tags/SSMS/" rel="tag"># SSMS</a>
           
         </div>
       
@@ -484,8 +380,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/05/DesignPatternWithProxy/" rel="next" title="結構型模式 - 代理模式">
-                <i class="fa fa-chevron-left"></i> 結構型模式 - 代理模式
+              <a href="/2019/07/23/AngularReactiveFormsSubmit/" rel="next" title="Angular Reactive Forms Submit">
+                <i class="fa fa-chevron-left"></i> Angular Reactive Forms Submit
               </a>
             
           </div>
@@ -493,10 +389,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/05/DesignPatternWithCommand/" rel="prev" title="行為型模式 - 命令模式">
-                行為型模式 - 命令模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -630,7 +522,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#責任鏈模式"><span class="nav-number">1.</span> <span class="nav-text">責任鏈模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-LeaveRequest"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">建立一個 類別 LeaveRequest</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-抽象類別-Approver"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">建立一個 抽象類別 Approver</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Manager-繼承-Approver"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">建立一個 類別 Manager 繼承 Approver</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-Director-繼承-Approver"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">建立一個 類別 Director 繼承 Approver</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立一個-類別-CEO-繼承-Approver"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">建立一個 類別 CEO 繼承 Approver</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用方式"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#適用場景"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">適用場景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#優點"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺點"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">缺點</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Only-splash-screen"><span class="nav-number">1.</span> <span class="nav-text">Only splash screen</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
