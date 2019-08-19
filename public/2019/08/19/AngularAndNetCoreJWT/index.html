@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Angular,.Net Core,JWT,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Angular + .Net Core JWT.Net Core 開啟 VS  增加 Models   AppSettings.cs123456789101112using System;using System.Collections.Generic;using System.Linq;using System.Threading.Tasks;namespace CoreJWT.Models&amp;#">
+<meta name="keywords" content="Angular,.Net Core,JWT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular + .Net Core JWT">
+<meta property="og:url" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/index.html">
+<meta property="og:site_name" content="D &amp; E&#39;s Notes">
+<meta property="og:description" content="Angular + .Net Core JWT.Net Core 開啟 VS  增加 Models   AppSettings.cs123456789101112using System;using System.Collections.Generic;using System.Linq;using System.Threading.Tasks;namespace CoreJWT.Models&amp;#">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/8.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/9.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/10.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/11.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/12.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/13.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/14.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/15.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/16.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/20.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/17.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/18.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/19.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/20.png">
+<meta property="og:updated_time" content="2019-08-19T06:12:19.230Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular + .Net Core JWT">
+<meta name="twitter:description" content="Angular + .Net Core JWT.Net Core 開啟 VS  增加 Models   AppSettings.cs123456789101112using System;using System.Collections.Generic;using System.Linq;using System.Threading.Tasks;namespace CoreJWT.Models&amp;#">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/">
+
+
+
+
+
+  <title>Angular + .Net Core JWT | D & E's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D & E's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/19/AngularAndNetCoreJWT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="D & E">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D & E's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Angular + .Net Core JWT</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-08-19T10:44:33+08:00">
+                2019-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Angular/" itemprop="url" rel="index">
+                    <span itemprop="name">Angular</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Angular-Net-Core-JWT"><a href="#Angular-Net-Core-JWT" class="headerlink" title="Angular + .Net Core JWT"></a>Angular + .Net Core JWT</h1><h4 id="Net-Core"><a href="#Net-Core" class="headerlink" title=".Net Core"></a>.Net Core</h4><ol>
+<li><p>開啟 <strong>VS</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/1.png" alt="Architecture"><br><img src="/2019/08/19/AngularAndNetCoreJWT/2.png" alt="Architecture"><br><img src="/2019/08/19/AngularAndNetCoreJWT/3.png" alt="Architecture"></p>
+</li>
+<li><p>增加 <strong>Models</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/4.png" alt="Architecture"></p>
+</li>
+</ol>
+<p><strong>AppSettings.cs</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace CoreJWT.Models</span><br><span class="line">&#123;</span><br><span class="line">    public class AppSettings</span><br><span class="line">    &#123;</span><br><span class="line">        public string Secret &#123; get; <span class="built_in">set</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>User.cs</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace CoreJWT.Models</span><br><span class="line">&#123;</span><br><span class="line">    public class User</span><br><span class="line">    &#123;</span><br><span class="line">        public int Id &#123; get; <span class="built_in">set</span>; &#125;</span><br><span class="line">        public string FirstName &#123; get; <span class="built_in">set</span>; &#125;</span><br><span class="line">        public string LastName &#123; get; <span class="built_in">set</span>; &#125;</span><br><span class="line">        public string Username &#123; get; <span class="built_in">set</span>; &#125;</span><br><span class="line">        public string Password &#123; get; <span class="built_in">set</span>; &#125;</span><br><span class="line">        public string JwtToken &#123; get; <span class="built_in">set</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li><p>增加 <strong>UsersController.cs</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/5.png" alt="Architecture"><br><img src="/2019/08/19/AngularAndNetCoreJWT/6.png" alt="Architecture"><br><img src="/2019/08/19/AngularAndNetCoreJWT/7.png" alt="Architecture"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">using CoreJWT.Models;</span><br><span class="line">using CoreJWT.Services;</span><br><span class="line">using Microsoft.AspNetCore.Mvc;</span><br><span class="line"></span><br><span class="line">namespace CoreJWT.Controllers</span><br><span class="line">&#123;</span><br><span class="line">    [Route(<span class="string">"api/[controller]"</span>)]</span><br><span class="line">    [ApiController]</span><br><span class="line">    public class UsersController : ControllerBase</span><br><span class="line">    &#123;</span><br><span class="line">        private IUserService userService;</span><br><span class="line"></span><br><span class="line">        public UsersController(IUserService userService)</span><br><span class="line">        &#123;</span><br><span class="line">            this.userService = userService;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [HttpPost(<span class="string">"authenticate"</span>)]</span><br><span class="line">        public IActionResult Authenticate([FromBody]User userParam)</span><br><span class="line">        &#123;</span><br><span class="line">            var user = this.userService.Authenticate(userParam.Username, userParam.Password);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (user == null)</span><br><span class="line">                <span class="built_in">return</span> BadRequest(new &#123; message = <span class="string">"Username or password is incorrect"</span> &#125;);</span><br><span class="line"></span><br><span class="line">            <span class="built_in">return</span> Ok(user);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [HttpGet(<span class="string">"getAllUser"</span>)]</span><br><span class="line">        public IActionResult GetAllUser()</span><br><span class="line">        &#123;</span><br><span class="line">            var user = this.userService.GetAll();</span><br><span class="line"></span><br><span class="line">            <span class="built_in">return</span> Ok(user);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [HttpDelete(<span class="string">"&#123;id&#125;"</span>)]</span><br><span class="line">        public IActionResult DeleteUser(int id)</span><br><span class="line">        &#123;</span><br><span class="line">            var user = this.userService.DeleteUser(id);</span><br><span class="line"></span><br><span class="line">            <span class="built_in">return</span> Ok(user);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        [HttpPost(<span class="string">"register"</span>)]</span><br><span class="line">        public IActionResult Register([FromBody]User userParam)</span><br><span class="line">        &#123;</span><br><span class="line">            var user = this.userService.Register(userParam);</span><br><span class="line"></span><br><span class="line">            <span class="built_in">return</span> Ok(user);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增加 <strong>service</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/8.png" alt="Architecture"></p>
+</li>
+</ol>
+<p><strong>IUserService.cs</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">using CoreJWT.Models;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line"></span><br><span class="line">namespace CoreJWT.Services</span><br><span class="line">&#123;</span><br><span class="line">    public interface IUserService</span><br><span class="line">    &#123;</span><br><span class="line">        User Authenticate(string username, string password);</span><br><span class="line">        IEnumerable&lt;User&gt; GetAll();</span><br><span class="line">        IEnumerable&lt;User&gt; DeleteUser(int id);</span><br><span class="line">        IEnumerable&lt;User&gt; Register(User user);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>UserService.cs</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">using CoreJWT.Models;</span><br><span class="line">using Microsoft.Extensions.Options;</span><br><span class="line">using Microsoft.IdentityModel.Tokens;</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.IdentityModel.Tokens.Jwt;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Security.Claims;</span><br><span class="line">using System.Text;</span><br><span class="line"></span><br><span class="line">namespace CoreJWT.Services</span><br><span class="line">&#123;</span><br><span class="line">    public class UserService : IUserService</span><br><span class="line">    &#123;</span><br><span class="line">        private List&lt;User&gt; users = new List&lt;User&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            new User &#123; Id = 1, FirstName = <span class="string">"Test1"</span>, LastName = <span class="string">"User1"</span>, Username = <span class="string">"test1"</span>, Password = <span class="string">"test1"</span> &#125;,</span><br><span class="line">            new User &#123; Id = 2, FirstName = <span class="string">"Test2"</span>, LastName = <span class="string">"User2"</span>, Username = <span class="string">"test2"</span>, Password = <span class="string">"test2"</span> &#125;,</span><br><span class="line">            new User &#123; Id = 3, FirstName = <span class="string">"Test3"</span>, LastName = <span class="string">"User3"</span>, Username = <span class="string">"test3"</span>, Password = <span class="string">"test3"</span> &#125;,</span><br><span class="line">            new User &#123; Id = 4, FirstName = <span class="string">"Test4"</span>, LastName = <span class="string">"User4"</span>, Username = <span class="string">"test4"</span>, Password = <span class="string">"test4"</span> &#125;,</span><br><span class="line">            new User &#123; Id = 5, FirstName = <span class="string">"Test5"</span>, LastName = <span class="string">"User5"</span>, Username = <span class="string">"test5"</span>, Password = <span class="string">"test5"</span> &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        private <span class="built_in">readonly</span> AppSettings appSettings;</span><br><span class="line"></span><br><span class="line">        public UserService(IOptions&lt;AppSettings&gt; appSettings)</span><br><span class="line">        &#123;</span><br><span class="line">            this.appSettings = appSettings.Value;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public User Authenticate(string username, string password)</span><br><span class="line">        &#123;</span><br><span class="line">            var user = this.users.SingleOrDefault(x =&gt; x.Username == username &amp;&amp; x.Password == password);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (user == null)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">return</span> null;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            // authentication successful so generate jwt token</span><br><span class="line">            var tokenHandler = new JwtSecurityTokenHandler();</span><br><span class="line">            var key = Encoding.ASCII.GetBytes(this.appSettings.Secret);</span><br><span class="line">            var tokenDescriptor = new SecurityTokenDescriptor</span><br><span class="line">            &#123;</span><br><span class="line">                Subject = new ClaimsIdentity(new Claim[]</span><br><span class="line">                &#123;</span><br><span class="line">                    new Claim(ClaimTypes.Name, user.Id.ToString())</span><br><span class="line">                &#125;),</span><br><span class="line">                Expires = DateTime.UtcNow.AddDays(7),</span><br><span class="line">                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)</span><br><span class="line">            &#125;;</span><br><span class="line">            var token = tokenHandler.CreateToken(tokenDescriptor);</span><br><span class="line">            user.JwtToken = tokenHandler.WriteToken(token);</span><br><span class="line"></span><br><span class="line">            // remove password before returning</span><br><span class="line">            user.Password = null;</span><br><span class="line"></span><br><span class="line">            <span class="built_in">return</span> user;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public IEnumerable&lt;User&gt; GetAll()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> this.users.Select(x =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                x.Password = null;</span><br><span class="line">                <span class="built_in">return</span> x;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public IEnumerable&lt;User&gt; DeleteUser(int id)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> this.users.Where(o =&gt; o.Id != id).Select(x =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                x.Password = null;</span><br><span class="line">                <span class="built_in">return</span> x;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        public IEnumerable&lt;User&gt; Register(User user)</span><br><span class="line">        &#123;</span><br><span class="line">            var _users = this.users.ToList();</span><br><span class="line"></span><br><span class="line">            _users.Add(user);</span><br><span class="line"></span><br><span class="line">            <span class="built_in">return</span> _users;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li>修改 <strong>appsettings.json</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/9.png" alt="Architecture"></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"AppSettings"</span>: &#123;</span><br><span class="line">    <span class="string">"Secret"</span>: <span class="string">"THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"Logging"</span>: &#123;</span><br><span class="line">    <span class="string">"LogLevel"</span>: &#123;</span><br><span class="line">      <span class="string">"Default"</span>: <span class="string">"Warning"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"AllowedHosts"</span>: <span class="string">"*"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>修改 <strong>Startup.cs</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/10.png" alt="Architecture"><br><img src="/2019/08/19/AngularAndNetCoreJWT/11.png" alt="Architecture"></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using CoreJWT.Models;</span><br><span class="line">using CoreJWT.Services;</span><br><span class="line">using Microsoft.AspNetCore.Authentication.JwtBearer;</span><br><span class="line">using Microsoft.AspNetCore.Builder;</span><br><span class="line">using Microsoft.AspNetCore.Hosting;</span><br><span class="line">using Microsoft.AspNetCore.HttpsPolicy;</span><br><span class="line">using Microsoft.AspNetCore.Mvc;</span><br><span class="line">using Microsoft.AspNetCore.SpaServices.AngularCli;</span><br><span class="line">using Microsoft.Extensions.Configuration;</span><br><span class="line">using Microsoft.Extensions.DependencyInjection;</span><br><span class="line">using Microsoft.Extensions.Logging;</span><br><span class="line">using Microsoft.Extensions.Options;</span><br><span class="line">using Microsoft.IdentityModel.Tokens;</span><br><span class="line"></span><br><span class="line">namespace CoreJWT</span><br><span class="line">&#123;</span><br><span class="line">    public class Startup</span><br><span class="line">    &#123;</span><br><span class="line">        public Startup(IConfiguration configuration)</span><br><span class="line">        &#123;</span><br><span class="line">            Configuration = configuration;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public IConfiguration Configuration &#123; get; &#125;</span><br><span class="line"></span><br><span class="line">        // This method gets called by the runtime. Use this method to add services to the container.</span><br><span class="line">        public void ConfigureServices(IServiceCollection services)</span><br><span class="line">        &#123;</span><br><span class="line">            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);</span><br><span class="line">            services.AddSpaStaticFiles(c =&gt; &#123; c.RootPath = <span class="string">"ClientApp/dist"</span>; &#125;);</span><br><span class="line">            // configure strongly typed settings objects</span><br><span class="line">            var appSettingsSection = Configuration.GetSection(<span class="string">"AppSettings"</span>);</span><br><span class="line">            services.Configure&lt;AppSettings&gt;(appSettingsSection);</span><br><span class="line"></span><br><span class="line">            // configure jwt authentication</span><br><span class="line">            var appSettings = appSettingsSection.Get&lt;AppSettings&gt;();</span><br><span class="line">            var key = Encoding.ASCII.GetBytes(appSettings.Secret);</span><br><span class="line">            services.AddAuthentication(x =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;</span><br><span class="line">                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;</span><br><span class="line">            &#125;).AddJwtBearer(x =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                x.RequireHttpsMetadata = <span class="literal">false</span>;</span><br><span class="line">                x.SaveToken = <span class="literal">true</span>;</span><br><span class="line">                x.TokenValidationParameters = new TokenValidationParameters</span><br><span class="line">                &#123;</span><br><span class="line">                    ValidateIssuerSigningKey = <span class="literal">true</span>,</span><br><span class="line">                    IssuerSigningKey = new SymmetricSecurityKey(key),</span><br><span class="line">                    ValidateIssuer = <span class="literal">false</span>,</span><br><span class="line">                    ValidateAudience = <span class="literal">false</span></span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            // configure DI <span class="keyword">for</span> application services</span><br><span class="line">            services.AddScoped&lt;IUserService, UserService&gt;();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.</span><br><span class="line">        public void Configure(IApplicationBuilder app, IHostingEnvironment env)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (env.IsDevelopment())</span><br><span class="line">            &#123;</span><br><span class="line">                app.UseDeveloperExceptionPage();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                app.UseExceptionHandler(<span class="string">"/Error"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            // global cors policy</span><br><span class="line">            app.UseCors(x =&gt; x</span><br><span class="line">                .AllowAnyOrigin()</span><br><span class="line">                .AllowAnyMethod()</span><br><span class="line">                .AllowAnyHeader());</span><br><span class="line"></span><br><span class="line">            app.UseMvc(routes =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                routes.MapRoute(</span><br><span class="line">                    name: <span class="string">"default"</span>,</span><br><span class="line">                    template: <span class="string">"api/&#123;controller&#125;/&#123;action=Index&#125;/&#123;id?&#125;"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            app.UseSpa(spa =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                spa.Options.SourcePath = <span class="string">"ClientApp"</span>;</span><br><span class="line">                <span class="keyword">if</span> (env.IsDevelopment())</span><br><span class="line">                &#123;</span><br><span class="line">                    spa.UseAngularCliServer(npmScript: <span class="string">"start"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            app.UseAuthentication();</span><br><span class="line">            app.UseHttpsRedirection();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Postman-call-web-api"><a href="#Postman-call-web-api" class="headerlink" title="Postman call web api"></a>Postman call web api</h4><p><img src="/2019/08/19/AngularAndNetCoreJWT/12.png" alt="Architecture"></p>
+<h3 id="Angular"><a href="#Angular" class="headerlink" title="Angular"></a>Angular</h3><ol>
+<li><p>新增專案 <strong>cmd</strong> → <strong>ng new ClientApp</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/13.png" alt="Architecture"><br><img src="/2019/08/19/AngularAndNetCoreJWT/14.png" alt="Architecture"></p>
+</li>
+<li><p>開啟 <strong>VS Code</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/15.png" alt="Architecture"><br><img src="/2019/08/19/AngularAndNetCoreJWT/16.png" alt="Architecture"></p>
+</li>
+<li><p>修改 <strong>index.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">  &lt;title&gt;ClientApp&lt;/title&gt;</span><br><span class="line">  &lt;base href=<span class="string">"/"</span>&gt;</span><br><span class="line"></span><br><span class="line">  &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span><br><span class="line">  &lt;link rel=<span class="string">"icon"</span> <span class="built_in">type</span>=<span class="string">"image/x-icon"</span> href=<span class="string">"favicon.ico"</span>&gt;</span><br><span class="line"></span><br><span class="line">   &lt;!-- bootstrap css --&gt;</span><br><span class="line">   &lt;link href=<span class="string">"//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"</span> rel=<span class="string">"stylesheet"</span> /&gt;</span><br><span class="line"></span><br><span class="line">   &lt;style&gt;</span><br><span class="line">       a &#123; cursor: pointer; &#125;</span><br><span class="line">   &lt;/style&gt;</span><br><span class="line">   </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;app-root&gt;&lt;/app-root&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <strong>app-routing.module.cs</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import &#123; NgModule &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; Routes, RouterModule &#125; from <span class="string">'@angular/router'</span>;</span><br><span class="line"></span><br><span class="line">import &#123; AuthGuard &#125; from <span class="string">'./_helpers'</span>;</span><br><span class="line">import &#123; HomeComponent &#125; from <span class="string">'./home/home.component'</span>;</span><br><span class="line">import &#123; LoginComponent &#125; from <span class="string">'./login/login.component'</span>;</span><br><span class="line">import &#123; RegisterComponent &#125; from <span class="string">'./register/register.component'</span>;</span><br><span class="line"></span><br><span class="line">const routes: Routes = [</span><br><span class="line">	&#123; path: <span class="string">''</span>, component: HomeComponent, canActivate: [AuthGuard] &#125;,</span><br><span class="line">	&#123; path: <span class="string">'login'</span>, component: LoginComponent &#125;,</span><br><span class="line">	&#123; path: <span class="string">'register'</span>, component: RegisterComponent &#125;,</span><br><span class="line"></span><br><span class="line">	// otherwise redirect to home</span><br><span class="line">	&#123; path: <span class="string">'**'</span>, redirectTo: <span class="string">''</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">	imports: [RouterModule.forRoot(routes)],</span><br><span class="line">	exports: [RouterModule]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppRoutingModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <strong>app.module.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserModule &#125; from <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line">import &#123; ReactiveFormsModule &#125; from <span class="string">'@angular/forms'</span>;</span><br><span class="line">import &#123; HttpClientModule, HTTP_INTERCEPTORS &#125; from <span class="string">'@angular/common/http'</span>;</span><br><span class="line">import &#123; NgModule &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">import &#123; AppRoutingModule &#125; from <span class="string">'./app-routing.module'</span>;</span><br><span class="line">import &#123; AppComponent &#125; from <span class="string">'./app.component'</span>;</span><br><span class="line">import &#123; HomeComponent &#125; from <span class="string">'./home/home.component'</span>;</span><br><span class="line">import &#123; LoginComponent &#125; from <span class="string">'./login/login.component'</span>;</span><br><span class="line">import &#123; AlertComponent &#125; from <span class="string">'./_components/alert.component'</span>;</span><br><span class="line">import &#123; RegisterComponent &#125; from <span class="string">'./register/register.component'</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent,</span><br><span class="line">    HomeComponent,</span><br><span class="line">    LoginComponent,</span><br><span class="line">    AlertComponent,</span><br><span class="line">    RegisterComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    ReactiveFormsModule,</span><br><span class="line">    HttpClientModule,</span><br><span class="line">    AppRoutingModule</span><br><span class="line">  ],</span><br><span class="line">  providers: [],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <strong>app.component.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- nav --&gt;</span><br><span class="line">&lt;nav class=<span class="string">"navbar navbar-expand navbar-dark bg-dark"</span> *ngIf=<span class="string">"currentUser"</span>&gt;</span><br><span class="line">  &lt;div class=<span class="string">"navbar-nav"</span>&gt;</span><br><span class="line">      &lt;a class=<span class="string">"nav-item nav-link"</span> routerLink=<span class="string">"/"</span>&gt;Home&lt;/a&gt;</span><br><span class="line">      &lt;a class=<span class="string">"nav-item nav-link"</span> (click)=<span class="string">"logout()"</span>&gt;Logout&lt;/a&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/nav&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- main app container --&gt;</span><br><span class="line">&lt;div class=<span class="string">"jumbotron"</span>&gt;</span><br><span class="line">  &lt;div class=<span class="string">"container"</span>&gt;</span><br><span class="line">      &lt;div class=<span class="string">"row"</span>&gt;</span><br><span class="line">          &lt;div class=<span class="string">"col-sm-6 offset-sm-3"</span>&gt;</span><br><span class="line">              &lt;app-alert&gt;&lt;/app-alert&gt;</span><br><span class="line">              &lt;router-outlet&gt;&lt;/router-outlet&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- credits --&gt;</span><br><span class="line">&lt;div class=<span class="string">"text-center"</span>&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line">      &lt;a href=<span class="string">"https://angular.io/cli/generate"</span> target=<span class="string">"_top"</span>&gt;Angular 8&lt;/a&gt;</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <strong>app.component.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; User &#125; from <span class="string">'./_models'</span>;</span><br><span class="line">import &#123; AuthenticationService &#125; from <span class="string">'./_service'</span>;</span><br><span class="line">import &#123; Router &#125; from <span class="string">'@angular/router'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  currentUser: User;</span><br><span class="line"></span><br><span class="line">  constructor(</span><br><span class="line">    private router: Router,</span><br><span class="line">    private authenticationService: AuthenticationService</span><br><span class="line">  ) &#123; </span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增 <strong>config.ts</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/20.png" alt="Architecture"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> const config = &#123;</span><br><span class="line">    apiUrl: <span class="string">'https://localhost:44354/api'</span></span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Create-component-login"><a href="#Create-component-login" class="headerlink" title="Create component login"></a>Create component login</h4><ol>
+<li><strong>ng g c login –spec false</strong></li>
+<li><p>修改 <strong>login.component.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;Login&lt;/h2&gt;</span><br><span class="line">&lt;form [formGroup]=<span class="string">"loginForm"</span> (ngSubmit)=<span class="string">"onSubmit()"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">        &lt;label <span class="keyword">for</span>=<span class="string">"username"</span>&gt;Username&lt;/label&gt;</span><br><span class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> formControlName=<span class="string">"username"</span> class=<span class="string">"form-control"</span> [ngClass]=<span class="string">"&#123; 'is-invalid': submitted &amp;&amp; f.username.errors &#125;"</span> /&gt;</span><br><span class="line">        &lt;div *ngIf=<span class="string">"submitted &amp;&amp; f.username.errors"</span> class=<span class="string">"invalid-feedback"</span>&gt;</span><br><span class="line">            &lt;div *ngIf=<span class="string">"f.username.errors.required"</span>&gt;Username is required&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">        &lt;label <span class="keyword">for</span>=<span class="string">"password"</span>&gt;Password&lt;/label&gt;</span><br><span class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"password"</span> formControlName=<span class="string">"password"</span> class=<span class="string">"form-control"</span> [ngClass]=<span class="string">"&#123; 'is-invalid': submitted &amp;&amp; f.password.errors &#125;"</span> /&gt;</span><br><span class="line">        &lt;div *ngIf=<span class="string">"submitted &amp;&amp; f.password.errors"</span> class=<span class="string">"invalid-feedback"</span>&gt;</span><br><span class="line">            &lt;div *ngIf=<span class="string">"f.password.errors.required"</span>&gt;Password is required&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">        &lt;button [disabled]=<span class="string">"loading"</span> class=<span class="string">"btn btn-primary"</span>&gt;</span><br><span class="line">            &lt;span *ngIf=<span class="string">"loading"</span> class=<span class="string">"spinner-border spinner-border-sm mr-1"</span>&gt;&lt;/span&gt;</span><br><span class="line">            Login</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">        &lt;a routerLink=<span class="string">"/register"</span> class=<span class="string">"btn btn-link"</span>&gt;Register&lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <strong>login.component.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; ActivatedRoute, Router &#125; from <span class="string">'@angular/router'</span>;</span><br><span class="line">import &#123; FormBuilder, FormGroup, Validators &#125; from <span class="string">'@angular/forms'</span>;</span><br><span class="line">import &#123; first &#125; from <span class="string">'rxjs/operators'</span>;</span><br><span class="line"></span><br><span class="line">import &#123; AuthenticationService, AlertService &#125; from <span class="string">'../_service'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">	selector: <span class="string">'app-login'</span>,</span><br><span class="line">	templateUrl: <span class="string">'./login.component.html'</span>,</span><br><span class="line">	styleUrls: [<span class="string">'./login.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class LoginComponent implements OnInit &#123;</span><br><span class="line"></span><br><span class="line">	loginForm: FormGroup;</span><br><span class="line">	loading = <span class="literal">false</span>;</span><br><span class="line">	submitted = <span class="literal">false</span>;</span><br><span class="line">	returnUrl: string;</span><br><span class="line"></span><br><span class="line">	constructor(</span><br><span class="line">		private formBuilder: FormBuilder,</span><br><span class="line">		private route: ActivatedRoute,</span><br><span class="line">		private router: Router,</span><br><span class="line">		private authenticationService: AuthenticationService,</span><br><span class="line">		private alertService: AlertService</span><br><span class="line">	) &#123;</span><br><span class="line">		// redirect to home <span class="keyword">if</span> already logged <span class="keyword">in</span></span><br><span class="line">		<span class="keyword">if</span> (this.authenticationService.currentUserValue) &#123;</span><br><span class="line">			this.router.navigate([<span class="string">'/'</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">ngOnInit</span></span>() &#123;</span><br><span class="line">		this.loginForm = this.formBuilder.group(&#123;</span><br><span class="line">			username: [<span class="string">''</span>, Validators.required],</span><br><span class="line">			password: [<span class="string">''</span>, Validators.required]</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		// get <span class="built_in">return</span> url from route parameters or default to <span class="string">'/'</span></span><br><span class="line">		this.returnUrl = this.route.snapshot.queryParams[<span class="string">'returnUrl'</span>] || <span class="string">'/'</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// convenience getter <span class="keyword">for</span> easy access to form fields</span><br><span class="line">	get <span class="function"><span class="title">f</span></span>() &#123; <span class="built_in">return</span> this.loginForm.controls; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">onSubmit</span></span>() &#123;</span><br><span class="line">		this.submitted = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">		// reset alerts on submit</span><br><span class="line">		this.alertService.clear();</span><br><span class="line"></span><br><span class="line">		// stop here <span class="keyword">if</span> form is invalid</span><br><span class="line">        <span class="keyword">if</span> (this.loginForm.invalid) &#123;</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		this.loading = <span class="literal">true</span>;</span><br><span class="line">		this.authenticationService.login(this.f.username.value, this.f.password.value)</span><br><span class="line">			.pipe(first())</span><br><span class="line">			.subscribe(</span><br><span class="line">				data =&gt; &#123;</span><br><span class="line">					this.router.navigate([this.returnUrl]);</span><br><span class="line">				&#125;,</span><br><span class="line">				error =&gt; &#123;</span><br><span class="line">					this.alertService.error(error.error.message);</span><br><span class="line">					this.loading = <span class="literal">false</span>;</span><br><span class="line">				&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Create-component-home"><a href="#Create-component-home" class="headerlink" title="Create component home"></a>Create component home</h4><ol>
+<li><strong>ng g c home –spec false</strong></li>
+<li><p>修改 <strong>home.component.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;Hi &#123;&#123;currentUser.firstName&#125;&#125;!&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;You are logged <span class="keyword">in</span> with Angular 8!!&lt;/p&gt;</span><br><span class="line">&lt;h3&gt;All registered users:&lt;/h3&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li *ngFor=<span class="string">"let user of users"</span>&gt;</span><br><span class="line">        &#123;&#123;user.username&#125;&#125; (&#123;&#123;user.firstName&#125;&#125; &#123;&#123;user.lastName&#125;&#125;)</span><br><span class="line">        - &lt;a (click)=<span class="string">"deleteUser(user.id)"</span> class=<span class="string">"text-danger"</span>&gt;Delete&lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <strong>home.component.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; User &#125; from <span class="string">'../_models'</span>;</span><br><span class="line">import &#123; AuthenticationService, UsersService &#125; from <span class="string">'../_service'</span>;</span><br><span class="line">import &#123; first &#125; from <span class="string">'rxjs/operators'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">	selector: <span class="string">'app-home'</span>,</span><br><span class="line">	templateUrl: <span class="string">'./home.component.html'</span>,</span><br><span class="line">	styleUrls: [<span class="string">'./home.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class HomeComponent implements OnInit &#123;</span><br><span class="line"></span><br><span class="line">	currentUser: User;</span><br><span class="line">	users = [];</span><br><span class="line"></span><br><span class="line">	constructor(</span><br><span class="line">		private authenticationService: AuthenticationService,</span><br><span class="line">		private usersService: UsersService</span><br><span class="line">	) &#123;</span><br><span class="line">		this.currentUser = this.authenticationService.currentUserValue;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">ngOnInit</span></span>() &#123;</span><br><span class="line">		this.loadAllUsers();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	deleteUser(id: number) &#123;</span><br><span class="line">		console.log(123,id)</span><br><span class="line">        this.usersService.delete(id)</span><br><span class="line">            .pipe(first())</span><br><span class="line">            .subscribe(users =&gt; &#123;</span><br><span class="line">				this.users = users</span><br><span class="line">			&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	private <span class="function"><span class="title">loadAllUsers</span></span>() &#123;</span><br><span class="line">        this.usersService.getAll()</span><br><span class="line">            .pipe(first())</span><br><span class="line">            .subscribe(users =&gt; this.users = users);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Create-component-register"><a href="#Create-component-register" class="headerlink" title="Create component register"></a>Create component register</h4><ol>
+<li><strong>ng g c register –spec false</strong></li>
+<li><p>修改 <strong>register.component.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;Register&lt;/h2&gt;</span><br><span class="line">&lt;form [formGroup]=<span class="string">"registerForm"</span> (ngSubmit)=<span class="string">"onSubmit()"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">        &lt;label <span class="keyword">for</span>=<span class="string">"firstName"</span>&gt;First Name&lt;/label&gt;</span><br><span class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> formControlName=<span class="string">"firstName"</span> class=<span class="string">"form-control"</span> [ngClass]=<span class="string">"&#123; 'is-invalid': submitted &amp;&amp; f.firstName.errors &#125;"</span> /&gt;</span><br><span class="line">        &lt;div *ngIf=<span class="string">"submitted &amp;&amp; f.firstName.errors"</span> class=<span class="string">"invalid-feedback"</span>&gt;</span><br><span class="line">            &lt;div *ngIf=<span class="string">"f.firstName.errors.required"</span>&gt;First Name is required&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">        &lt;label <span class="keyword">for</span>=<span class="string">"lastName"</span>&gt;Last Name&lt;/label&gt;</span><br><span class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> formControlName=<span class="string">"lastName"</span> class=<span class="string">"form-control"</span> [ngClass]=<span class="string">"&#123; 'is-invalid': submitted &amp;&amp; f.lastName.errors &#125;"</span> /&gt;</span><br><span class="line">        &lt;div *ngIf=<span class="string">"submitted &amp;&amp; f.lastName.errors"</span> class=<span class="string">"invalid-feedback"</span>&gt;</span><br><span class="line">            &lt;div *ngIf=<span class="string">"f.lastName.errors.required"</span>&gt;Last Name is required&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">        &lt;label <span class="keyword">for</span>=<span class="string">"username"</span>&gt;Username&lt;/label&gt;</span><br><span class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> formControlName=<span class="string">"username"</span> class=<span class="string">"form-control"</span> [ngClass]=<span class="string">"&#123; 'is-invalid': submitted &amp;&amp; f.username.errors &#125;"</span> /&gt;</span><br><span class="line">        &lt;div *ngIf=<span class="string">"submitted &amp;&amp; f.username.errors"</span> class=<span class="string">"invalid-feedback"</span>&gt;</span><br><span class="line">            &lt;div *ngIf=<span class="string">"f.username.errors.required"</span>&gt;Username is required&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">        &lt;label <span class="keyword">for</span>=<span class="string">"password"</span>&gt;Password&lt;/label&gt;</span><br><span class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"password"</span> formControlName=<span class="string">"password"</span> class=<span class="string">"form-control"</span> [ngClass]=<span class="string">"&#123; 'is-invalid': submitted &amp;&amp; f.password.errors &#125;"</span> /&gt;</span><br><span class="line">        &lt;div *ngIf=<span class="string">"submitted &amp;&amp; f.password.errors"</span> class=<span class="string">"invalid-feedback"</span>&gt;</span><br><span class="line">            &lt;div *ngIf=<span class="string">"f.password.errors.required"</span>&gt;Password is required&lt;/div&gt;</span><br><span class="line">            &lt;div *ngIf=<span class="string">"f.password.errors.minlength"</span>&gt;Password must be at least 6 characters&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"form-group"</span>&gt;</span><br><span class="line">        &lt;button [disabled]=<span class="string">"loading"</span> class=<span class="string">"btn btn-primary"</span>&gt;</span><br><span class="line">            &lt;span *ngIf=<span class="string">"loading"</span> class=<span class="string">"spinner-border spinner-border-sm mr-1"</span>&gt;&lt;/span&gt;</span><br><span class="line">            Register</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">        &lt;a routerLink=<span class="string">"/login"</span> class=<span class="string">"btn btn-link"</span>&gt;Cancel&lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <strong>register.component.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; FormGroup, FormBuilder, Validators &#125; from <span class="string">'@angular/forms'</span>;</span><br><span class="line">import &#123; AlertService, UsersService &#125; from <span class="string">'../_service'</span>;</span><br><span class="line">import &#123; first &#125; from <span class="string">'rxjs/operators'</span>;</span><br><span class="line">import &#123; Router &#125; from <span class="string">'@angular/router'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">	selector: <span class="string">'app-register'</span>,</span><br><span class="line">	templateUrl: <span class="string">'./register.component.html'</span>,</span><br><span class="line">	styleUrls: [<span class="string">'./register.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class RegisterComponent implements OnInit &#123;</span><br><span class="line">	[x: string]: any;</span><br><span class="line"></span><br><span class="line">	registerForm: FormGroup;</span><br><span class="line">	loading = <span class="literal">false</span>;</span><br><span class="line">	submitted = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">	constructor(</span><br><span class="line">		private formBuilder: FormBuilder,</span><br><span class="line">		private router: Router,</span><br><span class="line">		private userService: UsersService,</span><br><span class="line">		private alertService: AlertService</span><br><span class="line">	) &#123; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">ngOnInit</span></span>() &#123;</span><br><span class="line">		this.registerForm = this.formBuilder.group(&#123;</span><br><span class="line">			firstName: [<span class="string">''</span>, Validators.required],</span><br><span class="line">			lastName: [<span class="string">''</span>, Validators.required],</span><br><span class="line">			username: [<span class="string">''</span>, Validators.required],</span><br><span class="line">			password: [<span class="string">''</span>, [Validators.required, Validators.minLength(6)]]</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// convenience getter <span class="keyword">for</span> easy access to form fields</span><br><span class="line">	get <span class="function"><span class="title">f</span></span>() &#123; <span class="built_in">return</span> this.registerForm.controls; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">onSubmit</span></span>() &#123;</span><br><span class="line">		this.submitted = <span class="literal">true</span>;</span><br><span class="line">  </span><br><span class="line">		// reset alerts on submit</span><br><span class="line">		this.alertService.clear();</span><br><span class="line">		</span><br><span class="line">		// stop here <span class="keyword">if</span> form is invalid</span><br><span class="line">		<span class="keyword">if</span> (this.registerForm.invalid) &#123;</span><br><span class="line">			<span class="built_in">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		this.loading = <span class="literal">true</span>;</span><br><span class="line">		this.userService.register(this.registerForm.value)</span><br><span class="line">		.pipe(first())</span><br><span class="line">		.subscribe(</span><br><span class="line">			data =&gt; &#123;</span><br><span class="line">				this.alertService.success(<span class="string">'Registration successful'</span>, <span class="literal">true</span>);</span><br><span class="line">                this.router.navigate([<span class="string">'/login'</span>]);</span><br><span class="line">			&#125;,</span><br><span class="line">			error =&gt; &#123;</span><br><span class="line">				this.alertService.error(error.error.message);</span><br><span class="line">                this.loading = <span class="literal">false</span>;</span><br><span class="line">			&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Create-components"><a href="#Create-components" class="headerlink" title="Create _components"></a>Create _components</h4><ol>
+<li><p>新增 <strong>folder naming _components</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/17.png" alt="Architecture"></p>
+</li>
+<li><p>新增 <strong>file naming alert.component.css</strong></p>
+</li>
+<li><p>新增 <strong>file naming alert.component.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div *ngIf=<span class="string">"message"</span> [ngClass]=<span class="string">"message.cssClass"</span>&gt;&#123;&#123;message.text&#125;&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增 <strong>file naming alert.component.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit, OnDestroy &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; Subscription &#125; from <span class="string">'rxjs'</span>;</span><br><span class="line"></span><br><span class="line">import &#123; AlertService &#125; from <span class="string">'../_service'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">	selector: <span class="string">'app-alert'</span>,</span><br><span class="line">	templateUrl: <span class="string">'./alert.component.html'</span>,</span><br><span class="line">	styleUrls: [<span class="string">'./alert.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AlertComponent implements OnInit, OnDestroy &#123;</span><br><span class="line"></span><br><span class="line">	private subscription: Subscription;</span><br><span class="line">	message: any;</span><br><span class="line"></span><br><span class="line">	constructor(private alertService: AlertService) &#123; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">ngOnInit</span></span>() &#123;</span><br><span class="line">		this.subscription = this.alertService.getAlert()</span><br><span class="line">			.subscribe(message =&gt; &#123;</span><br><span class="line"></span><br><span class="line">				switch (message &amp;&amp; message.type) &#123;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'success'</span>:</span><br><span class="line">						message.cssClass = <span class="string">'alert alert-success'</span>;</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'error'</span>:</span><br><span class="line">						message.cssClass = <span class="string">'alert alert-danger'</span>;</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				this.message = message;</span><br><span class="line">			&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">ngOnDestroy</span></span>() &#123;</span><br><span class="line">        this.subscription.unsubscribe();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Create-helpers"><a href="#Create-helpers" class="headerlink" title="Create _helpers"></a>Create _helpers</h4><ol>
+<li><p>新增 <strong>folder naming _helpers</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/18.png" alt="Architecture"></p>
+</li>
+<li><p>新增 <strong>file auth.guard.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot &#125; from <span class="string">'@angular/router'</span>;</span><br><span class="line"></span><br><span class="line">import &#123; AuthenticationService &#125; from <span class="string">'../_service'</span>;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">	providedIn: <span class="string">'root'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AuthGuard implements CanActivate &#123;</span><br><span class="line">	constructor(</span><br><span class="line">		private router: Router,</span><br><span class="line">		private authenticationService: AuthenticationService</span><br><span class="line">	) &#123; &#125;</span><br><span class="line"></span><br><span class="line">	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) &#123;</span><br><span class="line">		const currentUser = this.authenticationService.currentUserValue;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (currentUser) &#123;</span><br><span class="line">            // authorised so <span class="built_in">return</span> <span class="literal">true</span></span><br><span class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		this.router.navigate([<span class="string">'/login'</span>], &#123; queryParams: &#123; returnUrl: state.url &#125; &#125;);</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增 <strong>file index.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> * from <span class="string">'./auth.guard'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Create-models"><a href="#Create-models" class="headerlink" title="Create _models"></a>Create _models</h4><ol>
+<li><p>新增 <strong>folder naming _models</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/19.png" alt="Architecture"></p>
+</li>
+<li><p>新增 <strong>file user.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> class User &#123;</span><br><span class="line">    id: string;</span><br><span class="line">    firstName: string;</span><br><span class="line">    lastName: string;</span><br><span class="line">    username: string;</span><br><span class="line">    password: string;</span><br><span class="line">    jwtToken: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增 <strong>file index.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> * from <span class="string">'./user'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Create-service"><a href="#Create-service" class="headerlink" title="Create _service"></a>Create _service</h4><ol>
+<li><p>新增 <strong>folder naming _service</strong><br><img src="/2019/08/19/AngularAndNetCoreJWT/20.png" alt="Architecture"></p>
+</li>
+<li><p>新增 <strong>file alert.service.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; Observable, Subject &#125; from <span class="string">'rxjs'</span>;</span><br><span class="line">import &#123; Router, NavigationStart &#125; from <span class="string">'@angular/router'</span>;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">	providedIn: <span class="string">'root'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AlertService &#123;</span><br><span class="line"></span><br><span class="line">	private subject = new Subject&lt;any&gt;();</span><br><span class="line">	private keepAfterRouteChange = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">	constructor(private router: Router) &#123;</span><br><span class="line">		// clear alert messages on route change unless <span class="string">'keepAfterRouteChange'</span> flag is <span class="literal">true</span></span><br><span class="line">		this.router.events.subscribe(event =&gt; &#123;</span><br><span class="line">			<span class="keyword">if</span> (event instanceof NavigationStart) &#123;</span><br><span class="line">				<span class="keyword">if</span> (this.keepAfterRouteChange) &#123;</span><br><span class="line">					// only keep <span class="keyword">for</span> a single route change</span><br><span class="line">					this.keepAfterRouteChange = <span class="literal">false</span>;</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					// clear alert message</span><br><span class="line">					this.clear();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getAlert(): Observable&lt;any&gt; &#123;</span><br><span class="line">		<span class="built_in">return</span> this.subject.asObservable();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	success(message: string, keepAfterRouteChange = <span class="literal">false</span>) &#123;</span><br><span class="line">        this.keepAfterRouteChange = keepAfterRouteChange;</span><br><span class="line">        this.subject.next(&#123; <span class="built_in">type</span>: <span class="string">'success'</span>, text: message &#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	error(message: string, keepAfterRouteChange = <span class="literal">false</span>) &#123;</span><br><span class="line">		this.keepAfterRouteChange = keepAfterRouteChange;</span><br><span class="line">		this.subject.next(&#123; <span class="built_in">type</span>: <span class="string">'error'</span>, text: message &#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">clear</span></span>() &#123;</span><br><span class="line">		// clear by calling subject.next() without parameters</span><br><span class="line">		this.subject.next();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增 <strong>file authentication.service.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; HttpClient &#125; from <span class="string">'@angular/common/http'</span>;</span><br><span class="line">import &#123; BehaviorSubject, Observable &#125; from <span class="string">'rxjs'</span>;</span><br><span class="line">import &#123; map &#125; from <span class="string">'rxjs/operators'</span>;</span><br><span class="line"></span><br><span class="line">import &#123; User &#125; from <span class="string">'../_models'</span>;</span><br><span class="line">import &#123; config &#125; from <span class="string">'../config'</span>;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">	providedIn: <span class="string">'root'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AuthenticationService &#123;</span><br><span class="line"></span><br><span class="line">	public currentUser: Observable&lt;User&gt;;</span><br><span class="line">	private currentUserSubject: BehaviorSubject&lt;User&gt;;</span><br><span class="line"></span><br><span class="line">	constructor(private http: HttpClient) &#123;</span><br><span class="line">		this.currentUserSubject = new BehaviorSubject&lt;User&gt;(JSON.parse(localStorage.getItem(<span class="string">'currentUser'</span>)));</span><br><span class="line">		this.currentUser = this.currentUserSubject.asObservable();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public get currentUserValue(): User &#123;</span><br><span class="line">		<span class="built_in">return</span> this.currentUserSubject.value;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	login(username, password) &#123;</span><br><span class="line">		var url = `<span class="variable">$&#123;config.apiUrl&#125;</span>/Users/authenticate`;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">return</span> this.http.post&lt;any&gt;(url, &#123; username, password &#125;)</span><br><span class="line">			.pipe(map(user =&gt; &#123;</span><br><span class="line"></span><br><span class="line">				// store user details and jwt token <span class="keyword">in</span> <span class="built_in">local</span> storage to keep user logged <span class="keyword">in</span> between page refreshes</span><br><span class="line">				localStorage.setItem(<span class="string">'currentUser'</span>, JSON.stringify(user));</span><br><span class="line"></span><br><span class="line">				this.currentUserSubject.next(user);</span><br><span class="line"></span><br><span class="line">				<span class="built_in">return</span> user;</span><br><span class="line">			&#125;));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增 <strong>file users.service.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; HttpClient &#125; from <span class="string">'@angular/common/http'</span>;</span><br><span class="line">import &#123; config &#125; from <span class="string">'../config'</span>;</span><br><span class="line">import &#123; User &#125; from <span class="string">'../_models'</span>;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">	providedIn: <span class="string">'root'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class UsersService &#123;</span><br><span class="line"></span><br><span class="line">	constructor(private http: HttpClient) &#123; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">getAll</span></span>() &#123;</span><br><span class="line">		var url = `<span class="variable">$&#123;config.apiUrl&#125;</span>/Users/getAllUser`;</span><br><span class="line">		<span class="built_in">return</span> this.http.get&lt;User[]&gt;(url);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	register(user: User) &#123;</span><br><span class="line">		var url = `<span class="variable">$&#123;config.apiUrl&#125;</span>/Users/register`;</span><br><span class="line">        <span class="built_in">return</span> this.http.post(url, user);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	delete(id: number) &#123;</span><br><span class="line">		var url = `<span class="variable">$&#123;config.apiUrl&#125;</span>/Users/<span class="variable">$&#123;id&#125;</span>`;</span><br><span class="line">        <span class="built_in">return</span> this.http.delete&lt;User[]&gt;(url);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增 <strong>file index.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> * from <span class="string">'./alert.service'</span>;</span><br><span class="line"><span class="built_in">export</span> * from <span class="string">'./authentication.service'</span>;</span><br><span class="line"><span class="built_in">export</span> * from <span class="string">'./users.service'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://code-maze.com/authentication-aspnetcore-jwt-1/" target="_blank" rel="noopener">ASP.NET Core Authentication with JWT and Angular</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Angular/" rel="tag"># Angular</a>
+          
+            <a href="/tags/Net-Core/" rel="tag"># .Net Core</a>
+          
+            <a href="/tags/JWT/" rel="tag"># JWT</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/29/MSSqlSplashScreen/" rel="next" title="MS Sql Splash Screen on server 2016">
+                <i class="fa fa-chevron-left"></i> MS Sql Splash Screen on server 2016
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="D & E">
+            
+              <p class="site-author-name" itemprop="name">D & E</p>
+              <p class="site-description motion-element" itemprop="description">Just notes</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">104</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Angular-Net-Core-JWT"><span class="nav-number">1.</span> <span class="nav-text">Angular + .Net Core JWT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Net-Core"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">.Net Core</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Postman-call-web-api"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Postman call web api</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular"><span class="nav-number">1.0.1.</span> <span class="nav-text">Angular</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-component-login"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">Create component login</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-component-home"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">Create component home</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-component-register"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">Create component register</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-components"><span class="nav-number">1.0.1.4.</span> <span class="nav-text">Create _components</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-helpers"><span class="nav-number">1.0.1.5.</span> <span class="nav-text">Create _helpers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-models"><span class="nav-number">1.0.1.6.</span> <span class="nav-text">Create _models</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-service"><span class="nav-number">1.0.1.7.</span> <span class="nav-text">Create _service</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">D & E</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
