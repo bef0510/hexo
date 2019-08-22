@@ -6,7 +6,7 @@ tags:
  - .Net Core
  - JWT
 categories: 
- - Angular
+ - .Net Core
 ---
 
 # Angular + .Net Core JWT
