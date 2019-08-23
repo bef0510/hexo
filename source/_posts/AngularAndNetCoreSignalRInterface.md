@@ -28,7 +28,7 @@ namespace HubServerBasic.Hubs
 }
 ~~~
 
-2. **MessageHub.cs**
+3. **MessageHub.cs**
 ~~~ bash
 using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
@@ -60,7 +60,7 @@ namespace HubServerBasic.Hubs
 }
 ~~~
 
-3. **Startup.cs**
+4. **Startup.cs**
 ~~~ bash
 using HubServerBasic.Hubs;
 using Microsoft.AspNetCore.Builder;

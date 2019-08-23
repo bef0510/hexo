@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content=".Net Core,Postman,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Basic.Net Core part 開啟 Web Api 專案  修改 Startup.cs 123456789101112131415161718192021222324252627282930313233343536373839404142434445using Microsoft.AspNetCore.Builder;using Microsoft.AspNetCore.Hosting;">
+<meta name="keywords" content=".Net Core,Postman">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".Net Core 2 WebApi + Postman">
+<meta property="og:url" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/index.html">
+<meta property="og:site_name" content="D &amp; E&#39;s Notes">
+<meta property="og:description" content="Basic.Net Core part 開啟 Web Api 專案  修改 Startup.cs 123456789101112131415161718192021222324252627282930313233343536373839404142434445using Microsoft.AspNetCore.Builder;using Microsoft.AspNetCore.Hosting;">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/8.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/9.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/10.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/11.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/12.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/13.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/14.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/15.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/16.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/17.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/18.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/19.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/20.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/21.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/22.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/23.png">
+<meta property="og:updated_time" content="2019-08-23T09:26:41.593Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=".Net Core 2 WebApi + Postman">
+<meta name="twitter:description" content="Basic.Net Core part 開啟 Web Api 專案  修改 Startup.cs 123456789101112131415161718192021222324252627282930313233343536373839404142434445using Microsoft.AspNetCore.Builder;using Microsoft.AspNetCore.Hosting;">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/23/DotNetCoreWebApi/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/23/DotNetCoreWebApi/">
+
+
+
+
+
+  <title>.Net Core 2 WebApi + Postman | D & E's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D & E's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/DotNetCoreWebApi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="D & E">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D & E's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">.Net Core 2 WebApi + Postman</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-08-23T15:05:51+08:00">
+                2019-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Net-Core/" itemprop="url" rel="index">
+                    <span itemprop="name">.Net Core</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h2><h4 id="Net-Core-part"><a href="#Net-Core-part" class="headerlink" title=".Net Core part"></a>.Net Core part</h4><ol>
+<li><p>開啟 Web Api 專案<br><img src="/2019/08/23/DotNetCoreWebApi/1.png" alt="Architecture"></p>
+</li>
+<li><p>修改 <strong>Startup.cs</strong><br><img src="/2019/08/23/DotNetCoreWebApi/2.png" alt="Architecture"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">using Microsoft.AspNetCore.Builder;</span><br><span class="line">using Microsoft.AspNetCore.Hosting;</span><br><span class="line">using Microsoft.AspNetCore.Mvc;</span><br><span class="line">using Microsoft.Extensions.Configuration;</span><br><span class="line">using Microsoft.Extensions.DependencyInjection;</span><br><span class="line"></span><br><span class="line">namespace WebApi</span><br><span class="line">&#123;</span><br><span class="line">    public class Startup</span><br><span class="line">    &#123;</span><br><span class="line">        public Startup(IConfiguration configuration)</span><br><span class="line">        &#123;</span><br><span class="line">            Configuration = configuration;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public IConfiguration Configuration &#123; get; &#125;</span><br><span class="line"></span><br><span class="line">        // This method gets called by the runtime. Use this method to add services to the container.</span><br><span class="line">        public void ConfigureServices(IServiceCollection services)</span><br><span class="line">        &#123;</span><br><span class="line">            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.</span><br><span class="line">        public void Configure(IApplicationBuilder app, IHostingEnvironment env)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (env.IsDevelopment())</span><br><span class="line">            &#123;</span><br><span class="line">                app.UseDeveloperExceptionPage();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                // The default HSTS value is 30 days. You may want to change this <span class="keyword">for</span> production scenarios, see https://aka.ms/aspnetcore-hsts.</span><br><span class="line">                app.UseHsts();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            app.UseMvc(routes =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                routes.MapRoute(<span class="string">"default"</span>, <span class="string">"&#123;controller=Home&#125;/&#123;action=Index&#125;/&#123;id?&#125;"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            app.UseHttpsRedirection();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增 <strong>HomeController.cs</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">using Microsoft.AspNetCore.Mvc;</span><br><span class="line"></span><br><span class="line">namespace WebApi.Controllers</span><br><span class="line">&#123;</span><br><span class="line">    [Route(<span class="string">"api/[controller]"</span>)]</span><br><span class="line">    [ApiController]</span><br><span class="line">    public class HomeController : ControllerBase</span><br><span class="line">    &#123;</span><br><span class="line">        public IActionResult Get()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(<span class="string">"Get Success"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [HttpPost]</span><br><span class="line">        public IActionResult Post()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(<span class="string">"Post Success"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [HttpPut]</span><br><span class="line">        public IActionResult Put()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(<span class="string">"Put Success"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [HttpDelete]</span><br><span class="line">        public IActionResult Delete()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(<span class="string">"Delete Success"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Postman-part"><a href="#Postman-part" class="headerlink" title="Postman part"></a>Postman part</h4><ol>
+<li><p><strong>Close SSL certificate verification</strong><br><img src="/2019/08/23/DotNetCoreWebApi/3.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Get</strong><br><img src="/2019/08/23/DotNetCoreWebApi/4.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Post</strong><br><img src="/2019/08/23/DotNetCoreWebApi/5.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Put</strong><br><img src="/2019/08/23/DotNetCoreWebApi/6.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Delete</strong><br><img src="/2019/08/23/DotNetCoreWebApi/7.png" alt="Architecture"></p>
+</li>
+</ol>
+<h2 id="Route-Attribute"><a href="#Route-Attribute" class="headerlink" title="Route Attribute"></a>Route Attribute</h2><h4 id="Net-Core-part-1"><a href="#Net-Core-part-1" class="headerlink" title=".Net Core part"></a>.Net Core part</h4><ol>
+<li><p>新增 <strong>Message.cs</strong><br><img src="/2019/08/23/DotNetCoreWebApi/8.png" alt="Architecture"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">namespace WebApi.Models</span><br><span class="line">&#123;</span><br><span class="line">    public class Message</span><br><span class="line">    &#123;</span><br><span class="line">        public string Message1 &#123; get; <span class="built_in">set</span>; &#125;</span><br><span class="line">        public string Message2 &#123; get; <span class="built_in">set</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增 <strong>RouteAttributeController.cs</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">using Microsoft.AspNetCore.Mvc;</span><br><span class="line">using WebApi.Models;</span><br><span class="line"></span><br><span class="line">namespace WebApi.Controllers</span><br><span class="line">&#123;</span><br><span class="line">    [Route(<span class="string">"api/[controller]"</span>)]</span><br><span class="line">    [ApiController]</span><br><span class="line">    public class RouteAttributeController : ControllerBase</span><br><span class="line">    &#123;</span><br><span class="line">        [Route(<span class="string">"Index"</span>)]</span><br><span class="line">        public IActionResult MyIndex()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(<span class="string">"Index Success"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [Route(<span class="string">"Index/&#123;id:int&#125;/&#123;firstName"</span>)]</span><br><span class="line">        public IActionResult MyIndex(int id)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok($<span class="string">"Index &#123;id&#125; Success"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [Route(<span class="string">"About"</span>)]</span><br><span class="line">        [HttpPost]</span><br><span class="line">        public IActionResult MyAbout()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(<span class="string">"About Success"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [Route(<span class="string">"About/&#123;id:int&#125;"</span>)]</span><br><span class="line">        [HttpPost]</span><br><span class="line">        public IActionResult MyAbout(int id)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok($<span class="string">"About &#123;id&#125; Success"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [Route(<span class="string">"ContactSingle"</span>)]</span><br><span class="line">        [HttpPost]</span><br><span class="line">        public IActionResult MyContact([FromBody]string message)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok($<span class="string">"Contact &#123;message&#125; Success"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [Route(<span class="string">"ContactClass"</span>)]</span><br><span class="line">        [HttpPost]</span><br><span class="line">        public IActionResult MyContact([FromBody]Message msg)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok($<span class="string">"Contact &#123;msg.Message1&#125; &#123;msg.Message2&#125; Success"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Postman-part-1"><a href="#Postman-part-1" class="headerlink" title="Postman part"></a>Postman part</h4><ol>
+<li><p><strong>Get Route(“Index”)</strong><br><img src="/2019/08/23/DotNetCoreWebApi/9.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Get [Route(“Index/{id:int}”)]</strong><br><img src="/2019/08/23/DotNetCoreWebApi/10.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Post [Route(“About”)]</strong><br><img src="/2019/08/23/DotNetCoreWebApi/11.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Post [Route(“About/{id:int}”)]</strong><br><img src="/2019/08/23/DotNetCoreWebApi/12.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Post [Route(“ContactSingle”)] FromBody</strong><br><img src="/2019/08/23/DotNetCoreWebApi/13.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Post [Route(“ContactClass”)] FromBody</strong><br><img src="/2019/08/23/DotNetCoreWebApi/14.png" alt="Architecture"></p>
+</li>
+</ol>
+<h2 id="Http-Verb"><a href="#Http-Verb" class="headerlink" title="Http Verb"></a>Http Verb</h2><h4 id="Net-Core-part-2"><a href="#Net-Core-part-2" class="headerlink" title=".Net Core part"></a>.Net Core part</h4><ol>
+<li>新增 <strong>HttpVerbController.cs</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using Microsoft.AspNetCore.Mvc;</span><br><span class="line">using WebApi.Models;</span><br><span class="line"></span><br><span class="line">namespace WebApi.Controllers</span><br><span class="line">&#123;</span><br><span class="line">    [Route(<span class="string">"api/[controller]"</span>)]</span><br><span class="line">    [ApiController]</span><br><span class="line">    public class HttpVerbController : ControllerBase</span><br><span class="line">    &#123;</span><br><span class="line">        private List&lt;Message&gt; messages = new List&lt;Message&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            new Message &#123; Message1 = <span class="string">"Message11"</span>, Message2 = <span class="string">"Message12"</span> &#125;,</span><br><span class="line">            new Message &#123; Message1 = <span class="string">"Message21"</span>, Message2 = <span class="string">"Message22"</span> &#125;,</span><br><span class="line">            new Message &#123; Message1 = <span class="string">"Message31"</span>, Message2 = <span class="string">"Message32"</span> &#125;,</span><br><span class="line">            new Message &#123; Message1 = <span class="string">"Message41"</span>, Message2 = <span class="string">"Message42"</span> &#125;,</span><br><span class="line">            new Message &#123; Message1 = <span class="string">"Message51"</span>, Message2 = <span class="string">"Message52"</span> &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        [HttpGet(<span class="string">"getMessage"</span>)]</span><br><span class="line">        public IActionResult GetListMessages()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(this.messages);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [HttpGet(<span class="string">"getMessage/&#123;id&#125;"</span>)]</span><br><span class="line">        public IActionResult GetListMessages(int id)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(this.messages.Where(o =&gt; o.Message2.Contains(id.ToString())).ToList());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [HttpPost(<span class="string">"postMessage"</span>)]</span><br><span class="line">        public IActionResult PostListMessages()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(this.messages);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [HttpPost(<span class="string">"postMessage/&#123;id&#125;"</span>)]</span><br><span class="line">        public IActionResult PostListMessages(int id)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(this.messages.Where(o =&gt; o.Message2.Contains(id.ToString())).ToList());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [HttpPost(<span class="string">"postMessageSingleBody"</span>)]</span><br><span class="line">        public IActionResult PostListMessages([FromBody]string message)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(this.messages.Where(o =&gt; o.Message2 == message).ToList());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [HttpPost(<span class="string">"postMessageClassBody"</span>)]</span><br><span class="line">        public IActionResult PostListMessages([FromBody]Message msg)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">return</span> Ok(this.messages.Where(o =&gt; o.Message2 == msg.Message2).ToList());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Postman-part-2"><a href="#Postman-part-2" class="headerlink" title="Postman part"></a>Postman part</h4><ol>
+<li><p><strong>Get [HttpGet(“getMessage”)]</strong><br><img src="/2019/08/23/DotNetCoreWebApi/15.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Get [HttpGet(“getMessage/{id}”)]</strong><br><img src="/2019/08/23/DotNetCoreWebApi/16.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Post [HttpPost(“postMessage”)]</strong><br><img src="/2019/08/23/DotNetCoreWebApi/17.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Post [HttpPost(“postMessage/{id}”)]</strong><br><img src="/2019/08/23/DotNetCoreWebApi/18.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Post [HttpPost(“postMessageSingleBody”)] FromBody</strong><br><img src="/2019/08/23/DotNetCoreWebApi/19.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Post [HttpPost(“postMessageClassBody”)] FromBody</strong><br><img src="/2019/08/23/DotNetCoreWebApi/20.png" alt="Architecture"></p>
+</li>
+</ol>
+<h2 id="Http-Response-Type"><a href="#Http-Response-Type" class="headerlink" title="Http Response Type"></a>Http Response Type</h2><h4 id="Net-Core-part-3"><a href="#Net-Core-part-3" class="headerlink" title=".Net Core part"></a>.Net Core part</h4><ol>
+<li>新增 <strong>ResponseTypeController.cs</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">using Microsoft.AspNetCore.Mvc;</span><br><span class="line"></span><br><span class="line">namespace WebApi.Controllers</span><br><span class="line">&#123;</span><br><span class="line">    [Route(<span class="string">"api/[controller]"</span>)]</span><br><span class="line">    [ApiController]</span><br><span class="line">    public class ResponseTypeController : ControllerBase</span><br><span class="line">    &#123;</span><br><span class="line">        [HttpGet(<span class="string">"getResponse/&#123;id&#125;"</span>)]</span><br><span class="line">        public IActionResult GetResponse(int id)</span><br><span class="line">        &#123;</span><br><span class="line">            switch (id)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">case</span> 1:</span><br><span class="line">                    <span class="built_in">return</span> Ok(<span class="string">"Success"</span>);</span><br><span class="line">                <span class="keyword">case</span> 2:</span><br><span class="line">                    <span class="built_in">return</span> BadRequest(<span class="string">"BadRequest"</span>);</span><br><span class="line">                default:</span><br><span class="line">                    <span class="built_in">return</span> NotFound(<span class="string">"NotFound"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Postman-part-3"><a href="#Postman-part-3" class="headerlink" title="Postman part"></a>Postman part</h4><ol>
+<li><p><strong>Status 200 Ok</strong><br><img src="/2019/08/23/DotNetCoreWebApi/21.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Status 400 Bad Request</strong><br><img src="/2019/08/23/DotNetCoreWebApi/22.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Status 404 Not Found</strong><br><img src="/2019/08/23/DotNetCoreWebApi/23.png" alt="Architecture"></p>
+</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/mvc/controllers/routing?view=aspnetcore-2.2" target="_blank" rel="noopener">ASP.NET Core 中的路由至控制器動作</a><br><a href="https://docs.microsoft.com/zh-tw/aspnet/core/web-api/?view=aspnetcore-2.2" target="_blank" rel="noopener">使用 ASP.NET Core 建立 Web API</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Net-Core/" rel="tag"># .Net Core</a>
+          
+            <a href="/tags/Postman/" rel="tag"># Postman</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/23/AngularAndNetCoreSignalRWebApi/" rel="next" title="Angular + .Net Core SignalR WebApi">
+                <i class="fa fa-chevron-left"></i> Angular + .Net Core SignalR WebApi
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="D & E">
+            
+              <p class="site-author-name" itemprop="name">D & E</p>
+              <p class="site-description motion-element" itemprop="description">Just notes</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">109</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic"><span class="nav-number">1.</span> <span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Net-Core-part"><span class="nav-number">1.0.1.</span> <span class="nav-text">.Net Core part</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Postman-part"><span class="nav-number">1.0.2.</span> <span class="nav-text">Postman part</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Route-Attribute"><span class="nav-number">2.</span> <span class="nav-text">Route Attribute</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Net-Core-part-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">.Net Core part</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Postman-part-1"><span class="nav-number">2.0.2.</span> <span class="nav-text">Postman part</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Http-Verb"><span class="nav-number">3.</span> <span class="nav-text">Http Verb</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Net-Core-part-2"><span class="nav-number">3.0.1.</span> <span class="nav-text">.Net Core part</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Postman-part-2"><span class="nav-number">3.0.2.</span> <span class="nav-text">Postman part</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Http-Response-Type"><span class="nav-number">4.</span> <span class="nav-text">Http Response Type</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Net-Core-part-3"><span class="nav-number">4.0.1.</span> <span class="nav-text">.Net Core part</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Postman-part-3"><span class="nav-number">4.0.2.</span> <span class="nav-text">Postman part</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number"></span> <span class="nav-text">Reference</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">D & E</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

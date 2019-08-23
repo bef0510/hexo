@@ -5,6 +5,7 @@ tags:
  - Angular
  - .Net Core
  - JWT
+ - Postman
 categories: 
  - .Net Core
 ---
@@ -118,7 +119,7 @@ namespace CoreJWT.Controllers
 }
 ~~~
 
-4. 增加 **service**
+4. 增加 **Services**
 ![Architecture](8.png)
 
 **IUserService.cs**
@@ -218,7 +219,6 @@ namespace CoreJWT.Services
             });
         }
 
-
         public IEnumerable<User> Register(User user)
         {
             var _users = this.users.ToList();
@@ -227,7 +227,6 @@ namespace CoreJWT.Services
 
             return _users;
         }
-
     }
 }
 ~~~
@@ -289,6 +288,7 @@ namespace CoreJWT
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSpaStaticFiles(c => { c.RootPath = "ClientApp/dist"; });
+
             // configure strongly typed settings objects
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
@@ -296,6 +296,7 @@ namespace CoreJWT
             // configure jwt authentication
             var appSettings = appSettingsSection.Get<AppSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -315,7 +316,6 @@ namespace CoreJWT
 
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -520,7 +520,7 @@ export const config = {
 ~~~
 
 #### Create component login
-1. **ng g c login --spec false**
+1. `ng g c login --spec false`
 2. 修改 **login.component.html**
 ~~~ bash
 <h2>Login</h2>
@@ -619,12 +619,11 @@ export class LoginComponent implements OnInit {
 					this.loading = false;
 				});
 	}
-
 }
 ~~~
 
 #### Create component home
-1. **ng g c home --spec false**
+1. `ng g c home --spec false`
 2. 修改 **home.component.html**
 ~~~ bash
 <h1>Hi {{currentUser.firstName}}!</h1>
@@ -684,7 +683,7 @@ export class HomeComponent implements OnInit {
 ~~~
 
 #### Create component register
-1. **ng g c register --spec false**
+1. `ng g c register --spec false`
 2. 修改 **register.component.html**
 ~~~ bash
 <h2>Register</h2>
