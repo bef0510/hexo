@@ -1,5 +1,5 @@
 ---
-title: Angular Pluggable Atchitecture
+title: Angular Pluggable Architecture
 date: 2019-09-04 14:59:50
 tags:
  - Angular Advanced
@@ -7,7 +7,7 @@ categories:
  - Angular
 ---
 
-# Angular Pluggable Atchitecture
+# Angular Pluggable Architecture
 1. **Create a new project**
 `ng new mainApp`
 
