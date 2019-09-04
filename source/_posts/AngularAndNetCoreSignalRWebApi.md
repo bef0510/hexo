@@ -2,7 +2,7 @@
 title: Angular + .Net Core SignalR WebApi
 date: 2019-08-23 09:57:45
 tags:
- - Angular
+ - Angular Basic
  - .Net Core
  - SignalR
  - Postman

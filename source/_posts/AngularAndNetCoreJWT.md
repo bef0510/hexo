@@ -2,7 +2,7 @@
 title: Angular + .Net Core JWT
 date: 2019-08-19 10:44:33
 tags:
- - Angular
+ - Angular Basic
  - .Net Core
  - JWT
  - Postman

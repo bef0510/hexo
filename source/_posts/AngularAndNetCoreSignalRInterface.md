@@ -2,7 +2,7 @@
 title: Angular + .Net Core SignalR Interface
 date: 2019-08-22 17:37:20
 tags:
- - Angular
+ - Angular Basic
  - .Net Core
  - SignalR
 categories: 

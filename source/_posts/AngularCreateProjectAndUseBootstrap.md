@@ -2,7 +2,7 @@
 title: Angular 建置，使用 Bootstrap
 date: 2019-04-30 15:03:57
 tags:
- - Angular
+ - Angular Basic
  - Bootstrap
  - VS Core
 categories: 

@@ -2,7 +2,7 @@
 title: Angular Custom Elements Include
 date: 2019-09-04 09:24:17
 tags:
- - Angular Elements
+ - Angular Advanced
 categories: 
  - Angular
 ---

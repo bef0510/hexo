@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Angular Advanced,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Angular Pluggable Atchitecture Create a new projectng new mainApp  Part plugin-a Add folder beside with mainAppplugins → plugin-a  Add package.json 12345678910111213141516171819202122&amp;#123;    &quot;name&quot;:">
+<meta name="keywords" content="Angular Advanced">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular Pluggable Atchitecture">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/AngularPluggableAtchitecture/index.html">
+<meta property="og:site_name" content="D &amp; E&#39;s Notes">
+<meta property="og:description" content="Angular Pluggable Atchitecture Create a new projectng new mainApp  Part plugin-a Add folder beside with mainAppplugins → plugin-a  Add package.json 12345678910111213141516171819202122&amp;#123;    &quot;name&quot;:">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/AngularPluggableAtchitecture/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/AngularPluggableAtchitecture/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/AngularPluggableAtchitecture/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/AngularPluggableAtchitecture/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/AngularPluggableAtchitecture/5.png">
+<meta property="og:updated_time" content="2019-09-04T08:05:37.331Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular Pluggable Atchitecture">
+<meta name="twitter:description" content="Angular Pluggable Atchitecture Create a new projectng new mainApp  Part plugin-a Add folder beside with mainAppplugins → plugin-a  Add package.json 12345678910111213141516171819202122&amp;#123;    &quot;name&quot;:">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/04/AngularPluggableAtchitecture/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/04/AngularPluggableAtchitecture/">
+
+
+
+
+
+  <title>Angular Pluggable Atchitecture | D & E's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D & E's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/04/AngularPluggableAtchitecture/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="D & E">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D & E's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Angular Pluggable Atchitecture</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-09-04T14:59:50+08:00">
+                2019-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Angular/" itemprop="url" rel="index">
+                    <span itemprop="name">Angular</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Angular-Pluggable-Atchitecture"><a href="#Angular-Pluggable-Atchitecture" class="headerlink" title="Angular Pluggable Atchitecture"></a>Angular Pluggable Atchitecture</h1><ol>
+<li><strong>Create a new project</strong><br><code>ng new mainApp</code></li>
+</ol>
+<h3 id="Part-plugin-a"><a href="#Part-plugin-a" class="headerlink" title="Part plugin-a"></a>Part plugin-a</h3><ol>
+<li><p><strong>Add folder beside with mainApp</strong><br><code>plugins → plugin-a</code><br><img src="/2019/09/04/AngularPluggableAtchitecture/1.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Add package.json</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"plugin-a"</span>,</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">    <span class="string">"license"</span>: <span class="string">"MIT"</span>,</span><br><span class="line">    <span class="string">"scripts"</span>: &#123;</span><br><span class="line">        <span class="string">"build"</span>: <span class="string">"rollup -c"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"dependencies"</span>: &#123;</span><br><span class="line">        <span class="string">"@angular/common"</span>: <span class="string">"5.2.0"</span>,</span><br><span class="line">        <span class="string">"@angular/core"</span>: <span class="string">"5.2.0"</span>,</span><br><span class="line">        <span class="string">"rollup"</span>: <span class="string">"0.55.1"</span>,</span><br><span class="line">        <span class="string">"rxjs"</span>: <span class="string">"5.5.6"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">        <span class="string">"rollup-plugin-angular"</span>: <span class="string">"^0.5.3"</span>,</span><br><span class="line">        <span class="string">"rollup-plugin-commonjs"</span>: <span class="string">"8.3.0"</span>,</span><br><span class="line">        <span class="string">"rollup-plugin-node-resolve"</span>: <span class="string">"3.0.2"</span>,</span><br><span class="line">        <span class="string">"rollup-plugin-typescript"</span>: <span class="string">"0.8.1"</span>,</span><br><span class="line">        <span class="string">"rollup-plugin-typescript2"</span>: <span class="string">"0.10.0"</span>,</span><br><span class="line">        <span class="string">"typescript"</span>: <span class="string">"2.5.3"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Add tsconfig.json</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"compileOnSave"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">        <span class="string">"baseUrl"</span>: <span class="string">"./"</span>,</span><br><span class="line">        <span class="string">"outDir"</span>: <span class="string">"./dist/out-tsc"</span>,</span><br><span class="line">        <span class="string">"sourceMap"</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="string">"declaration"</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="string">"module"</span>: <span class="string">"es2015"</span>,</span><br><span class="line">        <span class="string">"moduleResolution"</span>: <span class="string">"node"</span>,</span><br><span class="line">        <span class="string">"emitDecoratorMetadata"</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="string">"experimentalDecorators"</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="string">"target"</span>: <span class="string">"es5"</span>,</span><br><span class="line">        <span class="string">"typeRoots"</span>: [</span><br><span class="line">            <span class="string">"node_modules/@types"</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"lib"</span>: [</span><br><span class="line">            <span class="string">"es2017"</span>,</span><br><span class="line">            <span class="string">"dom"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>install</strong><br><code>npm install</code></p>
+</li>
+<li><p><strong>Add folder scr/app</strong><br><img src="/2019/09/04/AngularPluggableAtchitecture/2.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Add plugin-a.component.ts upder folder app</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'plugin-a-component'</span>,</span><br><span class="line">  template: `&lt;h3&gt;Hi, I am the Plugin A component.&lt;/h3&gt;</span><br><span class="line">  &lt;h4&gt;Hi, I am the Plugin A component.&lt;/h4&gt;`</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class PluginAComponent &#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span></span>() &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Add plugin-a.module.ts upder folder app</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import &#123; NgModule &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; CommonModule &#125; from <span class="string">'@angular/common'</span>;</span><br><span class="line">import &#123; PluginAComponent &#125; from <span class="string">'./plugin-a.component'</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    CommonModule</span><br><span class="line">  ],</span><br><span class="line">  declarations: [PluginAComponent],</span><br><span class="line">  entryComponents: [PluginAComponent],</span><br><span class="line">  providers: [&#123;</span><br><span class="line">     provide: <span class="string">'plugins'</span>,</span><br><span class="line">     useValue: [&#123;</span><br><span class="line">       name: <span class="string">'plugin-a-component'</span>,</span><br><span class="line">       component: PluginAComponent</span><br><span class="line">     &#125;],</span><br><span class="line">     multi: <span class="literal">true</span></span><br><span class="line">   &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class PluginAModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Add main.ts upder folder src</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> &#123; PluginAModule &#125; from <span class="string">'./app/plugin-a.module'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Add rollup.config.js under folder plugin-a</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import angular from <span class="string">'rollup-plugin-angular'</span>;</span><br><span class="line">import resolve from <span class="string">'rollup-plugin-node-resolve'</span>;</span><br><span class="line">import typescript from <span class="string">'rollup-plugin-typescript2'</span>;</span><br><span class="line">import commonjs from <span class="string">'rollup-plugin-commonjs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default [&#123;</span><br><span class="line">   input: <span class="string">'src/main.ts'</span>,</span><br><span class="line">   output: &#123;</span><br><span class="line">     file: <span class="string">'../../mainApp/src/assets/plugins/plugin-a.bundle.js'</span>,   </span><br><span class="line">     format: <span class="string">'umd'</span>,</span><br><span class="line">     name: <span class="string">'plugin-a'</span>,</span><br><span class="line">&#125;,</span><br><span class="line">   plugins: [</span><br><span class="line">     angular(),</span><br><span class="line">     resolve(&#123;</span><br><span class="line">        jsnext: <span class="literal">true</span>,</span><br><span class="line">        main: <span class="literal">true</span>,</span><br><span class="line">        // pass custom options to the resolve plugin</span><br><span class="line">        customResolveOptions: &#123;</span><br><span class="line">           moduleDirectory: <span class="string">'node_modules'</span></span><br><span class="line">        &#125;</span><br><span class="line">     &#125;),</span><br><span class="line">     typescript(&#123;</span><br><span class="line">       typescript: require(<span class="string">'typescript'</span>)</span><br><span class="line">     &#125;),</span><br><span class="line">     commonjs()</span><br><span class="line">   ],</span><br><span class="line">   external: [</span><br><span class="line">     <span class="string">'@angular/core'</span>,</span><br><span class="line">     <span class="string">'@angular/common'</span></span><br><span class="line">   ]</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Download rollup</strong><br><code>npm install rollup -g</code></p>
+</li>
+<li><p><strong>Build plugin-a</strong><br><code>npm run build</code><br><img src="/2019/09/04/AngularPluggableAtchitecture/3.png" alt="Architecture"></p>
+</li>
+</ol>
+<h3 id="Part-mainApp"><a href="#Part-mainApp" class="headerlink" title="Part mainApp"></a>Part mainApp</h3><ol>
+<li><p><strong>Make sure bundle.js already exists under assets</strong><br><img src="/2019/09/04/AngularPluggableAtchitecture/4.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Download systemjs</strong><br><code>npm install systemjs@0.21.3</code></p>
+</li>
+<li><p><strong>angular.json</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">***</span><br><span class="line"><span class="string">"scripts"</span>: [</span><br><span class="line">    <span class="string">"./node_modules/systemjs/dist/system.js"</span></span><br><span class="line">]</span><br><span class="line">***</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>main.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import &#123; enableProdMode &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; platformBrowserDynamic &#125; from <span class="string">'@angular/platform-browser-dynamic'</span>;</span><br><span class="line"></span><br><span class="line">import &#123; AppModule &#125; from <span class="string">'./app/app.module'</span>;</span><br><span class="line">import &#123; environment &#125; from <span class="string">'./environments/environment'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">declare</span> const SystemJS;</span><br><span class="line">import * as angularCore from <span class="string">'@angular/core'</span>;</span><br><span class="line">import * as angularCommon from <span class="string">'@angular/common'</span>;</span><br><span class="line">SystemJS.set(<span class="string">'@angular/core'</span>, SystemJS.newModule(angularCore));</span><br><span class="line">SystemJS.set(<span class="string">'@angular/common'</span>, SystemJS.newModule(angularCommon));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (environment.production) &#123;</span><br><span class="line">  enableProdMode();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">platformBrowserDynamic().bootstrapModule(AppModule)</span><br><span class="line">  .catch(err =&gt; console.error(err));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>app.module.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserModule &#125; from <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line">import &#123; COMPILER_OPTIONS, CompilerFactory, Compiler, NgModule &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; JitCompilerFactory &#125; from <span class="string">'@angular/platform-browser-dynamic'</span>;</span><br><span class="line"></span><br><span class="line">import &#123; AppRoutingModule &#125; from <span class="string">'./app-routing.module'</span>;</span><br><span class="line">import &#123; AppComponent &#125; from <span class="string">'./app.component'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> createCompiler(fn: CompilerFactory): Compiler &#123;     </span><br><span class="line">  <span class="built_in">return</span> fn.createCompiler();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    AppRoutingModule</span><br><span class="line">  ],</span><br><span class="line">  providers: [&#123;</span><br><span class="line">    provide: COMPILER_OPTIONS,</span><br><span class="line">    useValue: &#123;&#125;,</span><br><span class="line">    multi: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    provide: CompilerFactory,</span><br><span class="line">    useClass: JitCompilerFactory,</span><br><span class="line">    deps: [COMPILER_OPTIONS]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    provide: Compiler,</span><br><span class="line">    useFactory: createCompiler,</span><br><span class="line">    deps: [CompilerFactory]</span><br><span class="line">  &#125;],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>app.component.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="comment">#content&gt;&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>app.component.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">import &#123;</span><br><span class="line">  AfterViewInit, Component, Compiler, Injector, ViewChild,</span><br><span class="line">  ViewContainerRef</span><br><span class="line">&#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">declare</span> const SystemJS: any;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppComponent implements AfterViewInit &#123;</span><br><span class="line"></span><br><span class="line">  @ViewChild(<span class="string">'content'</span>, &#123; <span class="built_in">read</span>: ViewContainerRef, static: <span class="literal">false</span> &#125;) content: ViewContainerRef;</span><br><span class="line"></span><br><span class="line">  constructor(private _compiler: Compiler, private _injector: Injector) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">ngAfterViewInit</span></span>() &#123;</span><br><span class="line">    this.loadPlugins();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  private async <span class="function"><span class="title">loadPlugins</span></span>() &#123;</span><br><span class="line">    // import external module bundle</span><br><span class="line">    const module = await SystemJS.import(<span class="string">"assets/plugins/plugin-a.bundle.js"</span>);</span><br><span class="line"></span><br><span class="line">    // compile module</span><br><span class="line">    const moduleFactory = await this._compiler</span><br><span class="line">      .compileModuleAsync&lt;any&gt;(module[<span class="string">"PluginAModule"</span>]);</span><br><span class="line"></span><br><span class="line">    // resolve component factory</span><br><span class="line">    const moduleRef = moduleFactory.create(this._injector);</span><br><span class="line"></span><br><span class="line">    //get the custom made provider name <span class="string">'plugins'</span> </span><br><span class="line">    const componentProvider = moduleRef.injector.get(<span class="string">'plugins'</span>);</span><br><span class="line"></span><br><span class="line">    //from plugins array load the component on position 0 </span><br><span class="line">    const componentFactory = moduleRef.componentFactoryResolver</span><br><span class="line">      .resolveComponentFactory&lt;any&gt;(</span><br><span class="line">        componentProvider[0][0].component</span><br><span class="line">      );</span><br><span class="line"></span><br><span class="line">    // compile component </span><br><span class="line">    var pluginComponent = this.content.createComponent(componentFactory);</span><br><span class="line"></span><br><span class="line">    //sending @Input() values </span><br><span class="line">    //pluginComponent.instance.anyInput = <span class="string">"inputValue"</span>; </span><br><span class="line"></span><br><span class="line">    //accessing the component template view</span><br><span class="line">    //(pluginComponent.hostView as EmbeddedViewRef&lt;any&gt;).rootNodes[0] as HTMLElement;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Build mainApp</strong><br><code>ng s</code></p>
+</li>
+</ol>
+<h2 id="Change-immediate"><a href="#Change-immediate" class="headerlink" title="Change immediate"></a>Change immediate</h2><h3 id="Part-plugin-a-1"><a href="#Part-plugin-a-1" class="headerlink" title="Part plugin-a"></a>Part plugin-a</h3><ol>
+<li><p><strong>plugin-a.component.ts</strong><br><img src="/2019/09/04/AngularPluggableAtchitecture/5.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Build plugin-a</strong><br><code>npm run build</code></p>
+</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.youtube.com/watch?v=TEQdl3Pigiw" target="_blank" rel="noopener">Pluggable Angular Apps - Paul Spears - Angular Lunch April 2019</a><br><a href="https://itnext.io/how-to-build-a-plugin-extensible-application-architecture-in-angular5-736890278f3f" target="_blank" rel="noopener">How to build a plugin/extensible application architecture in Angular 5+</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Angular-Advanced/" rel="tag"># Angular Advanced</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/04/AngularElementsInclude/" rel="next" title="Angular Custom Elements Include">
+                <i class="fa fa-chevron-left"></i> Angular Custom Elements Include
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="D & E">
+            
+              <p class="site-author-name" itemprop="name">D & E</p>
+              <p class="site-description motion-element" itemprop="description">Just notes</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">112</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Angular-Pluggable-Atchitecture"><span class="nav-number">1.</span> <span class="nav-text">Angular Pluggable Atchitecture</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-plugin-a"><span class="nav-number">1.0.1.</span> <span class="nav-text">Part plugin-a</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-mainApp"><span class="nav-number">1.0.2.</span> <span class="nav-text">Part mainApp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Change-immediate"><span class="nav-number">1.1.</span> <span class="nav-text">Change immediate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-plugin-a-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">Part plugin-a</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">D & E</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

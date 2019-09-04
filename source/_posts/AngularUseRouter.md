@@ -2,7 +2,7 @@
 title: Router
 date: 2019-04-30 17:22:21
 tags:
- - Angular
+ - Angular Basic
 categories: 
  - Angular
 ---
