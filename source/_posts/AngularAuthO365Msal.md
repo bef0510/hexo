@@ -204,7 +204,7 @@ export class AppModule { }
 
 
 ## Using Interceptor
-1. ****
+1. **Add auth-interceptor.ts**
 ~~~ bash
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpEventType } from '@angular/common/http';
