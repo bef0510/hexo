@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Angular Auth,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Auth O365 V2.0 using msal Installnpm i msal --save  Modify file environment.tssrc\environments\environment.ts 123456789export const environment = &amp;#123;  production: false,  clientID: &apos;310c879d-fa10-4">
+<meta name="keywords" content="Angular Auth">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular Auth O365 V2.0 using msal">
+<meta property="og:url" content="http://yoursite.com/2019/10/22/AngularAuthO365Msal/index.html">
+<meta property="og:site_name" content="D &amp; E&#39;s Notes">
+<meta property="og:description" content="Auth O365 V2.0 using msal Installnpm i msal --save  Modify file environment.tssrc\environments\environment.ts 123456789export const environment = &amp;#123;  production: false,  clientID: &apos;310c879d-fa10-4">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2019/10/22/AngularAuthO365Msal/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/22/AngularAuthO365Msal/2.gif">
+<meta property="og:updated_time" content="2019-10-22T09:02:36.383Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular Auth O365 V2.0 using msal">
+<meta name="twitter:description" content="Auth O365 V2.0 using msal Installnpm i msal --save  Modify file environment.tssrc\environments\environment.ts 123456789export const environment = &amp;#123;  production: false,  clientID: &apos;310c879d-fa10-4">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/22/AngularAuthO365Msal/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/22/AngularAuthO365Msal/">
+
+
+
+
+
+  <title>Angular Auth O365 V2.0 using msal | D & E's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D & E's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/22/AngularAuthO365Msal/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="D & E">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D & E's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Angular Auth O365 V2.0 using msal</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-10-22T12:10:55+08:00">
+                2019-10-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Angular/" itemprop="url" rel="index">
+                    <span itemprop="name">Angular</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Auth-O365-V2-0-using-msal"><a href="#Auth-O365-V2-0-using-msal" class="headerlink" title="Auth O365 V2.0 using msal"></a>Auth O365 V2.0 using msal</h1><ol>
+<li><p><strong>Install</strong><br><code>npm i msal --save</code><br><img src="/2019/10/22/AngularAuthO365Msal/1.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Modify file environment.ts</strong><br><strong>src\environments\environment.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> const environment = &#123;</span><br><span class="line">  production: <span class="literal">false</span>,</span><br><span class="line">  clientID: <span class="string">'310c879d-fa10-4d7e-be1b-3efe6a38a04c'</span>,</span><br><span class="line">  redirectUri: <span class="string">'http://localhost:4200/'</span>,</span><br><span class="line">  authority: <span class="string">'https://login.microsoftonline.com/8135e33d-36db-4906-af5e-6a7df298ed96'</span>,</span><br><span class="line">  interactionMode: <span class="string">'popUp'</span>,</span><br><span class="line">  graphEndpoint: <span class="string">'https://graph.microsoft.com/v1.0/me'</span>,</span><br><span class="line">  graphScopes: [<span class="string">'user.read'</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Add auth.service.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import * as Msal from <span class="string">'msal'</span>;</span><br><span class="line">import &#123; environment &#125; from <span class="string">'../environments/environment'</span>;</span><br><span class="line">import &#123; from &#125; from <span class="string">'rxjs'</span>;</span><br><span class="line">import &#123; map, catchError, mergeMap &#125; from <span class="string">'rxjs/operators'</span>;</span><br><span class="line">import &#123; CacheLocation &#125; from <span class="string">'msal'</span>;</span><br><span class="line">import &#123; HttpClient, HttpHeaders &#125; from <span class="string">'@angular/common/http'</span>;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">    providedIn: <span class="string">'root'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AuthService &#123;</span><br><span class="line"></span><br><span class="line">    private clientApplication: Msal.UserAgentApplication;</span><br><span class="line"></span><br><span class="line">    constructor(</span><br><span class="line">        private http: HttpClient</span><br><span class="line">    ) &#123;</span><br><span class="line">        this.clientApplication = this.createApplication();</span><br><span class="line">        this.clientApplication.handleRedirectCallback((error, response) =&gt; &#123;</span><br><span class="line">            console.log(<span class="string">'response'</span>, response)</span><br><span class="line">            console.log(<span class="string">'error'</span>, error)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private <span class="function"><span class="title">createApplication</span></span>() &#123;</span><br><span class="line">        const msalConfig = &#123;</span><br><span class="line">            auth: &#123;</span><br><span class="line">                clientId: environment.clientID,</span><br><span class="line">                redirectUri: environment.redirectUri,</span><br><span class="line">                authority: environment.authority</span><br><span class="line">            &#125;,</span><br><span class="line">            cache: &#123;</span><br><span class="line">                storeAuthStateInCookie: <span class="literal">true</span>,</span><br><span class="line">                cacheLocation: (<span class="string">'localStorage'</span> as CacheLocation),</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">return</span> new Msal.UserAgentApplication(msalConfig);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">login</span></span>() &#123;</span><br><span class="line">        const acquireTokenSilent = () =&gt;</span><br><span class="line">            from(</span><br><span class="line">                this.clientApplication.acquireTokenSilent(&#123;</span><br><span class="line">                    scopes: environment.graphScopes</span><br><span class="line">                &#125;)</span><br><span class="line">            );</span><br><span class="line"></span><br><span class="line">        const acquireTokenPopup = () =&gt;</span><br><span class="line">            from(</span><br><span class="line">                this.clientApplication.acquireTokenPopup(&#123;</span><br><span class="line">                    scopes: environment.graphScopes,</span><br><span class="line">                &#125;)</span><br><span class="line">            ).pipe(</span><br><span class="line">                catchError(error =&gt; &#123;</span><br><span class="line">                    window.alert(<span class="string">'Error acquiring the popup:\n'</span> + error);</span><br><span class="line">                    <span class="built_in">return</span> <span class="string">'EMPTY'</span>;</span><br><span class="line">                &#125;)</span><br><span class="line">            );</span><br><span class="line"></span><br><span class="line">        console.log(798, environment.graphScopes)</span><br><span class="line">        from(this.clientApplication.loginPopup(&#123;</span><br><span class="line">            scopes: environment.graphScopes</span><br><span class="line">        &#125;)</span><br><span class="line">        )</span><br><span class="line">            .pipe(</span><br><span class="line">                mergeMap(token =&gt; &#123;</span><br><span class="line">                    console.log(<span class="string">'token'</span>, token)</span><br><span class="line">                    <span class="built_in">return</span> acquireTokenSilent().pipe(</span><br><span class="line">                        catchError(err =&gt; acquireTokenPopup())</span><br><span class="line">                    );</span><br><span class="line">                &#125;)</span><br><span class="line">            )</span><br><span class="line">            .subscribe(</span><br><span class="line">                (accessToken: any) =&gt; &#123;</span><br><span class="line">                    console.log(<span class="string">'rawIdToken'</span>, accessToken.idToken.rawIdToken);</span><br><span class="line">                    console.log(<span class="string">'accessToken.accessToken'</span>, accessToken.accessToken);</span><br><span class="line">                    localStorage.rawIdToken = accessToken.idToken.rawIdToken;</span><br><span class="line">                    localStorage.accessToken = accessToken;</span><br><span class="line">                &#125;,</span><br><span class="line">                error =&gt; &#123;</span><br><span class="line">                    console.log(789, error);</span><br><span class="line">                    window.alert(<span class="string">'Error during login:\n'</span> + error);</span><br><span class="line">                &#125;</span><br><span class="line">            );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">logout</span></span>() &#123;</span><br><span class="line">        this.clientApplication.logout();</span><br><span class="line">        delete localStorage.token;</span><br><span class="line">        delete localStorage.user;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">getInfo</span></span>() &#123;</span><br><span class="line">        <span class="built_in">let</span> token = localStorage.getItem(<span class="string">'token'</span>);</span><br><span class="line"></span><br><span class="line">        const header = new HttpHeaders().append(</span><br><span class="line">            <span class="string">'Authorization'</span>,</span><br><span class="line">            `Bearer <span class="variable">$&#123;localStorage.token&#125;</span>`</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        <span class="built_in">let</span> url = <span class="string">'https://graph.microsoft.com/v1.0/me'</span>;</span><br><span class="line">        this.http.get(url, &#123;</span><br><span class="line">            headers: header,</span><br><span class="line">            responseType: <span class="string">'text'</span></span><br><span class="line">        &#125;)</span><br><span class="line">        .subscribe(data =&gt; console.log(data));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>app.component.html</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button (click)=<span class="string">"onSignIn()"</span>&gt;Sign In&lt;/button&gt;</span><br><span class="line">&lt;button (click)=<span class="string">"onSignOut()"</span>&gt;Sign Out&lt;/button&gt;</span><br><span class="line">&lt;button (click)=<span class="string">"onGetInfo()"</span>&gt;Get Info&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>app.component.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; AuthService &#125; from <span class="string">'./auth.service'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppComponent &#123;</span><br><span class="line">  title = <span class="string">'msal8'</span>;</span><br><span class="line"></span><br><span class="line">  constructor(private authService: AuthService)&#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">onSignIn</span></span>() &#123;</span><br><span class="line">    this.authService.login();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">onSignOut</span></span>() &#123;</span><br><span class="line">    this.authService.logout();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">onGetInfo</span></span>() &#123;</span><br><span class="line">   this.authService.getInfo();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>app.module.ts</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserModule &#125; from <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line">import &#123; NgModule &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; HttpClientModule &#125; from <span class="string">'@angular/common/http'</span>;</span><br><span class="line">import &#123; AppRoutingModule &#125; from <span class="string">'./app-routing.module'</span>;</span><br><span class="line">import &#123; AppComponent &#125; from <span class="string">'./app.component'</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    AppRoutingModule,</span><br><span class="line">    HttpClientModule</span><br><span class="line">  ],</span><br><span class="line">  providers: [],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Run server</strong><br><img src="/2019/10/22/AngularAuthO365Msal/2.gif" alt="Architecture"></p>
+</li>
+</ol>
+<h2 id="Using-Interceptor"><a href="#Using-Interceptor" class="headerlink" title="Using Interceptor"></a>Using Interceptor</h2><ol>
+<li><hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from <span class="string">'@angular/core'</span>;</span><br><span class="line">import &#123; HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpEventType &#125; from <span class="string">'@angular/common/http'</span>;</span><br><span class="line">import &#123; Observable &#125; from <span class="string">'rxjs'</span>;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">    providedIn: <span class="string">'root'</span></span><br><span class="line">  &#125;)</span><br><span class="line"><span class="built_in">export</span> class AuthInterceptor implements HttpInterceptor &#123;</span><br><span class="line"></span><br><span class="line">  intercept(req: HttpRequest&lt;any&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;HttpEventType.Response&gt;&gt; &#123;</span><br><span class="line">    const authReq = req.clone(&#123;</span><br><span class="line">      setHeaders: &#123; Authorization: `Bearer <span class="variable">$&#123;localStorage.rawIdToken&#125;</span>` &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">return</span> next.handle(authReq);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.npmjs.com/package/msal" target="_blank" rel="noopener">msal</a><br><a href="https://docs.microsoft.com/bs-latn-ba/azure/active-directory/develop/msal-client-application-configuration" target="_blank" rel="noopener">Application configuration options</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Angular-Auth/" rel="tag"># Angular Auth</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/22/AngularAuthO365Adal/" rel="next" title="Angular Auth O365 V1.0 using adal">
+                <i class="fa fa-chevron-left"></i> Angular Auth O365 V1.0 using adal
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="D & E">
+            
+              <p class="site-author-name" itemprop="name">D & E</p>
+              <p class="site-description motion-element" itemprop="description">Just notes</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">116</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Auth-O365-V2-0-using-msal"><span class="nav-number">1.</span> <span class="nav-text">Auth O365 V2.0 using msal</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Interceptor"><span class="nav-number">1.1.</span> <span class="nav-text">Using Interceptor</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">D & E</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

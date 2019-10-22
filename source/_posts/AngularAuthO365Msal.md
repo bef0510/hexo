@@ -104,9 +104,10 @@ export class AuthService {
             )
             .subscribe(
                 (accessToken: any) => {
-                    console.log(123, accessToken.accessToken);
-                    localStorage.token = accessToken.accessToken;
-                    // window.location.reload();
+                    console.log('rawIdToken', accessToken.idToken.rawIdToken);
+                    console.log('accessToken.accessToken', accessToken.accessToken);
+                    localStorage.rawIdToken = accessToken.idToken.rawIdToken;
+                    localStorage.accessToken = accessToken;
                 },
                 error => {
                     console.log(789, error);
@@ -128,15 +129,13 @@ export class AuthService {
             'Authorization',
             `Bearer ${localStorage.token}`
         );
-        this.http.get<any>('https://graph.microsoft.com/v1.0/me', {
-            headers: header
-        }).pipe(
-            map((result => {
-                console.log(123, result)
-                return result;
-            }))).subscribe((result) => {
-                console.log(789, result)
-            });
+
+        let url = 'https://graph.microsoft.com/v1.0/me';
+        this.http.get(url, {
+            headers: header,
+            responseType: 'text'
+        })
+        .subscribe(data => console.log(data));
     }
 }
 ~~~
@@ -202,6 +201,28 @@ export class AppModule { }
 
 7. **Run server**
 ![Architecture](2.gif)
+
+
+## Using Interceptor
+1. ****
+~~~ bash
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpEventType } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+    providedIn: 'root'
+  })
+export class AuthInterceptor implements HttpInterceptor {
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<HttpEventType.Response>> {
+    const authReq = req.clone({
+      setHeaders: { Authorization: `Bearer ${localStorage.rawIdToken}` }
+    });
+    return next.handle(authReq);
+  }
+}
+~~~
 
 # Reference
 [msal](https://www.npmjs.com/package/msal)
