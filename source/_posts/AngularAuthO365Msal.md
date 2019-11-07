@@ -18,125 +18,134 @@ categories:
 export const environment = {
   production: false,
   clientID: '310c879d-fa10-4d7e-be1b-3efe6a38a04c',
-  redirectUri: 'http://localhost:4200/',
+  redirectUri: 'http://172.17.98.158:5500/',
   authority: 'https://login.microsoftonline.com/8135e33d-36db-4906-af5e-6a7df298ed96',
   interactionMode: 'popUp',
   graphEndpoint: 'https://graph.microsoft.com/v1.0/me',
-  graphScopes: ['user.read']
+  graphScopes: ['api://310c879d-fa10-4d7e-be1b-3efe6a38a04c/access_as_user']
 };
 ~~~
 
 3. **Add auth.service.ts**
 ~~~ bash
-import { Injectable } from '@angular/core';
+import { Injectable, ɵConsole } from '@angular/core';
 import * as Msal from 'msal';
-import { environment } from '../environments/environment';
-import { from } from 'rxjs';
-import { map, catchError, mergeMap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
+import { from, Observable, of } from 'rxjs';
+import { catchError, mergeMap, map } from 'rxjs/operators';
 import { CacheLocation } from 'msal';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { HttpClient } from '@angular/common/http';
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class AuthService {
 
-    private clientApplication: Msal.UserAgentApplication;
+  private clientApplication: Msal.UserAgentApplication;
+  scope = { scopes: environment.graphScopes };
 
-    constructor(
-        private http: HttpClient
-    ) {
-        this.clientApplication = this.createApplication();
-        this.clientApplication.handleRedirectCallback((error, response) => {
-            console.log('response', response)
-            console.log('error', error)
-        });
-    }
+  constructor(private http: HttpClient) {
+    this.clientApplication = this.createApplication();
+    this.clientApplication.handleRedirectCallback((error, response) => {
+      if (error) {
+        console.log(error);
+      } else {
+        if (response.tokenType === "access_token") {
+          console.log('response.tokenType', response.tokenType)
+        } else {
+          console.log("token type is:" + response.tokenType);
+        }
+      }
+    });
+  }
 
-    private createApplication() {
-        const msalConfig = {
-            auth: {
-                clientId: environment.clientID,
-                redirectUri: environment.redirectUri,
-                authority: environment.authority
-            },
-            cache: {
-                storeAuthStateInCookie: true,
-                cacheLocation: ('localStorage' as CacheLocation),
-            }
-        };
+  onLoginPopup(): Observable<string | Msal.AuthResponse> {
+    const loginPop = from(this.clientApplication.loginPopup(this.scope));
 
-        return new Msal.UserAgentApplication(msalConfig);
-    }
+    return loginPop.pipe(
+      mergeMap(token => {
+        console.log('token', token)
+        return this.onRefresh();
+      })
+    )
+  }
 
-    login() {
-        const acquireTokenSilent = () =>
-            from(
-                this.clientApplication.acquireTokenSilent({
-                    scopes: environment.graphScopes
-                })
-            );
+  onLoginRedirect() {
+    this.clientApplication.loginRedirect(this.scope);
+  }
 
-        const acquireTokenPopup = () =>
-            from(
-                this.clientApplication.acquireTokenPopup({
-                    scopes: environment.graphScopes,
-                })
-            ).pipe(
-                catchError(error => {
-                    window.alert('Error acquiring the popup:\n' + error);
-                    return 'EMPTY';
-                })
-            );
+  onGetAccount(): Msal.Account {
+    return this.clientApplication.getAccount();
+  }
+  
+  onRefresh(): Observable<string | Msal.AuthResponse> {
+    return this.acquireTokenSilent().pipe(
+      catchError(err => this.acquireTokenPopup())
+    );
+  }
 
-        console.log(798, environment.graphScopes)
-        from(this.clientApplication.loginPopup({
-            scopes: environment.graphScopes
-        })
-        )
-            .pipe(
-                mergeMap(token => {
-                    console.log('token', token)
-                    return acquireTokenSilent().pipe(
-                        catchError(err => acquireTokenPopup())
-                    );
-                })
-            )
-            .subscribe(
-                (accessToken: any) => {
-                    console.log('rawIdToken', accessToken.idToken.rawIdToken);
-                    console.log('accessToken.accessToken', accessToken.accessToken);
-                    localStorage.rawIdToken = accessToken.idToken.rawIdToken;
-                    localStorage.accessToken = accessToken;
-                },
-                error => {
-                    console.log(789, error);
-                    window.alert('Error during login:\n' + error);
-                }
-            );
-    }
+  onLogout() {
+    this.clientApplication.logout();
+    localStorage.clear();
+  }
 
-    logout() {
-        this.clientApplication.logout();
-        delete localStorage.token;
-        delete localStorage.user;
-    }
+  onIsExpire(): boolean {
+    const expiration = Math.round(new Date(localStorage.expiresOn).getTime() / 1000);
+    const now = Math.round(new Date().getTime() / 1000);
+    const leftTime = expiration - now;
+    return leftTime < 0;
+  }
 
-    getInfo() {
-        let token = localStorage.getItem('token');
+  onSaveToken(accessToken: any): Observable<boolean> {
+    localStorage.accessToken = accessToken.accessToken;
+    localStorage.expiration = accessToken.idToken.expiration;
+    localStorage.expiresOn = accessToken.expiresOn;
 
-        const header = new HttpHeaders().append(
-            'Authorization',
-            `Bearer ${localStorage.token}`
-        );
+    return of(true);
+  }
 
-        let url = 'https://graph.microsoft.com/v1.0/me';
-        this.http.get(url, {
-            headers: header,
-            responseType: 'text'
-        })
-        .subscribe(data => console.log(data));
-    }
+
+  getInfo() {
+
+    let url = 'https://172.17.98.63:8096/ForAuth/testUserisAuth';
+    let url1 = 'https://graph.microsoft.com/v1.0/me';
+ 
+    this.http.get(url)
+      .subscribe(data => console.log(data));
+  }
+
+  private createApplication(): Msal.UserAgentApplication {
+    const msalConfig = {
+      auth: {
+        clientId: environment.clientID,
+        redirectUri: environment.redirectUri,
+        authority: environment.authority
+      },
+      cache: {
+        storeAuthStateInCookie: true,
+        cacheLocation: ('localStorage' as CacheLocation),
+      }
+    };
+
+    return new Msal.UserAgentApplication(msalConfig);
+  }
+
+
+  private acquireTokenSilent(): Observable<Msal.AuthResponse> {
+    return from(
+      this.clientApplication.acquireTokenSilent(this.scope)
+    );
+  }
+
+  private acquireTokenPopup(): Observable<string | Msal.AuthResponse> {
+    return from(
+      this.clientApplication.acquireTokenPopup(this.scope)
+    ).pipe(
+      catchError(error => {
+        window.alert('Error acquiring the popup:\n' + error);
+        return '';
+      })
+    );
+  }
 }
 ~~~
 
@@ -163,11 +172,23 @@ export class AppComponent {
   constructor(private authService: AuthService){}
 
   onSignIn() {
-    this.authService.login();
+    if (localStorage.loginType === CONST_INFO.popupType) {
+      this.authService.onLoginPopup()
+        .subscribe((accessToken: any) => {
+
+          this.authService.onSaveToken(accessToken);
+
+          this.isLogin = true;
+        }, (error: any) => {
+          window.alert('Error during login:\n' + error);
+        });
+    } else if (localStorage.loginType === CONST_INFO.redirectType) {
+      this.authService.onLoginRedirect();
+    }
   }
 
   onSignOut() {
-    this.authService.logout();
+    this.authService.onLogout();
   }
 
   onGetInfo() {
