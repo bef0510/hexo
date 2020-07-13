@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Server,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Create Azure Virtual Machine Login Azure  Click Virtual machines  Click Add  Input Basics Information  Select Size  Input Disks Information  Make Sure Networking Information  Make Sure Management Info">
+<meta name="keywords" content="Server">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Create Azure Virtual Machine">
+<meta property="og:url" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/index.html">
+<meta property="og:site_name" content="D &amp; E&#39;s Notes">
+<meta property="og:description" content="Create Azure Virtual Machine Login Azure  Click Virtual machines  Click Add  Input Basics Information  Select Size  Input Disks Information  Make Sure Networking Information  Make Sure Management Info">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/1.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/2.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/3.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/4.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/5.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/6.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/7.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/8.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/9.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/10.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/11.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/12.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/13.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/14.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/15.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/16.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/17.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/18.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/19.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/20.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/21.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/22.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/23.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/24.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/25.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/26.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/27.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/28.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/29.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/30.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/31.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/32.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/33.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/34.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/35.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/36.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/37.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/38.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/39.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/40.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/41.png">
+<meta property="og:updated_time" content="2020-07-09T03:57:55.803Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Create Azure Virtual Machine">
+<meta name="twitter:description" content="Create Azure Virtual Machine Login Azure  Click Virtual machines  Click Add  Input Basics Information  Select Size  Input Disks Information  Make Sure Networking Information  Make Sure Management Info">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/">
+
+
+
+
+
+  <title>Create Azure Virtual Machine | D & E's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D & E's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/09/CreateAzureVirtualMachine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="D & E">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D & E's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Create Azure Virtual Machine</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-07-09T09:41:13+08:00">
+                2020-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Azure/" itemprop="url" rel="index">
+                    <span itemprop="name">Azure</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Create-Azure-Virtual-Machine"><a href="#Create-Azure-Virtual-Machine" class="headerlink" title="Create Azure Virtual Machine"></a>Create Azure Virtual Machine</h1><ol>
+<li><p><strong>Login</strong> <a href="https://portal.azure.com/" target="_blank" rel="noopener">Azure</a></p>
+</li>
+<li><p><strong>Click Virtual machines</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/1.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Click Add</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/2.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Input Basics Information</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/3.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Select Size</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/4.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Input Disks Information</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/5.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Make Sure Networking Information</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/6.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Make Sure Management Information</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/7.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Change Advanced Information</strong><br><strong>Click Select an extension to install</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/8.png" alt="Architecture"><br><img src="/2020/07/09/CreateAzureVirtualMachine/9.png" alt="Architecture"><br><img src="/2020/07/09/CreateAzureVirtualMachine/10.png" alt="Architecture"><br><img src="/2020/07/09/CreateAzureVirtualMachine/11.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Input Tags Information</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/12.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Create Virtual Machine</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/13.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Creating</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/14.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Create Done</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/15.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Search Virtual Machines</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/16.png" alt="Architecture"></p>
+</li>
+</ol>
+<h1 id="Remote-Virtual-Machines"><a href="#Remote-Virtual-Machines" class="headerlink" title="Remote Virtual Machines"></a>Remote Virtual Machines</h1><ol>
+<li><p><strong>Select Virtual Machines</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/17.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Copy Public IP Address</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/18.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Hint Windows key And Type mstsc</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/19.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Paste IP Address</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/20.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Input Account And Password</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/21.png" alt="Architecture"></p>
+</li>
+</ol>
+<h1 id="Instal-IIS"><a href="#Instal-IIS" class="headerlink" title="Instal IIS"></a>Instal IIS</h1><ol>
+<li><p><strong>Click Add roles and features</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/22.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Click Next</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/23.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Click Next</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/24.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Click Next</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/25.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Select Web Server (IIS)</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/26.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Click Add Features</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/27.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Click Next</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/28.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Select Features</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/29.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Click Next</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/30.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Click Next</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/31.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Select Restart And Click Install</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/32.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Click Close</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/33.png" alt="Architecture"></p>
+</li>
+<li><p><strong>After Restart Input <a href="http://localhost/" target="_blank" rel="noopener">http://localhost/</a> via Browser</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/34.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Click Networking And Click Add inbound port rule</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/35.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Modify Add inbound security rule</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/36.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Waiting For Few Second</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/37.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Input <a href="http://23.993.98.59" target="_blank" rel="noopener">http://23.993.98.59</a> on local Browser</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/38.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Create index.html in Remote Server</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/39.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Input <a href="http://localhost/" target="_blank" rel="noopener">http://localhost/</a> in Remote Browser</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/40.png" alt="Architecture"></p>
+</li>
+<li><p><strong>Input <a href="http://23.993.98.59" target="_blank" rel="noopener">http://23.993.98.59</a> in local Browser</strong><br><img src="/2020/07/09/CreateAzureVirtualMachine/41.png" alt="Architecture"></p>
+</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.youtube.com/watch?v=QOv_-xBXkpo" target="_blank" rel="noopener">Azure Virtual Machine Tutorial | Creating A Virtual Machine In Azure | Azure Training | Simplilearn</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Server/" rel="tag"># Server</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/17/SolrInstall/" rel="next" title="Solr Basic Install With Win 10">
+                <i class="fa fa-chevron-left"></i> Solr Basic Install With Win 10
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/09/CreateAzureDevOps/" rel="prev" title="Create Azure DevOps">
+                Create Azure DevOps <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="D & E">
+            
+              <p class="site-author-name" itemprop="name">D & E</p>
+              <p class="site-description motion-element" itemprop="description">Just notes</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">132</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-Azure-Virtual-Machine"><span class="nav-number">1.</span> <span class="nav-text">Create Azure Virtual Machine</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Remote-Virtual-Machines"><span class="nav-number">2.</span> <span class="nav-text">Remote Virtual Machines</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Instal-IIS"><span class="nav-number">3.</span> <span class="nav-text">Instal IIS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">D & E</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

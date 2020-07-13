@@ -6,3 +6,4 @@ node_modules/
 public/*
 .deploy*/
 !public/2019/
+!public/2020/
